@@ -1,4 +1,5 @@
 use_frameworks!
 target 'VarazdinEvents' do
-	pod 'RealmSwift'
+	pod 'Realm', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'master', :submodules => true
+	pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'master', :submodules => true
 end
