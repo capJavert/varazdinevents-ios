@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4709227F6C41BBDA4829D96E /* Pods_VarazdinEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87CA0486C82EDE8BF84D8BD /* Pods_VarazdinEvents.framework */; };
+		6A5D8EE7FF5EA830372A72DD /* Pods_VarazdinEvents_Db.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730E5E9FF023CC6066080368 /* Pods_VarazdinEvents_Db.framework */; };
+		D97C2796DD88B1D9F5EBC532 /* Pods_Db.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1932CE5C76456A275F8D8AA /* Pods_Db.framework */; };
+		E419E68F1DD22F4100FBBB47 /* Db.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E419E6851DD22F4100FBBB47 /* Db.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E419E6951DD22FD700FBBB47 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6941DD22FD700FBBB47 /* Event.swift */; };
+		E419E6971DD2300800FBBB47 /* EventCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6961DD2300800FBBB47 /* EventCategory.swift */; };
+		E419E6991DD2301600FBBB47 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6981DD2301600FBBB47 /* User.swift */; };
 		E4B1F75A1DD1E8BD00AA0434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1F7591DD1E8BD00AA0434 /* AppDelegate.swift */; };
 		E4B1F75C1DD1E8BD00AA0434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1F75B1DD1E8BD00AA0434 /* ViewController.swift */; };
 		E4B1F75F1DD1E8BD00AA0434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1F75D1DD1E8BD00AA0434 /* Main.storyboard */; };
@@ -18,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E419E68D1DD22F4100FBBB47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B1F74E1DD1E8BD00AA0434 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E419E6841DD22F4100FBBB47;
+			remoteInfo = Db;
+		};
 		E4B1F76B1DD1E8BD00AA0434 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4B1F74E1DD1E8BD00AA0434 /* Project object */;
@@ -34,10 +47,34 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E419E6931DD22F4100FBBB47 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E419E68F1DD22F4100FBBB47 /* Db.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1913706FB5E6C1384EA34F51 /* Pods-VarazdinEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents.release.xcconfig"; sourceTree = "<group>"; };
-		2336ED2F0ED0235AFDEB983D /* Pods-VarazdinEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents.debug.xcconfig"; sourceTree = "<group>"; };
+		2E38FD40BD070217B0465F91 /* Pods-Db.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Db.release.xcconfig"; path = "Pods/Target Support Files/Pods-Db/Pods-Db.release.xcconfig"; sourceTree = "<group>"; };
+		4EC0DB7E869300B843BB2EB5 /* Pods-VarazdinEvents-Db.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents-Db.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents-Db/Pods-VarazdinEvents-Db.release.xcconfig"; sourceTree = "<group>"; };
+		730E5E9FF023CC6066080368 /* Pods_VarazdinEvents_Db.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents_Db.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9588683E854BF8E8B35BE0F5 /* Pods-VarazdinEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents.debug.xcconfig"; sourceTree = "<group>"; };
+		A92329717800CF93DF486E39 /* Pods-Db.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Db.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Db/Pods-Db.debug.xcconfig"; sourceTree = "<group>"; };
+		B81E54C349594CF73B111B13 /* Pods-VarazdinEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents.release.xcconfig"; sourceTree = "<group>"; };
 		B87CA0486C82EDE8BF84D8BD /* Pods_VarazdinEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1932CE5C76456A275F8D8AA /* Pods_Db.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Db.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E419E6851DD22F4100FBBB47 /* Db.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Db.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E419E68C1DD22F4100FBBB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E419E6941DD22FD700FBBB47 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E419E6961DD2300800FBBB47 /* EventCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCategory.swift; sourceTree = "<group>"; };
+		E419E6981DD2301600FBBB47 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E4B1F7561DD1E8BD00AA0434 /* VarazdinEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarazdinEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1F7591DD1E8BD00AA0434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B1F75B1DD1E8BD00AA0434 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,9 +88,19 @@
 		E4B1F7751DD1E8BD00AA0434 /* VarazdinEventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VarazdinEventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1F7791DD1E8BD00AA0434 /* VarazdinEventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarazdinEventsUITests.swift; sourceTree = "<group>"; };
 		E4B1F77B1DD1E8BD00AA0434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EACBF42574B4F36ECB1CABE5 /* Pods-VarazdinEvents-Db.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents-Db.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents-Db/Pods-VarazdinEvents-Db.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E419E6821DD22F4100FBBB47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A5D8EE7FF5EA830372A72DD /* Pods_VarazdinEvents_Db.framework in Frameworks */,
+				D97C2796DD88B1D9F5EBC532 /* Pods_Db.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4B1F7531DD1E8BD00AA0434 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				B87CA0486C82EDE8BF84D8BD /* Pods_VarazdinEvents.framework */,
+				730E5E9FF023CC6066080368 /* Pods_VarazdinEvents_Db.framework */,
+				E1932CE5C76456A275F8D8AA /* Pods_Db.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -90,10 +139,25 @@
 		9B332D40E2C07F31FC0080BB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2336ED2F0ED0235AFDEB983D /* Pods-VarazdinEvents.debug.xcconfig */,
-				1913706FB5E6C1384EA34F51 /* Pods-VarazdinEvents.release.xcconfig */,
+				9588683E854BF8E8B35BE0F5 /* Pods-VarazdinEvents.debug.xcconfig */,
+				B81E54C349594CF73B111B13 /* Pods-VarazdinEvents.release.xcconfig */,
+				EACBF42574B4F36ECB1CABE5 /* Pods-VarazdinEvents-Db.debug.xcconfig */,
+				4EC0DB7E869300B843BB2EB5 /* Pods-VarazdinEvents-Db.release.xcconfig */,
+				A92329717800CF93DF486E39 /* Pods-Db.debug.xcconfig */,
+				2E38FD40BD070217B0465F91 /* Pods-Db.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E419E6861DD22F4100FBBB47 /* Db */ = {
+			isa = PBXGroup;
+			children = (
+				E419E68C1DD22F4100FBBB47 /* Info.plist */,
+				E419E6941DD22FD700FBBB47 /* Event.swift */,
+				E419E6961DD2300800FBBB47 /* EventCategory.swift */,
+				E419E6981DD2301600FBBB47 /* User.swift */,
+			);
+			path = Db;
 			sourceTree = "<group>";
 		};
 		E4B1F74D1DD1E8BD00AA0434 = {
@@ -102,6 +166,7 @@
 				E4B1F7581DD1E8BD00AA0434 /* VarazdinEvents */,
 				E4B1F76D1DD1E8BD00AA0434 /* VarazdinEventsTests */,
 				E4B1F7781DD1E8BD00AA0434 /* VarazdinEventsUITests */,
+				E419E6861DD22F4100FBBB47 /* Db */,
 				E4B1F7571DD1E8BD00AA0434 /* Products */,
 				9B332D40E2C07F31FC0080BB /* Pods */,
 				2302E0376806C92C485D97AB /* Frameworks */,
@@ -114,6 +179,7 @@
 				E4B1F7561DD1E8BD00AA0434 /* VarazdinEvents.app */,
 				E4B1F76A1DD1E8BD00AA0434 /* VarazdinEventsTests.xctest */,
 				E4B1F7751DD1E8BD00AA0434 /* VarazdinEventsUITests.xctest */,
+				E419E6851DD22F4100FBBB47 /* Db.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +218,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E419E6841DD22F4100FBBB47 /* Db */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E419E6921DD22F4100FBBB47 /* Build configuration list for PBXNativeTarget "Db" */;
+			buildPhases = (
+				EE5FC676F0D209D4311B1323 /* [CP] Check Pods Manifest.lock */,
+				E419E6811DD22F4100FBBB47 /* Sources */,
+				E419E6821DD22F4100FBBB47 /* Frameworks */,
+				E419E6831DD22F4100FBBB47 /* Resources */,
+				6EF6037C33AA63A0F1A9EE38 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Db;
+			productName = Db;
+			productReference = E419E6851DD22F4100FBBB47 /* Db.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E4B1F7551DD1E8BD00AA0434 /* VarazdinEvents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4B1F77E1DD1E8BD00AA0434 /* Build configuration list for PBXNativeTarget "VarazdinEvents" */;
@@ -162,10 +247,12 @@
 				E4B1F7541DD1E8BD00AA0434 /* Resources */,
 				3A2BBA49C34AC3ED01850CEF /* [CP] Embed Pods Frameworks */,
 				8F64E9B1E2CCAA37A2651883 /* [CP] Copy Pods Resources */,
+				E419E6931DD22F4100FBBB47 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E419E68E1DD22F4100FBBB47 /* PBXTargetDependency */,
 			);
 			name = VarazdinEvents;
 			productName = VarazdinEvents;
@@ -218,6 +305,12 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = varazdinevents;
 				TargetAttributes = {
+					E419E6841DD22F4100FBBB47 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WWXTYLGB6N;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
 					E4B1F7551DD1E8BD00AA0434 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = WWXTYLGB6N;
@@ -253,11 +346,19 @@
 				E4B1F7551DD1E8BD00AA0434 /* VarazdinEvents */,
 				E4B1F7691DD1E8BD00AA0434 /* VarazdinEventsTests */,
 				E4B1F7741DD1E8BD00AA0434 /* VarazdinEventsUITests */,
+				E419E6841DD22F4100FBBB47 /* Db */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E419E6831DD22F4100FBBB47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4B1F7541DD1E8BD00AA0434 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +416,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6EF6037C33AA63A0F1A9EE38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VarazdinEvents-Db/Pods-VarazdinEvents-Db-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8F64E9B1E2CCAA37A2651883 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,9 +446,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE5FC676F0D209D4311B1323 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E419E6811DD22F4100FBBB47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E419E6971DD2300800FBBB47 /* EventCategory.swift in Sources */,
+				E419E6951DD22FD700FBBB47 /* Event.swift in Sources */,
+				E419E6991DD2301600FBBB47 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4B1F7521DD1E8BD00AA0434 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,6 +502,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E419E68E1DD22F4100FBBB47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E419E6841DD22F4100FBBB47 /* Db */;
+			targetProxy = E419E68D1DD22F4100FBBB47 /* PBXContainerItemProxy */;
+		};
 		E4B1F76C1DD1E8BD00AA0434 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E4B1F7551DD1E8BD00AA0434 /* VarazdinEvents */;
@@ -393,6 +539,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E419E6901DD22F4100FBBB47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EACBF42574B4F36ECB1CABE5 /* Pods-VarazdinEvents-Db.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = Db/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VarazdinEvents.Db;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E419E6911DD22F4100FBBB47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EC0DB7E869300B843BB2EB5 /* Pods-VarazdinEvents-Db.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = Db/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VarazdinEvents.Db;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		E4B1F77C1DD1E8BD00AA0434 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,8 +665,9 @@
 		};
 		E4B1F77F1DD1E8BD00AA0434 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2336ED2F0ED0235AFDEB983D /* Pods-VarazdinEvents.debug.xcconfig */;
+			baseConfigurationReference = 9588683E854BF8E8B35BE0F5 /* Pods-VarazdinEvents.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				INFOPLIST_FILE = VarazdinEvents/Info.plist;
@@ -503,8 +681,9 @@
 		};
 		E4B1F7801DD1E8BD00AA0434 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1913706FB5E6C1384EA34F51 /* Pods-VarazdinEvents.release.xcconfig */;
+			baseConfigurationReference = B81E54C349594CF73B111B13 /* Pods-VarazdinEvents.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				INFOPLIST_FILE = VarazdinEvents/Info.plist;
@@ -519,7 +698,7 @@
 		E4B1F7821DD1E8BD00AA0434 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				INFOPLIST_FILE = VarazdinEventsTests/Info.plist;
@@ -534,7 +713,7 @@
 		E4B1F7831DD1E8BD00AA0434 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				INFOPLIST_FILE = VarazdinEventsTests/Info.plist;
@@ -549,7 +728,7 @@
 		E4B1F7851DD1E8BD00AA0434 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				INFOPLIST_FILE = VarazdinEventsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -563,7 +742,7 @@
 		E4B1F7861DD1E8BD00AA0434 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				INFOPLIST_FILE = VarazdinEventsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -577,6 +756,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E419E6921DD22F4100FBBB47 /* Build configuration list for PBXNativeTarget "Db" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E419E6901DD22F4100FBBB47 /* Debug */,
+				E419E6911DD22F4100FBBB47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E4B1F7511DD1E8BD00AA0434 /* Build configuration list for PBXProject "VarazdinEvents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
