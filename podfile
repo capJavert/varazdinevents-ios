@@ -1,7 +1,6 @@
-use_frameworks!
 target 'VarazdinEvents' do
+	use_frameworks!
 	target 'Db' do
-		inherit! :complete
 		pod 'RealmSwift', '~> 2.0'
 	end
 end

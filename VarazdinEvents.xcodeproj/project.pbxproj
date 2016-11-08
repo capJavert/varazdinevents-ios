@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4709227F6C41BBDA4829D96E /* Pods_VarazdinEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87CA0486C82EDE8BF84D8BD /* Pods_VarazdinEvents.framework */; };
-		6A5D8EE7FF5EA830372A72DD /* Pods_VarazdinEvents_Db.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730E5E9FF023CC6066080368 /* Pods_VarazdinEvents_Db.framework */; };
-		D97C2796DD88B1D9F5EBC532 /* Pods_Db.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1932CE5C76456A275F8D8AA /* Pods_Db.framework */; };
 		E419E68F1DD22F4100FBBB47 /* Db.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E419E6851DD22F4100FBBB47 /* Db.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E419E6951DD22FD700FBBB47 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6941DD22FD700FBBB47 /* Event.swift */; };
 		E419E6971DD2300800FBBB47 /* EventCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6961DD2300800FBBB47 /* EventCategory.swift */; };
@@ -21,6 +18,8 @@
 		E4B1F7641DD1E8BD00AA0434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1F7621DD1E8BD00AA0434 /* LaunchScreen.storyboard */; };
 		E4B1F76F1DD1E8BD00AA0434 /* VarazdinEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1F76E1DD1E8BD00AA0434 /* VarazdinEventsTests.swift */; };
 		E4B1F77A1DD1E8BD00AA0434 /* VarazdinEventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1F7791DD1E8BD00AA0434 /* VarazdinEventsUITests.swift */; };
+		E54014B21D863205F4D74006 /* Pods_VarazdinEvents_Db.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6A02605F07345B220B2AD2 /* Pods_VarazdinEvents_Db.framework */; };
+		EB4A7B22674143AEA8209E97 /* Pods_VarazdinEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECEB7F642AF34E065BB1223 /* Pods_VarazdinEvents.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +63,11 @@
 /* Begin PBXFileReference section */
 		2E38FD40BD070217B0465F91 /* Pods-Db.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Db.release.xcconfig"; path = "Pods/Target Support Files/Pods-Db/Pods-Db.release.xcconfig"; sourceTree = "<group>"; };
 		4EC0DB7E869300B843BB2EB5 /* Pods-VarazdinEvents-Db.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents-Db.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents-Db/Pods-VarazdinEvents-Db.release.xcconfig"; sourceTree = "<group>"; };
-		730E5E9FF023CC6066080368 /* Pods_VarazdinEvents_Db.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents_Db.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B6A02605F07345B220B2AD2 /* Pods_VarazdinEvents_Db.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents_Db.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ECEB7F642AF34E065BB1223 /* Pods_VarazdinEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9588683E854BF8E8B35BE0F5 /* Pods-VarazdinEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents.debug.xcconfig"; sourceTree = "<group>"; };
 		A92329717800CF93DF486E39 /* Pods-Db.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Db.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Db/Pods-Db.debug.xcconfig"; sourceTree = "<group>"; };
 		B81E54C349594CF73B111B13 /* Pods-VarazdinEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents.release.xcconfig"; sourceTree = "<group>"; };
-		B87CA0486C82EDE8BF84D8BD /* Pods_VarazdinEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1932CE5C76456A275F8D8AA /* Pods_Db.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Db.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E419E6851DD22F4100FBBB47 /* Db.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Db.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E419E68C1DD22F4100FBBB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E419E6941DD22FD700FBBB47 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -96,8 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A5D8EE7FF5EA830372A72DD /* Pods_VarazdinEvents_Db.framework in Frameworks */,
-				D97C2796DD88B1D9F5EBC532 /* Pods_Db.framework in Frameworks */,
+				E54014B21D863205F4D74006 /* Pods_VarazdinEvents_Db.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4709227F6C41BBDA4829D96E /* Pods_VarazdinEvents.framework in Frameworks */,
+				EB4A7B22674143AEA8209E97 /* Pods_VarazdinEvents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,16 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2302E0376806C92C485D97AB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B87CA0486C82EDE8BF84D8BD /* Pods_VarazdinEvents.framework */,
-				730E5E9FF023CC6066080368 /* Pods_VarazdinEvents_Db.framework */,
-				E1932CE5C76456A275F8D8AA /* Pods_Db.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		9B332D40E2C07F31FC0080BB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +134,15 @@
 				2E38FD40BD070217B0465F91 /* Pods-Db.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B678A02546E6B23DEBB19E51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6ECEB7F642AF34E065BB1223 /* Pods_VarazdinEvents.framework */,
+				5B6A02605F07345B220B2AD2 /* Pods_VarazdinEvents_Db.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E419E6861DD22F4100FBBB47 /* Db */ = {
@@ -169,7 +165,7 @@
 				E419E6861DD22F4100FBBB47 /* Db */,
 				E4B1F7571DD1E8BD00AA0434 /* Products */,
 				9B332D40E2C07F31FC0080BB /* Pods */,
-				2302E0376806C92C485D97AB /* Frameworks */,
+				B678A02546E6B23DEBB19E51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
