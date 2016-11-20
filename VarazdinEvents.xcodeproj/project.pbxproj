@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080596E3C7694AD8F03CFFA9 /* Pods_VarazdinEvents_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DAC9D9BAC1CC10D0B0387D /* Pods_VarazdinEvents_Core.framework */; };
+		35C26276F4D8BB075FDEF835 /* Pods_VarazdinEvents_WebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C22B29BD76801DBEAE658A /* Pods_VarazdinEvents_WebService.framework */; };
 		E419E68F1DD22F4100FBBB47 /* Db.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E419E6851DD22F4100FBBB47 /* Db.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E419E6951DD22FD700FBBB47 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6941DD22FD700FBBB47 /* Event.swift */; };
 		E419E6971DD2300800FBBB47 /* EventCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6961DD2300800FBBB47 /* EventCategory.swift */; };
 		E419E6991DD2301600FBBB47 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6981DD2301600FBBB47 /* User.swift */; };
+		E4A9621D1DE1F9DF00BCF470 /* WebService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4A962131DE1F9DF00BCF470 /* WebService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4A9622F1DE1F9EF00BCF470 /* Core.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4A962251DE1F9EF00BCF470 /* Core.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4A962341DE1FAE800BCF470 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962331DE1FAE800BCF470 /* HTTPRequest.swift */; };
+		E4A962391DE1FB4200BCF470 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962381DE1FB4200BCF470 /* DataLoader.swift */; };
+		E4A9623A1DE1FB4200BCF470 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962381DE1FB4200BCF470 /* DataLoader.swift */; };
+		E4A9623B1DE1FC4F00BCF470 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6941DD22FD700FBBB47 /* Event.swift */; };
+		E4A9623C1DE1FC5200BCF470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6981DD2301600FBBB47 /* User.swift */; };
+		E4A9623D1DE1FC5500BCF470 /* EventCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419E6961DD2300800FBBB47 /* EventCategory.swift */; };
 		E4B1F75A1DD1E8BD00AA0434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1F7591DD1E8BD00AA0434 /* AppDelegate.swift */; };
 		E4B1F75C1DD1E8BD00AA0434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1F75B1DD1E8BD00AA0434 /* ViewController.swift */; };
 		E4B1F75F1DD1E8BD00AA0434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1F75D1DD1E8BD00AA0434 /* Main.storyboard */; };
@@ -29,6 +39,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = E419E6841DD22F4100FBBB47;
 			remoteInfo = Db;
+		};
+		E4A9621B1DE1F9DF00BCF470 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B1F74E1DD1E8BD00AA0434 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4A962121DE1F9DF00BCF470;
+			remoteInfo = WebService;
+		};
+		E4A9622D1DE1F9EF00BCF470 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B1F74E1DD1E8BD00AA0434 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4A962241DE1F9EF00BCF470;
+			remoteInfo = Core;
 		};
 		E4B1F76B1DD1E8BD00AA0434 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -54,6 +78,8 @@
 			dstSubfolderSpec = 13;
 			files = (
 				E419E68F1DD22F4100FBBB47 /* Db.appex in Embed App Extensions */,
+				E4A9621D1DE1F9DF00BCF470 /* WebService.appex in Embed App Extensions */,
+				E4A9622F1DE1F9EF00BCF470 /* Core.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,18 +87,30 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03C22B29BD76801DBEAE658A /* Pods_VarazdinEvents_WebService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents_WebService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E38FD40BD070217B0465F91 /* Pods-Db.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Db.release.xcconfig"; path = "Pods/Target Support Files/Pods-Db/Pods-Db.release.xcconfig"; sourceTree = "<group>"; };
 		4EC0DB7E869300B843BB2EB5 /* Pods-VarazdinEvents-Db.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents-Db.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents-Db/Pods-VarazdinEvents-Db.release.xcconfig"; sourceTree = "<group>"; };
+		55DAC9D9BAC1CC10D0B0387D /* Pods_VarazdinEvents_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6A02605F07345B220B2AD2 /* Pods_VarazdinEvents_Db.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents_Db.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D44AC5FBE99877D64985379 /* Pods-VarazdinEvents-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents-Core.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents-Core/Pods-VarazdinEvents-Core.debug.xcconfig"; sourceTree = "<group>"; };
 		6ECEB7F642AF34E065BB1223 /* Pods_VarazdinEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarazdinEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		726D82625E075570FA55890D /* Pods-VarazdinEvents-WebService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents-WebService.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents-WebService/Pods-VarazdinEvents-WebService.release.xcconfig"; sourceTree = "<group>"; };
 		9588683E854BF8E8B35BE0F5 /* Pods-VarazdinEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents.debug.xcconfig"; sourceTree = "<group>"; };
 		A92329717800CF93DF486E39 /* Pods-Db.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Db.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Db/Pods-Db.debug.xcconfig"; sourceTree = "<group>"; };
 		B81E54C349594CF73B111B13 /* Pods-VarazdinEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents.release.xcconfig"; sourceTree = "<group>"; };
+		BB6439BB5ADEE0A71D094214 /* Pods-VarazdinEvents-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents-Core.release.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents-Core/Pods-VarazdinEvents-Core.release.xcconfig"; sourceTree = "<group>"; };
+		C8D4E6E11337EC0CA97AFB58 /* Pods-VarazdinEvents-WebService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarazdinEvents-WebService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VarazdinEvents-WebService/Pods-VarazdinEvents-WebService.debug.xcconfig"; sourceTree = "<group>"; };
 		E419E6851DD22F4100FBBB47 /* Db.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Db.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E419E68C1DD22F4100FBBB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E419E6941DD22FD700FBBB47 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E419E6961DD2300800FBBB47 /* EventCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCategory.swift; sourceTree = "<group>"; };
 		E419E6981DD2301600FBBB47 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E4A962131DE1F9DF00BCF470 /* WebService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WebService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A9621A1DE1F9DF00BCF470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A962251DE1F9EF00BCF470 /* Core.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Core.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A9622C1DE1F9EF00BCF470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A962331DE1FAE800BCF470 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		E4A962381DE1FB4200BCF470 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		E4B1F7561DD1E8BD00AA0434 /* VarazdinEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarazdinEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1F7591DD1E8BD00AA0434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B1F75B1DD1E8BD00AA0434 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +133,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				E54014B21D863205F4D74006 /* Pods_VarazdinEvents_Db.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962101DE1F9DF00BCF470 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35C26276F4D8BB075FDEF835 /* Pods_VarazdinEvents_WebService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962221DE1F9EF00BCF470 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				080596E3C7694AD8F03CFFA9 /* Pods_VarazdinEvents_Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +186,10 @@
 				4EC0DB7E869300B843BB2EB5 /* Pods-VarazdinEvents-Db.release.xcconfig */,
 				A92329717800CF93DF486E39 /* Pods-Db.debug.xcconfig */,
 				2E38FD40BD070217B0465F91 /* Pods-Db.release.xcconfig */,
+				5D44AC5FBE99877D64985379 /* Pods-VarazdinEvents-Core.debug.xcconfig */,
+				BB6439BB5ADEE0A71D094214 /* Pods-VarazdinEvents-Core.release.xcconfig */,
+				C8D4E6E11337EC0CA97AFB58 /* Pods-VarazdinEvents-WebService.debug.xcconfig */,
+				726D82625E075570FA55890D /* Pods-VarazdinEvents-WebService.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -141,6 +199,8 @@
 			children = (
 				6ECEB7F642AF34E065BB1223 /* Pods_VarazdinEvents.framework */,
 				5B6A02605F07345B220B2AD2 /* Pods_VarazdinEvents_Db.framework */,
+				55DAC9D9BAC1CC10D0B0387D /* Pods_VarazdinEvents_Core.framework */,
+				03C22B29BD76801DBEAE658A /* Pods_VarazdinEvents_WebService.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,6 +216,24 @@
 			path = Db;
 			sourceTree = "<group>";
 		};
+		E4A962141DE1F9DF00BCF470 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				E4A9621A1DE1F9DF00BCF470 /* Info.plist */,
+				E4A962331DE1FAE800BCF470 /* HTTPRequest.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		E4A962261DE1F9EF00BCF470 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E4A9622C1DE1F9EF00BCF470 /* Info.plist */,
+				E4A962381DE1FB4200BCF470 /* DataLoader.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		E4B1F74D1DD1E8BD00AA0434 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +241,8 @@
 				E4B1F76D1DD1E8BD00AA0434 /* VarazdinEventsTests */,
 				E4B1F7781DD1E8BD00AA0434 /* VarazdinEventsUITests */,
 				E419E6861DD22F4100FBBB47 /* Db */,
+				E4A962141DE1F9DF00BCF470 /* WebService */,
+				E4A962261DE1F9EF00BCF470 /* Core */,
 				E4B1F7571DD1E8BD00AA0434 /* Products */,
 				9B332D40E2C07F31FC0080BB /* Pods */,
 				B678A02546E6B23DEBB19E51 /* Frameworks */,
@@ -176,6 +256,8 @@
 				E4B1F76A1DD1E8BD00AA0434 /* VarazdinEventsTests.xctest */,
 				E4B1F7751DD1E8BD00AA0434 /* VarazdinEventsUITests.xctest */,
 				E419E6851DD22F4100FBBB47 /* Db.appex */,
+				E4A962131DE1F9DF00BCF470 /* WebService.appex */,
+				E4A962251DE1F9EF00BCF470 /* Core.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +315,44 @@
 			productReference = E419E6851DD22F4100FBBB47 /* Db.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		E4A962121DE1F9DF00BCF470 /* WebService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4A9621E1DE1F9DF00BCF470 /* Build configuration list for PBXNativeTarget "WebService" */;
+			buildPhases = (
+				B6D9F703BD1FAC29C8408683 /* [CP] Check Pods Manifest.lock */,
+				E4A9620F1DE1F9DF00BCF470 /* Sources */,
+				E4A962101DE1F9DF00BCF470 /* Frameworks */,
+				E4A962111DE1F9DF00BCF470 /* Resources */,
+				5A0B20C4F3B54807FF9D19BA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebService;
+			productName = WebService;
+			productReference = E4A962131DE1F9DF00BCF470 /* WebService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E4A962241DE1F9EF00BCF470 /* Core */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4A962301DE1F9EF00BCF470 /* Build configuration list for PBXNativeTarget "Core" */;
+			buildPhases = (
+				C2CBCF7FA4A9FBCEA2BA2B2A /* [CP] Check Pods Manifest.lock */,
+				E4A962211DE1F9EF00BCF470 /* Sources */,
+				E4A962221DE1F9EF00BCF470 /* Frameworks */,
+				E4A962231DE1F9EF00BCF470 /* Resources */,
+				C4BF0F93A4EA13382998EC8D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Core;
+			productName = Core;
+			productReference = E4A962251DE1F9EF00BCF470 /* Core.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E4B1F7551DD1E8BD00AA0434 /* VarazdinEvents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4B1F77E1DD1E8BD00AA0434 /* Build configuration list for PBXNativeTarget "VarazdinEvents" */;
@@ -249,6 +369,8 @@
 			);
 			dependencies = (
 				E419E68E1DD22F4100FBBB47 /* PBXTargetDependency */,
+				E4A9621C1DE1F9DF00BCF470 /* PBXTargetDependency */,
+				E4A9622E1DE1F9EF00BCF470 /* PBXTargetDependency */,
 			);
 			name = VarazdinEvents;
 			productName = VarazdinEvents;
@@ -307,6 +429,17 @@
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
+					E4A962121DE1F9DF00BCF470 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WWXTYLGB6N;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					E4A962241DE1F9EF00BCF470 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WWXTYLGB6N;
+						ProvisioningStyle = Automatic;
+					};
 					E4B1F7551DD1E8BD00AA0434 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = WWXTYLGB6N;
@@ -343,12 +476,28 @@
 				E4B1F7691DD1E8BD00AA0434 /* VarazdinEventsTests */,
 				E4B1F7741DD1E8BD00AA0434 /* VarazdinEventsUITests */,
 				E419E6841DD22F4100FBBB47 /* Db */,
+				E4A962121DE1F9DF00BCF470 /* WebService */,
+				E4A962241DE1F9EF00BCF470 /* Core */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E419E6831DD22F4100FBBB47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962111DE1F9DF00BCF470 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962231DE1F9EF00BCF470 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -412,6 +561,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5A0B20C4F3B54807FF9D19BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VarazdinEvents-WebService/Pods-VarazdinEvents-WebService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6EF6037C33AA63A0F1A9EE38 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,6 +606,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VarazdinEvents/Pods-VarazdinEvents-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B6D9F703BD1FAC29C8408683 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2CBCF7FA4A9FBCEA2BA2B2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C4BF0F93A4EA13382998EC8D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VarazdinEvents-Core/Pods-VarazdinEvents-Core-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EE5FC676F0D209D4311B1323 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -470,12 +679,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4A9620F1DE1F9DF00BCF470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A962341DE1FAE800BCF470 /* HTTPRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962211DE1F9EF00BCF470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A9623B1DE1FC4F00BCF470 /* Event.swift in Sources */,
+				E4A9623A1DE1FB4200BCF470 /* DataLoader.swift in Sources */,
+				E4A9623D1DE1FC5500BCF470 /* EventCategory.swift in Sources */,
+				E4A9623C1DE1FC5200BCF470 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4B1F7521DD1E8BD00AA0434 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E4B1F75C1DD1E8BD00AA0434 /* ViewController.swift in Sources */,
 				E4B1F75A1DD1E8BD00AA0434 /* AppDelegate.swift in Sources */,
+				E4A962391DE1FB4200BCF470 /* DataLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +731,16 @@
 			isa = PBXTargetDependency;
 			target = E419E6841DD22F4100FBBB47 /* Db */;
 			targetProxy = E419E68D1DD22F4100FBBB47 /* PBXContainerItemProxy */;
+		};
+		E4A9621C1DE1F9DF00BCF470 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4A962121DE1F9DF00BCF470 /* WebService */;
+			targetProxy = E4A9621B1DE1F9DF00BCF470 /* PBXContainerItemProxy */;
+		};
+		E4A9622E1DE1F9EF00BCF470 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4A962241DE1F9EF00BCF470 /* Core */;
+			targetProxy = E4A9622D1DE1F9EF00BCF470 /* PBXContainerItemProxy */;
 		};
 		E4B1F76C1DD1E8BD00AA0434 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -560,6 +799,65 @@
 				INFOPLIST_FILE = Db/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VarazdinEvents.Db;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E4A9621F1DE1F9DF00BCF470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8D4E6E11337EC0CA97AFB58 /* Pods-VarazdinEvents-WebService.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = WebService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VarazdinEvents.WebService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E4A962201DE1F9DF00BCF470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 726D82625E075570FA55890D /* Pods-VarazdinEvents-WebService.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = WebService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VarazdinEvents.WebService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E4A962311DE1F9EF00BCF470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D44AC5FBE99877D64985379 /* Pods-VarazdinEvents-Core.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = Core/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VarazdinEvents.Core;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E4A962321DE1F9EF00BCF470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB6439BB5ADEE0A71D094214 /* Pods-VarazdinEvents-Core.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = Core/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VarazdinEvents.Core;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -663,7 +961,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9588683E854BF8E8B35BE0F5 /* Pods-VarazdinEvents.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				INFOPLIST_FILE = VarazdinEvents/Info.plist;
@@ -679,7 +977,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B81E54C349594CF73B111B13 /* Pods-VarazdinEvents.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				INFOPLIST_FILE = VarazdinEvents/Info.plist;
@@ -757,6 +1055,24 @@
 			buildConfigurations = (
 				E419E6901DD22F4100FBBB47 /* Debug */,
 				E419E6911DD22F4100FBBB47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4A9621E1DE1F9DF00BCF470 /* Build configuration list for PBXNativeTarget "WebService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4A9621F1DE1F9DF00BCF470 /* Debug */,
+				E4A962201DE1F9DF00BCF470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4A962301DE1F9EF00BCF470 /* Build configuration list for PBXNativeTarget "Core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4A962311DE1F9EF00BCF470 /* Debug */,
+				E4A962321DE1F9EF00BCF470 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

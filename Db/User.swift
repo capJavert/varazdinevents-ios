@@ -2,7 +2,7 @@ import Foundation
 
 import RealmSwift
 
-class User: Object
+public class User: Object
 {
     dynamic var id: Int = 0
     dynamic var username: String = ""

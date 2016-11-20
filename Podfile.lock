@@ -1,17 +1,23 @@
 PODS:
+  - Alamofire (4.1.0)
   - Realm (2.0.3):
     - Realm/Headers (= 2.0.3)
   - Realm/Headers (2.0.3)
   - RealmSwift (2.0.3):
     - Realm (= 2.0.3)
+  - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.1)
   - RealmSwift (~> 2.0)
+  - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
+  Alamofire: e266cf991b933498df791e645e0d8ac294492153
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 54ce7473047b1799fd48b0a53dfe302ea0f30d22
+PODFILE CHECKSUM: 635502cb32166bbf3f98387be58db65276b0ec80
 
-COCOAPODS: 1.1.0.rc.3
+COCOAPODS: 1.1.1

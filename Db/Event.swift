@@ -2,7 +2,7 @@ import Foundation
 
 import RealmSwift
 
-class Event: Object
+public class Event: Object
 {
     dynamic var id: Int = 0
     dynamic var title: String = ""
