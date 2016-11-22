@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
+		E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */; };
+		E4A962C21DE42BE400BCF470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962C11DE42BE400BCF470 /* ViewController.swift */; };
+		E4A962C51DE42BE400BCF470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A962C31DE42BE400BCF470 /* Main.storyboard */; };
+		E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */; };
+		E4A962CA1DE42BE400BCF470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A962C91DE42BE400BCF470 /* Assets.xcassets */; };
+		E4A962CD1DE42BE500BCF470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A962CB1DE42BE500BCF470 /* LaunchScreen.storyboard */; };
+		E4A962D81DE42BE500BCF470 /* VzLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962D71DE42BE500BCF470 /* VzLifeTests.swift */; };
+		E4A962E31DE42BE500BCF470 /* VzLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962E21DE42BE500BCF470 /* VzLifeUITests.swift */; };
+		E4A962F81DE42EA100BCF470 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962F51DE42EA100BCF470 /* Event.swift */; };
+		E4A962F91DE42EA100BCF470 /* EventCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962F61DE42EA100BCF470 /* EventCategory.swift */; };
+		E4A962FA1DE42EA100BCF470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962F71DE42EA100BCF470 /* User.swift */; };
+		E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962FB1DE42EF900BCF470 /* HTTPRequest.swift */; };
+		E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962FD1DE42F3A00BCF470 /* DataLoader.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4A962D41DE42BE500BCF470 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4A962B41DE42BE400BCF470 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4A962BB1DE42BE400BCF470;
+			remoteInfo = VzLife;
+		};
+		E4A962DF1DE42BE500BCF470 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4A962B41DE42BE400BCF470 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4A962BB1DE42BE400BCF470;
+			remoteInfo = VzLife;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
+		9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VzLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A962BC1DE42BE400BCF470 /* VzLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VzLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4A962C11DE42BE400BCF470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E4A962C41DE42BE400BCF470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4A962C71DE42BE400BCF470 /* VzLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VzLife.xcdatamodel; sourceTree = "<group>"; };
+		E4A962C91DE42BE400BCF470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4A962CC1DE42BE500BCF470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4A962CE1DE42BE500BCF470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A962D31DE42BE500BCF470 /* VzLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VzLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A962D71DE42BE500BCF470 /* VzLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VzLifeTests.swift; sourceTree = "<group>"; };
+		E4A962D91DE42BE500BCF470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A962DE1DE42BE500BCF470 /* VzLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VzLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A962E21DE42BE500BCF470 /* VzLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VzLifeUITests.swift; sourceTree = "<group>"; };
+		E4A962E41DE42BE500BCF470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A962F51DE42EA100BCF470 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E4A962F61DE42EA100BCF470 /* EventCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCategory.swift; sourceTree = "<group>"; };
+		E4A962F71DE42EA100BCF470 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E4A962FB1DE42EF900BCF470 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		E4A962FD1DE42F3A00BCF470 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		F0CD8825CA3BDDF4C94ACC1F /* Pods-VzLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4A962B91DE42BE400BCF470 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962D01DE42BE500BCF470 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962DB1DE42BE500BCF470 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		148B2D91DEE90FDC7D6162F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0CD8825CA3BDDF4C94ACC1F /* Pods-VzLife.debug.xcconfig */,
+				6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6FF697AFCB827D9BD067AD25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4A962B31DE42BE400BCF470 = {
+			isa = PBXGroup;
+			children = (
+				E4A962F41DE42E5900BCF470 /* Db */,
+				E4A962F21DE42E4200BCF470 /* WebService */,
+				E4A962F01DE42E2D00BCF470 /* Core */,
+				E4A962BE1DE42BE400BCF470 /* VzLife */,
+				E4A962D61DE42BE500BCF470 /* VzLifeTests */,
+				E4A962E11DE42BE500BCF470 /* VzLifeUITests */,
+				E4A962BD1DE42BE400BCF470 /* Products */,
+				148B2D91DEE90FDC7D6162F4 /* Pods */,
+				6FF697AFCB827D9BD067AD25 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E4A962BD1DE42BE400BCF470 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4A962BC1DE42BE400BCF470 /* VzLife.app */,
+				E4A962D31DE42BE500BCF470 /* VzLifeTests.xctest */,
+				E4A962DE1DE42BE500BCF470 /* VzLifeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4A962BE1DE42BE400BCF470 /* VzLife */ = {
+			isa = PBXGroup;
+			children = (
+				E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */,
+				E4A962C11DE42BE400BCF470 /* ViewController.swift */,
+				E4A962C31DE42BE400BCF470 /* Main.storyboard */,
+				E4A962C91DE42BE400BCF470 /* Assets.xcassets */,
+				E4A962CB1DE42BE500BCF470 /* LaunchScreen.storyboard */,
+				E4A962CE1DE42BE500BCF470 /* Info.plist */,
+				E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */,
+			);
+			path = VzLife;
+			sourceTree = "<group>";
+		};
+		E4A962D61DE42BE500BCF470 /* VzLifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4A962D71DE42BE500BCF470 /* VzLifeTests.swift */,
+				E4A962D91DE42BE500BCF470 /* Info.plist */,
+			);
+			path = VzLifeTests;
+			sourceTree = "<group>";
+		};
+		E4A962E11DE42BE500BCF470 /* VzLifeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E4A962E21DE42BE500BCF470 /* VzLifeUITests.swift */,
+				E4A962E41DE42BE500BCF470 /* Info.plist */,
+			);
+			path = VzLifeUITests;
+			sourceTree = "<group>";
+		};
+		E4A962F01DE42E2D00BCF470 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E4A962FD1DE42F3A00BCF470 /* DataLoader.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E4A962F21DE42E4200BCF470 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				E4A962FB1DE42EF900BCF470 /* HTTPRequest.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		E4A962F41DE42E5900BCF470 /* Db */ = {
+			isa = PBXGroup;
+			children = (
+				E4A962F51DE42EA100BCF470 /* Event.swift */,
+				E4A962F61DE42EA100BCF470 /* EventCategory.swift */,
+				E4A962F71DE42EA100BCF470 /* User.swift */,
+			);
+			path = Db;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4A962BB1DE42BE400BCF470 /* VzLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4A962E71DE42BE500BCF470 /* Build configuration list for PBXNativeTarget "VzLife" */;
+			buildPhases = (
+				55ADE441814153FD575AF977 /* [CP] Check Pods Manifest.lock */,
+				E4A962B81DE42BE400BCF470 /* Sources */,
+				E4A962B91DE42BE400BCF470 /* Frameworks */,
+				E4A962BA1DE42BE400BCF470 /* Resources */,
+				960BAE2DCA778C2B45992723 /* [CP] Embed Pods Frameworks */,
+				411D2BFCA21CD8DFE104BDC3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VzLife;
+			productName = VzLife;
+			productReference = E4A962BC1DE42BE400BCF470 /* VzLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4A962D21DE42BE500BCF470 /* VzLifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4A962EA1DE42BE500BCF470 /* Build configuration list for PBXNativeTarget "VzLifeTests" */;
+			buildPhases = (
+				E4A962CF1DE42BE500BCF470 /* Sources */,
+				E4A962D01DE42BE500BCF470 /* Frameworks */,
+				E4A962D11DE42BE500BCF470 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4A962D51DE42BE500BCF470 /* PBXTargetDependency */,
+			);
+			name = VzLifeTests;
+			productName = VzLifeTests;
+			productReference = E4A962D31DE42BE500BCF470 /* VzLifeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4A962DD1DE42BE500BCF470 /* VzLifeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4A962ED1DE42BE500BCF470 /* Build configuration list for PBXNativeTarget "VzLifeUITests" */;
+			buildPhases = (
+				E4A962DA1DE42BE500BCF470 /* Sources */,
+				E4A962DB1DE42BE500BCF470 /* Frameworks */,
+				E4A962DC1DE42BE500BCF470 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4A962E01DE42BE500BCF470 /* PBXTargetDependency */,
+			);
+			name = VzLifeUITests;
+			productName = VzLifeUITests;
+			productReference = E4A962DE1DE42BE500BCF470 /* VzLifeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4A962B41DE42BE400BCF470 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = varazdinevents;
+				TargetAttributes = {
+					E4A962BB1DE42BE400BCF470 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WWXTYLGB6N;
+						ProvisioningStyle = Automatic;
+					};
+					E4A962D21DE42BE500BCF470 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WWXTYLGB6N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E4A962BB1DE42BE400BCF470;
+					};
+					E4A962DD1DE42BE500BCF470 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WWXTYLGB6N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E4A962BB1DE42BE400BCF470;
+					};
+				};
+			};
+			buildConfigurationList = E4A962B71DE42BE400BCF470 /* Build configuration list for PBXProject "VzLife" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4A962B31DE42BE400BCF470;
+			productRefGroup = E4A962BD1DE42BE400BCF470 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4A962BB1DE42BE400BCF470 /* VzLife */,
+				E4A962D21DE42BE500BCF470 /* VzLifeTests */,
+				E4A962DD1DE42BE500BCF470 /* VzLifeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4A962BA1DE42BE400BCF470 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A962CD1DE42BE500BCF470 /* LaunchScreen.storyboard in Resources */,
+				E4A962CA1DE42BE400BCF470 /* Assets.xcassets in Resources */,
+				E4A962C51DE42BE400BCF470 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962D11DE42BE500BCF470 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962DC1DE42BE500BCF470 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		411D2BFCA21CD8DFE104BDC3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VzLife/Pods-VzLife-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55ADE441814153FD575AF977 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		960BAE2DCA778C2B45992723 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VzLife/Pods-VzLife-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4A962B81DE42BE400BCF470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A962F91DE42EA100BCF470 /* EventCategory.swift in Sources */,
+				E4A962F81DE42EA100BCF470 /* Event.swift in Sources */,
+				E4A962FA1DE42EA100BCF470 /* User.swift in Sources */,
+				E4A962C21DE42BE400BCF470 /* ViewController.swift in Sources */,
+				E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */,
+				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
+				E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */,
+				E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962CF1DE42BE500BCF470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A962D81DE42BE500BCF470 /* VzLifeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4A962DA1DE42BE500BCF470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A962E31DE42BE500BCF470 /* VzLifeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4A962D51DE42BE500BCF470 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4A962BB1DE42BE400BCF470 /* VzLife */;
+			targetProxy = E4A962D41DE42BE500BCF470 /* PBXContainerItemProxy */;
+		};
+		E4A962E01DE42BE500BCF470 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4A962BB1DE42BE400BCF470 /* VzLife */;
+			targetProxy = E4A962DF1DE42BE500BCF470 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4A962C31DE42BE400BCF470 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4A962C41DE42BE400BCF470 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4A962CB1DE42BE500BCF470 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4A962CC1DE42BE500BCF470 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4A962E51DE42BE500BCF470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E4A962E61DE42BE500BCF470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4A962E81DE42BE500BCF470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0CD8825CA3BDDF4C94ACC1F /* Pods-VzLife.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = VzLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VzLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E4A962E91DE42BE500BCF470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = VzLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VzLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E4A962EB1DE42BE500BCF470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = VzLifeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VzLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VzLife.app/VzLife";
+			};
+			name = Debug;
+		};
+		E4A962EC1DE42BE500BCF470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = VzLifeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VzLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VzLife.app/VzLife";
+			};
+			name = Release;
+		};
+		E4A962EE1DE42BE500BCF470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = VzLifeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VzLifeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = VzLife;
+			};
+			name = Debug;
+		};
+		E4A962EF1DE42BE500BCF470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
+				INFOPLIST_FILE = VzLifeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VzLifeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = VzLife;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4A962B71DE42BE400BCF470 /* Build configuration list for PBXProject "VzLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4A962E51DE42BE500BCF470 /* Debug */,
+				E4A962E61DE42BE500BCF470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4A962E71DE42BE500BCF470 /* Build configuration list for PBXNativeTarget "VzLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4A962E81DE42BE500BCF470 /* Debug */,
+				E4A962E91DE42BE500BCF470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4A962EA1DE42BE500BCF470 /* Build configuration list for PBXNativeTarget "VzLifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4A962EB1DE42BE500BCF470 /* Debug */,
+				E4A962EC1DE42BE500BCF470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4A962ED1DE42BE500BCF470 /* Build configuration list for PBXNativeTarget "VzLifeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4A962EE1DE42BE500BCF470 /* Debug */,
+				E4A962EF1DE42BE500BCF470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E4A962C71DE42BE400BCF470 /* VzLife.xcdatamodel */,
+			);
+			currentVersion = E4A962C71DE42BE400BCF470 /* VzLife.xcdatamodel */;
+			path = VzLife.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E4A962B41DE42BE400BCF470 /* Project object */;
+}

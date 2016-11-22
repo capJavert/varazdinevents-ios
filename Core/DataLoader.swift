@@ -1,5 +1,4 @@
 import Foundation
-import Pods_VarazdinEvents_Db
 
 public protocol DataLoader
 {

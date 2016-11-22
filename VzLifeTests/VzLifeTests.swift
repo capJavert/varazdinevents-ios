@@ -1,15 +1,15 @@
 //
-//  VarazdinEventsTests.swift
-//  VarazdinEventsTests
+//  VzLifeTests.swift
+//  VzLifeTests
 //
-//  Created by FOI on 08/11/16.
+//  Created by FOI on 22/11/16.
 //  Copyright © 2016 varazdinevents. All rights reserved.
 //
 
 import XCTest
-@testable import VarazdinEvents
+@testable import VzLife
 
-class VarazdinEventsTests: XCTestCase {
+class VzLifeTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

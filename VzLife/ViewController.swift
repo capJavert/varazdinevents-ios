@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  VarazdinEvents
+//  VzLife
 //
-//  Created by FOI on 08/11/16.
+//  Created by FOI on 22/11/16.
 //  Copyright © 2016 varazdinevents. All rights reserved.
 //
 

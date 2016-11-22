@@ -1,2 +1,0 @@
-# varazdinevents-ios
-air@foivz
