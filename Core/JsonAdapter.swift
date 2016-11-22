@@ -16,14 +16,14 @@ public class JsonAdapter
                 let event:Event = Event()
                 event.id = subJson["id"].int!
                 event.title = subJson["title"].string!
-                event.text = subJson["text"].string!
+                event.text = subJson["text"].string
                 event.date = subJson["date"].int!
                 event.date_to = subJson["date_to"].int!
                 event.host = subJson["host"].string!
-                event.official_link = subJson["official_link"].string!
+                event.official_link = subJson["official_link"].string
                 event.image = subJson["image"].string!
-                event.facebook = subJson["facebook"].string!
-                event.offers = subJson["offers"].string!
+                event.facebook = subJson["facebook"].string
+                event.offers = subJson["offers"].string
                 events.append(event)
             } }
         return events
