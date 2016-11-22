@@ -1,15 +1,21 @@
 import Alamofire
-import SwiftyJSON
+
+public protocol WebServiceResultDelegate{
+    func getResult(json:AnyObject)
+}
 
 public class HTTPRequest
 {
-    public static var sharedWSInstance = HTTPRequest()
-    public func httprequest(url: String, params: [String:String], completion: @escaping (AnyObject) -> Void)
+    
+    public var wsResultDelegate:WebServiceResultDelegate?
+    public init(){}
+    
+    public func httprequest(url: String, method: HTTPMethod, params: [String:String])
     {
-        Alamofire.request(url, method: .post)
+        Alamofire.request(url, method: method, parameters: params)
             .responseJSON { response in
                 if let json = response.result.value{
-                    completion(json as AnyObject)
+                    self.wsResultDelegate?.getResult(json: json as AnyObject)
                 }
         }
     }

@@ -21,6 +21,11 @@
 		E4A962FA1DE42EA100BCF470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962F71DE42EA100BCF470 /* User.swift */; };
 		E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962FB1DE42EF900BCF470 /* HTTPRequest.swift */; };
 		E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962FD1DE42F3A00BCF470 /* DataLoader.swift */; };
+		E4A963001DE435DB00BCF470 /* JsonAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962FF1DE435DB00BCF470 /* JsonAdapter.swift */; };
+		E4A963021DE45CFE00BCF470 /* WebServiceDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963011DE45CFE00BCF470 /* WebServiceDataLoader.swift */; };
+		E4A963041DE4637F00BCF470 /* DbController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963031DE4637F00BCF470 /* DbController.swift */; };
+		E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963051DE4E37100BCF470 /* NetworkConnection.swift */; };
+		E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963071DE4E67600BCF470 /* DbDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,11 @@
 		E4A962F71DE42EA100BCF470 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E4A962FB1DE42EF900BCF470 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		E4A962FD1DE42F3A00BCF470 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		E4A962FF1DE435DB00BCF470 /* JsonAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonAdapter.swift; sourceTree = "<group>"; };
+		E4A963011DE45CFE00BCF470 /* WebServiceDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceDataLoader.swift; sourceTree = "<group>"; };
+		E4A963031DE4637F00BCF470 /* DbController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbController.swift; sourceTree = "<group>"; };
+		E4A963051DE4E37100BCF470 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		E4A963071DE4E67600BCF470 /* DbDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbDataLoader.swift; sourceTree = "<group>"; };
 		F0CD8825CA3BDDF4C94ACC1F /* Pods-VzLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +153,7 @@
 				E4A962CB1DE42BE500BCF470 /* LaunchScreen.storyboard */,
 				E4A962CE1DE42BE500BCF470 /* Info.plist */,
 				E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */,
+				E4A963011DE45CFE00BCF470 /* WebServiceDataLoader.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
@@ -169,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A962FD1DE42F3A00BCF470 /* DataLoader.swift */,
+				E4A962FF1DE435DB00BCF470 /* JsonAdapter.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -177,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A962FB1DE42EF900BCF470 /* HTTPRequest.swift */,
+				E4A963051DE4E37100BCF470 /* NetworkConnection.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -187,6 +200,8 @@
 				E4A962F51DE42EA100BCF470 /* Event.swift */,
 				E4A962F61DE42EA100BCF470 /* EventCategory.swift */,
 				E4A962F71DE42EA100BCF470 /* User.swift */,
+				E4A963031DE4637F00BCF470 /* DbController.swift */,
+				E4A963071DE4E67600BCF470 /* DbDataLoader.swift */,
 			);
 			path = Db;
 			sourceTree = "<group>";
@@ -379,11 +394,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */,
 				E4A962F91DE42EA100BCF470 /* EventCategory.swift in Sources */,
+				E4A963021DE45CFE00BCF470 /* WebServiceDataLoader.swift in Sources */,
+				E4A963001DE435DB00BCF470 /* JsonAdapter.swift in Sources */,
 				E4A962F81DE42EA100BCF470 /* Event.swift in Sources */,
 				E4A962FA1DE42EA100BCF470 /* User.swift in Sources */,
+				E4A963041DE4637F00BCF470 /* DbController.swift in Sources */,
 				E4A962C21DE42BE400BCF470 /* ViewController.swift in Sources */,
 				E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */,
+				E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */,
 				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
 				E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */,
 				E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */,
