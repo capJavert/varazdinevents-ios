@@ -10,6 +10,7 @@
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
 		E45FB09D1DEB3E7A00056445 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */; };
 		E45FB0A11DEB3F6A00056445 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */; };
+		E45FB0A31DEB728E00056445 /* InfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A21DEB728E00056445 /* InfosViewController.swift */; };
 		E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */; };
 		E4A962C51DE42BE400BCF470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A962C31DE42BE400BCF470 /* Main.storyboard */; };
 		E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */; };
@@ -51,6 +52,7 @@
 		9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VzLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		E45FB0A21DEB728E00056445 /* InfosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfosViewController.swift; sourceTree = "<group>"; };
 		E4A962BC1DE42BE400BCF470 /* VzLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VzLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4A962C41DE42BE400BCF470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				E4A963011DE45CFE00BCF470 /* WebServiceDataLoader.swift */,
 				E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */,
 				E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */,
+				E45FB0A21DEB728E00056445 /* InfosViewController.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				E45FB09D1DEB3E7A00056445 /* ImageCollectionViewCell.swift in Sources */,
 				E4A963021DE45CFE00BCF470 /* WebServiceDataLoader.swift in Sources */,
 				E4A963001DE435DB00BCF470 /* JsonAdapter.swift in Sources */,
+				E45FB0A31DEB728E00056445 /* InfosViewController.swift in Sources */,
 				E4A962F81DE42EA100BCF470 /* Event.swift in Sources */,
 				E4A962FA1DE42EA100BCF470 /* User.swift in Sources */,
 				E4A963041DE4637F00BCF470 /* DbController.swift in Sources */,

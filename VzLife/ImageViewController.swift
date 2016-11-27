@@ -19,7 +19,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     var eventsArray: [eventObject] = []
-    
+    var events = WebServiceDataLoader()
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
         eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
         // Do any additional setup after loading the view.
-    
+        
     
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
@@ -56,11 +56,28 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! ImageCollectionViewCell
         cell.aboutView.text = eventsArray[indexPath.item].about
         cell.imageView.image = eventsArray[indexPath.item].imageUrl
+        //setting tag for unique identifing button ( because we can't know which of many buttons in collection is clicked
+        cell.moreInfoButton.tag = indexPath.item
+        cell.moreInfoButton.addTarget(self, action: #selector(didGoToInfos(sender:)), for: .touchUpInside)
         
         return cell
     }
     
+    func didGoToInfos( sender: UIButton){
+        //passing Sender
+        self.performSegue(withIdentifier: "toInfos", sender: sender)
+    }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //We know that sender is a button
+        if segue.identifier == "toInfos"{
+            //casting sender to UIButton
+            let sender = sender as! UIButton
+            let eventVC = segue.destination as! InfosViewController
+            
+        }
+    }
     /*
     // MARK: - Navigation
 

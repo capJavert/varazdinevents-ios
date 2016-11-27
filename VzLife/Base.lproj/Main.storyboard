@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cSh-Vj-10U" kind="relationship" relationship="rootViewController" id="F90-Q7-51K"/>
+                        <segue destination="cSh-Vj-10U" kind="relationship" relationship="rootViewController" id="TCJ-o9-JZL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j4-OQ-aWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,11 +109,42 @@
                     <navigationItem key="navigationItem" id="nud-kw-PBl"/>
                     <connections>
                         <outlet property="collectionView" destination="sGH-Gd-zWP" id="60E-6X-Goc"/>
+                        <segue destination="HDl-56-gfe" kind="show" identifier="toInfos" id="etc-4b-sVj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idj-EN-ntN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="445.60000000000002" y="35.532233883058474"/>
+        </scene>
+        <!--Infos View Controller-->
+        <scene sceneID="nR6-Nu-nRN">
+            <objects>
+                <viewController id="HDl-56-gfe" customClass="InfosViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PYS-8C-ADV"/>
+                        <viewControllerLayoutGuide type="bottom" id="S3J-pY-4pJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n5i-fT-Ff2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-zZ-gzK">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EGu-zZ-gzK" secondAttribute="trailing" id="Roh-vY-4Uv"/>
+                            <constraint firstItem="EGu-zZ-gzK" firstAttribute="bottom" secondItem="S3J-pY-4pJ" secondAttribute="top" id="Tsj-6r-8HP"/>
+                            <constraint firstItem="EGu-zZ-gzK" firstAttribute="leading" secondItem="n5i-fT-Ff2" secondAttribute="leading" id="qCX-wC-DwE"/>
+                            <constraint firstItem="EGu-zZ-gzK" firstAttribute="top" secondItem="n5i-fT-Ff2" secondAttribute="topMargin" constant="-20" id="yjm-F2-FRx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SEA-of-fan"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNv-l6-jAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1455" y="-13"/>
         </scene>
     </scenes>
 </document>
