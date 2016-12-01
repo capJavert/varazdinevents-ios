@@ -12,12 +12,12 @@
         <scene sceneID="9y5-vt-Gzr">
             <objects>
                 <navigationController id="Ns5-vK-ZFf" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fL5-KC-CU6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fL5-KC-CU6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cSh-Vj-10U" kind="relationship" relationship="rootViewController" id="TCJ-o9-JZL"/>
+                        <segue destination="TdT-Kw-Nek" kind="relationship" relationship="rootViewController" id="arK-Wx-UU2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j4-OQ-aWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -32,15 +32,59 @@
                         <viewControllerLayoutGuide type="top" id="qhV-yK-eco"/>
                         <viewControllerLayoutGuide type="bottom" id="Imv-dJ-HZY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XkQ-gI-mhx">
+                    <view key="view" contentMode="scaleToFill" id="XkQ-gI-mhx" customClass="LoginCelCollectionViewCell" customModule="VzLife" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="qtF-Ym-IWV">
+                                <frame key="frameInset" minX="107" minY="153" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <edgeInsets key="layoutMargins" top="-230" left="0.0" bottom="0.0" right="0.0"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttB-kN-XHu">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1d-Fz-KbT">
+                                <frame key="frameInset" minX="62" minY="356" width="243" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywd-bt-Uak">
+                                <frame key="frameInset" minX="62" minY="407" width="243" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.70562258923912768" blue="0.3568612366857612" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ttB-kN-XHu" firstAttribute="top" secondItem="qhV-yK-eco" secondAttribute="bottom" constant="243" id="Uu0-go-QoB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ttB-kN-XHu" secondAttribute="trailing" constant="54" id="ghC-4f-x8u"/>
+                            <constraint firstItem="ttB-kN-XHu" firstAttribute="leading" secondItem="XkQ-gI-mhx" secondAttribute="leadingMargin" constant="46" id="q5E-Ge-VFC"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="emailTextField" destination="ttB-kN-XHu" id="Nr3-HJ-vCe"/>
+                            <outlet property="loginButton" destination="ywd-bt-Uak" id="qoa-KL-Gz7"/>
+                            <outlet property="passTextField" destination="b1d-Fz-KbT" id="Akq-Fs-xHc"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="v4c-wQ-gK3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmG-8O-VwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="-45"/>
+            <point key="canvasLocation" x="293.60000000000002" y="-45.42728635682159"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="O8L-PH-Pux">
@@ -165,4 +209,7 @@
             <point key="canvasLocation" x="1311" y="511"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="155" height="155"/>
+    </resources>
 </document>
