@@ -17,7 +17,7 @@ public class WebServiceDataLoader:DataLoader
     {
         if(self.eventsLoaded){
             self.bindData()
-            //self.dataLoaded()
+            self.dataLoaded()
         }
     }
     

@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let ws = WebServiceDataLoader()
+        ws.LoadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
