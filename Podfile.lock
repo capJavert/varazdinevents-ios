@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.1.0)
+  - Kingfisher (3.2.1)
   - Realm (2.1.0):
     - Realm/Headers (= 2.1.0)
   - Realm/Headers (2.1.0)
@@ -9,15 +10,17 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.1)
+  - Kingfisher (~> 3.2)
   - RealmSwift
   - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
   Alamofire: e266cf991b933498df791e645e0d8ac294492153
+  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   Realm: bc829ad0ef3d4eea70c34cfcc3b1704d18d50df1
   RealmSwift: a4d4abbf0088c337cab5b738054395842e4b3052
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 80bb1d80ec128b0eb0738617058e49f6c27960fb
+PODFILE CHECKSUM: 070745c6cd34d5f9770ed6b0236b6f9c4a231ee0
 
 COCOAPODS: 1.1.1

@@ -15,7 +15,7 @@ public class HTTPRequest
         Alamofire.request(url, method: method, parameters: params)
             .responseJSON { response in
                 if let json = response.result.value{
-                    NSLog("JSON: \(json)")
+                    //NSLog("JSON: \(json)")
                     self.wsResultDelegate?.getResult(json: json as AnyObject)
                 }
         }
