@@ -23,18 +23,43 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
         return cv
     }()
 
+    let backButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Back", for: .normal)
+        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+        return button
+    }()
+
     
+    var backButtonTopAnchor: NSLayoutConstraint?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         observeKeyboardNotifications()
         view.addSubview(collectionView)
+        view.addSubview(backButton)
+        
+        backButtonTopAnchor = backButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
+        
         collectionView.anchorToTop(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
 
         registerCells()
     }
-/*
-    @IBAction func unwdindToLoginScreen(segue: UIStoryboardSegue){
+    
+   
+ /*    func toLogin( segue: UIStoryboardSegue, sender: AnyObject?){
+    
+        if(segue.identifier=="toLogin"){
+        
+            (segue.destination as! LoginCelCollectionViewCell)
+        
+        }
+        
+    }*/
+    
+        
+    /*@IBAction func unwdindToLoginScreen(segue: UIStoryboardSegue){
     }*/
  
     

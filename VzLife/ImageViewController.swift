@@ -18,25 +18,42 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         var imageUrl: UIImage
     }
     
+   
+    
     var eventsArray: [eventObject] = []
     var events = WebServiceDataLoader()
+    
+    let toLoginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Prijava", for: .normal)
+        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+        return button
+    }()
+    
+    
+    var toLoginButtonTopAnchor: NSLayoutConstraint?
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         view.addSubview(toLoginButton)
+        
         eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
         eventsArray.append(eventObject(about: "Milica Kruscis kraljica Baza", imageUrl: UIImage(named: "kod")!))
         eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
         eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
         // Do any additional setup after loading the view.
         
+        toLoginButtonTopAnchor = toLoginButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 60, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
     
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self 
         
     }
+    
+ 
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
