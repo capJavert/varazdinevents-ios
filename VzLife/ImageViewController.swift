@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import Kingfisher
 
 //Those two classes we included so we could use it for layout and as for DataSource for collecetion we are using
 
@@ -15,13 +17,15 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     struct eventObject{
         var about: String
-        var imageUrl: UIImage
+        var imageUrl: String
     }
     
    
     
     var eventsArray: [eventObject] = []
-    var events = WebServiceDataLoader()
+    var events = [Event] ()
+    var webServiceDataLoader = WebServiceDataLoader()
+    var dbDataLoader = DBDataLoader()
     
     let toLoginButton: UIButton = {
         let button = UIButton(type: .system)
@@ -38,10 +42,26 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         super.viewDidLoad()
          view.addSubview(toLoginButton)
         
+        
+        //set default Realm DB configuration
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(
+            schemaVersion: 4,
+            migrationBlock: { migration, oldSchemaVersion in })
+        
+        if(NetworkConnection.Connection.isConnectedToNetwork() && UserDefaults.standard.bool(forKey: "EnableWebService")){
+            webServiceDataLoader.onDataLoadedDelegate = self
+            webServiceDataLoader.LoadData()
+        }else{
+            
+            dbDataLoader.onDataLoadedDelegate = self
+            dbDataLoader.LoadData()
+        }
+        
+        /*
         eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
         eventsArray.append(eventObject(about: "Milica Kruscis kraljica Baza", imageUrl: UIImage(named: "kod")!))
         eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
-        eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
+        eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))*/
         // Do any additional setup after loading the view.
         
         toLoginButtonTopAnchor = toLoginButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 60, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
@@ -52,8 +72,6 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         
     }
     
- 
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,7 +90,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! ImageCollectionViewCell
         cell.aboutView.text = eventsArray[indexPath.item].about
-        cell.imageView.image = eventsArray[indexPath.item].imageUrl
+        cell.imageView.kf.setImage(with: URL(string: eventsArray[indexPath.item].imageUrl))
         //setting tag for unique identifing button ( because we can't know which of many buttons in collection is clicked
         cell.moreInfoButton.tag = indexPath.item
         cell.moreInfoButton.addTarget(self, action: #selector(didGoToInfos(sender:)), for: .touchUpInside)
@@ -105,4 +123,20 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     */
 
+}
+
+
+
+extension ImageViewController: OnDataLoadedDelegate {
+    public func onDataLoaded(events: [Event]) {
+        self.events=events
+        NSLog("EVOOOOOOOOOOOOOOOO: ", self.events)
+        for event in events {
+        
+            eventsArray.append(eventObject(about: event.title, imageUrl: event.image))
+            
+        }
+        collectionView.reloadData()
+        
+    }
 }
