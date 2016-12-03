@@ -11,13 +11,13 @@ public class DBDataLoader:DataLoader {
     
     private func showDataFromLocalDB()
     {
-        DbController.sharedDBInstance.realmFetchStores()
+        DbController.sharedDBInstance.realmFetchEvents()
     }
 }
 
 extension DBDataLoader:DBResultDelegate {
-    public func getStores(result: [Event]) {
+    public func getEvents(result: [Event]) {
         self.events = result
-        //self.dataLoaded()
+        self.dataLoaded()
     }
 }

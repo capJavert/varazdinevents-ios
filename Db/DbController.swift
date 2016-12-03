@@ -2,7 +2,7 @@ import Foundation
 import RealmSwift
 
 public protocol DBResultDelegate{
-    func getStores(result:[Event])
+    func getEvents(result:[Event])
 }
 public class DbController
 {
@@ -14,16 +14,21 @@ public class DbController
     
     public func realmAdd(o: Object)
     {
-        try! self.realm.write
-        {
-                self.realm.add(o)
+        
+        if(!o.isInvalidated) {
+            try! self.realm.write
+                {
+                    self.realm.add(o)
+            }
+        } else {
+            NSLog("invalidated")
         }
     }
     
-    public func realmFetchStores()
+    public func realmFetchEvents()
     {
         let data = self.realm.objects(Event.self)
-        dbResultDelegate?.getStores(result: data.reversed())
+        dbResultDelegate?.getEvents(result: data.reversed())
     }
 }
 

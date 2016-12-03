@@ -7,6 +7,7 @@ public class WebServiceDataLoader:DataLoader
     
     var httpRequest = HTTPRequest()
     
+    
     public override func LoadData() {
         httpRequest.wsResultDelegate = self
         httpRequest.httprequest(url: "http://varazdinevents.cf/api/events", method: .get, params: [:])
@@ -17,7 +18,7 @@ public class WebServiceDataLoader:DataLoader
     {
         if(self.eventsLoaded){
             self.bindData()
-            //self.dataLoaded()
+            self.dataLoaded()
         }
     }
     
@@ -37,16 +38,8 @@ public class WebServiceDataLoader:DataLoader
 
 extension WebServiceDataLoader: WebServiceResultDelegate{
     public func getResult(json: AnyObject) {
-        if(!self.eventsLoaded){
-            self.eventsLoaded = true
-            self.events = JsonAdapter.getEvents(json: json)
-            self.eventsLoaded = true
-            self.showLoadedData()
-            httpRequest.httprequest(url: "http://varazdinevents.cf/api/events", method: .get, params: [:])
-        }else{
-            self.showLoadedData()
-        }
-        
+        self.eventsLoaded = true
+        self.events = JsonAdapter.getEvents(json: json)
+        self.showLoadedData()
     }
-    
 }

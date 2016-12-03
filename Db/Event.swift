@@ -4,14 +4,18 @@ import RealmSwift
 
 public class Event: Object
 {
-    dynamic var id: Int = 0
-    dynamic var title: String = ""
-    dynamic var text: String? = ""
-    dynamic var date: Int = 0
-    dynamic var date_to: Int = 0
-    dynamic var host: String = ""
-    dynamic var official_link: String? = ""
-    dynamic var image: String = ""
-    dynamic var facebook: String? = ""
-    dynamic var offers: String? = ""
+    dynamic var id = 0
+    dynamic var title = ""
+    dynamic var text = ""
+    dynamic var date = 0
+    dynamic var date_to = 0
+    dynamic var host = ""
+    dynamic var official_link = "link"
+    dynamic var image = ""
+    dynamic var facebook = ""
+    dynamic var offers = "offers"
+    
+    override public static func primaryKey() -> String? {
+        return "id"
+    }
 }
