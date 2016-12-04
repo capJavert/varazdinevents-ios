@@ -27,21 +27,12 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
     
-    let toLoginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Prijava", for: .normal)
-        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
-        return button
-    }()
-    
-    
-    var toLoginButtonTopAnchor: NSLayoutConstraint?
+   
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         view.addSubview(toLoginButton)
-        
+    
         
         //set default Realm DB configuration
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
@@ -64,9 +55,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))*/
         // Do any additional setup after loading the view.
         
-        toLoginButtonTopAnchor = toLoginButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 60, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
-    
-        //telling CollectionView that stuff he is looking for can be found within this viewController itself
+                //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self 
         
@@ -93,16 +82,17 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.imageView.kf.setImage(with: URL(string: eventsArray[indexPath.item].imageUrl))
         //setting tag for unique identifing button ( because we can't know which of many buttons in collection is clicked
         cell.moreInfoButton.tag = indexPath.item
-        cell.moreInfoButton.addTarget(self, action: #selector(didGoToInfos(sender:)), for: .touchUpInside)
+      //  cell.moreInfoButton.addTarget(self, action: #selector(didGoToInfos(sender:)), for: .touchUpInside)
         
         return cell
     }
     
-    func didGoToInfos( sender: UIButton){
+ /*   func didGoToInfos( sender: UIButton){
         //passing Sender
         self.performSegue(withIdentifier: "toInfos", sender: sender)
     }
     
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
@@ -112,8 +102,15 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             let eventVC = segue.destination as! InfosViewController
             
         }
+            }*/
+    
+    @IBAction func toLooginAction(_ sender: Any) {
+        
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView") as! LogInViewController
+        self.navigationController?.pushViewController(loginView, animated: true)
     }
-    /*
+    
+       /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -125,13 +122,10 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
 
 }
 
-
-
 extension ImageViewController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         self.events=events
-        NSLog("EVOOOOOOOOOOOOOOOO: ", self.events)
-        for event in events {
+            for event in events {
         
             eventsArray.append(eventObject(about: event.title, imageUrl: event.image))
             
