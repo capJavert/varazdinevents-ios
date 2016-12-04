@@ -12,5 +12,5 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var aboutView: UILabel!
-    @IBOutlet weak var moreInfoButton: UIButton!
+    @IBOutlet weak var moreInfoButton: EventDetailButton!
 }
