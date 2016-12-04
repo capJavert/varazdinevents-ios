@@ -133,6 +133,7 @@ extension LogInViewController: OnUserLoggedDelegate {
          self.user=user
         
         let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! ImageViewController
+        eventsView.user = user
         self.navigationController?.pushViewController(eventsView, animated: true)
 
          collectionView.reloadData()
