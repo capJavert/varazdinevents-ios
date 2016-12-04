@@ -3,6 +3,7 @@ import Foundation
 public class WebServiceDataLoader:DataLoader
 {
     public var eventsLoaded: Bool = false
+    public var userLoaded: Bool = false
     private var prefs = UserDefaults()
     
     var httpRequest = HTTPRequest()
@@ -10,9 +11,13 @@ public class WebServiceDataLoader:DataLoader
     
     public override func LoadData() {
         httpRequest.wsResultDelegate = self
-        httpRequest.httprequest(url: "http://varazdinevents.cf/api/events", method: .get, params: [:])
+        httpRequest.requestEvents()
     }
     
+    public override func LoadUser(username: String, password: String) {
+        httpRequest.wsResultDelegate = self
+        httpRequest.requestUser(username: username, password: password)
+    }
     
     public func showLoadedData()
     {
@@ -21,7 +26,6 @@ public class WebServiceDataLoader:DataLoader
             self.dataLoaded()
         }
     }
-    
     
     private func bindData()
     {
@@ -38,7 +42,7 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realmDeleteEvents(notThese: notThese)
     }
     
-    private func bindUser()
+    public func bindUser()
     {
         DbController.sharedDBInstance.realm.beginWrite()
         DbController.sharedDBInstance.realm.deleteAll()
@@ -49,9 +53,22 @@ public class WebServiceDataLoader:DataLoader
 }
 
 extension WebServiceDataLoader: WebServiceResultDelegate{
-    public func getResult(json: AnyObject) {
-        self.eventsLoaded = true
-        self.events = JsonAdapter.getEvents(json: json)
-        self.showLoadedData()
+    public func getResult(json: AnyObject, type: String) {
+        switch type {
+            case "events":
+                self.events = JsonAdapter.getEvents(json: json)
+                self.eventsLoaded = true
+                self.showLoadedData()
+                break
+            case "user":
+                self.user = JsonAdapter.getUser(json: json)
+                self.userLoaded = true
+                
+                self.bindUser()
+                self.userLogged()
+                break
+            default: break
+        }
     }
+
 }

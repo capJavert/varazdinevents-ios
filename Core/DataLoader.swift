@@ -16,6 +16,8 @@ public class DataLoader
     public var onUserLoggedDelegate:OnUserLoggedDelegate?
     
     func LoadData() {}
+    func LoadUser(username: String, password: String) {}
+    
     public init(){}
     public func dataLoaded() {
         if (events==nil) {

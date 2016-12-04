@@ -1,7 +1,7 @@
 import Alamofire
 
 public protocol WebServiceResultDelegate{
-    func getResult(json:AnyObject)
+    func getResult(json:AnyObject, type: String)
 }
 
 public class HTTPRequest
@@ -10,13 +10,25 @@ public class HTTPRequest
     public var wsResultDelegate:WebServiceResultDelegate?
     public init(){}
     
-    public func httprequest(url: String, method: HTTPMethod, params: [String:String])
+    public func requestEvents()
     {
-        Alamofire.request(url, method: method, parameters: params)
+        Alamofire.request("http://varazdinevents.cf/api/events", method: .get, parameters: [:])
             .responseJSON { response in
                 if let json = response.result.value{
                     //NSLog("JSON: \(json)")
-                    self.wsResultDelegate?.getResult(json: json as AnyObject)
+                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "events")
+                }
+        }
+    }
+    
+    public func requestUser(username: String, password: String)
+    {
+        Alamofire.request("http://varazdinevents.cf/api/user/login", method: .post,
+                          parameters: ["username": username, "password": password])
+            .responseJSON { response in
+                if let json = response.result.value{
+                    //NSLog("JSON: \(json)")
+                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "user")
                 }
         }
     }
