@@ -20,8 +20,6 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         var imageUrl: String
     }
     
-   
-    
     var eventsArray: [eventObject] = []
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
