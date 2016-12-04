@@ -22,6 +22,7 @@ public class JsonAdapter
                 event.official_link = subJson["official_link"].string!
                 event.image = subJson["image"].string!
                 event.facebook = subJson["facebook"].string!
+                event.category = subJson["category"].string!
                 //event.offers = subJson["offers"].string!
                 events.append(event)
             } }

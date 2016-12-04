@@ -14,6 +14,7 @@ public class Event: Object
     dynamic var image = ""
     dynamic var facebook = ""
     dynamic var offers = "offers"
+    dynamic var category = "Ostalo"
     
     override public static func primaryKey() -> String? {
         return "id"
