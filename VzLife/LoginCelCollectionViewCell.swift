@@ -34,13 +34,22 @@ class LoginCelCollectionViewCell: UICollectionViewCell {
         return textField
     }()
     
-    let loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .orange
         button.setTitle("Log in", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(logIn), for: .touchUpInside)
         return button
     }()
+    // ? -> means optional, cuz' you want to initialize it as nil
+    var loginController: LogInViewController?
+    
+    func logIn(){
+        
+        loginController?.finishLogin(username: emailTextField.text!, password: passwordTextField.text!)
+    
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,8 +69,14 @@ class LoginCelCollectionViewCell: UICollectionViewCell {
         _ = loginButton.anchor(passwordTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
 }
+    
+    
+   
+    
+    
+    
+    
 }

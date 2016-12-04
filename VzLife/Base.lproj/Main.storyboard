@@ -96,7 +96,7 @@
         <!--Image View Controller-->
         <scene sceneID="O8L-PH-Pux">
             <objects>
-                <viewController id="cSh-Vj-10U" customClass="ImageViewController" customModule="VzLife" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsView" id="cSh-Vj-10U" customClass="ImageViewController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cxO-fY-WVR"/>
                         <viewControllerLayoutGuide type="bottom" id="NlZ-vp-ci3"/>

@@ -14,6 +14,12 @@ import Kingfisher
 
 
 class ImageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    struct eventObject{
+        var about: String
+        var imageUrl: String
+    }
+    
+    var eventsArray: [eventObject] = []
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
