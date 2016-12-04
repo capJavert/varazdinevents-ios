@@ -11,6 +11,11 @@ import UIKit
 class LogInViewController: UIViewController, UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     let loginCellId = "loginCellId"
+    var user = User()
+    var webServiceDataLoader = WebServiceDataLoader()
+    var dbDataLoader = DBDataLoader()
+    var loginCell: LoginCelCollectionViewCell?
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -29,10 +34,9 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
         button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
         return button
     }()
-
     
     var backButtonTopAnchor: NSLayoutConstraint?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,27 +45,24 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
         view.addSubview(backButton)
         
         backButtonTopAnchor = backButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
-        
         collectionView.anchorToTop(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
 
         registerCells()
     }
     
-   
- /*    func toLogin( segue: UIStoryboardSegue, sender: AnyObject?){
-    
-        if(segue.identifier=="toLogin"){
-        
-            (segue.destination as! LoginCelCollectionViewCell)
-        
-        }
-        
-    }*/
-    
-        
-    /*@IBAction func unwdindToLoginScreen(segue: UIStoryboardSegue){
-    }*/
  
+    func finishLogin(username: String, password: String) {
+       // print("Ovo je user", (loginCell?.emailTextField.text!)!)
+        if(NetworkConnection.Connection.isConnectedToNetwork()){
+            webServiceDataLoader.onUserLoggedDelegate = self
+            webServiceDataLoader.LoadUser(username: username, password: password)
+        }else{
+            dbDataLoader.onUserLoggedDelegate = self
+            dbDataLoader.LoadData()
+        }
+
+            }
+    
     
     fileprivate func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: .UIKeyboardWillShow, object: nil)
@@ -96,7 +97,8 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath)
+        let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCelCollectionViewCell
+        loginCell.loginController = self
         return loginCell
         
     }
@@ -124,7 +126,17 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
 
-    
-
-
 }
+
+extension LogInViewController: OnUserLoggedDelegate {
+    public func onUserLogged(user: User) {
+         self.user=user
+        
+        let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! ImageViewController
+        self.navigationController?.pushViewController(eventsView, animated: true)
+
+         collectionView.reloadData()
+    }
+    
+}
+
