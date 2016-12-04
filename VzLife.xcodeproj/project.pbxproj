@@ -127,6 +127,7 @@
 		683A87D91DF48991006D16EF /* EventDetail */ = {
 			isa = PBXGroup;
 			children = (
+				68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */,
 				68FADAF51DF48E87000A858E /* EventDetailController.swift */,
 			);
 			path = EventDetail;
@@ -181,7 +182,6 @@
 				E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */,
 				E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */,
 				E49D22C31DF3193D00E3B98B /* Extensions.swift */,
-				68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
