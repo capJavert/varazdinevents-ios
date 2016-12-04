@@ -39,11 +39,10 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             schemaVersion: 4,
             migrationBlock: { migration, oldSchemaVersion in })
         
-        if(NetworkConnection.Connection.isConnectedToNetwork() && UserDefaults.standard.bool(forKey: "EnableWebService")){
+        if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
             webServiceDataLoader.LoadData()
         }else{
-            
             dbDataLoader.onDataLoadedDelegate = self
             dbDataLoader.LoadData()
         }
