@@ -9,8 +9,7 @@ public class JsonAdapter
         let jsonEvents = JSON(json)
         let items = jsonEvents["items"]
         let itemsString = String(describing: items)
-        if let dataFromString = itemsString.data(using: String.Encoding.utf8,
-                                                              allowLossyConversion: false) {
+        if let dataFromString = itemsString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             let json2 = JSON(data: dataFromString)
             for (_, subJson) in json2 {
                 let event:Event = Event()
@@ -27,5 +26,21 @@ public class JsonAdapter
                 events.append(event)
             } }
         return events
+    }
+    
+    public static func getUser(json: AnyObject) -> User
+    {
+        let user = User()
+        let jsonUser = JSON(json)
+        let userString = String(describing: jsonUser)
+        if let dataFromString = userString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            let json = JSON(data: dataFromString)
+            
+            user.id = json["id"].int!
+            user.username = json["username"].string!
+            user.sessionId = json["token"].string!
+            
+        }
+        return user
     }
 }

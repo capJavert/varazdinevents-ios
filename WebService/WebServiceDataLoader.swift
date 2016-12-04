@@ -26,13 +26,25 @@ public class WebServiceDataLoader:DataLoader
     private func bindData()
     {
         DbController.sharedDBInstance.realm.beginWrite()
-        DbController.sharedDBInstance.realm.deleteAll()
         try! DbController.sharedDBInstance.realm.commitWrite()
         
+        var notThese = [Int] ()
         for event in events!
         {
             DbController.sharedDBInstance.realmAdd(o: event)
+            notThese.append(event.id)
         }
+        
+        DbController.sharedDBInstance.realmDeleteEvents(notThese: notThese)
+    }
+    
+    private func bindUser()
+    {
+        DbController.sharedDBInstance.realm.beginWrite()
+        DbController.sharedDBInstance.realm.deleteAll()
+        try! DbController.sharedDBInstance.realm.commitWrite()
+        
+        DbController.sharedDBInstance.realmAdd(o: user!)
     }
 }
 
