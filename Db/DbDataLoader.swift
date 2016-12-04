@@ -20,4 +20,9 @@ extension DBDataLoader:DBResultDelegate {
         self.events = result
         self.dataLoaded()
     }
+    
+    public func getUser(result: User) {
+        self.user = result
+        self.userLogged()
+    }
 }
