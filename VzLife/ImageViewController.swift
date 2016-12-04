@@ -10,19 +10,10 @@ import UIKit
 import RealmSwift
 import Kingfisher
 
-//Those two classes we included so we could use it for layout and as for DataSource for collecetion we are using
+//Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
 class ImageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
-    struct eventObject{
-        var about: String
-        var imageUrl: String
-    }
-    
-   
-    
-    var eventsArray: [eventObject] = []
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
@@ -47,14 +38,8 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             dbDataLoader.LoadData()
         }
         
-        /*
-        eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
-        eventsArray.append(eventObject(about: "Milica Kruscis kraljica Baza", imageUrl: UIImage(named: "kod")!))
-        eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))
-        eventsArray.append(eventObject(about: "Sabatoni samo za vas 12.10", imageUrl: UIImage(named: "kod")!))*/
-        // Do any additional setup after loading the view.
-        
-                //telling CollectionView that stuff he is looking for can be found within this viewController itself
+
+        //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self 
         
@@ -69,7 +54,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     //Implementing methods for classes we included
     //First one is for number of items in collectionView ( how many items will we have )
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return eventsArray.count
+        return events.count
     }
     
     
@@ -77,31 +62,34 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     // This method is generating cell object and returns it with all properties we need it
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! ImageCollectionViewCell
-        cell.aboutView.text = eventsArray[indexPath.item].about
-        cell.imageView.kf.setImage(with: URL(string: eventsArray[indexPath.item].imageUrl))
+        cell.aboutView.text = events[indexPath.item].title
+        cell.imageView.kf.setImage(with: URL(string: events[indexPath.item].image))
         //setting tag for unique identifing button ( because we can't know which of many buttons in collection is clicked
         cell.moreInfoButton.tag = indexPath.item
-      //  cell.moreInfoButton.addTarget(self, action: #selector(didGoToInfos(sender:)), for: .touchUpInside)
+        cell.moreInfoButton.event = events[indexPath.item]
+        cell.moreInfoButton.addTarget(self, action: #selector(goToEventDetail(sender:)), for: .touchUpInside)
         
         return cell
     }
     
- /*   func didGoToInfos( sender: UIButton){
+    func goToEventDetail( sender: UIButton){
         //passing Sender
-        self.performSegue(withIdentifier: "toInfos", sender: sender)
+        self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
     
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
-        if segue.identifier == "toInfos"{
+        if segue.identifier == "EventDetail"{
             //casting sender to UIButton
-            let sender = sender as! UIButton
-            let eventVC = segue.destination as! InfosViewController
+            let sender = sender as! EventDetailButton
+            let eventDetail = segue.destination as! EventDetailController
+            
+            eventDetail.event = sender.event
             
         }
-            }*/
+    }
     
     @IBAction func toLooginAction(_ sender: Any) {
         
@@ -124,11 +112,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
 extension ImageViewController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         self.events=events
-            for event in events {
         
-            eventsArray.append(eventObject(about: event.title, imageUrl: event.image))
-            
-        }
         collectionView.reloadData()
         
     }

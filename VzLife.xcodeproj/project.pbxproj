@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
+		68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */; };
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
 		E45FB09D1DEB3E7A00056445 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */; };
 		E45FB0A11DEB3F6A00056445 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */; };
-		E45FB0A31DEB728E00056445 /* InfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A21DEB728E00056445 /* InfosViewController.swift */; };
 		E469CC421DEE0BCD00DDDB38 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC411DEE0BCD00DDDB38 /* LogInViewController.swift */; };
 		E469CC441DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */; };
 		E49D22C21DF3186F00E3B98B /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */; };
@@ -52,11 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68FADAF51DF48E87000A858E /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
+		68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailButton.swift; sourceTree = "<group>"; };
 		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
 		9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VzLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		E45FB0A21DEB728E00056445 /* InfosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfosViewController.swift; sourceTree = "<group>"; };
 		E469CC411DEE0BCD00DDDB38 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCelCollectionViewCell.swift; sourceTree = "<group>"; };
 		E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		683A87D91DF48991006D16EF /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				68FADAF51DF48E87000A858E /* EventDetailController.swift */,
+			);
+			path = EventDetail;
+			sourceTree = "<group>";
+		};
 		6FF697AFCB827D9BD067AD25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		E4A962B31DE42BE400BCF470 = {
 			isa = PBXGroup;
 			children = (
+				683A87D91DF48991006D16EF /* EventDetail */,
 				E4A962F41DE42E5900BCF470 /* Db */,
 				E4A962F21DE42E4200BCF470 /* WebService */,
 				E4A962F01DE42E2D00BCF470 /* Core */,
@@ -166,11 +177,11 @@
 				E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */,
 				E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */,
 				E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */,
-				E45FB0A21DEB728E00056445 /* InfosViewController.swift */,
 				E469CC411DEE0BCD00DDDB38 /* LogInViewController.swift */,
 				E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */,
 				E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */,
 				E49D22C31DF3193D00E3B98B /* Extensions.swift */,
+				68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
@@ -418,15 +429,16 @@
 				E469CC441DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift in Sources */,
 				E4A963021DE45CFE00BCF470 /* WebServiceDataLoader.swift in Sources */,
 				E4A963001DE435DB00BCF470 /* JsonAdapter.swift in Sources */,
-				E45FB0A31DEB728E00056445 /* InfosViewController.swift in Sources */,
 				E49D22C41DF3193D00E3B98B /* Extensions.swift in Sources */,
 				E4A962F81DE42EA100BCF470 /* Event.swift in Sources */,
 				E4A962FA1DE42EA100BCF470 /* User.swift in Sources */,
 				E4A963041DE4637F00BCF470 /* DbController.swift in Sources */,
 				E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */,
+				68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */,
 				E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */,
 				E45FB0A11DEB3F6A00056445 /* ImageViewController.swift in Sources */,
 				E469CC421DEE0BCD00DDDB38 /* LogInViewController.swift in Sources */,
+				68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */,
 				E49D22C21DF3186F00E3B98B /* LeftPaddedTextField.swift in Sources */,
 				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
 				E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */,

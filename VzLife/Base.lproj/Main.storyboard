@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GKK-CU-l3t">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GKK-CU-l3t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Event Detail Controller-->
+        <scene sceneID="wC3-VW-utY">
+            <objects>
+                <viewController storyboardIdentifier="EventDetail" id="Me0-ob-IT0" customClass="EventDetailController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="99x-Tn-1Cn"/>
+                        <viewControllerLayoutGuide type="bottom" id="DRD-PW-xdg"/>
+                    </layoutGuides>
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="LaO-5P-NKe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tOO-VP-S6I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="246"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tOO-VP-S6I" secondAttribute="height" multiplier="125:82" id="5fc-eV-nRE"/>
+                                    <constraint firstAttribute="width" constant="375" id="fOF-EN-BTk"/>
+                                </constraints>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nvj-Vc-Ume">
+                                <rect key="frame" x="0.0" y="254" width="375" height="50"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rhz-5Z-5It">
+                                <rect key="frame" x="0.0" y="312" width="375" height="355"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Nvj-Vc-Ume" firstAttribute="top" secondItem="tOO-VP-S6I" secondAttribute="bottom" constant="8" id="IMH-4A-Yya"/>
+                            <constraint firstItem="Rhz-5Z-5It" firstAttribute="top" secondItem="tOO-VP-S6I" secondAttribute="bottom" constant="66" id="l6h-ut-Py6"/>
+                        </constraints>
+                    </stackView>
+                    <connections>
+                        <outlet property="imageView" destination="Nvj-Vc-Ume" id="vLF-dJ-cLn"/>
+                        <outlet property="stackView" destination="LaO-5P-NKe" id="Ztz-TT-TTD"/>
+                        <outlet property="tableView" destination="tOO-VP-S6I" id="Hgv-fa-c6B"/>
+                        <outlet property="textView" destination="Rhz-5Z-5It" id="cgW-xC-Ddf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Edf-Ia-Au1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1298.4000000000001" y="223.53823088455775"/>
+        </scene>
         <!--Log In View Controller-->
         <scene sceneID="Qs0-9d-fN6">
             <objects>
@@ -69,7 +116,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="ePD-Xi-2Pj" customClass="ImageCollectionViewCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="45" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="45" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -88,7 +135,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq9-gm-V62">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq9-gm-V62" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="147" width="296" height="27"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="More informations">
@@ -150,6 +197,7 @@
                     <connections>
                         <outlet property="collectionView" destination="sGH-Gd-zWP" id="60E-6X-Goc"/>
                         <segue destination="Iaj-EK-q1C" kind="show" identifier="toLogin" action="showDetailViewController:sender:" id="rVz-lq-oFg"/>
+                        <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="r9s-mS-euz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idj-EN-ntN" userLabel="First Responder" sceneMemberID="firstResponder"/>
