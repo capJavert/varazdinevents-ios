@@ -23,18 +23,27 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
-    
+    var user = User()
    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         
+        
         //set default Realm DB configuration
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
             schemaVersion: 4,
             migrationBlock: { migration, oldSchemaVersion in })
+        
+        if user.id != 0 {
+            
+            self.navigationItem.setHidesBackButton(true, animated:true)
+            loginButton.isHidden = true
+        }
+
         
         if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
