@@ -50,13 +50,23 @@ class EventDetailController: UIViewController {
         if(event.facebook=="") {
             facebookLable.isHidden = true
         } else {
-            facebookLable.text = "Facebook event"
+            facebookLable.text = "Facebook stranica"
         }
+        
+        facebookLable.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.openFacebookPage(sender:)))
+        facebookLable.addGestureRecognizer(tap)
+
+        
         categoryLabel.text = "Kategorija: " + event.category
         
         imageView.kf.setImage(with: URL(string: event.image))
         textView.text = event.text.replacingOccurrences(of: "<br />", with: "\n", options: .regularExpression, range: nil)
         
+    }
+    
+    func openFacebookPage(sender:UITapGestureRecognizer) {
+        UIApplication.shared.open(NSURL(string: event.facebook) as! URL)
     }
     
     override func didReceiveMemoryWarning() {
