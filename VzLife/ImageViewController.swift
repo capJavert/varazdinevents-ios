@@ -13,24 +13,54 @@ import Kingfisher
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
-class ImageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ImageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     struct eventObject{
         var about: String
         var imageUrl: String
     }
-    
+    var dataSource : Results<Event>!
     var eventsArray: [eventObject] = []
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
     var user = User()
-   
+    var searchBarController: UISearchController!
+    var searchText: String = "SomeTest"
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loginButton: UIButton!
+    
+    
+    @IBAction func searchBarAction(_ sender: Any) {
+        
+        searchBarController = UISearchController(searchResultsController: nil)
+        //hide navigatiobar during search
+        searchBarController.hidesNavigationBarDuringPresentation = false
+        searchBarController.searchBar.delegate = self
+        searchBarController.searchBar.text = searchText
+        searchBarController.searchBar.barTintColor = UIColor(red: 50/255, green: 60/255, blue: 72/255, alpha: 1.0)
+        searchBarController.searchBar.tintColor = UIColor.white
+        present(searchBarController, animated: true, completion: nil)
+        
 
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchText = searchBar.text!
+        //whetever search I'm making will be the title of the search text
+        self.navigationItem.title = searchText.uppercased()
+        let realm = try! Realm()
+        dataSource = realm.objects(Event.self).filter("title = \(searchText)")
+        self.collectionView!.reloadData()
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         
         
         //set default Realm DB configuration
@@ -39,11 +69,10 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             migrationBlock: { migration, oldSchemaVersion in })
         
         if user.id != 0 {
-            
             self.navigationItem.setHidesBackButton(true, animated:true)
             loginButton.isHidden = true
         }
-
+        
         
         if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
@@ -53,14 +82,21 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             dbDataLoader.LoadData()
         }
         
-
+        
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
-        collectionView.dataSource = self 
+        collectionView.dataSource = self
+        
+        /* //searchResultUpdateder informs searchBar when search is updated
+         searchBarController.searchResultsUpdater = self
+         searchBarController.dimsBackgroundDuringPresentation = false
+         //to remove search bar from other views if user change the view
+         definesPresentationContext = true
+         collectionView.*/
         
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -92,7 +128,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
     
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
@@ -112,16 +148,16 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.navigationController?.pushViewController(loginView, animated: true)
     }
     
-       /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension ImageViewController: OnDataLoadedDelegate {
