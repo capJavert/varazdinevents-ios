@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681603E51E0DE605000EED21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 681603E41E0DE605000EED21 /* GoogleService-Info.plist */; };
 		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
 		68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */; };
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		681603E41E0DE605000EED21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		68FADAF51DF48E87000A858E /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailButton.swift; sourceTree = "<group>"; };
 		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		E4A962BE1DE42BE400BCF470 /* VzLife */ = {
 			isa = PBXGroup;
 			children = (
+				681603E41E0DE605000EED21 /* GoogleService-Info.plist */,
 				E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */,
 				E4A962C31DE42BE400BCF470 /* Main.storyboard */,
 				E4A962C91DE42BE400BCF470 /* Assets.xcassets */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4A962CD1DE42BE500BCF470 /* LaunchScreen.storyboard in Resources */,
+				681603E51E0DE605000EED21 /* GoogleService-Info.plist in Resources */,
 				E4A962CA1DE42BE400BCF470 /* Assets.xcassets in Resources */,
 				E4A962C51DE42BE400BCF470 /* Main.storyboard in Resources */,
 			);
