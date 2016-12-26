@@ -37,9 +37,24 @@ public class HTTPRequest
     {
         Alamofire.request("http://varazdinevents.cf/api/firebase/add/"+token, method: .get)
             .responseJSON { response in
+                if response.result.value != nil{
+                    //NSLog("JSON: \(json)")
+                    //self.wsResultDelegate?.getResult(json: json as AnyObject, type: "user")
+                }
+        }
+    }
+    
+    public func createEvent(event: Event, sessionId: String)
+    {
+        var request = URLRequest(url: NSURL(string: "http://varazdinevents.cf/api/events?token="+sessionId) as! URL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try! JSONSerialization.data(withJSONObject: event)
+        
+        Alamofire.request(request).responseJSON { response in
                 if let json = response.result.value{
                     //NSLog("JSON: \(json)")
-                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "user")
+                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "event")
                 }
         }
     }
