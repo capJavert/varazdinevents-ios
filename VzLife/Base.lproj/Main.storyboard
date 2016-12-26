@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qZ1-rc-dDT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GKK-CU-l3t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -156,7 +156,7 @@
         <!--Image View Controller-->
         <scene sceneID="O8L-PH-Pux">
             <objects>
-                <viewController storyboardIdentifier="eventsView" id="cSh-Vj-10U" customClass="ImageViewController" customModule="VzLife" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSh-Vj-10U" customClass="ImageViewController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cxO-fY-WVR"/>
                         <viewControllerLayoutGuide type="bottom" id="NlZ-vp-ci3"/>
@@ -254,6 +254,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nud-kw-PBl">
+                        <barButtonItem key="leftBarButtonItem" title="Kreiraj Event" id="tFH-OG-khe">
+                            <connections>
+                                <action selector="eventCreateViewButton:" destination="cSh-Vj-10U" id="3iA-y3-OGX"/>
+                                <segue destination="qZ1-rc-dDT" kind="show" identifier="eventCreate" id="Oli-pH-nN7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Wux-kL-6BS">
                             <connections>
                                 <action selector="searchBarAction:" destination="cSh-Vj-10U" id="gA3-lb-e2e"/>
@@ -274,7 +280,7 @@
         <!--Event Create View Controller-->
         <scene sceneID="Wg8-Nd-5t1">
             <objects>
-                <viewController id="qZ1-rc-dDT" customClass="EventCreateViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventCreate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qZ1-rc-dDT" customClass="EventCreateViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vR8-aZ-uPD"/>
                         <viewControllerLayoutGuide type="bottom" id="8uy-MM-227"/>

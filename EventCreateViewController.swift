@@ -14,6 +14,9 @@ class EventCreateViewController: UIViewController {
     @IBOutlet weak var eventAbout: UITextField!
     @IBOutlet weak var eventDate: UIDatePicker!
     @IBOutlet weak var eventCategory: UITextField!
+    
+    
+    var events = [Event]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,13 +30,21 @@ class EventCreateViewController: UIViewController {
     
     @IBAction func eventCreateButton(_ sender: Any) {
         
-        let title = self.eventTitle.text
-        let about = self.eventAbout.text
-        let date  = self.eventDate.date
-        let category = self.eventCategory.text
+        let events = Event()
+        //need to set to event object
+        events.title = self.eventTitle.text!
+        events.text = self.eventAbout.text!
+        let date = self.eventDate.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMDD000000"
+        let stringDate = dateFormatter.string(from: date)
+        events.date = Int(stringDate)!
+     
+    
+        events.category = self.eventCategory.text!
         
-        if((title?.isEmpty)! || (about?.isEmpty)! || (category?.isEmpty)!){
-            displayAlertMessage(userMessage: "Nije ispunjeno jedno od bitnih polja")
+       if(events.title.isEmpty){
+            self.displayAlertMessage(userMessage: "Nije ispunjeno jedno od bitnih polja")
             return
         }
         
@@ -41,7 +52,7 @@ class EventCreateViewController: UIViewController {
     
     func displayAlertMessage(userMessage: String){
         
-        var alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
        
         let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
         
@@ -61,3 +72,5 @@ class EventCreateViewController: UIViewController {
     */
 
 }
+
+

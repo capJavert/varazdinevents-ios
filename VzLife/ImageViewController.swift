@@ -46,6 +46,12 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     }
     
+    @IBAction func eventCreateViewButton(_ sender: Any) {
+       
+        let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateViewController
+        self.navigationController?.pushViewController(eventCreateView, animated: true)
+        
+    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchText = searchBar.text!
