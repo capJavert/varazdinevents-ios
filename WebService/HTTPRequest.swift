@@ -44,12 +44,12 @@ public class HTTPRequest
         }
     }
     
-    public func createEvent(event: Event, sessionId: String)
+    public func createEvent(data: [String: Any], sessionId: String)
     {
         var request = URLRequest(url: NSURL(string: "http://varazdinevents.cf/api/events?token="+sessionId) as! URL)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try! JSONSerialization.data(withJSONObject: event)
+        request.httpBody = try! JSONSerialization.data(withJSONObject: data)
         
         Alamofire.request(request).responseJSON { response in
                 if let json = response.result.value{
