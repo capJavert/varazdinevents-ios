@@ -32,4 +32,15 @@ public class HTTPRequest
                 }
         }
     }
+    
+    public func registerToken(token: String)
+    {
+        Alamofire.request("http://varazdinevents.cf/api/firebase/add/"+token, method: .get)
+            .responseJSON { response in
+                if let json = response.result.value{
+                    //NSLog("JSON: \(json)")
+                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "user")
+                }
+        }
+    }
 }
