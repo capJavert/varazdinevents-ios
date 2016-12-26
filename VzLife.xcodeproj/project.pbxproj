@@ -15,6 +15,7 @@
 		E45FB0A11DEB3F6A00056445 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */; };
 		E469CC421DEE0BCD00DDDB38 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC411DEE0BCD00DDDB38 /* LogInViewController.swift */; };
 		E469CC441DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */; };
+		E476B0171E114E96004B2D72 /* EventCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476B0161E114E96004B2D72 /* EventCreateViewController.swift */; };
 		E49D22C21DF3186F00E3B98B /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */; };
 		E49D22C41DF3193D00E3B98B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D22C31DF3193D00E3B98B /* Extensions.swift */; };
 		E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		E469CC411DEE0BCD00DDDB38 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCelCollectionViewCell.swift; sourceTree = "<group>"; };
+		E476B0161E114E96004B2D72 /* EventCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreateViewController.swift; sourceTree = "<group>"; };
 		E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
 		E49D22C31DF3193D00E3B98B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E4A962BC1DE42BE400BCF470 /* VzLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VzLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,9 +145,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E4609D5E1E109AEF00889BFB /* EventCreate */ = {
+			isa = PBXGroup;
+			children = (
+				E476B0161E114E96004B2D72 /* EventCreateViewController.swift */,
+			);
+			name = EventCreate;
+			sourceTree = "<group>";
+		};
 		E4A962B31DE42BE400BCF470 = {
 			isa = PBXGroup;
 			children = (
+				E4609D5E1E109AEF00889BFB /* EventCreate */,
 				683A87D91DF48991006D16EF /* EventDetail */,
 				E4A962F41DE42E5900BCF470 /* Db */,
 				E4A962F21DE42E4200BCF470 /* WebService */,
@@ -429,6 +440,7 @@
 			files = (
 				E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */,
 				E4A962F91DE42EA100BCF470 /* EventCategory.swift in Sources */,
+				E476B0171E114E96004B2D72 /* EventCreateViewController.swift in Sources */,
 				E45FB09D1DEB3E7A00056445 /* ImageCollectionViewCell.swift in Sources */,
 				E469CC441DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift in Sources */,
 				E4A963021DE45CFE00BCF470 /* WebServiceDataLoader.swift in Sources */,
