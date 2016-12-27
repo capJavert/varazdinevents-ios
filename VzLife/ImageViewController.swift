@@ -25,7 +25,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     var dbDataLoader = DBDataLoader()
     var user = User()
     var searchBarController: UISearchController!
-    var searchText: String = "SomeTest"
+    var searchText: String = ""
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -34,8 +34,8 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
     @IBAction func searchBarAction(_ sender: Any) {
-        
         searchBarController = UISearchController(searchResultsController: nil)
+        searchBarController.searchBar.delegate = self
         //hide navigatiobar during search
         searchBarController.hidesNavigationBarDuringPresentation = false
         searchBarController.searchBar.delegate = self
@@ -43,10 +43,16 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         searchBarController.searchBar.barTintColor = UIColor(red: 50/255, green: 60/255, blue: 72/255, alpha: 1.0)
         searchBarController.searchBar.tintColor = UIColor.white
         present(searchBarController, animated: true, completion: nil)
-        
-
     }
  
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchText == "") {
+            self.navigationItem.title = searchText.uppercased()
+            self.events = try! Array(Realm().objects(Event.self))
+            self.collectionView!.reloadData()
+        }
+    }
+    
     @IBAction func goToCreationEvent(_ sender: Any) {
         
         let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateViewController
@@ -57,17 +63,16 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         
     }
     
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchText = searchBar.text!
+        
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
-        let predicate = NSPredicate(format: "title = %@", searchText)
+        let predicate = NSPredicate(format: "title CONTAINS %@", searchText)
         self.events = try! Array(Realm().objects(Event.self).filter(predicate))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
-        
     }
     
     override func viewDidLoad() {
