@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Kingfisher
+import Realm
 
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
@@ -45,6 +46,8 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        print(category)
         
     }
     
@@ -96,7 +99,10 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
 
 extension EventByCategoryViewController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
-        self.events=events
+        //dve linije would hit that
+        let predicate = NSPredicate(format: "category = %@", category)
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        
         collectionView.reloadData()
     }
     
