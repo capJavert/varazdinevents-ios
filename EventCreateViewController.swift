@@ -63,8 +63,10 @@ class EventCreateViewController: UIViewController {
         }
 
         let httpReq = HTTPRequest()
-        httpReq.createEvent(data: ["title": events.title, "text": self.eventAbout.text!, "facebook": self.facebookUrl.text!, "offers": self.offers.text!, "host": self.host.text!,  "date": dateFrom, "dateEnd": date_to, "time": "lala", "timeTo": "lala", "category": self.eventCategory.text!, "image": "lala", "officialLink": "lala"] , sessionId: user.sessionId)
-        
+        httpReq.createEvent(data: ["title": events.title, "text": events.text, "facebook": events.facebook, "offers": events.offers, "host": events.host,  "date": dateFrom, "dateEnd": date_to, "time": "23:46:11", "timeTo": "23:40:12", "category": events.category, "image": "lala", "officialLink": "lala"] , sessionId: user.sessionId)
+        let goBackToCollectionView = self.storyboard?.instantiateViewController(withIdentifier:"eventsView") as! ImageViewController
+        goBackToCollectionView.user = user
+        self.navigationController?.pushViewController(goBackToCollectionView, animated: true)
         
     }
     
