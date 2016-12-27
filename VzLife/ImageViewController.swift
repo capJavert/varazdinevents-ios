@@ -63,8 +63,8 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         searchText = searchBar.text!
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
-        let realm = try! Realm()
-        dataSource = realm.objects(Event.self).filter("title = \(searchText)")
+        let predicate = NSPredicate(format: "title = %@", searchText)
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
         
