@@ -46,20 +46,25 @@ class EventCreateViewController: UIViewController {
         events.facebook = self.facebookUrl.text!
         events.offers = self.offers.text!
         events.host = self.host.text!
+        
         let dateEnd = self.eventDateEnd.date
+        let dateEndTimeInterval = dateEnd.timeIntervalSince1970
+        let dateEndInt = Int(dateEndTimeInterval)
+        
         let date = self.eventDate.date
+        let dateTimeInterval = date.timeIntervalSince1970
+        let dateInInt = Int(dateTimeInterval)
+        
         
         let dateFormatter = DateFormatter()
         let dateFormatter2 = DateFormatter()
         
-        dateFormatter.dateFormat = "yyyyMMDD000000"
-        dateFormatter2.dateFormat = "h:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateFormatter2.dateFormat = "hh:mm"
         
-        let stringDate = dateFormatter.string(from: date)
-        let stringDateTo = dateFormatter.string(from: dateEnd)
+        //let stringDate = dateFormatter.string(from: date)
+        //let stringDateTo = dateFormatter.string(from: dateEnd)
         
-        let dateFrom = Int(stringDate)!
-        let dateTo = Int(stringDateTo)!
         
         let stringTime = dateFormatter2.string(from: date)
         let stringTimeTo = dateFormatter2.string(from: dateEnd)
@@ -74,7 +79,7 @@ class EventCreateViewController: UIViewController {
         }
 
         let httpReq = HTTPRequest()
-        httpReq.createEvent(data: ["title": events.title, "text": events.text, "facebook": events.facebook, "offers": events.offers, "host": events.host,  "date": dateFrom, "dateEnd": dateTo, "time": stringTime, "timeTo": stringTimeTo, "category": events.category, "image": "lala", "officialLink": "lala"] , sessionId: user.sessionId)
+        httpReq.createEvent(data: ["title": events.title, "text": events.text, "facebook": events.facebook, "offers": events.offers, "host": events.host,  "date": dateInInt, "dateEnd": dateEndInt, "time": stringTime, "timeTo": stringTimeTo, "category": events.category, "image": "lala", "officialLink": "lala"] , sessionId: user.sessionId)
         let goBackToCollectionView = self.storyboard?.instantiateViewController(withIdentifier:"eventsView") as! ImageViewController
         goBackToCollectionView.user = user
         self.navigationController?.pushViewController(goBackToCollectionView, animated: true)
