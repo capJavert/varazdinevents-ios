@@ -11,6 +11,7 @@ import UIKit
 class CategoriesViewController: UITableViewController {
 
     let categories = ["Kazalište i film", "Slušaona", "Svirka", "Volontiranje", " Tečaj", "Predavanje", "Party","Ostalo","Arhiva događaja"]
+    var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()

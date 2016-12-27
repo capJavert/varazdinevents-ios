@@ -142,6 +142,14 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
     
+    @IBAction func goToCategories(_ sender: Any) {
+        
+        let toCategories = self.storyboard?.instantiateViewController(withIdentifier: "categoryView") as! CategoriesViewController
+        toCategories.user = user
+        self.navigationController?.pushViewController(toCategories, animated: true)
+
+        
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
