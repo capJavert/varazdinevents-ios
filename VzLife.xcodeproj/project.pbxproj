@@ -36,6 +36,8 @@
 		E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963051DE4E37100BCF470 /* NetworkConnection.swift */; };
 		E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963071DE4E67600BCF470 /* DbDataLoader.swift */; };
 		E4DB146D1E12A3BE00F0CB10 /* Categories1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146C1E12A3BE00F0CB10 /* Categories1ViewController.swift */; };
+		E4DB146F1E12D7D500F0CB10 /* EventByCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146E1E12D7D500F0CB10 /* EventByCategoryViewController.swift */; };
+		E4DB14711E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB14701E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		E4A963051DE4E37100BCF470 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		E4A963071DE4E67600BCF470 /* DbDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbDataLoader.swift; sourceTree = "<group>"; };
 		E4DB146C1E12A3BE00F0CB10 /* Categories1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories1ViewController.swift; sourceTree = "<group>"; };
+		E4DB146E1E12D7D500F0CB10 /* EventByCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventByCategoryViewController.swift; sourceTree = "<group>"; };
+		E4DB14701E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventByCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F0CD8825CA3BDDF4C94ACC1F /* Pods-VzLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				E4DB146C1E12A3BE00F0CB10 /* Categories1ViewController.swift */,
+				E4DB146E1E12D7D500F0CB10 /* EventByCategoryViewController.swift */,
+				E4DB14701E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -469,8 +475,10 @@
 				68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */,
 				E49D22C21DF3186F00E3B98B /* LeftPaddedTextField.swift in Sources */,
 				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
+				E4DB14711E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift in Sources */,
 				E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */,
 				E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */,
+				E4DB146F1E12D7D500F0CB10 /* EventByCategoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

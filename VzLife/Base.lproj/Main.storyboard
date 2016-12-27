@@ -286,6 +286,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="sGH-Gd-zWP" id="60E-6X-Goc"/>
+                        <outlet property="createEventButton" destination="tFH-OG-khe" id="L4F-qK-mLy"/>
                         <outlet property="loginButton" destination="aRA-Wh-uZc" id="LNl-pf-Cvv"/>
                         <segue destination="Iaj-EK-q1C" kind="show" identifier="toLogin" action="showDetailViewController:sender:" id="rVz-lq-oFg"/>
                         <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="r9s-mS-euz"/>
@@ -294,6 +295,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idj-EN-ntN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="295" y="982"/>
+        </scene>
+        <!--Event By Category View Controller-->
+        <scene sceneID="X0L-79-czA">
+            <objects>
+                <viewController storyboardIdentifier="eventsByCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oc9-r2-t5s" customClass="EventByCategoryViewController" customModule="VzLife" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vhi-Kq-81J"/>
+                        <viewControllerLayoutGuide type="bottom" id="YHk-Bx-6C0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U5A-ki-eNp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CmX-IZ-J2W">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gYL-J4-K5f">
+                                    <size key="itemSize" width="328" height="182"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventByCategoryCollectionViewCell" customModule="VzLife">
+                                        <rect key="frame" x="24" y="45" width="328" height="182"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gc9-cp-jEj">
+                                                    <rect key="frame" x="16" y="8" width="296" height="108"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gc9-cp-jEj" secondAttribute="height" multiplier="74:27" id="7Ke-hB-NBQ"/>
+                                                        <constraint firstAttribute="width" constant="296" id="SDP-Ui-7nr"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ai-YL-Zy7">
+                                                    <rect key="frame" x="22" y="119" width="295" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sl-fr-kDO" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="147" width="296" height="27"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="More informations">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.99227746390000005" green="0.97469490960000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="gc9-cp-jEj" firstAttribute="leading" secondItem="5JE-IS-M3w" secondAttribute="leadingMargin" constant="8" id="ELU-GY-bau"/>
+                                            <constraint firstItem="6Sl-fr-kDO" firstAttribute="top" secondItem="5ai-YL-Zy7" secondAttribute="bottom" constant="7" id="IUr-0B-fem"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="6Sl-fr-kDO" secondAttribute="bottom" id="O0d-gm-MYq"/>
+                                            <constraint firstItem="6Sl-fr-kDO" firstAttribute="leading" secondItem="5JE-IS-M3w" secondAttribute="leadingMargin" constant="8" id="WJ1-MF-7jT"/>
+                                            <constraint firstItem="5ai-YL-Zy7" firstAttribute="leading" secondItem="5JE-IS-M3w" secondAttribute="leadingMargin" constant="14" id="ZO8-e8-wiE"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="6Sl-fr-kDO" secondAttribute="trailing" constant="8" id="aw2-w7-GF9"/>
+                                            <constraint firstItem="5ai-YL-Zy7" firstAttribute="top" secondItem="gc9-cp-jEj" secondAttribute="bottom" constant="3" id="cbb-oy-QHK"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="5ai-YL-Zy7" secondAttribute="trailing" constant="3" id="l9V-rt-VgH"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="gc9-cp-jEj" secondAttribute="trailing" constant="8" id="myk-ay-5yY"/>
+                                            <constraint firstAttribute="topMargin" secondItem="gc9-cp-jEj" secondAttribute="top" id="vvS-g4-vhT"/>
+                                            <constraint firstItem="6Sl-fr-kDO" firstAttribute="top" secondItem="gc9-cp-jEj" secondAttribute="bottom" constant="31" id="w3Z-AC-xJs"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="aboutView" destination="5ai-YL-Zy7" id="gzV-MU-yG2"/>
+                                            <outlet property="imageView" destination="gc9-cp-jEj" id="0Lr-Jg-sLO"/>
+                                            <outlet property="moreInfoButton" destination="6Sl-fr-kDO" id="IrK-Go-UEp"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CmX-IZ-J2W" secondAttribute="trailing" id="Ahz-8V-9yy"/>
+                            <constraint firstItem="CmX-IZ-J2W" firstAttribute="leading" secondItem="U5A-ki-eNp" secondAttribute="leading" id="NXR-kI-O6C"/>
+                            <constraint firstItem="CmX-IZ-J2W" firstAttribute="bottom" secondItem="YHk-Bx-6C0" secondAttribute="top" id="Zjn-5L-HO3"/>
+                            <constraint firstItem="CmX-IZ-J2W" firstAttribute="top" secondItem="U5A-ki-eNp" secondAttribute="top" id="oYg-tJ-DNa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3is-HK-HQM">
+                        <barButtonItem key="leftBarButtonItem" title="Kreiraj Event" id="5lb-Wr-uve"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="dJM-sd-hJC"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6QQ-nX-vkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="629" y="1891"/>
         </scene>
         <!--Event Create View Controller-->
         <scene sceneID="Wg8-Nd-5t1">

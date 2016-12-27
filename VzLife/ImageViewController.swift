@@ -30,6 +30,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var createEventButton: UIBarButtonItem!
     
     
     @IBAction func searchBarAction(_ sender: Any) {
@@ -80,7 +81,12 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         if user.id != 0 {
             self.navigationItem.setHidesBackButton(true, animated:true)
             loginButton.isHidden = true
+            createEventButton.isEnabled = true
+           
             
+        }else{
+            createEventButton.isEnabled = false
+            createEventButton.tintColor = UIColor.clear
         }
         
         
@@ -175,7 +181,6 @@ extension ImageViewController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         self.events=events
         collectionView.reloadData()
-        
     }
     
     public func onDataLoaded(users: User){
