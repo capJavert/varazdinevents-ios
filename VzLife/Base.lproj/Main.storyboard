@@ -407,7 +407,13 @@
                             <constraint firstItem="CmX-IZ-J2W" firstAttribute="top" secondItem="U5A-ki-eNp" secondAttribute="top" id="oYg-tJ-DNa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3is-HK-HQM"/>
+                    <navigationItem key="navigationItem" id="3is-HK-HQM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="aB8-8U-s6q">
+                            <connections>
+                                <action selector="searchBarAction:" destination="Oc9-r2-t5s" id="Rkm-Sc-6Nl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="CmX-IZ-J2W" id="CsH-vh-2a0"/>
                     </connections>

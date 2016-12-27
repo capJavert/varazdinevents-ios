@@ -14,12 +14,14 @@ import Realm
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
-class EventByCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class EventByCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
    
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
     var user = User()
+    var searchBarController: UISearchController!
+    var searchText: String = ""
     var category = ""
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -56,11 +58,47 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func searchBarAction(_ sender: Any) {
+        searchBarController = UISearchController(searchResultsController: nil)
+        searchBarController.searchBar.delegate = self
+        //hide navigatiobar during search
+        searchBarController.hidesNavigationBarDuringPresentation = false
+        searchBarController.searchBar.delegate = self
+        searchBarController.searchBar.text = searchText
+        searchBarController.searchBar.barTintColor = UIColor(red: 50/255, green: 60/255, blue: 72/255, alpha: 1.0)
+        searchBarController.searchBar.tintColor = UIColor.white
+        present(searchBarController, animated: true, completion: nil)
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchText == "") {
+            self.navigationItem.title = searchText.uppercased()
+            self.events = try! Array(Realm().objects(Event.self))
+            self.collectionView!.reloadData()
+        }
+    }
+
+    
     //Implementing methods for classes we included
     //First one is for number of items in collectionView ( how many items will we have )
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return events.count
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchText = searchBar.text!
+        
+        //whetever search I'm making will be the title of the search text
+        self.navigationItem.title = searchText.uppercased()
+        let predicate = NSPredicate(format: "title CONTAINS %@", searchText)
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        self.collectionView!.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
+
     
     
     //Second method we needed is for every cell specifing the properties of it
