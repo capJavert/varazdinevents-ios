@@ -19,14 +19,13 @@ class EventCreateViewController: UIViewController {
     @IBOutlet weak var facebookUrl: UITextField!
     @IBOutlet weak var offers: UITextField!
     var sessionId: String = ""
-    
+    var user =  User()
     
     
     
     var events = [Event]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -64,7 +63,7 @@ class EventCreateViewController: UIViewController {
         }
 
         let httpReq = HTTPRequest()
-        httpReq.createEvent(data: ["title": events.title, "text": self.eventAbout.text!, "facebook": self.facebookUrl.text!, "offers": self.offers.text!, "host": self.host.text!,  "date": dateFrom, "dateEnd": date_to, "time": "lala", "timeTo": "lala", "category": self.eventCategory.text!, "image": "lala", "officialLink": "lala"] , sessionId: sessionId)
+        httpReq.createEvent(data: ["title": events.title, "text": self.eventAbout.text!, "facebook": self.facebookUrl.text!, "offers": self.offers.text!, "host": self.host.text!,  "date": dateFrom, "dateEnd": date_to, "time": "lala", "timeTo": "lala", "category": self.eventCategory.text!, "image": "lala", "officialLink": "lala"] , sessionId: user.sessionId)
         
         
     }

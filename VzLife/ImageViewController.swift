@@ -45,14 +45,17 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         
 
     }
-    
-    @IBAction func eventCreateViewButton(_ sender: Any) {
-       
+ 
+    @IBAction func goToCreationEvent(_ sender: Any) {
+        
         let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateViewController
+       
+        eventCreateView.user = user
+        //eventCreateView.user = user
         self.navigationController?.pushViewController(eventCreateView, animated: true)
-        eventCreateView.sessionId = user.sessionId
         
     }
+    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -69,8 +72,6 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         //set default Realm DB configuration
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
             schemaVersion: 4,
@@ -79,7 +80,9 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         if user.id != 0 {
             self.navigationItem.setHidesBackButton(true, animated:true)
             loginButton.isHidden = true
+            
         }
+        
         
         
         if(NetworkConnection.Connection.isConnectedToNetwork()){
@@ -171,8 +174,15 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
 extension ImageViewController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         self.events=events
-        
         collectionView.reloadData()
         
     }
+    
+    public func onDataLoaded(users: User){
+        self.user = users
+    
 }
+
+}
+
+
