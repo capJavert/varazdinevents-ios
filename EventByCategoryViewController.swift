@@ -75,7 +75,8 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
             self.navigationItem.title = searchText.uppercased()
-            self.events = try! Array(Realm().objects(Event.self))
+            let predicate = NSPredicate(format: "category = %@", category)
+            self.events = try! Array(Realm().objects(Event.self).filter(predicate))
             self.collectionView!.reloadData()
         }
     }
@@ -93,7 +94,7 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
         
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
-        let predicate = NSPredicate(format: "title CONTAINS %@", searchText)
+        let predicate = NSPredicate(format: "title CONTAINS %@ AND category = %@", searchText, category)
         self.events = try! Array(Realm().objects(Event.self).filter(predicate))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
