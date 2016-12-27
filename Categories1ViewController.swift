@@ -38,8 +38,18 @@ class CategoriesViewController: UITableViewController {
             return cell
         }
 
-        
-        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "eventsByCategories", sender: categories[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "eventsByCategories"{
+        let eventsByCategories = segue.destination as! EventByCategoryViewController
+        let sender = sender as! String
+        eventsByCategories.category = sender
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

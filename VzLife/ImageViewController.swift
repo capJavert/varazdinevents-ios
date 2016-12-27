@@ -88,9 +88,6 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             createEventButton.isEnabled = false
             createEventButton.tintColor = UIColor.clear
         }
-        
-        
-        
         if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
             webServiceDataLoader.LoadData()

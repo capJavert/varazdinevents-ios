@@ -19,7 +19,7 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
     var user = User()
-    
+    var category = ""
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var aboutView: UILabel!
@@ -27,13 +27,12 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
     
     @IBOutlet weak var moreInfoButton: EventDetailButton!
      override func viewDidLoad() {
-        viewDidLoad()
+        super.viewDidLoad()
         
-        //set default Realm DB configuration
+        
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
             schemaVersion: 4,
             migrationBlock: { migration, oldSchemaVersion in })
-        
         
         if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
@@ -43,20 +42,11 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
             dbDataLoader.LoadData()
         }
         
-        
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        /* //searchResultUpdateder informs searchBar when search is updated
-         searchBarController.searchResultsUpdater = self
-         searchBarController.dimsBackgroundDuringPresentation = false
-         //to remove search bar from other views if user change the view
-         definesPresentationContext = true
-         collectionView.*/
-        
     }
-    
     
      override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
@@ -80,20 +70,34 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
         //setting tag for unique identifing button ( because we can't know which of many buttons in collection is clicked
         cell2.moreInfoButton.tag = indexPath.item
         cell2.moreInfoButton.event = events[indexPath.item]
-       // cell2.moreInfoButton.addTarget(self, action: #selector(goToEventDetail(sender:)), for: .touchUpInside)
+        cell2.moreInfoButton.addTarget(self, action: #selector(goToEventDetail(sender:)), for: .touchUpInside)
         
         return cell2
     }
  
+    func goToEventDetail( sender: UIButton){
+        //passing Sender
+        self.performSegue(withIdentifier: "EventDetail", sender: sender)
+    }
     
-  
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //We know that sender is a button
+        if segue.identifier == "EventDetail"{
+            //casting sender to UIButton
+            let sender = sender as! EventDetailButton
+            let eventDetail = segue.destination as! EventDetailController
+            
+            eventDetail.event = sender.event
+            
+        }
+    }
 }
 
 extension EventByCategoryViewController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         self.events=events
-        
+        collectionView.reloadData()
     }
     
 }
