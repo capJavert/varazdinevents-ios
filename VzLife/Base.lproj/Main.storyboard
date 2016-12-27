@@ -149,7 +149,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="UNg-kW-GCs" style="IBUITableViewCellStyleDefault" id="dnN-Od-v46">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="UNg-kW-GCs" style="IBUITableViewCellStyleDefault" id="dnN-Od-v46">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnN-Od-v46" id="wKq-jd-le2">
@@ -288,7 +288,7 @@
                                     <action selector="goToCategories:" destination="cSh-Vj-10U" id="a2o-Gd-KCf"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="compose" id="tFH-OG-khe">
+                            <barButtonItem systemItem="add" id="tFH-OG-khe">
                                 <connections>
                                     <action selector="goToCreationEvent:" destination="cSh-Vj-10U" id="2Pv-DE-e0g"/>
                                 </connections>
@@ -327,6 +327,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CmX-IZ-J2W">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="667" id="7sY-CI-OOM"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gYL-J4-K5f">
                                     <size key="itemSize" width="328" height="182"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -335,7 +338,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventByCategoryCollectionViewCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="45" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="45" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -404,10 +407,7 @@
                             <constraint firstItem="CmX-IZ-J2W" firstAttribute="top" secondItem="U5A-ki-eNp" secondAttribute="top" id="oYg-tJ-DNa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3is-HK-HQM">
-                        <barButtonItem key="leftBarButtonItem" title="Kreiraj Event" id="5lb-Wr-uve"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="dJM-sd-hJC"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="3is-HK-HQM"/>
                     <connections>
                         <outlet property="collectionView" destination="CmX-IZ-J2W" id="CsH-vh-2a0"/>
                     </connections>

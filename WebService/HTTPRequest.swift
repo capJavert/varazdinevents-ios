@@ -53,7 +53,7 @@ public class HTTPRequest
         
         Alamofire.request(request).responseJSON { response in
                 if let json = response.result.value{
-                    //NSLog("JSON: \(json)")
+                    NSLog("JSON: \(json)")
                     self.wsResultDelegate?.getResult(json: json as AnyObject, type: "event")
                 }
         }

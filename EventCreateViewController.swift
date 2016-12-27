@@ -60,7 +60,7 @@ class EventCreateViewController: UIViewController {
         let dateFormatter2 = DateFormatter()
         
         dateFormatter.dateFormat = "dd.MM.yyyy"
-        dateFormatter2.dateFormat = "hh:mm"
+        dateFormatter2.dateFormat = "hh:mm:ss"
         
         //let stringDate = dateFormatter.string(from: date)
         //let stringDateTo = dateFormatter.string(from: dateEnd)
