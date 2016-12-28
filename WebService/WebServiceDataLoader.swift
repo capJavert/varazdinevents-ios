@@ -50,6 +50,15 @@ public class WebServiceDataLoader:DataLoader
         
         DbController.sharedDBInstance.realmAdd(o: user!)
     }
+    
+    public func bindEvent(event: Event)
+    {
+        DbController.sharedDBInstance.realm.beginWrite()
+        DbController.sharedDBInstance.realm.deleteAll()
+        try! DbController.sharedDBInstance.realm.commitWrite()
+        
+        DbController.sharedDBInstance.realmAdd(o: event)
+    }
 }
 
 extension WebServiceDataLoader: WebServiceResultDelegate{
@@ -67,7 +76,14 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
                 self.bindUser()
                 self.userLogged()
                 break
-            default: break
+            case "event":
+                let event = JsonAdapter.getEvent(json: json)
+                self.bindEvent(event: event)
+                DBDataLoader().LoadData()
+                break
+            default:
+                //not valid type
+                break
         }
     }
 
