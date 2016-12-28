@@ -101,6 +101,8 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             dbDataLoader.LoadData()
         }
         
+        //refresh option
+        self.collectionView.addSubview(self.refreshControl)
         
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
@@ -115,6 +117,21 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         
     }
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
+    
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        if(NetworkConnection.Connection.isConnectedToNetwork()){
+            webServiceDataLoader.onDataLoadedDelegate = self
+            webServiceDataLoader.LoadData()
+        }
+        
+        refreshControl.endRefreshing()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
