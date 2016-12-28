@@ -8,10 +8,10 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
-class EventDetailController: UIViewController {
+class EventDetailController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
@@ -19,6 +19,8 @@ class EventDetailController: UIViewController {
     @IBOutlet weak var categoryLabel : UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var buttonFavorite: UITabBarItem!
+    @IBOutlet weak var tabBar: UITabBar!
     
     var event: Event = Event()
     var eventInfo = [Any] ()
@@ -26,9 +28,13 @@ class EventDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        event = try! Realm().object(ofType: Event.self, forPrimaryKey: event.id)!
+        
+        tabBar.delegate = self
         scrollView.backgroundColor = UIColor.white
         
-        titleLabel.text = event.title
+        //titleLabel.text = event.title
+        self.navigationItem.title = event.title
         
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy"
@@ -63,6 +69,25 @@ class EventDetailController: UIViewController {
         imageView.kf.setImage(with: URL(string: event.image))
         textView.text = event.text.replacingOccurrences(of: "<br />", with: "\n", options: .regularExpression, range: nil)
         
+        if (event.favorite) {
+            tabBar.selectedItem = tabBar.items![0] as UITabBarItem
+        }
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let realm = try! Realm()
+        do {
+            try! realm.write() {
+                if (event.favorite) {
+                    event.favorite = false
+                    tabBar.selectedItem = nil
+                } else {
+                    event.favorite = true
+                }
+                
+                realm.add(event, update: true)
+            }
+        }
     }
     
     func openFacebookPage(sender:UITapGestureRecognizer) {
