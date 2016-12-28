@@ -11,7 +11,6 @@ import Kingfisher
 
 class EventDetailController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
@@ -28,7 +27,8 @@ class EventDetailController: UIViewController {
         
         scrollView.backgroundColor = UIColor.white
         
-        titleLabel.text = event.title
+        //titleLabel.text = event.title
+        self.navigationItem.title = event.title
         
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy"
