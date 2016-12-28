@@ -93,12 +93,14 @@
                         </subviews>
                     </scrollView>
                     <connections>
+                        <outlet property="buttonFavorite" destination="qUg-tQ-Esa" id="K57-zL-pld"/>
                         <outlet property="categoryLabel" destination="vvL-ba-kXy" id="yC2-yj-l3U"/>
                         <outlet property="dateLabel" destination="KoM-dJ-jqC" id="v2e-g4-1Sm"/>
                         <outlet property="facebookLable" destination="SHD-kY-8ch" id="FIe-Yn-nvD"/>
                         <outlet property="hostLabel" destination="i6U-9o-8Ll" id="f7e-Ud-Uog"/>
                         <outlet property="imageView" destination="CcW-5g-NR8" id="Nc8-jn-go7"/>
                         <outlet property="scrollView" destination="Vzy-3r-fjU" id="bmf-Kb-SXl"/>
+                        <outlet property="tabBar" destination="Fch-5F-dCA" id="lfJ-mU-TQ2"/>
                         <outlet property="textView" destination="xTW-Gc-O67" id="gku-X0-M7S"/>
                         <outlet property="timeLabel" destination="4vk-uq-V3m" id="ai4-9F-lHm"/>
                     </connections>
