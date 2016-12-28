@@ -22,6 +22,8 @@ class LoginCelCollectionViewCell: UICollectionViewCell {
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
         textField.keyboardType = .emailAddress
+        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
     }()
     
