@@ -29,7 +29,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var createEventButton: UIBarButtonItem!
     
     
@@ -85,12 +85,9 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         if user.id != 0 {
             self.navigationItem.setHidesBackButton(true, animated:true)
-            loginButton.isHidden = true
-            createEventButton.isEnabled = true
-           
-            
+            self.navigationItem.leftBarButtonItem = nil
         }else{
-            createEventButton.isEnabled = false
+            createEventButton.isEnabled = true
             createEventButton.tintColor = UIColor.clear
         }
         if(NetworkConnection.Connection.isConnectedToNetwork()){

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GKK-CU-l3t">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GKK-CU-l3t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -153,11 +153,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnN-Od-v46" id="wKq-jd-le2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UNg-kW-GCs">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -204,7 +204,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="ePD-Xi-2Pj" customClass="ImageCollectionViewCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="45" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="45" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -264,14 +264,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRA-Wh-uZc">
-                                <rect key="frame" x="313" y="72" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Prijava"/>
-                                <connections>
-                                    <action selector="toLooginAction:" destination="cSh-Vj-10U" eventType="touchUpInside" id="Qsv-Ax-g6f"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -283,9 +275,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="nud-kw-PBl">
                         <leftBarButtonItems>
-                            <barButtonItem systemItem="organize" id="vZQ-Vn-Kcn">
+                            <barButtonItem title="Prijava" id="xYJ-B2-y6q">
                                 <connections>
-                                    <action selector="goToCategories:" destination="cSh-Vj-10U" id="a2o-Gd-KCf"/>
+                                    <segue destination="Iaj-EK-q1C" kind="show" id="mne-V0-h9L"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="tFH-OG-khe">
@@ -294,17 +286,23 @@
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Wux-kL-6BS">
-                            <connections>
-                                <action selector="searchBarAction:" destination="cSh-Vj-10U" id="gA3-lb-e2e"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="Wux-kL-6BS">
+                                <connections>
+                                    <action selector="searchBarAction:" destination="cSh-Vj-10U" id="gA3-lb-e2e"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Kategorije" id="vZQ-Vn-Kcn">
+                                <connections>
+                                    <action selector="goToCategories:" destination="cSh-Vj-10U" id="a2o-Gd-KCf"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="sGH-Gd-zWP" id="60E-6X-Goc"/>
                         <outlet property="createEventButton" destination="tFH-OG-khe" id="L4F-qK-mLy"/>
-                        <outlet property="loginButton" destination="aRA-Wh-uZc" id="LNl-pf-Cvv"/>
-                        <segue destination="Iaj-EK-q1C" kind="show" identifier="toLogin" action="showDetailViewController:sender:" id="rVz-lq-oFg"/>
+                        <outlet property="loginButton" destination="xYJ-B2-y6q" id="mYK-LT-ADG"/>
                         <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="r9s-mS-euz"/>
                     </connections>
                 </viewController>
