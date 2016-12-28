@@ -30,12 +30,32 @@ public class DbController
         try! self.realm.commitWrite()
     }
     
-    public func realmAdd(o: Object)
+    public func realmAdd(o: Event)
     {
+        let event = try! Realm().object(ofType: Event.self, forPrimaryKey: o.id)
+        
+        if((event) != nil) {
+            if (event?.favorite)! {
+                o.favorite = true
+            }
+        }
+        
         if(!o.isInvalidated) {
             try! self.realm.write
             {
              self.realm.add(o, update: true)
+            }
+        } else {
+            NSLog("invalidated")
+        }
+    }
+    
+    public func realmAddUser(o: Object)
+    {
+        if(!o.isInvalidated) {
+            try! self.realm.write
+                {
+                    self.realm.add(o, update: true)
             }
         } else {
             NSLog("invalidated")

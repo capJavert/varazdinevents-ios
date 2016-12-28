@@ -48,7 +48,7 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realm.deleteAll()
         try! DbController.sharedDBInstance.realm.commitWrite()
         
-        DbController.sharedDBInstance.realmAdd(o: user!)
+        DbController.sharedDBInstance.realmAddUser(o: user!)
     }
     
     public func bindEvent(event: Event)
