@@ -77,8 +77,8 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
                 self.userLogged()
                 break
             case "event":
-                let event = JsonAdapter.getEvent(json: json)
-                self.bindEvent(event: event)
+                //let event = JsonAdapter.getEvent(json: json)
+                //self.bindEvent(event: event)
                 DBDataLoader().LoadData()
                 break
             default:
