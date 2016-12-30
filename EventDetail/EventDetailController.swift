@@ -14,7 +14,7 @@ class EventDetailController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var hostLabel: UILabel!
+    @IBOutlet weak var hostLabel: HostLabel!
     @IBOutlet weak var facebookLable: UILabel!
     @IBOutlet weak var categoryLabel : UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -52,17 +52,20 @@ class EventDetailController: UIViewController, UITabBarDelegate {
             timeLabel.text = "Vrijeme: " + timeFormater.string(from: date) + " - " + timeFormater.string(from: dateTo)
         }
         
+        hostLabel.host = try! Realm().object(ofType: Host.self, forPrimaryKey: event.author)!
         hostLabel.text = "Organizator: " + event.host
+        hostLabel.isUserInteractionEnabled = true
+        let hostTap = UITapGestureRecognizer(target: self, action: #selector(self.goToEventHost(sender:)))
+        hostLabel.addGestureRecognizer(hostTap)
+        
         if(event.facebook=="") {
             facebookLable.isHidden = true
         } else {
             facebookLable.text = "Facebook stranica"
         }
-        
         facebookLable.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.openFacebookPage(sender:)))
-        facebookLable.addGestureRecognizer(tap)
-
+        let facebookTap = UITapGestureRecognizer(target: self, action: #selector(self.openFacebookPage(sender:)))
+        facebookLable.addGestureRecognizer(facebookTap)
         
         categoryLabel.text = "Kategorija: " + event.category
         
@@ -92,6 +95,23 @@ class EventDetailController: UIViewController, UITabBarDelegate {
     
     func openFacebookPage(sender:UITapGestureRecognizer) {
         UIApplication.shared.open(NSURL(string: event.facebook) as! URL)
+    }
+    
+    func goToEventHost( sender: HostLabel){
+        //passing Sender
+        self.performSegue(withIdentifier: "Host", sender: hostLabel)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //We know that sender is a button
+        if segue.identifier == "Host"{
+            //casting sender to UIButton
+            let sender = sender as! HostLabel
+            let eventDetail = segue.destination as! HostController
+            
+            eventDetail.host = sender.host
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -166,8 +166,6 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
         let toCategories = self.storyboard?.instantiateViewController(withIdentifier: "categoryView") as! CategoriesViewController
         toCategories.user = user
         self.navigationController?.pushViewController(toCategories, animated: true)
-
-        
     }
     
     

@@ -23,6 +23,7 @@ public class JsonAdapter
                 event.image = subJson["image"].string!
                 event.facebook = subJson["facebook"].string!
                 event.category = subJson["category"].string!
+                event.author = subJson["author"].int!
                 //event.offers = subJson["offers"].string!
                 events.append(event)
             } }
@@ -67,5 +68,29 @@ public class JsonAdapter
             
         }
         return user
+    }
+    
+    public static func getHosts(json: AnyObject) -> Array<Host>
+    {
+        var hosts = [Host]()
+        let jsonEvents = JSON(json)
+        let items = jsonEvents["items"]
+        let itemsString = String(describing: items)
+        if let dataFromString = itemsString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            let json2 = JSON(data: dataFromString)
+            for (_, subJson) in json2 {
+                let host:Host = Host()
+                host.id = subJson["id"].int!
+                host.name = subJson["name"].string!
+                host.address = subJson["address"].string!
+                host.phone = subJson["phone"].string!
+                host.work_hours = subJson["work_hours"].string!
+                host.facebook = subJson["facebook"].string!
+                host.website = subJson["website"].string!
+                host.about = subJson["about"].string!
+                host.image = subJson["image"].string!
+                hosts.append(host)
+            } }
+        return hosts
     }
 }

@@ -30,7 +30,23 @@ public class DbController
         try! self.realm.commitWrite()
     }
     
-    public func realmAdd(o: Event)
+    public func realmDeleteHosts(notThese: Array<Int>) {
+        var filterString = ""
+        for id in notThese {
+            if(filterString != "") {
+                filterString += " AND "
+            }
+            filterString += ("id != "+String(id))
+        }
+        
+        let items = self.realm.objects(Host.self).filter(filterString)
+        
+        self.realm.beginWrite()
+        self.realm.delete(items)
+        try! self.realm.commitWrite()
+    }
+    
+    public func realmAddEvent(o: Event)
     {
         let event = try! Realm().object(ofType: Event.self, forPrimaryKey: o.id)
         
@@ -50,7 +66,7 @@ public class DbController
         }
     }
     
-    public func realmAddUser(o: Object)
+    public func realmAdd(o: Object)
     {
         if(!o.isInvalidated) {
             try! self.realm.write

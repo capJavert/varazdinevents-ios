@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		681603E51E0DE605000EED21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 681603E41E0DE605000EED21 /* GoogleService-Info.plist */; };
+		689A55191E15DA2600CEE356 /* HostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A55181E15DA2600CEE356 /* HostController.swift */; };
+		689A551D1E15F8BA00CEE356 /* HostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A551C1E15F8BA00CEE356 /* HostLabel.swift */; };
+		689A551F1E15FB0200CEE356 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A551E1E15FB0200CEE356 /* Host.swift */; };
 		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
 		68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */; };
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
@@ -59,6 +62,9 @@
 
 /* Begin PBXFileReference section */
 		681603E41E0DE605000EED21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		689A55181E15DA2600CEE356 /* HostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostController.swift; sourceTree = "<group>"; };
+		689A551C1E15F8BA00CEE356 /* HostLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostLabel.swift; sourceTree = "<group>"; };
+		689A551E1E15FB0200CEE356 /* Host.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
 		68FADAF51DF48E87000A858E /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailButton.swift; sourceTree = "<group>"; };
 		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			children = (
 				68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */,
 				68FADAF51DF48E87000A858E /* EventDetailController.swift */,
+				689A551C1E15F8BA00CEE356 /* HostLabel.swift */,
 			);
 			path = EventDetail;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 				E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */,
 				E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */,
 				E49D22C31DF3193D00E3B98B /* Extensions.swift */,
+				689A55181E15DA2600CEE356 /* HostController.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 				E4A962F71DE42EA100BCF470 /* User.swift */,
 				E4A963031DE4637F00BCF470 /* DbController.swift */,
 				E4A963071DE4E67600BCF470 /* DbDataLoader.swift */,
+				689A551E1E15FB0200CEE356 /* Host.swift */,
 			);
 			path = Db;
 			sourceTree = "<group>";
@@ -457,6 +466,7 @@
 			files = (
 				E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */,
 				E4A962F91DE42EA100BCF470 /* EventCategory.swift in Sources */,
+				689A55191E15DA2600CEE356 /* HostController.swift in Sources */,
 				E476B0171E114E96004B2D72 /* EventCreateViewController.swift in Sources */,
 				E45FB09D1DEB3E7A00056445 /* ImageCollectionViewCell.swift in Sources */,
 				E469CC441DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift in Sources */,
@@ -469,6 +479,7 @@
 				E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */,
 				E4DB146D1E12A3BE00F0CB10 /* Categories1ViewController.swift in Sources */,
 				68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */,
+				689A551D1E15F8BA00CEE356 /* HostLabel.swift in Sources */,
 				E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */,
 				E45FB0A11DEB3F6A00056445 /* ImageViewController.swift in Sources */,
 				E469CC421DEE0BCD00DDDB38 /* LogInViewController.swift in Sources */,
@@ -477,6 +488,7 @@
 				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
 				E4DB14711E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift in Sources */,
 				E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */,
+				689A551F1E15FB0200CEE356 /* Host.swift in Sources */,
 				E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */,
 				E4DB146F1E12D7D500F0CB10 /* EventByCategoryViewController.swift in Sources */,
 			);

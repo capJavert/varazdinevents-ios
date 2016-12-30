@@ -11,6 +11,7 @@ public class WebServiceDataLoader:DataLoader
     
     public override func LoadData() {
         httpRequest.wsResultDelegate = self
+        httpRequest.requestHosts()
         httpRequest.requestEvents()
     }
     
@@ -35,11 +36,26 @@ public class WebServiceDataLoader:DataLoader
         var notThese = [Int] ()
         for event in events!
         {
-            DbController.sharedDBInstance.realmAdd(o: event)
+            DbController.sharedDBInstance.realmAddEvent(o: event)
             notThese.append(event.id)
         }
         
         DbController.sharedDBInstance.realmDeleteEvents(notThese: notThese)
+    }
+    
+    public func bindHosts(hosts: Array<Host>)
+    {
+        DbController.sharedDBInstance.realm.beginWrite()
+        try! DbController.sharedDBInstance.realm.commitWrite()
+        
+        var notThese = [Int] ()
+        for host in hosts
+        {
+            DbController.sharedDBInstance.realmAdd(o: host)
+            notThese.append(host.id)
+        }
+        
+        DbController.sharedDBInstance.realmDeleteHosts(notThese: notThese)
     }
     
     public func bindUser()
@@ -48,7 +64,7 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realm.deleteAll()
         try! DbController.sharedDBInstance.realm.commitWrite()
         
-        DbController.sharedDBInstance.realmAddUser(o: user!)
+        DbController.sharedDBInstance.realmAdd(o: user!)
     }
     
     public func bindEvent(event: Event)
@@ -72,7 +88,6 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
             case "user":
                 self.user = JsonAdapter.getUser(json: json)
                 self.userLoaded = true
-                
                 self.bindUser()
                 self.userLogged()
                 break
@@ -80,6 +95,10 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
                 //let event = JsonAdapter.getEvent(json: json)
                 //self.bindEvent(event: event)
                 DBDataLoader().LoadData()
+                break
+            case "hosts":
+                let hosts = JsonAdapter.getHosts(json: json)
+                self.bindHosts(hosts: hosts)
                 break
             default:
                 //not valid type
