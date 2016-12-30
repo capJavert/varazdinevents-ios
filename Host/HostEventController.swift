@@ -3,7 +3,7 @@ import RealmSwift
 import Kingfisher
 import Realm
 
-class HostController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
+class HostEventController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
     
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
@@ -23,6 +23,8 @@ class HostController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let predicate = NSPredicate(format: "author = %@", argumentArray: [host.id])
         self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        
+        self.navigationItem.title = "Događanja "+host.name
         
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
@@ -50,7 +52,7 @@ class HostController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
-            self.navigationItem.title = searchText.uppercased()
+            self.navigationItem.title = "Događanja "+host.name
             let predicate = NSPredicate(format: "author = %@", argumentArray: [host.id])
             self.events = try! Array(Realm().objects(Event.self).filter(predicate))
             self.collectionView!.reloadData()
