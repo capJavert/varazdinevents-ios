@@ -423,6 +423,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="CmX-IZ-J2W" id="CsH-vh-2a0"/>
+                        <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="6Xx-GE-c4z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QQ-nX-vkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -698,6 +699,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="UND-Mb-3aX" id="OAG-kO-LGQ"/>
+                        <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="NC6-dR-p2e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6N-qb-wvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -705,4 +707,7 @@
             <point key="canvasLocation" x="2362" y="-9"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NC6-dR-p2e"/>
+    </inferredMetricsTieBreakers>
 </document>
