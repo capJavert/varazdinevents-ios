@@ -14,7 +14,7 @@ import Realm
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
-class EventByCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
+class EventCategoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
    
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
@@ -23,13 +23,13 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
     var searchBarController: UISearchController!
     var searchText: String = ""
     var category = ""
-    @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var aboutView: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var moreInfoButton: EventDetailButton!
-     override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         
@@ -105,9 +105,8 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
     //Second method we needed is for every cell specifing the properties of it
     // This method is generating cell object and returns it with all properties we need it
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell2", for: indexPath) as! EventByCategoryCollectionViewCell
+        let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell2", for: indexPath) as! EventCategoryCollectionCell
         cell2.aboutView.text = events[indexPath.item].title
-        
         cell2.imageView.kf.setImage(with: URL(string: events[indexPath.item].image))
         //setting tag for unique identifing button ( because we can't know which of many buttons in collection is clicked
         cell2.moreInfoButton.tag = indexPath.item
@@ -136,7 +135,7 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
     }
 }
 
-extension EventByCategoryViewController: OnDataLoadedDelegate {
+extension EventCategoryController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         //dve linije would hit that
         let predicate = NSPredicate(format: "category = %@", category)

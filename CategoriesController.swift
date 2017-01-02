@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoriesViewController: UITableViewController, UISearchBarDelegate {
+class CategoriesController: UITableViewController, UISearchBarDelegate {
 
     let categories = ["Kazalište i film", "Slušaona", "Svirka", "Volontiranje", " Tečaj", "Predavanje", "Party","Ostalo","Arhiva događaja"]
     var filteredCategories = [String]()
@@ -39,7 +39,7 @@ class CategoriesViewController: UITableViewController, UISearchBarDelegate {
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-     return 1
+        return 1
      }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -87,7 +87,7 @@ class CategoriesViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "eventsByCategories"{
-        let eventsByCategories = segue.destination as! EventByCategoryViewController
+        let eventsByCategories = segue.destination as! EventCategoryController
         let sender = sender as! String
         eventsByCategories.category = sender
         }
@@ -100,15 +100,5 @@ class CategoriesViewController: UITableViewController, UISearchBarDelegate {
         searchBar.endEditing(true)
         self.tableView.reloadData()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

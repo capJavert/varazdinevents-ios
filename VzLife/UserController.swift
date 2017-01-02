@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LogInViewController: UIViewController, UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class UserController: UIViewController, UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     let loginCellId = "loginCellId"
     var user = User()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
-    var loginCell: LoginCelCollectionViewCell?
+    var loginCell: UserCellCollectionCell?
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -88,7 +88,7 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
     
     fileprivate func registerCells() {
         //...
-        collectionView.register(LoginCelCollectionViewCell.self, forCellWithReuseIdentifier: loginCellId)
+        collectionView.register(UserCellCollectionCell.self, forCellWithReuseIdentifier: loginCellId)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -97,30 +97,12 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCelCollectionViewCell
+        let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! UserCellCollectionCell
         loginCell.loginController = self
         return loginCell
         
     }
-    
-    
-    /*@IBAction func loginAction(sender: AnyObject){
-        
-        if emailTextField.text?.characters.count == nil {
-        
-            let alert = UIAlertView(title: "Greška", message: "Email mora biti upisan",delegate: self, cancelButtonTitle: "U redu")
-            alert.show()
-            
-        }else if passwordField.text?.characters.count == nil {
-        
-            let alert = UIAlertView(title: "Greška", message: "Lozinka mora biti upisana",delegate: self, cancelButtonTitle: "U redu")
-            alert.show()
-        
-        }else{
-            let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 150, height: 150)) as UIActivityIndicatorView
-            spinner.startAnimating()
-        }*/
-  
+
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
@@ -128,11 +110,11 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
 
 }
 
-extension LogInViewController: OnUserLoggedDelegate {
+extension UserController: OnUserLoggedDelegate {
     public func onUserLogged(user: User) {
          self.user=user
         
-        let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! ImageViewController
+        let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventViewController
         eventsView.user = user
         self.navigationController?.pushViewController(eventsView, animated: true)
 

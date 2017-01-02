@@ -13,7 +13,7 @@ import Kingfisher
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
-class ImageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+class EventViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     struct eventObject{
         var about: String
         var imageUrl: String
@@ -56,9 +56,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBAction func goToCreationEvent(_ sender: Any) {
         
         let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateViewController
-       
         eventCreateView.user = user
-        //eventCreateView.user = user
         self.navigationController?.pushViewController(eventCreateView, animated: true)
         
     }
@@ -101,17 +99,9 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             dbDataLoader.LoadData()
         }
         
-        
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        /* //searchResultUpdateder informs searchBar when search is updated
-         searchBarController.searchResultsUpdater = self
-         searchBarController.dimsBackgroundDuringPresentation = false
-         //to remove search bar from other views if user change the view
-         definesPresentationContext = true
-         collectionView.*/
         
     }
     
@@ -131,7 +121,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     //Second method we needed is for every cell specifing the properties of it
     // This method is generating cell object and returns it with all properties we need it
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! ImageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionViewCell
         cell.aboutView.text = events[indexPath.item].title
         cell.imageView.kf.setImage(with: URL(string: events[indexPath.item].image))
         //setting tag for unique identifing button ( because we can't know which of many buttons in collection is clicked
@@ -149,7 +139,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBAction func goToCategories(_ sender: Any) {
         
-        let toCategories = self.storyboard?.instantiateViewController(withIdentifier: "categoryView") as! CategoriesViewController
+        let toCategories = self.storyboard?.instantiateViewController(withIdentifier: "categoryView") as! CategoriesController
         toCategories.user = user
         self.navigationController?.pushViewController(toCategories, animated: true)
 
@@ -163,7 +153,6 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
             //casting sender to UIButton
             let sender = sender as! EventDetailButton
             let eventDetail = segue.destination as! EventDetailController
-            
             eventDetail.event = sender.event
             
         }
@@ -171,23 +160,13 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBAction func toLooginAction(_ sender: Any) {
         
-        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView") as! LogInViewController
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView") as! UserController
         self.navigationController?.pushViewController(loginView, animated: true)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
-extension ImageViewController: OnDataLoadedDelegate {
+extension EventViewController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         self.events=events
         collectionView.reloadData()
@@ -195,8 +174,7 @@ extension ImageViewController: OnDataLoadedDelegate {
     
     public func onDataLoaded(users: User){
         self.user = users
-    
-}
+    }
 
 }
 

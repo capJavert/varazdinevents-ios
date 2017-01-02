@@ -1,17 +1,16 @@
 //
-//  EventByCategoryCollectionViewCell.swift
+//  ImageCollectionViewCell.swift
 //  VzLife
 //
-//  Created by FOI on 27/12/16.
+//  Created by FOI on 27/11/16.
 //  Copyright © 2016 varazdinevents. All rights reserved.
 //
 
 import UIKit
 
-class EventByCategoryCollectionViewCell: UICollectionViewCell {
-
+class EventCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var aboutView: UILabel!
     @IBOutlet weak var moreInfoButton: EventDetailButton!
 }
-

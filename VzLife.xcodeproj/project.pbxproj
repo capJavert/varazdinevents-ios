@@ -11,10 +11,10 @@
 		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
 		68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */; };
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
-		E45FB09D1DEB3E7A00056445 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */; };
-		E45FB0A11DEB3F6A00056445 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */; };
-		E469CC421DEE0BCD00DDDB38 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC411DEE0BCD00DDDB38 /* LogInViewController.swift */; };
-		E469CC441DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */; };
+		E45FB09D1DEB3E7A00056445 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* EventCollectionViewCell.swift */; };
+		E45FB0A11DEB3F6A00056445 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* EventViewController.swift */; };
+		E469CC421DEE0BCD00DDDB38 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC411DEE0BCD00DDDB38 /* UserController.swift */; };
+		E469CC441DEF80DB00DDDB38 /* UserCellCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC431DEF80DB00DDDB38 /* UserCellCollectionCell.swift */; };
 		E476B0171E114E96004B2D72 /* EventCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476B0161E114E96004B2D72 /* EventCreateViewController.swift */; };
 		E49D22C21DF3186F00E3B98B /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */; };
 		E49D22C41DF3193D00E3B98B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D22C31DF3193D00E3B98B /* Extensions.swift */; };
@@ -35,9 +35,9 @@
 		E4A963041DE4637F00BCF470 /* DbController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963031DE4637F00BCF470 /* DbController.swift */; };
 		E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963051DE4E37100BCF470 /* NetworkConnection.swift */; };
 		E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A963071DE4E67600BCF470 /* DbDataLoader.swift */; };
-		E4DB146D1E12A3BE00F0CB10 /* Categories1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146C1E12A3BE00F0CB10 /* Categories1ViewController.swift */; };
-		E4DB146F1E12D7D500F0CB10 /* EventByCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146E1E12D7D500F0CB10 /* EventByCategoryViewController.swift */; };
-		E4DB14711E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB14701E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift */; };
+		E4DB146D1E12A3BE00F0CB10 /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146C1E12A3BE00F0CB10 /* CategoriesController.swift */; };
+		E4DB146F1E12D7D500F0CB10 /* EventCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146E1E12D7D500F0CB10 /* EventCategoryController.swift */; };
+		E4DB14711E12DB4C00F0CB10 /* EventCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB14701E12DB4C00F0CB10 /* EventCategoryCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,13 +63,13 @@
 		68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailButton.swift; sourceTree = "<group>"; };
 		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
 		9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VzLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		E469CC411DEE0BCD00DDDB38 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCelCollectionViewCell.swift; sourceTree = "<group>"; };
+		E45FB09C1DEB3E7A00056445 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		E45FB0A01DEB3F6A00056445 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		E469CC411DEE0BCD00DDDB38 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = ../VzLife/UserController.swift; sourceTree = "<group>"; };
+		E469CC431DEF80DB00DDDB38 /* UserCellCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCellCollectionCell.swift; path = ../VzLife/UserCellCollectionCell.swift; sourceTree = "<group>"; };
 		E476B0161E114E96004B2D72 /* EventCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreateViewController.swift; sourceTree = "<group>"; };
-		E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
-		E49D22C31DF3193D00E3B98B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftPaddedTextField.swift; path = ../VzLife/LeftPaddedTextField.swift; sourceTree = "<group>"; };
+		E49D22C31DF3193D00E3B98B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../VzLife/Extensions.swift; sourceTree = "<group>"; };
 		E4A962BC1DE42BE400BCF470 /* VzLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VzLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4A962C41DE42BE400BCF470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,9 +93,9 @@
 		E4A963031DE4637F00BCF470 /* DbController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbController.swift; sourceTree = "<group>"; };
 		E4A963051DE4E37100BCF470 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		E4A963071DE4E67600BCF470 /* DbDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbDataLoader.swift; sourceTree = "<group>"; };
-		E4DB146C1E12A3BE00F0CB10 /* Categories1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories1ViewController.swift; sourceTree = "<group>"; };
-		E4DB146E1E12D7D500F0CB10 /* EventByCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventByCategoryViewController.swift; sourceTree = "<group>"; };
-		E4DB14701E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventByCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4DB146C1E12A3BE00F0CB10 /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = SOURCE_ROOT; };
+		E4DB146E1E12D7D500F0CB10 /* EventCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCategoryController.swift; path = ../EventCategoryController.swift; sourceTree = "<group>"; };
+		E4DB14701E12DB4C00F0CB10 /* EventCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCategoryCollectionCell.swift; path = ../EventCategoryCollectionCell.swift; sourceTree = "<group>"; };
 		F0CD8825CA3BDDF4C94ACC1F /* Pods-VzLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +151,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E4062F601E1ADE7900364A8D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E4DB146C1E12A3BE00F0CB10 /* CategoriesController.swift */,
+				E4DB146E1E12D7D500F0CB10 /* EventCategoryController.swift */,
+				E4DB14701E12DB4C00F0CB10 /* EventCategoryCollectionCell.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E4062F641E1ADFFB00364A8D /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				E469CC411DEE0BCD00DDDB38 /* UserController.swift */,
+				E469CC431DEF80DB00DDDB38 /* UserCellCollectionCell.swift */,
+				E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */,
+				E49D22C31DF3193D00E3B98B /* Extensions.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
 		E4609D5E1E109AEF00889BFB /* EventCreate */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +183,8 @@
 		E4A962B31DE42BE400BCF470 = {
 			isa = PBXGroup;
 			children = (
-				E4DB14691E11A0E000F0CB10 /* Categories */,
+				E4062F641E1ADFFB00364A8D /* LogIn */,
+				E4062F601E1ADE7900364A8D /* Categories */,
 				E4609D5E1E109AEF00889BFB /* EventCreate */,
 				683A87D91DF48991006D16EF /* EventDetail */,
 				E4A962F41DE42E5900BCF470 /* Db */,
@@ -190,6 +212,8 @@
 		E4A962BE1DE42BE400BCF470 /* VzLife */ = {
 			isa = PBXGroup;
 			children = (
+				E45FB09C1DEB3E7A00056445 /* EventCollectionViewCell.swift */,
+				E45FB0A01DEB3F6A00056445 /* EventViewController.swift */,
 				681603E41E0DE605000EED21 /* GoogleService-Info.plist */,
 				E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */,
 				E4A962C31DE42BE400BCF470 /* Main.storyboard */,
@@ -197,12 +221,6 @@
 				E4A962CB1DE42BE500BCF470 /* LaunchScreen.storyboard */,
 				E4A962CE1DE42BE500BCF470 /* Info.plist */,
 				E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */,
-				E45FB09C1DEB3E7A00056445 /* ImageCollectionViewCell.swift */,
-				E45FB0A01DEB3F6A00056445 /* ImageViewController.swift */,
-				E469CC411DEE0BCD00DDDB38 /* LogInViewController.swift */,
-				E469CC431DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift */,
-				E49D22C11DF3186F00E3B98B /* LeftPaddedTextField.swift */,
-				E49D22C31DF3193D00E3B98B /* Extensions.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
@@ -254,16 +272,6 @@
 				E4A963071DE4E67600BCF470 /* DbDataLoader.swift */,
 			);
 			path = Db;
-			sourceTree = "<group>";
-		};
-		E4DB14691E11A0E000F0CB10 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				E4DB146C1E12A3BE00F0CB10 /* Categories1ViewController.swift */,
-				E4DB146E1E12D7D500F0CB10 /* EventByCategoryViewController.swift */,
-				E4DB14701E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,8 +466,8 @@
 				E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */,
 				E4A962F91DE42EA100BCF470 /* EventCategory.swift in Sources */,
 				E476B0171E114E96004B2D72 /* EventCreateViewController.swift in Sources */,
-				E45FB09D1DEB3E7A00056445 /* ImageCollectionViewCell.swift in Sources */,
-				E469CC441DEF80DB00DDDB38 /* LoginCelCollectionViewCell.swift in Sources */,
+				E45FB09D1DEB3E7A00056445 /* EventCollectionViewCell.swift in Sources */,
+				E469CC441DEF80DB00DDDB38 /* UserCellCollectionCell.swift in Sources */,
 				E4A963021DE45CFE00BCF470 /* WebServiceDataLoader.swift in Sources */,
 				E4A963001DE435DB00BCF470 /* JsonAdapter.swift in Sources */,
 				E49D22C41DF3193D00E3B98B /* Extensions.swift in Sources */,
@@ -467,18 +475,18 @@
 				E4A962FA1DE42EA100BCF470 /* User.swift in Sources */,
 				E4A963041DE4637F00BCF470 /* DbController.swift in Sources */,
 				E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */,
-				E4DB146D1E12A3BE00F0CB10 /* Categories1ViewController.swift in Sources */,
+				E4DB146D1E12A3BE00F0CB10 /* CategoriesController.swift in Sources */,
 				68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */,
 				E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */,
-				E45FB0A11DEB3F6A00056445 /* ImageViewController.swift in Sources */,
-				E469CC421DEE0BCD00DDDB38 /* LogInViewController.swift in Sources */,
+				E45FB0A11DEB3F6A00056445 /* EventViewController.swift in Sources */,
+				E469CC421DEE0BCD00DDDB38 /* UserController.swift in Sources */,
 				68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */,
 				E49D22C21DF3186F00E3B98B /* LeftPaddedTextField.swift in Sources */,
 				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
-				E4DB14711E12DB4C00F0CB10 /* EventByCategoryCollectionViewCell.swift in Sources */,
+				E4DB14711E12DB4C00F0CB10 /* EventCategoryCollectionCell.swift in Sources */,
 				E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */,
 				E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */,
-				E4DB146F1E12D7D500F0CB10 /* EventByCategoryViewController.swift in Sources */,
+				E4DB146F1E12D7D500F0CB10 /* EventCategoryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginCelCollectionViewCell: UICollectionViewCell {
+class UserCellCollectionCell: UICollectionViewCell {
 
     let logoImageView: UIImageView = {
         let image = UIImage(named: "logo")
@@ -45,7 +45,7 @@ class LoginCelCollectionViewCell: UICollectionViewCell {
         return button
     }()
     // ? -> means optional, cuz' you want to initialize it as nil
-    var loginController: LogInViewController?
+    var loginController: UserController?
     
     func logIn(){
         
@@ -73,12 +73,8 @@ class LoginCelCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-}
+    }
     
     
-   
-    
-    
-    
-    
+
 }
