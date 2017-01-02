@@ -83,7 +83,7 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
     //Second method we needed is for every cell specifing the properties of it
     // This method is generating cell object and returns it with all properties we need it
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell2", for: indexPath) as! ImageCollectionViewCell
+        let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell2", for: indexPath) as! EventCell
         cell2.aboutView.text = events[indexPath.item].title
         
         cell2.imageView.kf.setImage(with: URL(string: events[indexPath.item].image))

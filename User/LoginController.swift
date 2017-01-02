@@ -132,7 +132,7 @@ extension LoginController: OnUserLoggedDelegate {
     public func onUserLogged(user: User) {
          self.user=user
         
-        let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! ImageViewController
+        let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
         eventsView.user = user
         self.navigationController?.pushViewController(eventsView, animated: true)
 
