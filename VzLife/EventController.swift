@@ -13,7 +13,7 @@ import Kingfisher
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
-class EventViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+class EventController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     struct eventObject{
         var about: String
         var imageUrl: String
@@ -121,7 +121,7 @@ class EventViewController: UIViewController, UICollectionViewDataSource, UIColle
     //Second method we needed is for every cell specifing the properties of it
     // This method is generating cell object and returns it with all properties we need it
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionCell
         cell.aboutView.text = events[indexPath.item].title
         cell.imageView.kf.setImage(with: URL(string: events[indexPath.item].image))
         //setting tag for unique identifing button ( because we can't know which of many buttons in collection is clicked
@@ -166,7 +166,7 @@ class EventViewController: UIViewController, UICollectionViewDataSource, UIColle
     
 }
 
-extension EventViewController: OnDataLoadedDelegate {
+extension EventController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         self.events=events
         collectionView.reloadData()

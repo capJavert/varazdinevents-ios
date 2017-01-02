@@ -11,8 +11,8 @@
 		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
 		68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */; };
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
-		E45FB09D1DEB3E7A00056445 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* EventCollectionViewCell.swift */; };
-		E45FB0A11DEB3F6A00056445 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* EventViewController.swift */; };
+		E45FB09D1DEB3E7A00056445 /* EventCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* EventCollectionCell.swift */; };
+		E45FB0A11DEB3F6A00056445 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* EventController.swift */; };
 		E469CC421DEE0BCD00DDDB38 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC411DEE0BCD00DDDB38 /* UserController.swift */; };
 		E469CC441DEF80DB00DDDB38 /* UserCellCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469CC431DEF80DB00DDDB38 /* UserCellCollectionCell.swift */; };
 		E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476B0161E114E96004B2D72 /* EventCreateController.swift */; };
@@ -63,8 +63,8 @@
 		68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailButton.swift; sourceTree = "<group>"; };
 		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
 		9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VzLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E45FB09C1DEB3E7A00056445 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
-		E45FB0A01DEB3F6A00056445 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		E45FB09C1DEB3E7A00056445 /* EventCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionCell.swift; sourceTree = "<group>"; };
+		E45FB0A01DEB3F6A00056445 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		E469CC411DEE0BCD00DDDB38 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = ../VzLife/UserController.swift; sourceTree = "<group>"; };
 		E469CC431DEF80DB00DDDB38 /* UserCellCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCellCollectionCell.swift; path = ../VzLife/UserCellCollectionCell.swift; sourceTree = "<group>"; };
 		E476B0161E114E96004B2D72 /* EventCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreateController.swift; sourceTree = "<group>"; };
@@ -212,8 +212,8 @@
 		E4A962BE1DE42BE400BCF470 /* VzLife */ = {
 			isa = PBXGroup;
 			children = (
-				E45FB09C1DEB3E7A00056445 /* EventCollectionViewCell.swift */,
-				E45FB0A01DEB3F6A00056445 /* EventViewController.swift */,
+				E45FB09C1DEB3E7A00056445 /* EventCollectionCell.swift */,
+				E45FB0A01DEB3F6A00056445 /* EventController.swift */,
 				681603E41E0DE605000EED21 /* GoogleService-Info.plist */,
 				E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */,
 				E4A962C31DE42BE400BCF470 /* Main.storyboard */,
@@ -466,7 +466,7 @@
 				E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */,
 				E4A962F91DE42EA100BCF470 /* EventCategory.swift in Sources */,
 				E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */,
-				E45FB09D1DEB3E7A00056445 /* EventCollectionViewCell.swift in Sources */,
+				E45FB09D1DEB3E7A00056445 /* EventCollectionCell.swift in Sources */,
 				E469CC441DEF80DB00DDDB38 /* UserCellCollectionCell.swift in Sources */,
 				E4A963021DE45CFE00BCF470 /* WebServiceDataLoader.swift in Sources */,
 				E4A963001DE435DB00BCF470 /* JsonAdapter.swift in Sources */,
@@ -478,7 +478,7 @@
 				E4DB146D1E12A3BE00F0CB10 /* CategoriesController.swift in Sources */,
 				68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */,
 				E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */,
-				E45FB0A11DEB3F6A00056445 /* EventViewController.swift in Sources */,
+				E45FB0A11DEB3F6A00056445 /* EventController.swift in Sources */,
 				E469CC421DEE0BCD00DDDB38 /* UserController.swift in Sources */,
 				68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */,
 				E49D22C21DF3186F00E3B98B /* LeftPaddedTextField.swift in Sources */,
