@@ -55,7 +55,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBAction func goToCreationEvent(_ sender: Any) {
         
-        let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateViewController
+        let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateController
        
         eventCreateView.user = user
         //eventCreateView.user = user
@@ -163,7 +163,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBAction func goToCategories(_ sender: Any) {
         
-        let toCategories = self.storyboard?.instantiateViewController(withIdentifier: "categoryView") as! CategoriesViewController
+        let toCategories = self.storyboard?.instantiateViewController(withIdentifier: "categoryView") as! CategoryController
         toCategories.user = user
         self.navigationController?.pushViewController(toCategories, animated: true)
     }

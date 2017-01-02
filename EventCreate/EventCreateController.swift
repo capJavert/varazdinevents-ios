@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventCreateViewController: UIViewController {
+class EventCreateController: UIViewController {
 
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var eventAbout: UITextField!

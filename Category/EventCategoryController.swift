@@ -1,20 +1,10 @@
-//
-
-//  VzLife
-//
-//  Created by FOI on 27/11/16.
-//  Copyright © 2016 varazdinevents. All rights reserved.
-//
-
 import UIKit
 import RealmSwift
 import Kingfisher
 import Realm
 
-//Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
-
-class EventByCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
+class EventCategoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
    
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
@@ -105,7 +95,7 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
     //Second method we needed is for every cell specifing the properties of it
     // This method is generating cell object and returns it with all properties we need it
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell2", for: indexPath) as! EventByCategoryCollectionViewCell
+        let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell2", for: indexPath) as! EventCategoryCell
         cell2.aboutView.text = events[indexPath.item].title
         
         cell2.imageView.kf.setImage(with: URL(string: events[indexPath.item].image))
@@ -136,7 +126,7 @@ class EventByCategoryViewController: UIViewController, UICollectionViewDelegate,
     }
 }
 
-extension EventByCategoryViewController: OnDataLoadedDelegate {
+extension EventCategoryController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         //dve linije would hit that
         let predicate = NSPredicate(format: "category = %@", category)
