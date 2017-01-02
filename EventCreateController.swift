@@ -1,5 +1,5 @@
 //
-//  EventCreateViewController.swift
+//  EventCreateController.swift
 //  VzLife
 //
 //  Created by FOI on 26/12/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventCreateViewController: UIViewController {
+class EventCreateController: UIViewController {
 
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var eventAbout: UITextField!

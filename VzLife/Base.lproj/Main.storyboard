@@ -422,10 +422,10 @@
             </objects>
             <point key="canvasLocation" x="975" y="1890"/>
         </scene>
-        <!--Event Create View Controller-->
+        <!--Event Create Controller-->
         <scene sceneID="Wg8-Nd-5t1">
             <objects>
-                <viewController storyboardIdentifier="eventCreate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qZ1-rc-dDT" customClass="EventCreateViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventCreate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qZ1-rc-dDT" customClass="EventCreateController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vR8-aZ-uPD"/>
                         <viewControllerLayoutGuide type="bottom" id="8uy-MM-227"/>

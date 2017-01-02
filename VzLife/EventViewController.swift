@@ -55,7 +55,7 @@ class EventViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBAction func goToCreationEvent(_ sender: Any) {
         
-        let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateViewController
+        let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateController
         eventCreateView.user = user
         self.navigationController?.pushViewController(eventCreateView, animated: true)
         
