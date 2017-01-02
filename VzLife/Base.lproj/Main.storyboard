@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="1293.5999999999999" y="246.9265367316342"/>
         </scene>
-        <!--User View Controller-->
+        <!--User Controller-->
         <scene sceneID="Qs0-9d-fN6">
             <objects>
-                <viewController storyboardIdentifier="loginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iaj-EK-q1C" customClass="UserViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iaj-EK-q1C" customClass="UserController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QUL-sK-her"/>
                         <viewControllerLayoutGuide type="bottom" id="ctq-en-23B"/>
@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="-708" y="511"/>
         </scene>
-        <!--Categories View Controller-->
+        <!--Categories Controller-->
         <scene sceneID="BQK-bA-GzY">
             <objects>
-                <tableViewController storyboardIdentifier="categoryView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZSD-zG-x6p" customClass="CategoriesViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="categoryView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZSD-zG-x6p" customClass="CategoriesController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Plw-jK-C0y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="-8" y="1872"/>
         </scene>
-        <!--Event View Controller-->
+        <!--Event Controller-->
         <scene sceneID="O8L-PH-Pux">
             <objects>
-                <viewController storyboardIdentifier="eventsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSh-Vj-10U" customClass="EventViewController" customModule="VzLife" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSh-Vj-10U" customClass="EventController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cxO-fY-WVR"/>
                         <viewControllerLayoutGuide type="bottom" id="NlZ-vp-ci3"/>
@@ -312,10 +312,10 @@
             </objects>
             <point key="canvasLocation" x="295" y="982"/>
         </scene>
-        <!--Event By Category View Controller-->
+        <!--Event Category Controller-->
         <scene sceneID="X0L-79-czA">
             <objects>
-                <viewController storyboardIdentifier="eventsByCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oc9-r2-t5s" customClass="EventByCategoryViewController" customModule="VzLife" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsByCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oc9-r2-t5s" customClass="EventCategoryController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vhi-Kq-81J"/>
                         <viewControllerLayoutGuide type="bottom" id="YHk-Bx-6C0"/>
@@ -337,7 +337,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventByCategoryCollectionViewCell" customModule="VzLife">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventCategoryCollectionCell" customModule="VzLife">
                                         <rect key="frame" x="23.5" y="45" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
