@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,8 +15,8 @@
             <objects>
                 <viewController storyboardIdentifier="EventDetail" id="Me0-ob-IT0" customClass="EventDetailController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0Kr-fz-S8b"/>
-                        <viewControllerLayoutGuide type="bottom" id="LE3-Fu-aIL"/>
+                        <viewControllerLayoutGuide type="top" id="XL0-Kf-GXP"/>
+                        <viewControllerLayoutGuide type="bottom" id="cc9-nY-Szg"/>
                     </layoutGuides>
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="Vzy-3r-fjU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -92,6 +90,7 @@
                             </imageView>
                         </subviews>
                     </scrollView>
+                    <navigationItem key="navigationItem" id="OMr-rn-3Ct"/>
                     <connections>
                         <outlet property="buttonFavorite" destination="qUg-tQ-Esa" id="K57-zL-pld"/>
                         <outlet property="categoryLabel" destination="vvL-ba-kXy" id="yC2-yj-l3U"/>
@@ -108,15 +107,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edf-Ia-Au1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="208"/>
+            <point key="canvasLocation" x="1290" y="208.00000000000003"/>
         </scene>
-        <!--Log In View Controller-->
+        <!--Login Controller-->
         <scene sceneID="Qs0-9d-fN6">
             <objects>
-                <viewController storyboardIdentifier="loginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iaj-EK-q1C" customClass="LogInViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iaj-EK-q1C" customClass="LoginController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QUL-sK-her"/>
-                        <viewControllerLayoutGuide type="bottom" id="ctq-en-23B"/>
+                        <viewControllerLayoutGuide type="top" id="bgy-MH-HOW"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Dn-ve-HBP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vxk-wx-c1a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -143,12 +142,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30I-BF-PE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="511"/>
+            <point key="canvasLocation" x="-863" y="549"/>
         </scene>
-        <!--Categories View Controller-->
+        <!--Category Controller-->
         <scene sceneID="BQK-bA-GzY">
             <objects>
-                <tableViewController storyboardIdentifier="categoryView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZSD-zG-x6p" customClass="CategoriesViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="categoryView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZSD-zG-x6p" customClass="CategoryController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Plw-jK-C0y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,27 +182,28 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="Oc9-r2-t5s" kind="show" identifier="eventsByCategories" id="UWx-dr-VWS"/>
+                        <segue destination="Oc9-r2-t5s" kind="show" identifier="eventsByCategories" id="CmU-3I-VSi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8X-a6-nAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8" y="1872"/>
+            <point key="canvasLocation" x="-8" y="1872.0000000000002"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Event Controller-->
         <scene sceneID="O8L-PH-Pux">
             <objects>
-                <viewController storyboardIdentifier="eventsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSh-Vj-10U" customClass="ImageViewController" customModule="VzLife" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSh-Vj-10U" customClass="EventController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cxO-fY-WVR"/>
-                        <viewControllerLayoutGuide type="bottom" id="NlZ-vp-ci3"/>
+                        <viewControllerLayoutGuide type="top" id="yUT-Oj-MYq"/>
+                        <viewControllerLayoutGuide type="bottom" id="aQx-ZT-hCz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qiq-P6-LZF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sGH-Gd-zWP">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sGH-Gd-zWP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90747052195222022" green="0.91288638097733088" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lHj-NM-0TQ">
                                     <size key="itemSize" width="328" height="182"/>
@@ -212,28 +212,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="ePD-Xi-2Pj" customClass="ImageCollectionViewCell" customModule="VzLife">
-                                        <rect key="frame" x="23.5" y="45" width="328" height="182"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="ePD-Xi-2Pj" customClass="EventCell" customModule="VzLife">
+                                        <rect key="frame" x="24" y="45" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-zx-yFS">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-zx-yFS">
                                                     <rect key="frame" x="16" y="8" width="296" height="108"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="296" id="I5z-gt-fma"/>
-                                                        <constraint firstAttribute="width" secondItem="JiV-zx-yFS" secondAttribute="height" multiplier="74:27" id="TW5-0v-nwY"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX3-kb-bMv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX3-kb-bMv">
                                                     <rect key="frame" x="22" y="119" width="295" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq9-gm-V62" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq9-gm-V62" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="147" width="296" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="More informations">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -247,19 +246,6 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.99227746390000005" green="0.97469490960000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="xq9-gm-V62" firstAttribute="top" secondItem="rX3-kb-bMv" secondAttribute="bottom" constant="7" id="98z-WW-9iH"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="rX3-kb-bMv" secondAttribute="trailing" constant="3" id="AkE-QI-mDh"/>
-                                            <constraint firstItem="xq9-gm-V62" firstAttribute="top" secondItem="JiV-zx-yFS" secondAttribute="bottom" constant="31" id="En8-gU-dAP"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="JiV-zx-yFS" secondAttribute="trailing" constant="8" id="HFo-7P-wSZ"/>
-                                            <constraint firstItem="xq9-gm-V62" firstAttribute="leading" secondItem="ePD-Xi-2Pj" secondAttribute="leadingMargin" constant="8" id="Y3U-dY-MU2"/>
-                                            <constraint firstItem="rX3-kb-bMv" firstAttribute="leading" secondItem="ePD-Xi-2Pj" secondAttribute="leadingMargin" constant="14" id="fR6-HU-PqC"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="xq9-gm-V62" secondAttribute="bottom" id="gIT-s7-FD7"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="xq9-gm-V62" secondAttribute="trailing" constant="8" id="j3n-h9-YhK"/>
-                                            <constraint firstItem="rX3-kb-bMv" firstAttribute="top" secondItem="JiV-zx-yFS" secondAttribute="bottom" constant="3" id="lxH-yS-ugN"/>
-                                            <constraint firstAttribute="topMargin" secondItem="JiV-zx-yFS" secondAttribute="top" id="rGa-Cg-k40"/>
-                                            <constraint firstItem="JiV-zx-yFS" firstAttribute="leading" secondItem="ePD-Xi-2Pj" secondAttribute="leadingMargin" constant="8" id="v2o-D6-Faf"/>
-                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
@@ -275,12 +261,6 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="sGH-Gd-zWP" firstAttribute="leading" secondItem="Qiq-P6-LZF" secondAttribute="leading" id="H5t-Tw-z36"/>
-                            <constraint firstItem="sGH-Gd-zWP" firstAttribute="top" secondItem="Qiq-P6-LZF" secondAttribute="top" id="pTE-1e-ahU"/>
-                            <constraint firstItem="sGH-Gd-zWP" firstAttribute="bottom" secondItem="NlZ-vp-ci3" secondAttribute="top" id="xRf-H9-EiW"/>
-                            <constraint firstAttribute="trailing" secondItem="sGH-Gd-zWP" secondAttribute="trailing" id="yF5-hc-7ET"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nud-kw-PBl">
                         <leftBarButtonItems>
@@ -319,24 +299,22 @@
             </objects>
             <point key="canvasLocation" x="295" y="982"/>
         </scene>
-        <!--Event By Category View Controller-->
+        <!--Event Category Controller-->
         <scene sceneID="X0L-79-czA">
             <objects>
-                <viewController storyboardIdentifier="eventsByCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oc9-r2-t5s" customClass="EventByCategoryViewController" customModule="VzLife" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsByCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oc9-r2-t5s" customClass="EventCategoryController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vhi-Kq-81J"/>
-                        <viewControllerLayoutGuide type="bottom" id="YHk-Bx-6C0"/>
+                        <viewControllerLayoutGuide type="top" id="fUj-pE-nXk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ye7-UY-wCt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U5A-ki-eNp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CmX-IZ-J2W">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CmX-IZ-J2W">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="667" id="7sY-CI-OOM"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gYL-J4-K5f">
                                     <size key="itemSize" width="328" height="182"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -344,28 +322,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventByCategoryCollectionViewCell" customModule="VzLife">
-                                        <rect key="frame" x="23.5" y="45" width="328" height="182"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventCategoryCell" customModule="VzLife">
+                                        <rect key="frame" x="24" y="45" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gc9-cp-jEj">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gc9-cp-jEj">
                                                     <rect key="frame" x="16" y="8" width="296" height="108"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="gc9-cp-jEj" secondAttribute="height" multiplier="74:27" id="7Ke-hB-NBQ"/>
-                                                        <constraint firstAttribute="width" constant="296" id="SDP-Ui-7nr"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ai-YL-Zy7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ai-YL-Zy7">
                                                     <rect key="frame" x="22" y="119" width="295" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sl-fr-kDO" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sl-fr-kDO" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="147" width="296" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="More informations">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -379,19 +356,6 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.99227746390000005" green="0.97469490960000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="gc9-cp-jEj" firstAttribute="leading" secondItem="5JE-IS-M3w" secondAttribute="leadingMargin" constant="8" id="ELU-GY-bau"/>
-                                            <constraint firstItem="6Sl-fr-kDO" firstAttribute="top" secondItem="5ai-YL-Zy7" secondAttribute="bottom" constant="7" id="IUr-0B-fem"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="6Sl-fr-kDO" secondAttribute="bottom" id="O0d-gm-MYq"/>
-                                            <constraint firstItem="6Sl-fr-kDO" firstAttribute="leading" secondItem="5JE-IS-M3w" secondAttribute="leadingMargin" constant="8" id="WJ1-MF-7jT"/>
-                                            <constraint firstItem="5ai-YL-Zy7" firstAttribute="leading" secondItem="5JE-IS-M3w" secondAttribute="leadingMargin" constant="14" id="ZO8-e8-wiE"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="6Sl-fr-kDO" secondAttribute="trailing" constant="8" id="aw2-w7-GF9"/>
-                                            <constraint firstItem="5ai-YL-Zy7" firstAttribute="top" secondItem="gc9-cp-jEj" secondAttribute="bottom" constant="3" id="cbb-oy-QHK"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="5ai-YL-Zy7" secondAttribute="trailing" constant="3" id="l9V-rt-VgH"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="gc9-cp-jEj" secondAttribute="trailing" constant="8" id="myk-ay-5yY"/>
-                                            <constraint firstAttribute="topMargin" secondItem="gc9-cp-jEj" secondAttribute="top" id="vvS-g4-vhT"/>
-                                            <constraint firstItem="6Sl-fr-kDO" firstAttribute="top" secondItem="gc9-cp-jEj" secondAttribute="bottom" constant="31" id="w3Z-AC-xJs"/>
-                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
@@ -407,12 +371,6 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="CmX-IZ-J2W" firstAttribute="bottom" secondItem="YHk-Bx-6C0" secondAttribute="top" id="0bu-1x-2Y7"/>
-                            <constraint firstAttribute="trailing" secondItem="CmX-IZ-J2W" secondAttribute="trailing" id="Ahz-8V-9yy"/>
-                            <constraint firstItem="CmX-IZ-J2W" firstAttribute="leading" secondItem="U5A-ki-eNp" secondAttribute="leading" id="NXR-kI-O6C"/>
-                            <constraint firstItem="CmX-IZ-J2W" firstAttribute="top" secondItem="U5A-ki-eNp" secondAttribute="top" id="oYg-tJ-DNa"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3is-HK-HQM">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="aB8-8U-s6q">
@@ -423,20 +381,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="CmX-IZ-J2W" id="CsH-vh-2a0"/>
-                        <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="6Xx-GE-c4z"/>
+                        <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="NYz-R5-CSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QQ-nX-vkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="975" y="1890"/>
         </scene>
-        <!--Event Create View Controller-->
+        <!--Event Create Controller-->
         <scene sceneID="Wg8-Nd-5t1">
             <objects>
-                <viewController storyboardIdentifier="eventCreate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qZ1-rc-dDT" customClass="EventCreateViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventCreate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qZ1-rc-dDT" customClass="EventCreateController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vR8-aZ-uPD"/>
-                        <viewControllerLayoutGuide type="bottom" id="8uy-MM-227"/>
+                        <viewControllerLayoutGuide type="top" id="R19-yJ-VaZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qkt-3z-hmf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LLb-p1-2Vd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -586,26 +544,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfd-RU-dmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="1169.865067466267"/>
+            <point key="canvasLocation" x="1703" y="1115"/>
         </scene>
         <!--Host Event Controller-->
         <scene sceneID="MMq-hf-gue">
             <objects>
                 <viewController storyboardIdentifier="Host" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l1W-Di-L8E" customClass="HostEventController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3k8-yy-mjC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gtw-iN-gma"/>
+                        <viewControllerLayoutGuide type="top" id="xGn-YZ-kFK"/>
+                        <viewControllerLayoutGuide type="bottom" id="4QX-y5-SQF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="joN-KJ-VoD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UND-Mb-3aX">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UND-Mb-3aX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="667" id="po8-W7-l4c"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UWv-aQ-rop">
                                     <size key="itemSize" width="328" height="182"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -613,28 +569,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="mCi-jN-thc" customClass="ImageCollectionViewCell" customModule="VzLife">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="mCi-jN-thc" customClass="EventCell" customModule="VzLife">
                                         <rect key="frame" x="24" y="45" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yk2-fA-HsN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yk2-fA-HsN">
                                                     <rect key="frame" x="16" y="8" width="296" height="108"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="296" id="Sb9-bR-Tde"/>
-                                                        <constraint firstAttribute="width" secondItem="Yk2-fA-HsN" secondAttribute="height" multiplier="74:27" id="V8R-zD-LOG"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMs-qz-4wj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMs-qz-4wj">
                                                     <rect key="frame" x="22" y="119" width="295" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxV-4t-0xW" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxV-4t-0xW" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="147" width="296" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="More informations">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -648,19 +603,6 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.99227746390000005" green="0.97469490960000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="UxV-4t-0xW" firstAttribute="top" secondItem="QMs-qz-4wj" secondAttribute="bottom" constant="7" id="Jur-KK-e0v"/>
-                                            <constraint firstItem="QMs-qz-4wj" firstAttribute="leading" secondItem="mCi-jN-thc" secondAttribute="leadingMargin" constant="14" id="NRl-ef-0sV"/>
-                                            <constraint firstItem="UxV-4t-0xW" firstAttribute="top" secondItem="Yk2-fA-HsN" secondAttribute="bottom" constant="31" id="OkT-dM-zR7"/>
-                                            <constraint firstAttribute="topMargin" secondItem="Yk2-fA-HsN" secondAttribute="top" id="W0j-h9-IPU"/>
-                                            <constraint firstItem="QMs-qz-4wj" firstAttribute="top" secondItem="Yk2-fA-HsN" secondAttribute="bottom" constant="3" id="cxI-95-zh1"/>
-                                            <constraint firstItem="Yk2-fA-HsN" firstAttribute="leading" secondItem="mCi-jN-thc" secondAttribute="leadingMargin" constant="8" id="eRG-xO-r6k"/>
-                                            <constraint firstItem="UxV-4t-0xW" firstAttribute="leading" secondItem="mCi-jN-thc" secondAttribute="leadingMargin" constant="8" id="gbu-Pt-hwz"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="QMs-qz-4wj" secondAttribute="trailing" constant="3" id="jIF-tW-mVb"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="UxV-4t-0xW" secondAttribute="bottom" id="oB0-e6-vhh"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Yk2-fA-HsN" secondAttribute="trailing" constant="8" id="pwd-PS-72A"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="UxV-4t-0xW" secondAttribute="trailing" constant="8" id="qpf-O5-sXq"/>
-                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
@@ -676,12 +618,6 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UND-Mb-3aX" firstAttribute="bottom" secondItem="Gtw-iN-gma" secondAttribute="top" id="W98-I5-1gQ"/>
-                            <constraint firstItem="UND-Mb-3aX" firstAttribute="top" secondItem="joN-KJ-VoD" secondAttribute="top" id="YbS-Di-Tml"/>
-                            <constraint firstItem="UND-Mb-3aX" firstAttribute="leading" secondItem="joN-KJ-VoD" secondAttribute="leading" id="aqQ-7V-wrG"/>
-                            <constraint firstAttribute="trailing" secondItem="UND-Mb-3aX" secondAttribute="trailing" id="d3T-fK-blI"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n5s-WL-kpl">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="XS7-Sg-AZz">
@@ -704,8 +640,8 @@
             <objects>
                 <viewController id="pEB-Rk-hzW" customClass="HostController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rC5-Yc-X43"/>
-                        <viewControllerLayoutGuide type="bottom" id="fA5-yU-5DN"/>
+                        <viewControllerLayoutGuide type="top" id="bT8-tz-Ygz"/>
+                        <viewControllerLayoutGuide type="bottom" id="oDJ-AY-d59"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Rn-z2-zGk" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -797,6 +733,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NC6-dR-p2e"/>
+        <segue reference="r9s-mS-euz"/>
     </inferredMetricsTieBreakers>
 </document>

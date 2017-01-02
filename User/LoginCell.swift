@@ -1,5 +1,5 @@
 //
-//  LoginCelCollectionViewCell.swift
+//  LoginCell.swift
 //  VzLife
 //
 //  Created by FOI on 30/11/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginCelCollectionViewCell: UICollectionViewCell {
+class LoginCell: UICollectionViewCell {
 
     let logoImageView: UIImageView = {
         let image = UIImage(named: "logo")
@@ -45,7 +45,7 @@ class LoginCelCollectionViewCell: UICollectionViewCell {
         return button
     }()
     // ? -> means optional, cuz' you want to initialize it as nil
-    var loginController: LogInViewController?
+    var loginController: LoginController?
     
     func logIn(){
         

@@ -1,14 +1,6 @@
-//
-//  Categories1ViewController.swift
-//  VzLife
-//
-//  Created by FOI on 27/12/16.
-//  Copyright © 2016 varazdinevents. All rights reserved.
-//
-
 import UIKit
 
-class CategoriesViewController: UITableViewController, UISearchBarDelegate {
+class CategoryController: UITableViewController, UISearchBarDelegate {
 
     let categories = ["Kazalište i film", "Slušaona", "Svirka", "Volontiranje", " Tečaj", "Predavanje", "Party","Ostalo","Arhiva događaja"]
     var filteredCategories = [String]()
@@ -87,7 +79,7 @@ class CategoriesViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "eventsByCategories"{
-        let eventsByCategories = segue.destination as! EventByCategoryViewController
+        let eventsByCategories = segue.destination as! EventCategoryController
         let sender = sender as! String
         eventsByCategories.category = sender
         }
