@@ -1,5 +1,5 @@
 //
-//  LogInViewController.swift
+//  LoginController.swift
 //  VzLife
 //
 //  Created by FOI on 29/11/16.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LogInViewController: UIViewController, UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class LoginController: UIViewController, UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     let loginCellId = "loginCellId"
     var user = User()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
-    var loginCell: LoginCelCollectionViewCell?
+    var loginCell: LoginCell?
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -88,7 +88,7 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
     
     fileprivate func registerCells() {
         //...
-        collectionView.register(LoginCelCollectionViewCell.self, forCellWithReuseIdentifier: loginCellId)
+        collectionView.register(LoginCell.self, forCellWithReuseIdentifier: loginCellId)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -97,7 +97,7 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCelCollectionViewCell
+        let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCell
         loginCell.loginController = self
         return loginCell
         
@@ -128,7 +128,7 @@ class LogInViewController: UIViewController, UICollectionViewDataSource,  UIColl
 
 }
 
-extension LogInViewController: OnUserLoggedDelegate {
+extension LoginController: OnUserLoggedDelegate {
     public func onUserLogged(user: User) {
          self.user=user
         

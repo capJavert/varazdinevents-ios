@@ -183,7 +183,7 @@ class ImageViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBAction func toLooginAction(_ sender: Any) {
         
-        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView") as! LogInViewController
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView") as! LoginController
         self.navigationController?.pushViewController(loginView, animated: true)
     }
     
