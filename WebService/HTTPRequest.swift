@@ -33,6 +33,17 @@ public class HTTPRequest
         }
     }
     
+    public func requestAuth(sessionId: String)
+    {
+        Alamofire.request(baseUrl+"/user/auth?token="+sessionId, method: .get, parameters: [:])
+            .responseJSON { response in
+                if let json = response.result.value{
+                    //NSLog("JSON: \(json)")
+                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "auth")
+                }
+        }
+    }
+    
     public func registerToken(token: String)
     {
         Alamofire.request(baseUrl+"/firebase/add/"+token, method: .get)
