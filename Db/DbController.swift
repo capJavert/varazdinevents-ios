@@ -16,6 +16,7 @@ public class DbController
     
     public func realmDeleteEvents(notThese: Array<Int>) {
         var filterString = ""
+        
         for id in notThese {
             if(filterString != "") {
                 filterString += " AND "
@@ -23,7 +24,11 @@ public class DbController
             filterString += ("id != "+String(id))
         }
         
-        let items = self.realm.objects(Event.self).filter(filterString)
+        var items = self.realm.objects(Event.self)
+        
+        if (filterString != "") {
+            items = self.realm.objects(Event.self).filter(filterString)
+        }
         
         self.realm.beginWrite()
         self.realm.delete(items)
@@ -32,6 +37,7 @@ public class DbController
     
     public func realmDeleteHosts(notThese: Array<Int>) {
         var filterString = ""
+        
         for id in notThese {
             if(filterString != "") {
                 filterString += " AND "
@@ -39,7 +45,11 @@ public class DbController
             filterString += ("id != "+String(id))
         }
         
-        let items = self.realm.objects(Host.self).filter(filterString)
+        var items = self.realm.objects(Host.self)
+        
+        if (filterString != "") {
+            items = self.realm.objects(Host.self).filter(filterString)
+        }
         
         self.realm.beginWrite()
         self.realm.delete(items)

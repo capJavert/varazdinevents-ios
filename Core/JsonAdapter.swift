@@ -8,25 +8,28 @@ public class JsonAdapter
         var events = [Event]()
         let jsonEvents = JSON(json)
         let items = jsonEvents["items"]
-        let itemsString = String(describing: items)
-        if let dataFromString = itemsString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-            let json2 = JSON(data: dataFromString)
-            for (_, subJson) in json2 {
-                let event:Event = Event()
-                event.id = subJson["id"].int!
-                event.title = subJson["title"].string!
-                event.text = subJson["text"].string!
-                event.date = subJson["date"].int!
-                event.date_to = subJson["date_to"].int!
-                event.host = subJson["host"].string!
-                event.official_link = subJson["official_link"].string!
-                event.image = subJson["image"].string!
-                event.facebook = subJson["facebook"].string!
-                event.category = subJson["category"].string!
-                event.author = subJson["author"].int!
-                //event.offers = subJson["offers"].string!
-                events.append(event)
-            } }
+        
+        if (jsonEvents["items"].count > 0) {
+            let itemsString = String(describing: items)
+            if let dataFromString = itemsString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                let json2 = JSON(data: dataFromString)
+                for (_, subJson) in json2 {
+                    let event:Event = Event()
+                    event.id = subJson["id"].int!
+                    event.title = subJson["title"].string!
+                    event.text = subJson["text"].string!
+                    event.date = subJson["date"].int!
+                    event.date_to = subJson["date_to"].int!
+                    event.host = subJson["host"].string!
+                    event.official_link = subJson["official_link"].string!
+                    event.image = subJson["image"].string!
+                    event.facebook = subJson["facebook"].string!
+                    event.category = subJson["category"].string!
+                    event.author = subJson["author"].int!
+                    //event.offers = subJson["offers"].string!
+                    events.append(event)
+                } }
+        }
         return events
     }
     
