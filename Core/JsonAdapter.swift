@@ -62,11 +62,14 @@ public class JsonAdapter
         if let dataFromString = userString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             let json = JSON(data: dataFromString)
             
-            user.id = json["id"].int!
-            user.username = json["username"].string!
-            user.sessionId = json["token"].string!
-            
+            //check if valid user id is returned
+            if(json["id"].exists()) {
+                user.id = json["id"].int!
+                user.username = json["username"].string!
+                user.sessionId = json["token"].string!
+            }
         }
+        
         return user
     }
     

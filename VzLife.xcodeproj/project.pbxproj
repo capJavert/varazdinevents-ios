@@ -15,6 +15,7 @@
 		689A55191E15DA2600CEE356 /* HostEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A55181E15DA2600CEE356 /* HostEventController.swift */; };
 		689A551D1E15F8BA00CEE356 /* HostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A551C1E15F8BA00CEE356 /* HostLabel.swift */; };
 		689A551F1E15FB0200CEE356 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A551E1E15FB0200CEE356 /* Host.swift */; };
+		68C389441E244073004E0A8F /* InitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C389431E244073004E0A8F /* InitController.swift */; };
 		68EE63681E165B1B002F57BB /* HostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EE63671E165B1B002F57BB /* HostController.swift */; };
 		68EE636A1E165E9E002F57BB /* HostEventButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EE63691E165E9E002F57BB /* HostEventButton.swift */; };
 		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
@@ -71,6 +72,7 @@
 		689A55181E15DA2600CEE356 /* HostEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostEventController.swift; sourceTree = "<group>"; };
 		689A551C1E15F8BA00CEE356 /* HostLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostLabel.swift; sourceTree = "<group>"; };
 		689A551E1E15FB0200CEE356 /* Host.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
+		68C389431E244073004E0A8F /* InitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitController.swift; sourceTree = "<group>"; };
 		68EE63671E165B1B002F57BB /* HostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostController.swift; sourceTree = "<group>"; };
 		68EE63691E165E9E002F57BB /* HostEventButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostEventButton.swift; sourceTree = "<group>"; };
 		68FADAF51DF48E87000A858E /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */,
 				E45FB09C1DEB3E7A00056445 /* EventCell.swift */,
 				E45FB0A01DEB3F6A00056445 /* EventController.swift */,
+				68C389431E244073004E0A8F /* InitController.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */,
 				E45FB09D1DEB3E7A00056445 /* EventCell.swift in Sources */,
 				E4A963021DE45CFE00BCF470 /* WebServiceDataLoader.swift in Sources */,
+				68C389441E244073004E0A8F /* InitController.swift in Sources */,
 				E4A963001DE435DB00BCF470 /* JsonAdapter.swift in Sources */,
 				E4A962F81DE42EA100BCF470 /* Event.swift in Sources */,
 				E4A962FA1DE42EA100BCF470 /* User.swift in Sources */,

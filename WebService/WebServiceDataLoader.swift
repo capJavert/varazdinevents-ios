@@ -100,6 +100,14 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
                 let hosts = JsonAdapter.getHosts(json: json)
                 self.bindHosts(hosts: hosts)
                 break
+            case "auth":
+                let user = JsonAdapter.getUser(json: json)
+                if (user.id != 0) {
+                    self.userLoaded = true
+                    self.user = user
+                    self.userLogged()
+                }
+            break
             default:
                 //not valid type
                 break
