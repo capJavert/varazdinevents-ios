@@ -1,10 +1,14 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class FacebookImportController: UIViewController {
+class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate {
     var user =  User()
     let loginManager = LoginManager()
+    @IBOutlet weak var eventIdField: UITextField!
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
     
     struct FacebookRequest: GraphRequestProtocol {
         struct Response: GraphResponseProtocol {
@@ -20,18 +24,37 @@ class FacebookImportController: UIViewController {
         var apiVersion: GraphAPIVersion = .defaultVersion
     }
     
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if ((error) != nil)
+        {
+            // Process error
+        }
+        else if result.isCancelled {
+            // Handle cancellations
+        }
+        else {
+            eventIdField.isEnabled = true
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if result.grantedPermissions.contains("email")
+            {
+                
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        eventIdField.isEnabled = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if AccessToken.current != nil {
-            print(AccessToken.current ?? "NO TOKEN")
-        } else {
-            let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-            loginButton.center = self.view.center
-            loginButton.sizeToFit()
-        
-            self.view.addSubview(loginButton)
+        if AccessToken.current == nil {
+            eventIdField.isEnabled = false
         }
+        
+        self.loginButton.delegate = self
+        self.loginButton.sizeToFit()
         
         /*let connection = GraphRequestConnection()
         connection.add(FacebookRequest()) { response, result in
