@@ -17,6 +17,7 @@ public class DataLoader
     
     func LoadData() {}
     func LoadUser(username: String, password: String) {}
+    func CheckUserAuth(sessionId: String) {}
     
     public init(){}
     public func dataLoaded() {

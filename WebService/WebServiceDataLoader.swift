@@ -20,6 +20,11 @@ public class WebServiceDataLoader:DataLoader
         httpRequest.requestUser(username: username, password: password)
     }
     
+    public override func CheckUserAuth(sessionId: String) {
+        httpRequest.wsResultDelegate = self
+        httpRequest.requestAuth(sessionId: sessionId)
+    }
+    
     public func showLoadedData()
     {
         if(self.eventsLoaded){
@@ -58,13 +63,13 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realmDeleteHosts(notThese: notThese)
     }
     
-    public func bindUser()
+    public func bindUser(user: User)
     {
         DbController.sharedDBInstance.realm.beginWrite()
         DbController.sharedDBInstance.realm.deleteAll()
         try! DbController.sharedDBInstance.realm.commitWrite()
         
-        DbController.sharedDBInstance.realmAdd(o: user!)
+        DbController.sharedDBInstance.realmAdd(o: user)
     }
     
     public func bindEvent(event: Event)
@@ -88,7 +93,7 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
             case "user":
                 self.user = JsonAdapter.getUser(json: json)
                 self.userLoaded = true
-                self.bindUser()
+                self.bindUser(user: user!)
                 self.userLogged()
                 break
             case "event":
@@ -100,6 +105,17 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
                 let hosts = JsonAdapter.getHosts(json: json)
                 self.bindHosts(hosts: hosts)
                 break
+            case "auth":
+                let user = JsonAdapter.getUser(json: json)
+                if (user.id != 0) {
+                    self.user = user
+                } else {
+                    self.user = User()
+                }
+                
+                self.userLoaded = true
+                self.userLogged()
+            break
             default:
                 //not valid type
                 break

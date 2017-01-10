@@ -137,12 +137,40 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cSh-Vj-10U" kind="relationship" relationship="rootViewController" id="vXO-Iu-cY5"/>
+                        <segue destination="G5r-5b-Eaa" kind="relationship" relationship="rootViewController" id="kmy-xJ-z1R"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30I-BF-PE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-863" y="549"/>
+            <point key="canvasLocation" x="-1388" y="568"/>
+        </scene>
+        <!--Init Controller-->
+        <scene sceneID="Uqh-pZ-v1h">
+            <objects>
+                <viewController id="G5r-5b-Eaa" customClass="InitController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MJr-9u-Qv4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cx1-Dd-B6J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="06H-tK-uZ5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="VzLife-logo" translatesAutoresizingMaskIntoConstraints="NO" id="u3h-Va-3h1">
+                                <rect key="frame" x="30" y="298" width="320" height="39"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99839156866073608" green="0.73316329717636108" blue="0.2757987380027771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kox-FW-D8T"/>
+                    <connections>
+                        <segue destination="cSh-Vj-10U" kind="show" identifier="init" id="uVR-kM-e8B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bR5-ZN-kAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607" y="567"/>
         </scene>
         <!--Category Controller-->
         <scene sceneID="BQK-bA-GzY">
@@ -161,11 +189,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnN-Od-v46" id="wKq-jd-le2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UNg-kW-GCs">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -323,7 +351,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventCategoryCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="45" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="45" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -732,6 +760,9 @@
             <point key="canvasLocation" x="2365.5999999999999" y="-14.842578710644679"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="VzLife-logo" width="320" height="39"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="r9s-mS-euz"/>
     </inferredMetricsTieBreakers>
