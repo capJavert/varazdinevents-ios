@@ -12,48 +12,52 @@ import RealmSwift
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
-class InitController: UINavigationController  {
+class InitController: UIViewController {
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
+    var events = [Event] ()
     var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //set default Realm DB configuration
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(
+            schemaVersion: 4,
+            migrationBlock: { migration, oldSchemaVersion in })
         
+        webServiceDataLoader.onUserLoggedDelegate = self
+        
+        let users = try! Array(Realm().objects(User.self))
+        if (users.count > 0) {
+            user = users[0]
+        }
+        
+        webServiceDataLoader.CheckUserAuth(sessionId: user.sessionId)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func initFirstView(_ sender: Any) {
+        let eventController = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
+        eventController.user = user
+        print(user)
+        self.navigationController?.show(eventController, sender: self)
     }
-    
-    func goToEventDetail( sender: UIButton){
-        //passing Sender
-        self.performSegue(withIdentifier: "EventDetail", sender: sender)
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //We know that sender is a button
-        if segue.identifier == "EventDetail"{
-            //casting sender to UIButton
-            let sender = sender as! EventDetailButton
-            let eventDetail = segue.destination as! EventDetailController
+        if segue.identifier == "init" {
+            let sender = sender as! User
+            let eventList = segue.destination as! EventController
             
-            eventDetail.event = sender.event
+            eventList.user = sender
             
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+}
+
+extension InitController: OnUserLoggedDelegate {
+    public func onUserLogged(user: User) {
+        self.user = user
+        print(user)
+        initFirstView(sender: user)
+    }
 }
