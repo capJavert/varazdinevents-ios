@@ -161,7 +161,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.27057921886444092" green="0.60292184352874756" blue="0.99315375089645386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99839156866073608" green="0.73316329717636108" blue="0.2757987380027771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="kox-FW-D8T"/>
                     <connections>
