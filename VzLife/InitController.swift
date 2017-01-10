@@ -39,7 +39,6 @@ class InitController: UIViewController {
     @IBAction func initFirstView(_ sender: Any) {
         let eventController = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
         eventController.user = user
-        print(user)
         self.navigationController?.show(eventController, sender: self)
     }
     
@@ -57,7 +56,6 @@ class InitController: UIViewController {
 extension InitController: OnUserLoggedDelegate {
     public func onUserLogged(user: User) {
         self.user = user
-        print(user)
         initFirstView(sender: user)
     }
 }
