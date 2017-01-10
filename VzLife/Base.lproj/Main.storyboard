@@ -155,7 +155,13 @@
                     <view key="view" contentMode="scaleToFill" id="06H-tK-uZ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="VzLife-logo" translatesAutoresizingMaskIntoConstraints="NO" id="u3h-Va-3h1">
+                                <rect key="frame" x="30" y="298" width="320" height="39"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27057921886444092" green="0.60292184352874756" blue="0.99315375089645386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="kox-FW-D8T"/>
                     <connections>
@@ -754,6 +760,9 @@
             <point key="canvasLocation" x="2365.5999999999999" y="-14.842578710644679"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="VzLife-logo" width="320" height="39"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="r9s-mS-euz"/>
     </inferredMetricsTieBreakers>
