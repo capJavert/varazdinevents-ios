@@ -13,6 +13,8 @@ class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate, UITe
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        eventIdField.isEnabled = true
+        
         if ((error) != nil) {
             // Process error
         } else if result.isCancelled {
