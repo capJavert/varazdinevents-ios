@@ -3,43 +3,20 @@ import FacebookCore
 import FacebookLogin
 import FBSDKCoreKit
 import FBSDKLoginKit
+import RealmSwift
 
-class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate {
+class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
     var user =  User()
     let loginManager = LoginManager()
+    let webService = WebServiceDataLoader()
     @IBOutlet weak var eventIdField: UITextField!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     
-    struct FacebookRequest: GraphRequestProtocol {
-        struct Response: GraphResponseProtocol {
-            init(rawResponse: Any?) {
-                // Decode JSON from rawResponse into other properties here.
-            }
-        }
-        
-        var graphPath = "/me"
-        var parameters: [String : Any]? = ["fields": "id, name"]
-        var accessToken = AccessToken.current
-        var httpMethod: GraphRequestHTTPMethod = .GET
-        var apiVersion: GraphAPIVersion = .defaultVersion
-    }
-    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if ((error) != nil)
-        {
+        if ((error) != nil) {
             // Process error
-        }
-        else if result.isCancelled {
+        } else if result.isCancelled {
             // Handle cancellations
-        }
-        else {
-            eventIdField.isEnabled = true
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
-            {
-                
-            }
         }
     }
     
@@ -49,23 +26,32 @@ class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let users = try! Array(Realm().objects(User.self))
+        if (users.count > 0) {
+            user = users[0]
+        }
+        
         if AccessToken.current == nil {
             eventIdField.isEnabled = false
+        } else {
+            //logged in
         }
         
-        self.loginButton.delegate = self
-        self.loginButton.sizeToFit()
+        loginButton.delegate = self
+        loginButton.sizeToFit()
         
-        /*let connection = GraphRequestConnection()
-        connection.add(FacebookRequest()) { response, result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failed(let error):
-                print("Custom Graph Request Failed: \(error)")
-            }
+        eventIdField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if AccessToken.current == nil {
+            return false
+        } else {
+            webService.onEventCreatedDelegate = self
+            webService.CreateFacebookEvent(eventId: textField.text!, sessionId: self.user.sessionId, oAuthToken: (AccessToken.current?.authenticationToken)!)
+            
+            return true
         }
-        connection.start()*/
     }
     
     func displayAlertMessage(userMessage: String){
@@ -79,4 +65,14 @@ class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate {
     }
 }
 
-
+extension FacebookImportController: OnEventCreatedDelegate {
+    public func onEventCreated(status: Bool) {
+        if(status) {
+            let goBackToCollectionView = self.storyboard?.instantiateViewController(withIdentifier:"eventsView") as! EventController
+            goBackToCollectionView.user = user
+            self.navigationController?.pushViewController(goBackToCollectionView, animated: true)
+        } else {
+            self.displayAlertMessage(userMessage: "Neispravan ID Facebook događaja!")
+        }
+    }
+}
