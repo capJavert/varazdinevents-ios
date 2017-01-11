@@ -80,4 +80,16 @@ public class HTTPRequest
                 }
         }
     }
+    
+    public func createFacebookEvent(eventId: String, sessionId: String, oAuthToken: String)
+    {
+        Alamofire.request(baseUrl+"/events/facebook/"+eventId, method: .get, parameters: ["oauth": oAuthToken, "token": sessionId])
+            .responseJSON { response in
+                if let json = response.result.value{
+                    //NSLog("JSON: \(json)")
+                    
+                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "facebook")
+                }
+        }
+    }
 }

@@ -99,4 +99,20 @@ public class JsonAdapter
             } }
         return hosts
     }
+    
+    public static func getFacebookImportStatus(json: AnyObject) -> Bool
+    {
+        let jsonStatus = JSON(json)
+        let userString = String(describing: jsonStatus)
+        if let dataFromString = userString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            let json = JSON(data: dataFromString)
+            
+            if(json["success"].exists()){
+                return true
+            }
+        }
+        
+        return false
+    }
+    
 }

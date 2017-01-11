@@ -11,5 +11,7 @@ target 'VzLife' do
 	pod 'Kingfisher', '~> 3.2'
 	pod 'Firebase/Core'
 	pod 'Firebase/Messaging'
-
+	pod 'FacebookCore'
+	pod 'FacebookLogin'
+	pod 'FacebookShare'
 end

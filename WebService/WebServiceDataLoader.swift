@@ -20,6 +20,11 @@ public class WebServiceDataLoader:DataLoader
         httpRequest.requestUser(username: username, password: password)
     }
     
+    public override func CreateFacebookEvent(eventId: String, sessionId: String, oAuthToken: String) {
+        httpRequest.wsResultDelegate = self
+        httpRequest.createFacebookEvent(eventId: eventId, sessionId: sessionId, oAuthToken: oAuthToken)
+    }
+    
     public override func CheckUserAuth(sessionId: String) {
         httpRequest.wsResultDelegate = self
         httpRequest.requestAuth(sessionId: sessionId)
@@ -115,6 +120,10 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
                 
                 self.userLoaded = true
                 self.userLogged()
+            break
+            case "facebook":
+                let status = JsonAdapter.getFacebookImportStatus(json: json)
+                self.eventCreated(status: status)
             break
             default:
                 //not valid type
