@@ -8,17 +8,20 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
-class EventDetailController: UIViewController {
+class EventDetailController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var hostLabel: UILabel!
+    @IBOutlet weak var hostLabel: HostLabel!
     @IBOutlet weak var facebookLable: UILabel!
     @IBOutlet weak var categoryLabel : UILabel!
+    @IBOutlet weak var locationLabel : UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var buttonFavorite: UITabBarItem!
+    @IBOutlet weak var tabBar: UITabBar!
     
     var event: Event = Event()
     var eventInfo = [Any] ()
@@ -26,9 +29,13 @@ class EventDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        event = try! Realm().object(ofType: Event.self, forPrimaryKey: event.id)!
+        
+        tabBar.delegate = self
         scrollView.backgroundColor = UIColor.white
         
-        titleLabel.text = event.title
+        //titleLabel.text = event.title
+        self.navigationItem.title = event.title
         
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy"
@@ -46,17 +53,95 @@ class EventDetailController: UIViewController {
             timeLabel.text = "Vrijeme: " + timeFormater.string(from: date) + " - " + timeFormater.string(from: dateTo)
         }
         
+        hostLabel.host = try! Realm().object(ofType: Host.self, forPrimaryKey: event.author)!
         hostLabel.text = "Organizator: " + event.host
+        hostLabel.isUserInteractionEnabled = true
+        let hostTap = UITapGestureRecognizer(target: self, action: #selector(self.goToEventHost(sender:)))
+        hostLabel.addGestureRecognizer(hostTap)
+        
         if(event.facebook=="") {
             facebookLable.isHidden = true
         } else {
-            facebookLable.text = "Facebook event"
+            facebookLable.text = "Facebook stranica"
         }
+        facebookLable.isUserInteractionEnabled = true
+        let facebookTap = UITapGestureRecognizer(target: self, action: #selector(self.openFacebookPage(sender:)))
+        facebookLable.addGestureRecognizer(facebookTap)
+        
+        locationLabel.text = "Lokacija događaja"
+        locationLabel.isUserInteractionEnabled = true
+        let locationTap = UITapGestureRecognizer(target: self, action: #selector(self.goToEventLocation(sender:)))
+        locationLabel.addGestureRecognizer(locationTap)
+        
         categoryLabel.text = "Kategorija: " + event.category
+        categoryLabel.isUserInteractionEnabled = true
+        let categoryTap = UITapGestureRecognizer(target: self, action: #selector(self.goToEventCategory(sender:)))
+        categoryLabel.addGestureRecognizer(categoryTap)
         
         imageView.kf.setImage(with: URL(string: event.image))
         textView.text = event.text.replacingOccurrences(of: "<br />", with: "\n", options: .regularExpression, range: nil)
         
+        if (event.favorite) {
+            tabBar.selectedItem = tabBar.items![0] as UITabBarItem
+        }
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let realm = try! Realm()
+        do {
+            try! realm.write() {
+                if (event.favorite) {
+                    event.favorite = false
+                    tabBar.selectedItem = nil
+                } else {
+                    event.favorite = true
+                }
+                
+                realm.add(event, update: true)
+            }
+        }
+    }
+    
+    func openFacebookPage(sender:UITapGestureRecognizer) {
+        UIApplication.shared.open(NSURL(string: event.facebook) as! URL)
+    }
+    
+    func goToEventHost( sender: HostLabel){
+        //passing Sender
+        self.performSegue(withIdentifier: "Host", sender: hostLabel)
+    }
+    
+    func goToEventLocation( sender: UILabel){
+        //passing Sender
+        self.performSegue(withIdentifier: "EventLocation", sender: sender)
+    }
+    
+    func goToEventCategory( sender: UILabel){
+        //passing Sender
+        self.performSegue(withIdentifier: "EventCategory", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //We know that sender is a button
+        if segue.identifier == "Host"{
+            //casting sender to UIButton
+            let sender = sender as! HostLabel
+            let eventDetail = segue.destination as! HostController
+            
+            eventDetail.host = sender.host
+            
+        } else if(segue.identifier == "EventLocation") {
+            //casting sender to UIButton
+            let eventLocation = segue.destination as! EventLocationController
+            
+            eventLocation.event = self.event
+            eventLocation.host = self.hostLabel.host
+        } else if(segue.identifier == "EventCategory") {
+            //casting sender to UIButton
+            let eventCategory = segue.destination as! EventCategoryController
+            
+            eventCategory.category = event.category
+        }
     }
     
     override func didReceiveMemoryWarning() {
