@@ -12,6 +12,10 @@ public protocol OnEventCreatedDelegate {
     func onEventCreated(status: Bool)
 }
 
+public protocol OnLocationFetchedDelegate {
+    func onLocationFetched(latLng: Dictionary<String, Any>)
+}
+
 public class DataLoader
 {
     public var events:[Event]?
@@ -19,6 +23,7 @@ public class DataLoader
     public var onDataLoadedDelegate:OnDataLoadedDelegate?
     public var onUserLoggedDelegate:OnUserLoggedDelegate?
     public var onEventCreatedDelegate:OnEventCreatedDelegate?
+    public var onLocationFetchedDelegate:OnLocationFetchedDelegate?
     
     func LoadData() {}
     func LoadUser(username: String, password: String) {}
@@ -48,5 +53,9 @@ public class DataLoader
             onUserLoggedDelegate?.onUserLogged(user: user!)
         }
         
+    }
+    
+    public func locationFetched(latLng: Dictionary<String, Any>) {
+        onLocationFetchedDelegate?.onLocationFetched(latLng: latLng)
     }
 }

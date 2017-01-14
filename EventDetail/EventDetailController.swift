@@ -17,6 +17,7 @@ class EventDetailController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var hostLabel: HostLabel!
     @IBOutlet weak var facebookLable: UILabel!
     @IBOutlet weak var categoryLabel : UILabel!
+    @IBOutlet weak var locationLabel : UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var buttonFavorite: UITabBarItem!
@@ -67,6 +68,11 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         let facebookTap = UITapGestureRecognizer(target: self, action: #selector(self.openFacebookPage(sender:)))
         facebookLable.addGestureRecognizer(facebookTap)
         
+        locationLabel.text = "Lokacija događaja"
+        locationLabel.isUserInteractionEnabled = true
+        let locationTap = UITapGestureRecognizer(target: self, action: #selector(self.goToEventLocation(sender:)))
+        locationLabel.addGestureRecognizer(locationTap)
+        
         categoryLabel.text = "Kategorija: " + event.category
         
         imageView.kf.setImage(with: URL(string: event.image))
@@ -102,6 +108,11 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         self.performSegue(withIdentifier: "Host", sender: hostLabel)
     }
     
+    func goToEventLocation( sender: UILabel){
+        //passing Sender
+        self.performSegue(withIdentifier: "EventLocation", sender: sender)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
         if segue.identifier == "Host"{
@@ -111,6 +122,12 @@ class EventDetailController: UIViewController, UITabBarDelegate {
             
             eventDetail.host = sender.host
             
+        } else if(segue.identifier == "EventLocation") {
+            //casting sender to UIButton
+            let eventLocation = segue.destination as! EventLocationController
+            
+            eventLocation.event = self.event
+            eventLocation.host = self.hostLabel.host
         }
     }
     

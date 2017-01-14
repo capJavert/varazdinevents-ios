@@ -92,4 +92,27 @@ public class HTTPRequest
                 }
         }
     }
+    
+    public func getLatLngFromAddress(address: String)
+    {
+        var googleWebApiKey = ""
+        var keys: NSDictionary?
+        
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = keys {
+            googleWebApiKey = (dict["GoogleWebApiKey"] as? String)!
+        }
+        
+        
+        Alamofire.request("https://maps.googleapis.com/maps/api/geocode/json", method: .get, parameters: ["address": address, "key": googleWebApiKey])
+            .responseJSON { response in
+                if let json = response.result.value{
+                    //NSLog("JSON: \(json)")
+                    
+                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "location")
+                }
+        }
+    }
 }
