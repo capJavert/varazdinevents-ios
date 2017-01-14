@@ -85,6 +85,12 @@ public class WebServiceDataLoader:DataLoader
         
         DbController.sharedDBInstance.realmAdd(o: event)
     }
+    
+    public func getLocation(address: String)
+    {
+        httpRequest.wsResultDelegate = self
+        httpRequest.getLatLngFromAddress(address: address)
+    }
 }
 
 extension WebServiceDataLoader: WebServiceResultDelegate{
@@ -124,6 +130,11 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
             case "facebook":
                 let status = JsonAdapter.getFacebookImportStatus(json: json)
                 self.eventCreated(status: status)
+            break
+            case "location":
+                let latLng = JsonAdapter.getLocation(json: json)
+                print("Location:", latLng)
+                self.locationFetched(latLng: latLng)
             break
             default:
                 //not valid type

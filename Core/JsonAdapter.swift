@@ -115,4 +115,31 @@ public class JsonAdapter
         return false
     }
     
+    public static func getLocation(json: AnyObject) -> Dictionary<String, Any>
+    {
+        var location = Dictionary<String, Any>()
+        
+        var data = JSON(json)
+        var subJson = String(describing: data["results"][0])
+        if let dataFromString = subJson.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            data = JSON(data: dataFromString)
+            
+            location["address"] = data["formatted_address"].string!
+            
+            subJson = String(describing: data["geometry"])
+            if let dataFromString = subJson.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                data = JSON(data: dataFromString)
+                
+                subJson = String(describing: data["location"])
+                if let dataFromString = subJson.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                    data = JSON(data: dataFromString)
+                    
+                    location["lat"] = data["lat"].double!
+                    location["lng"] = data["lng"].double!
+                }
+            }
+        }
+        
+        return location
+    }
 }
