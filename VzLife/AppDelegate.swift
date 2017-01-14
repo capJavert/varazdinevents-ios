@@ -12,6 +12,8 @@ import UserNotifications
 import Firebase
 import FirebaseMessaging
 import FacebookCore
+import GoogleMaps
+//import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, FIRMessagingDelegate {
@@ -23,6 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool
     {
+        var keys: NSDictionary?
+        
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = keys {
+            let googleMapsApiKey = dict["GoogleMapsApiKey"] as? String
+            
+            // Initialize services that require secret keys
+            GMSServices.provideAPIKey(googleMapsApiKey!)
+            //GMSPlacesClient.provideAPIKey(googleMapsApiKey)
+        }
+        
         return SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
