@@ -133,7 +133,6 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
             break
             case "location":
                 let latLng = JsonAdapter.getLocation(json: json)
-                print("Location:", latLng)
                 self.locationFetched(latLng: latLng)
             break
             default:
