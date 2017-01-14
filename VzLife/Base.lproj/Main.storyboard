@@ -50,7 +50,7 @@
                                 <rect key="frame" x="0.0" y="285" width="375" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.99839156870000001" green="0.73316329719999995" blue="0.27579873799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -58,7 +58,7 @@
                                 <rect key="frame" x="0.0" y="317" width="375" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.99839156870000001" green="0.73316329719999995" blue="0.27579873799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -92,7 +92,7 @@
                                 <rect key="frame" x="0.0" y="349" width="375" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.99839156870000001" green="0.73316329719999995" blue="0.27579873799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -113,6 +113,7 @@
                         <outlet property="timeLabel" destination="4vk-uq-V3m" id="ai4-9F-lHm"/>
                         <segue destination="pEB-Rk-hzW" kind="show" identifier="Host" id="ad5-34-qzN"/>
                         <segue destination="bLu-6a-fS9" kind="show" identifier="EventLocation" id="pdw-z1-6o9"/>
+                        <segue destination="Oc9-r2-t5s" kind="show" identifier="EventCategory" id="XnG-T4-XFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edf-Ia-Au1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -851,6 +852,7 @@
         <image name="VzLife-logo" width="320" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r9s-mS-euz"/>
+        <segue reference="NYz-R5-CSN"/>
+        <segue reference="CmU-3I-VSi"/>
     </inferredMetricsTieBreakers>
 </document>

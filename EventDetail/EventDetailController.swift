@@ -74,6 +74,9 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         locationLabel.addGestureRecognizer(locationTap)
         
         categoryLabel.text = "Kategorija: " + event.category
+        categoryLabel.isUserInteractionEnabled = true
+        let categoryTap = UITapGestureRecognizer(target: self, action: #selector(self.goToEventCategory(sender:)))
+        categoryLabel.addGestureRecognizer(categoryTap)
         
         imageView.kf.setImage(with: URL(string: event.image))
         textView.text = event.text.replacingOccurrences(of: "<br />", with: "\n", options: .regularExpression, range: nil)
@@ -113,6 +116,11 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         self.performSegue(withIdentifier: "EventLocation", sender: sender)
     }
     
+    func goToEventCategory( sender: UILabel){
+        //passing Sender
+        self.performSegue(withIdentifier: "EventCategory", sender: sender)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
         if segue.identifier == "Host"{
@@ -128,6 +136,11 @@ class EventDetailController: UIViewController, UITabBarDelegate {
             
             eventLocation.event = self.event
             eventLocation.host = self.hostLabel.host
+        } else if(segue.identifier == "EventCategory") {
+            //casting sender to UIButton
+            let eventCategory = segue.destination as! EventCategoryController
+            
+            eventCategory.category = event.category
         }
     }
     
