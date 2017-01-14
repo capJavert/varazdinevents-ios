@@ -13,6 +13,7 @@
 		684606D71E1AE96100165F97 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684606D31E1AE96100165F97 /* LoginCell.swift */; };
 		684606D81E1AE96100165F97 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684606D41E1AE96100165F97 /* LoginController.swift */; };
 		684A357C1E2A81EB00193E96 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 684A357B1E2A81EB00193E96 /* Keys.plist */; };
+		684A35801E2A853500193E96 /* EventLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A357F1E2A853500193E96 /* EventLocationController.swift */; };
 		6887094A1E253BBD002BC0CC /* FacebookImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688709491E253BBD002BC0CC /* FacebookImportController.swift */; };
 		689A55191E15DA2600CEE356 /* HostEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A55181E15DA2600CEE356 /* HostEventController.swift */; };
 		689A551D1E15F8BA00CEE356 /* HostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A551C1E15F8BA00CEE356 /* HostLabel.swift */; };
@@ -72,6 +73,7 @@
 		684606D31E1AE96100165F97 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		684606D41E1AE96100165F97 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		684A357B1E2A81EB00193E96 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		684A357F1E2A853500193E96 /* EventLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationController.swift; sourceTree = "<group>"; };
 		688709491E253BBD002BC0CC /* FacebookImportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookImportController.swift; sourceTree = "<group>"; };
 		689A55181E15DA2600CEE356 /* HostEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostEventController.swift; sourceTree = "<group>"; };
 		689A551C1E15F8BA00CEE356 /* HostLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostLabel.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */,
 				68FADAF51DF48E87000A858E /* EventDetailController.swift */,
 				689A551C1E15F8BA00CEE356 /* HostLabel.swift */,
+				684A357F1E2A853500193E96 /* EventLocationController.swift */,
 			);
 			path = EventDetail;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */,
 				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
 				E4DB14711E12DB4C00F0CB10 /* EventCategoryCell.swift in Sources */,
+				684A35801E2A853500193E96 /* EventLocationController.swift in Sources */,
 				E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */,
 				684606D51E1AE96100165F97 /* Extensions.swift in Sources */,
 				689A551F1E15FB0200CEE356 /* Host.swift in Sources */,
