@@ -54,8 +54,6 @@ PODS:
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
-  - GooglePlaces (2.1.1):
-    - GoogleMaps/Base (= 2.1.1)
   - GoogleSymbolUtilities (1.1.2)
   - GoogleToolboxForMac/Defines (2.1.0)
   - GoogleToolboxForMac/Logger (2.1.0):
@@ -78,7 +76,6 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
   - GoogleMaps
-  - GooglePlaces
   - Kingfisher (~> 3.2)
   - RealmSwift
   - SwiftyJSON (~> 3.1)
@@ -99,7 +96,6 @@ SPEC CHECKSUMS:
   FirebaseMessaging: acf66347e43c5637c697060c3001d25c809a4131
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
-  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
@@ -107,6 +103,6 @@ SPEC CHECKSUMS:
   RealmSwift: a4d4abbf0088c337cab5b738054395842e4b3052
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: a5be4f55824bbc4b876dfbce4a76dac3ee9e1410
+PODFILE CHECKSUM: cf8302d7d7ec9ee394fa6e1bd37ca152715accee
 
 COCOAPODS: 1.1.1

@@ -13,7 +13,6 @@ import Firebase
 import FirebaseMessaging
 import FacebookCore
 import GoogleMaps
-//import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, FIRMessagingDelegate {
@@ -35,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             // Initialize services that require secret keys
             GMSServices.provideAPIKey(googleMapsApiKey!)
-            //GMSPlacesClient.provideAPIKey(googleMapsApiKey)
         }
         
         return SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
