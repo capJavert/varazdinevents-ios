@@ -41,6 +41,15 @@ class HostController: UIViewController{
 
         textView.text = host.about.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil).replacingOccurrences(of: "&nbsp;", with: " ")
         imageView.kf.setImage(with: URL(string: host.image))
+        
+        //adjust label positions
+        addressLabel.frame.origin.y = imageView.frame.origin.y + imageView.frame.height
+        phoneLabel.frame.origin.y = addressLabel.frame.origin.y + addressLabel.frame.height
+        workHoursLabel.frame.origin.y = phoneLabel.frame.origin.y + phoneLabel.frame.height
+        facebookLabel.frame.origin.y = workHoursLabel.frame.origin.y + workHoursLabel.frame.height
+        websiteLabel.frame.origin.y = facebookLabel.frame.origin.y + facebookLabel.frame.height
+        moreInfoButton.frame.origin.y = websiteLabel.frame.origin.y + websiteLabel.frame.height + 5
+        textView.frame.origin.y = moreInfoButton.frame.origin.y + websiteLabel.frame.height + 5
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,9 +72,10 @@ class HostController: UIViewController{
     
     
     func setLabel(label: UILabel, value: Any) -> UILabel {
-        if (host.address != "") {
+        if (value as! String != "") {
             label.text = value as? String
         } else {
+            label.frame = CGRect(x: label.frame.origin.x, y: label.frame.origin.y, width: label.frame.width, height: 0)
             label.isHidden = true
         }
         
