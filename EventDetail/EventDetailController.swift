@@ -59,11 +59,6 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         let hostTap = UITapGestureRecognizer(target: self, action: #selector(self.goToEventHost(sender:)))
         hostLabel.addGestureRecognizer(hostTap)
         
-        if(event.facebook=="") {
-            facebookLable.isHidden = true
-        } else {
-            facebookLable.text = "Facebook stranica"
-        }
         facebookLable.isUserInteractionEnabled = true
         let facebookTap = UITapGestureRecognizer(target: self, action: #selector(self.openFacebookPage(sender:)))
         facebookLable.addGestureRecognizer(facebookTap)
@@ -80,6 +75,24 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         
         imageView.kf.setImage(with: URL(string: event.image))
         textView.text = event.text.replacingOccurrences(of: "<br />", with: "\n", options: .regularExpression, range: nil)
+        
+        //adjust label positions
+        dateLabel.frame.origin.y = imageView.frame.origin.y + imageView.frame.height
+        timeLabel.frame.origin.y = dateLabel.frame.origin.y + dateLabel.frame.height
+        hostLabel.frame.origin.y = timeLabel.frame.origin.y + timeLabel.frame.height
+        facebookLable.frame.origin.y = hostLabel.frame.origin.y + hostLabel.frame.height
+        
+        if(event.facebook=="") {
+            facebookLable.isHidden = true
+            categoryLabel.frame.origin.y = hostLabel.frame.origin.y + hostLabel.frame.height
+            textView.frame = CGRect(x: textView.frame.origin.x, y: textView.frame.origin.y, width: textView.frame.width, height: textView.frame.height + facebookLable.frame.height)
+        } else {
+            facebookLable.text = "Facebook stranica"
+            categoryLabel.frame.origin.y = facebookLable.frame.origin.y + facebookLable.frame.height
+        }
+
+        locationLabel.frame.origin.y = categoryLabel.frame.origin.y + categoryLabel.frame.height
+        textView.frame.origin.y = locationLabel.frame.origin.y + locationLabel.frame.height
         
         if (event.favorite) {
             tabBar.selectedItem = tabBar.items![0] as UITabBarItem
