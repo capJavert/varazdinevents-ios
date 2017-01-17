@@ -2,7 +2,7 @@ import UIKit
 
 class CategoryController: UITableViewController, UISearchBarDelegate {
 
-    let categories = ["Kazalište i film", "Slušaona", "Svirka", "Volontiranje", " Tečaj", "Predavanje", "Party","Ostalo","Arhiva događaja"]
+    let categories = ["Kazalište i film", "Slušaona", "Svirka", "Volontiranje", "Tečaj", "Predavanje", "Party", "Ostalo"]
     var filteredCategories = [String]()
     var user = User()
     var searchBar = UISearchBar()
