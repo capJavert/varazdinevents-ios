@@ -74,6 +74,7 @@
 		684606D41E1AE96100165F97 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		684A357B1E2A81EB00193E96 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		684A357F1E2A853500193E96 /* EventLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationController.swift; sourceTree = "<group>"; };
+		6882A0D91E313A13002CBC76 /* VzLife.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VzLife.entitlements; sourceTree = "<group>"; };
 		688709491E253BBD002BC0CC /* FacebookImportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookImportController.swift; sourceTree = "<group>"; };
 		689A55181E15DA2600CEE356 /* HostEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostEventController.swift; sourceTree = "<group>"; };
 		689A551C1E15F8BA00CEE356 /* HostLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostLabel.swift; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 		E4A962BE1DE42BE400BCF470 /* VzLife */ = {
 			isa = PBXGroup;
 			children = (
+				6882A0D91E313A13002CBC76 /* VzLife.entitlements */,
 				684A357B1E2A81EB00193E96 /* Keys.plist */,
 				681603E41E0DE605000EED21 /* GoogleService-Info.plist */,
 				E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */,
@@ -380,10 +382,14 @@
 				TargetAttributes = {
 					E4A962BB1DE42BE400BCF470 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = B2Z8J357DK;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 0;
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -690,11 +696,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = VzLife/VzLife.entitlements;
+				DEVELOPMENT_TEAM = B2Z8J357DK;
 				INFOPLIST_FILE = VzLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VzLife;
+				PRODUCT_BUNDLE_IDENTIFIER = "air.foi.hr.vz-life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3402e9cf-b99a-47c1-9e6b-903d683ddf86";
+				PROVISIONING_PROFILE_SPECIFIER = Ante;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -705,10 +714,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VzLife/VzLife.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VzLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = air.foi.hr.VzLife;
+				PRODUCT_BUNDLE_IDENTIFIER = "air.foi.hr.vz-life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
