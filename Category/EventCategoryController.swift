@@ -39,8 +39,8 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        print(category)
-        
+        //set collection view size
+        collectionView.frame.size.width = self.view.frame.width
     }
     
      override func didReceiveMemoryWarning() {

@@ -19,6 +19,7 @@ class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate, UITe
             // Process error
         } else if result.isCancelled {
             // Handle cancellations
+            eventIdField.isEnabled = false
         }
     }
     

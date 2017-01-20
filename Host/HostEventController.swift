@@ -29,6 +29,9 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        //set collection view size
+        collectionView.frame.size.width = self.view.frame.width
     }
     
     override func didReceiveMemoryWarning() {

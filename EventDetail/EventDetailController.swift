@@ -97,6 +97,17 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         if (event.favorite) {
             tabBar.selectedItem = tabBar.items![0] as UITabBarItem
         }
+        
+        //adjust text size
+        let fixedWidth = textView.frame.size.width
+        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        var newFrame = textView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        textView.frame = newFrame;
+        
+        //calc scroll height
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: textView.frame.height + imageView.frame.height + dateLabel.frame.height + timeLabel.frame.height + facebookLable.frame.height + locationLabel.frame.height + hostLabel.frame.height + categoryLabel.frame.height + 150)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

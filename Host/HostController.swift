@@ -48,8 +48,19 @@ class HostController: UIViewController{
         workHoursLabel.frame.origin.y = phoneLabel.frame.origin.y + phoneLabel.frame.height
         facebookLabel.frame.origin.y = workHoursLabel.frame.origin.y + workHoursLabel.frame.height
         websiteLabel.frame.origin.y = facebookLabel.frame.origin.y + facebookLabel.frame.height
-        moreInfoButton.frame.origin.y = websiteLabel.frame.origin.y + websiteLabel.frame.height + 5
-        textView.frame.origin.y = moreInfoButton.frame.origin.y + websiteLabel.frame.height + 5
+        moreInfoButton.frame.origin.y = websiteLabel.frame.origin.y + websiteLabel.frame.height + 10
+        textView.frame.origin.y = moreInfoButton.frame.origin.y + websiteLabel.frame.height + 10
+        
+        //adjust text size
+        let fixedWidth = textView.frame.size.width
+        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        var newFrame = textView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        textView.frame = newFrame;
+        
+        //calc scroll height
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: textView.frame.height + imageView.frame.height + websiteLabel.frame.height + phoneLabel.frame.height + facebookLabel.frame.height + addressLabel.frame.height + workHoursLabel.frame.height + moreInfoButton.frame.height + 20)
     }
     
     override func didReceiveMemoryWarning() {

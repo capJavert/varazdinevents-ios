@@ -105,13 +105,8 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        /* //searchResultUpdateder informs searchBar when search is updated
-         searchBarController.searchResultsUpdater = self
-         searchBarController.dimsBackgroundDuringPresentation = false
-         //to remove search bar from other views if user change the view
-         definesPresentationContext = true
-         collectionView.*/
-        
+        //set collection view size
+        collectionView.frame.size.width = self.view.frame.width
     }
     
     lazy var refreshControl: UIRefreshControl = {
