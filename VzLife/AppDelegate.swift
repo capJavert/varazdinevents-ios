@@ -117,8 +117,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             print("Message ID: \(messageID)")
         }
         
-        // Print full message.
-        print(userInfo)
+        // show event
+        showEvent(eventId: Int(userInfo["gcm.notification.event_id"] as! String)!)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
@@ -128,10 +128,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             print("Message ID: \(messageID)")
         }
         
-        // Print full message.
-        print(userInfo)
+        // show event
+        showEvent(eventId: Int(userInfo["gcm.notification.event_id"] as! String)!)
         
         completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+    func showEvent(eventId: Int) {
+        //init storyboard and views
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let prevController : EventController = mainStoryboardIpad.instantiateViewController(withIdentifier: "eventsView") as! EventController
+        let viewController : EventDetailController = mainStoryboardIpad.instantiateViewController(withIdentifier: "EventDetail") as! EventDetailController
+        
+        //get event object
+        viewController.event = DbController.sharedDBInstance.realm.object(ofType: Event.self, forPrimaryKey: eventId)!
+        
+        //navigate to view
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [prevController, viewController]
+        self.window!.rootViewController = navigationController
+        
+        self.window?.makeKeyAndVisible()
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {

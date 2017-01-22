@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import RealmSwift
+import Firebase
 
 class EventDetailController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -114,11 +115,17 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         let realm = try! Realm()
         do {
             try! realm.write() {
+                let request = HTTPRequest()
+    
                 if (event.favorite) {
                     event.favorite = false
                     tabBar.selectedItem = nil
+                    
+                    request.unFavoriteEvent(token: FIRInstanceID.instanceID().token()!, eventId: event.id)
                 } else {
                     event.favorite = true
+                    
+                    request.favoriteEvent(token: FIRInstanceID.instanceID().token()!, eventId: event.id)
                 }
                 
                 realm.add(event, update: true)
