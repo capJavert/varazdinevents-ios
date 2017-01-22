@@ -78,11 +78,6 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set default Realm DB configuration
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(
-            schemaVersion: 4,
-            migrationBlock: { migration, oldSchemaVersion in })
-        
         if user.id != 0 {
             self.navigationItem.setHidesBackButton(true, animated:true)
             self.navigationItem.leftBarButtonItem = nil

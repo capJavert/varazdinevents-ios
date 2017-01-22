@@ -13,6 +13,7 @@ import Firebase
 import FirebaseMessaging
 import FacebookCore
 import GoogleMaps
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, FIRMessagingDelegate {
@@ -24,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool
     {
+        //set default Realm DB configuration
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(
+            schemaVersion: 4,
+            migrationBlock: { migration, oldSchemaVersion in })
+        
         //configure fcm
         FIRApp.configure()
         connectToFcm()
