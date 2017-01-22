@@ -55,6 +55,28 @@ public class HTTPRequest
         }
     }
     
+    public func favoriteEvent(token: String, eventId: Int)
+    {
+        Alamofire.request(baseUrl+"/firebase/favorite/"+String(eventId), method: .get, parameters: ["token": token])
+            .responseJSON { response in
+                if response.result.value != nil{
+                    //NSLog("JSON: \(json)")
+                    //self.wsResultDelegate?.getResult(json: json as AnyObject, type: "user")
+                }
+        }
+    }
+    
+    public func unFavoriteEvent(token: String, eventId: Int)
+    {
+        Alamofire.request(baseUrl+"/firebase/un-favorite/"+String(eventId), method: .get, parameters: ["token": token])
+            .responseJSON { response in
+                if response.result.value != nil{
+                    //NSLog("JSON: \(json)")
+                    //self.wsResultDelegate?.getResult(json: json as AnyObject, type: "user")
+                }
+        }
+    }
+    
     public func createEvent(data: [String: Any], sessionId: String)
     {
         var request = URLRequest(url: NSURL(string: baseUrl+"/events?token="+sessionId) as! URL)
