@@ -73,7 +73,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CcW-5g-NR8">
+                                    <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CcW-5g-NR8">
                                         <rect key="frame" x="-1.7272727272779775" y="1" width="374.99999999999989" height="189.99999999999997"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="190" id="6rF-lE-zSv"/>
@@ -163,7 +163,7 @@
         <scene sceneID="fbp-Bf-qA3">
             <objects>
                 <navigationController id="GKK-CU-l3t" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6K7-2l-lmn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6K7-2l-lmn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -763,7 +763,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2w6-TW-XPU">
+                            <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2w6-TW-XPU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="gJI-jY-tfW"/>
