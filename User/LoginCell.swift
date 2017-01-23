@@ -44,13 +44,27 @@ class LoginCell: UICollectionViewCell {
         button.addTarget(self, action: #selector(logIn), for: .touchUpInside)
         return button
     }()
+    
+    lazy var cancleButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .orange
+        button.setTitle("Odustani", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(cancle), for: .touchUpInside)
+        return button
+    }()
+
     // ? -> means optional, cuz' you want to initialize it as nil
     var loginController: LoginController?
+    var eventController: EventController?
     
     func logIn(){
         
         loginController?.finishLogin(username: emailTextField.text!, password: passwordTextField.text!)
+    }
     
+    func cancle(){
+        loginController?.cancleIt()
     }
     
     override init(frame: CGRect) {
@@ -60,6 +74,7 @@ class LoginCell: UICollectionViewCell {
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(loginButton)
+        addSubview(cancleButton)
         
         _ = logoImageView.anchor(centerYAnchor, left: nil, bottom: nil, right: nil, topConstant: -230, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 160, heightConstant: 160)
         logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -69,6 +84,8 @@ class LoginCell: UICollectionViewCell {
         _ = passwordTextField.anchor(emailTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
         
         _ = loginButton.anchor(passwordTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
+       
+        _ = cancleButton.anchor(loginButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,9 +93,5 @@ class LoginCell: UICollectionViewCell {
 }
     
     
-   
-    
-    
-    
-    
 }
+

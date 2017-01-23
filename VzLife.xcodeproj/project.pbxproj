@@ -24,6 +24,7 @@
 		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
 		68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */; };
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
+		E43A79651E36A1D100D013CA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A79641E36A1D100D013CA /* TabBar.swift */; };
 		E45FB09D1DEB3E7A00056445 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* EventCell.swift */; };
 		E45FB0A11DEB3F6A00056445 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* EventController.swift */; };
 		E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476B0161E114E96004B2D72 /* EventCreateController.swift */; };
@@ -86,6 +87,7 @@
 		68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailButton.swift; sourceTree = "<group>"; };
 		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
 		9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VzLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E43A79641E36A1D100D013CA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		E45FB09C1DEB3E7A00056445 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		E45FB0A01DEB3F6A00056445 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		E476B0161E114E96004B2D72 /* EventCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreateController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E43A79631E36A19A00D013CA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E43A79641E36A1D100D013CA /* TabBar.swift */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
 		E4609D5E1E109AEF00889BFB /* EventCreate */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +215,7 @@
 		E4A962B31DE42BE400BCF470 = {
 			isa = PBXGroup;
 			children = (
+				E43A79631E36A19A00D013CA /* TabBar */,
 				684606D01E1AE8F100165F97 /* User */,
 				68EE63661E165A0B002F57BB /* Host */,
 				E4DB14691E11A0E000F0CB10 /* Category */,
@@ -539,6 +550,7 @@
 				684606D61E1AE96100165F97 /* LeftPaddedTextField.swift in Sources */,
 				68EE63681E165B1B002F57BB /* HostController.swift in Sources */,
 				E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */,
+				E43A79651E36A1D100D013CA /* TabBar.swift in Sources */,
 				684606D71E1AE96100165F97 /* LoginCell.swift in Sources */,
 				E4DB146F1E12D7D500F0CB10 /* EventCategoryController.swift in Sources */,
 			);
