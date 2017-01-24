@@ -251,12 +251,12 @@
 				681603E41E0DE605000EED21 /* GoogleService-Info.plist */,
 				E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */,
 				E4A962C31DE42BE400BCF470 /* Main.storyboard */,
-				E4A962C91DE42BE400BCF470 /* Assets.xcassets */,
 				E4A962CB1DE42BE500BCF470 /* LaunchScreen.storyboard */,
 				E4A962CE1DE42BE500BCF470 /* Info.plist */,
 				E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */,
 				E45FB09C1DEB3E7A00056445 /* EventCell.swift */,
 				E45FB0A01DEB3F6A00056445 /* EventController.swift */,
+				E4A962C91DE42BE400BCF470 /* Assets.xcassets */,
 				68C389431E244073004E0A8F /* InitController.swift */,
 			);
 			path = VzLife;

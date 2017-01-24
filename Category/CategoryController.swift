@@ -84,6 +84,8 @@ class CategoryController: UITableViewController, UISearchBarDelegate {
         eventsByCategories.category = sender
         }
     }
+    
+    
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.endEditing(true)
     }
