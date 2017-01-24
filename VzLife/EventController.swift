@@ -77,7 +77,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController?.tabBar.isHidden = false
         if user.id != 0 {
             self.navigationItem.setHidesBackButton(true, animated:true)
             self.navigationItem.leftBarButtonItem = nil
@@ -102,7 +102,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         
         //set collection view size
         collectionView.frame.size.width = self.view.frame.width
-      
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     lazy var refreshControl: UIRefreshControl = {
@@ -184,8 +184,6 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     
             }
     
-   
-
     
     /* func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toLogIn" {

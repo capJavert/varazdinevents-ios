@@ -21,13 +21,15 @@ class EventCreateController: UIViewController {
     var sessionId: String = ""
     var user =  User()
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     var events = [Event]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(scrollView)
         // Do any additional setup after loading the view.
-        
+        scrollView.contentSize = CGSize(width: 0, height: 700)
         self.navigationItem.title = "Kreiraj događaj"
     }
 

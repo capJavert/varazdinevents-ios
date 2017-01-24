@@ -154,7 +154,7 @@ extension LoginController: OnUserLoggedDelegate {
         eventsView.user = user
         self.navigationController?.pushViewController(eventsView, animated: true)
 
-         collectionView.reloadData()
+        collectionView.reloadData()
     }
     
 }
