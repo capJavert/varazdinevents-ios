@@ -120,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edf-Ia-Au1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2172" y="-63.418290854572717"/>
+            <point key="canvasLocation" x="3111.1999999999998" y="-63.418290854572717"/>
         </scene>
         <!--Event Location Controller-->
         <scene sceneID="bK3-Cl-epS">
@@ -143,7 +143,7 @@
         <!--Login Controller-->
         <scene sceneID="Qs0-9d-fN6">
             <objects>
-                <viewController storyboardIdentifier="loginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iaj-EK-q1C" customClass="LoginController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" hidesBottomBarWhenPushed="YES" id="Iaj-EK-q1C" customClass="LoginController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bgy-MH-HOW"/>
                         <viewControllerLayoutGuide type="bottom" id="7Dn-ve-HBP"/>
@@ -153,17 +153,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="Anq-0w-a0W"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLa-gt-srd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232.8" y="-259.52023988005999"/>
+            <point key="canvasLocation" x="1618" y="-260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fbp-Bf-qA3">
             <objects>
                 <navigationController id="GKK-CU-l3t" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6K7-2l-lmn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6K7-2l-lmn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -252,7 +254,7 @@
         <!--Event Controller-->
         <scene sceneID="O8L-PH-Pux">
             <objects>
-                <viewController storyboardIdentifier="eventsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSh-Vj-10U" customClass="EventController" customModule="VzLife" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsView" id="cSh-Vj-10U" customClass="EventController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yUT-Oj-MYq"/>
                         <viewControllerLayoutGuide type="bottom" id="aQx-ZT-hCz"/>
@@ -326,7 +328,7 @@
                         <leftBarButtonItems>
                             <barButtonItem title="Prijava" id="xYJ-B2-y6q">
                                 <connections>
-                                    <segue destination="LTd-qy-s4g" kind="show" id="mne-V0-h9L"/>
+                                    <segue destination="Iaj-EK-q1C" kind="show" identifier="toLoginInAction" id="sGS-11-2F2"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="tFH-OG-khe">
@@ -357,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idj-EN-ntN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="942"/>
+            <point key="canvasLocation" x="156" y="907"/>
         </scene>
         <!--Event Category Controller-->
         <scene sceneID="X0L-79-czA">
@@ -667,7 +669,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4yC-kb-ifa">
             <objects>
-                <tabBarController id="uEW-SK-Jwh" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarView" id="uEW-SK-Jwh" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="vyy-Ox-nd3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -770,7 +772,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6N-qb-wvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="-228.03598200899552"/>
+            <point key="canvasLocation" x="5359.1999999999998" y="-228.03598200899552"/>
         </scene>
         <!--Host Controller-->
         <scene sceneID="hTD-Fm-ybY">
@@ -869,16 +871,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gim-l6-ON6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3304.8000000000002" y="-14.842578710644679"/>
+            <point key="canvasLocation" x="4244" y="-14.842578710644679"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sjx-Tc-TC4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UC3-1J-pxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D5K-jf-AE0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="recents" id="P8l-NT-ZMQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4bR-eZ-Neo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4bR-eZ-Neo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -887,26 +888,9 @@
                         <segue destination="cSh-Vj-10U" kind="relationship" relationship="rootViewController" id="yXC-yX-R6j"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UC3-1J-pxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-630" y="908"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="BOj-sF-hp8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LTd-qy-s4g" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9AV-4x-yDO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Iaj-EK-q1C" kind="relationship" relationship="rootViewController" id="aXr-wJ-JZr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="owE-Pf-TB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="293.60000000000002" y="-259.52023988005999"/>
         </scene>
     </scenes>
     <resources>
@@ -915,8 +899,8 @@
         <image name="VzLife-logo" width="320" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="r9s-mS-euz"/>
         <segue reference="T2f-Xb-3lT"/>
         <segue reference="CmU-3I-VSi"/>
-        <segue reference="r9s-mS-euz"/>
     </inferredMetricsTieBreakers>
 </document>

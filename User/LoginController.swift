@@ -30,8 +30,10 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
 
     let backButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Back", for: .normal)
+        button.setTitle("Nazad", for: .normal)
         button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+        button.addTarget(self, action: #selector(cancleIt), for: .allTouchEvents)
+
         return button
     }()
     
@@ -47,14 +49,16 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
         backButtonTopAnchor = backButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
         collectionView.anchorToTop(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         //self.tabBarController?.tabBar.isHidden = true
+       // self.tabBarController?.tabBar.layer.isHidden = true
+        
 
         registerCells()
     }
-    override func viewWillAppear(_ animated: Bool) {
+ /*   override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
     
-    }
+    }*/
     
  
     func finishLogin(username: String, password: String) {
@@ -69,9 +73,12 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
 
             }
     
-    func cancleIt(){
+    public func cancleIt(){
+        
         let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
         self.navigationController?.pushViewController(eventsView, animated: true)
+        
+       
     }
     
     

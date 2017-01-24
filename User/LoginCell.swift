@@ -63,7 +63,7 @@ class LoginCell: UICollectionViewCell {
         loginController?.finishLogin(username: emailTextField.text!, password: passwordTextField.text!)
     }
     
-    func cancle(){
+   func cancle(){
         loginController?.cancleIt()
     }
     
