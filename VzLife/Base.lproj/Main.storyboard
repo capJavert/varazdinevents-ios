@@ -408,6 +408,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Trenutno ne postoje aktivni događaji" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P51-4R-2px">
+                                <rect key="frame" x="66" y="318" width="242" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="availabilityText">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -419,13 +429,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="availabilityText" destination="P51-4R-2px" id="PJO-ou-CLs"/>
                         <outlet property="collectionView" destination="CmX-IZ-J2W" id="CsH-vh-2a0"/>
                         <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="NYz-R5-CSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QQ-nX-vkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4074" y="1012"/>
+            <point key="canvasLocation" x="4072.8000000000002" y="1011.544227886057"/>
         </scene>
         <!--Event Create Controller-->
         <scene sceneID="Wg8-Nd-5t1">

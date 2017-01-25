@@ -13,7 +13,9 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     var searchBarController: UISearchController!
     var searchText: String = ""
     var category = ""
+    var emptyList = false
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var availabilityText: UITextField!
     
     @IBOutlet weak var aboutView: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -52,6 +54,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         super.viewWillAppear(animated)
         
         self.navigationItem.title = category
+       
         
     }
     
@@ -81,6 +84,15 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     //Implementing methods for classes we included
     //First one is for number of items in collectionView ( how many items will we have )
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (events.count == 0){
+            emptyList = true
+        }
+        if(emptyList){
+            availabilityText.isHidden = false
+        }
+        else{
+            availabilityText.isHidden = true
+        }
         return events.count
     }
     
