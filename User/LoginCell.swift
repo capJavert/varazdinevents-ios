@@ -23,6 +23,7 @@ class LoginCell: UICollectionViewCell {
         textField.layer.borderWidth = 1
         textField.backgroundColor = .white
         textField.keyboardType = .emailAddress
+        textField.layer.cornerRadius = 15.0
         textField.autocorrectionType = UITextAutocorrectionType.no
         textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
@@ -33,6 +34,7 @@ class LoginCell: UICollectionViewCell {
         textField.placeholder = "Lozinka"
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
+        textField.layer.cornerRadius = 15.0
         textField.backgroundColor = .white
         textField.isSecureTextEntry = true
         return textField
@@ -43,19 +45,13 @@ class LoginCell: UICollectionViewCell {
         button.backgroundColor = .white
         button.setTitle("Prijava", for: .normal)
         button.setTitleColor(.orange, for: .normal)
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 7.0
         button.addTarget(self, action: #selector(logIn), for: .touchUpInside)
         return button
     }()
     
-    lazy var cancleButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = .white
-        button.setTitle("Odustani", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
-        button.addTarget(self, action: #selector(cancle), for: .touchUpInside)
-        return button
-    }()
-
+    
     // ? -> means optional, cuz' you want to initialize it as nil
     var loginController: LoginController?
     var eventController: EventController?
@@ -76,18 +72,17 @@ class LoginCell: UICollectionViewCell {
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(loginButton)
-        addSubview(cancleButton)
+        
         
         _ = logoImageView.anchor(centerYAnchor, left: nil, bottom: nil, right: nil, topConstant: -150, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 320, heightConstant: 39)
         logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        _ = emailTextField.anchor(logoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 30, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
+        _ = emailTextField.anchor(logoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 80, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
         
         _ = passwordTextField.anchor(emailTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
         
-        _ = loginButton.anchor(passwordTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
+        _ = loginButton.anchor(passwordTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 40, bottomConstant: 0, rightConstant: 40, widthConstant: 0, heightConstant: 40)
        
-        _ = cancleButton.anchor(loginButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
     }
     
     required init?(coder aDecoder: NSCoder) {
