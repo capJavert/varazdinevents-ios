@@ -45,9 +45,10 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
         observeKeyboardNotifications()
         view.addSubview(collectionView)
         view.addSubview(backButton)
-        
+     //   view.backgroundColor = .orange
         backButtonTopAnchor = backButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
         collectionView.anchorToTop(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+        collectionView.backgroundColor = UIColor(netHex:0xFFBB46)
         //self.tabBarController?.tabBar.isHidden = true
        // self.tabBarController?.tabBar.layer.isHidden = true
         
@@ -152,10 +153,25 @@ extension LoginController: OnUserLoggedDelegate {
         
         let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
         eventsView.user = user
-        self.navigationController?.pushViewController(eventsView, animated: true)
+        let rootView = self.navigationController?.popToRootViewController(animated: false)
+        self.navigationController?.pushViewController((rootView?[0])!, animated: false)
 
         collectionView.reloadData()
     }
     
+}
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex:Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    }
 }
 

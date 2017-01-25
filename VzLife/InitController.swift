@@ -37,20 +37,9 @@ class InitController: UIViewController {
     }
     
     @IBAction func initFirstView(_ sender: Any) {
-        let eventController = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
-        eventController.user = user
-        self.navigationController?.show(eventController, sender: self)
+        performSegue(withIdentifier: "init", sender: sender)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "init" {
-            let sender = sender as! User
-            let eventList = segue.destination as! EventController
-            
-            eventList.user = sender
-            
-        }
-    }
+
 }
 
 extension InitController: OnUserLoggedDelegate {

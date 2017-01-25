@@ -124,6 +124,7 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
                     self.user = User()
                 }
                 
+                self.bindUser(user: user)
                 self.userLoaded = true
                 self.userLogged()
             break

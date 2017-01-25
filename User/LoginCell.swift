@@ -11,16 +11,17 @@ import UIKit
 class LoginCell: UICollectionViewCell {
 
     let logoImageView: UIImageView = {
-        let image = UIImage(named: "logo")
+        let image = UIImage(named: "VzLife-logo")
         let imageView = UIImageView(image: image)
         return imageView
     }()
     
     let emailTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
-        textField.placeholder = "Enter email"
+        textField.placeholder = "Korisničko ime"
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
+        textField.backgroundColor = .white
         textField.keyboardType = .emailAddress
         textField.autocorrectionType = UITextAutocorrectionType.no
         textField.autocapitalizationType = UITextAutocapitalizationType.none
@@ -29,27 +30,28 @@ class LoginCell: UICollectionViewCell {
     
     let passwordTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
-        textField.placeholder = "Enter password"
+        textField.placeholder = "Lozinka"
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
+        textField.backgroundColor = .white
         textField.isSecureTextEntry = true
         return textField
     }()
     
     lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .orange
-        button.setTitle("Log in", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .white
+        button.setTitle("Prijava", for: .normal)
+        button.setTitleColor(.orange, for: .normal)
         button.addTarget(self, action: #selector(logIn), for: .touchUpInside)
         return button
     }()
     
     lazy var cancleButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .orange
+        button.backgroundColor = .white
         button.setTitle("Odustani", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.orange, for: .normal)
         button.addTarget(self, action: #selector(cancle), for: .touchUpInside)
         return button
     }()
@@ -76,10 +78,10 @@ class LoginCell: UICollectionViewCell {
         addSubview(loginButton)
         addSubview(cancleButton)
         
-        _ = logoImageView.anchor(centerYAnchor, left: nil, bottom: nil, right: nil, topConstant: -230, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 160, heightConstant: 160)
+        _ = logoImageView.anchor(centerYAnchor, left: nil, bottom: nil, right: nil, topConstant: -150, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 320, heightConstant: 39)
         logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        _ = emailTextField.anchor(logoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 8, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
+        _ = emailTextField.anchor(logoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 30, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
         
         _ = passwordTextField.anchor(emailTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
         

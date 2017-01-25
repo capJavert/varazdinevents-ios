@@ -26,12 +26,12 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     var user = User()
     var searchBarController: UISearchController!
     var searchText: String = ""
+    var userUiItems: [UIBarButtonItem] = []
     
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var createEventButton: UIBarButtonItem!
-    
     
     @IBAction func searchBarAction(_ sender: Any) {
         searchBarController = UISearchController(searchResultsController: nil)
@@ -58,7 +58,6 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateController
        
         eventCreateView.user = user
-        //eventCreateView.user = user
         self.navigationController?.pushViewController(eventCreateView, animated: true)
         
     }
@@ -77,14 +76,13 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //save navigation items
+        userUiItems.append(loginButton)
+        userUiItems.append(createEventButton)
+        
         self.tabBarController?.tabBar.isHidden = false
-        if user.id != 0 {
-            self.navigationItem.setHidesBackButton(true, animated:true)
-            self.navigationItem.leftBarButtonItem = nil
-        }else{
-            createEventButton.isEnabled = true
-            createEventButton.tintColor = UIColor.clear
-        }
+  
         if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
             webServiceDataLoader.LoadData()
@@ -102,7 +100,24 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         
         //set collection view size
         collectionView.frame.size.width = self.view.frame.width
+        
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let users = try! Array(Realm().objects(User.self))
+        if (users.count > 0) {
+            user = users[0]
+        }
+        
+        if user.id != 0 {
+            self.navigationItem.setLeftBarButtonItems([userUiItems[1]], animated: false)
+        }
+        else {
+            self.navigationItem.setLeftBarButtonItems([userUiItems[0]], animated: false)
+        }
     }
     
     lazy var refreshControl: UIRefreshControl = {
@@ -152,14 +167,6 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
     
-    @IBAction func goToCategories(_ sender: Any) {
-        
-        let toCategories = self.storyboard?.instantiateViewController(withIdentifier: "categoryView") as! CategoryController
-        toCategories.user = user
-        self.navigationController?.pushViewController(toCategories, animated: true)
-    }
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
         if segue.identifier == "EventDetail"{
@@ -172,36 +179,9 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         }
     }
     
-    
-    
    @IBAction func toLooginAction(_ sender: Any) {
-        
-      /*  let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView") as! LoginController
-        loginView.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(loginView, animated: true)*/
-    
-    performSegue(withIdentifier: "toLogInAction", sender: loginButton)
-    
-            }
-    
-    
-    /* func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toLogIn" {
-            let destinationController = segue.destination as! LoginController
-            destinationController.hidesBottomBarWhenPushed = true
-        }
-    }*/
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+        performSegue(withIdentifier: "toLogInAction", sender: loginButton)
+    }
 }
 
 extension EventController: OnDataLoadedDelegate {
@@ -213,8 +193,7 @@ extension EventController: OnDataLoadedDelegate {
     public func onDataLoaded(users: User){
         self.user = users
     
-}
-
+    }
 }
 
 
