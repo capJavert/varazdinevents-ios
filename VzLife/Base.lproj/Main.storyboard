@@ -164,9 +164,8 @@
         <!--Navigation Controller-->
         <scene sceneID="fbp-Bf-qA3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="30I-BF-PE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="GKK-CU-l3t" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6K7-2l-lmn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6K7-2l-lmn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -174,6 +173,7 @@
                         <segue destination="G5r-5b-Eaa" kind="relationship" relationship="rootViewController" id="kmy-xJ-z1R"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30I-BF-PE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2306" y="328"/>
         </scene>
@@ -880,10 +880,10 @@
             </objects>
             <point key="canvasLocation" x="4244" y="-14.842578710644679"/>
         </scene>
-        <!--View Controller-->
+        <!--About Controller-->
         <scene sceneID="dS7-8z-WH6">
             <objects>
-                <viewController id="1BE-gW-ztr" sceneMemberID="viewController">
+                <viewController id="1BE-gW-ztr" customClass="aboutController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oo0-Rp-B9x"/>
                         <viewControllerLayoutGuide type="bottom" id="Q97-3n-ksh"/>
@@ -891,9 +891,73 @@
                     <view key="view" contentMode="scaleToFill" id="Uk4-Ht-qPf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-i2-wet">
+                                <rect key="frame" x="-20" y="52" width="415" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgP-Eu-Oej">
+                                        <rect key="frame" x="20" y="20" width="375" height="802"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="O nama">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                    <font key="NSOriginalFont" size="14" name=".AppleSystemUIFont"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content">   Ova inicijativa nastala je davnog 10. listopada 2014. godine osnivanjem Facebook stranice „Studentski život Varaždina“ gdje smo nastojali objediniti sva događanja s područja grada Varaždina te ih približiti studentskoj populaciji, ali i svima onima koji su bili zainteresirani sadržajem koji pružamo.
+</mutableString>
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content">
+Veliki početni uspjeh te mnogobrojne riječi pohvale ubrzo su ovu jednostavnu ideju pretvorile u ambiciju, koja nas kroz sve ove godine drži na istom putu ka ostvarenju konačnog cilja – podizanju društvenog i kulturološkog standarda grada Varaždina.
+
+Unatoč brojnim preprekama, korak po korak uspjeli smo realizirati još jednu točku naše inicijative te izraditi ovu web stranicu, VaraždinEvents. Stranica je zamišljena kao pregledniji supstitut sadržaja koji smo pružali putem Facebooka te je direktan posrednik između Vas i potencijalnih događaja i aktivnosti na području grada Varaždina i njegove okolice.
+
+Nadamo se da ćete se i VI uključiti u ovaj projekt jednostavnim sudjelovanjem u aktivnostima i događajima koji se svakodnevno provode. Ukoliko se imate želju neposredno uključiti u realizaciju ove inicijative, slobodno nam se javite sa svojim prijedlozima, primjedbama, ali i idejama za nove pothvate. 
+
+Podignimo društveni standard grada Varaždina zajedno!
+
+ 
+
+P.S: Istinski bismo Vam bili zahvalni ukoliko biste bili u mogućnosti pružiti podršku malom donacijom putem integriranog PayPal sustava na ovoj stranici kako bismo pokrili neke osnovne troškove domene, hostinga, ali i piva za daljnje pothvate.
+
+Hvala svima!
+
+~VaraždinEvents ekipa</mutableString>
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="DEX-di-F8Z"/>
+                    <connections>
+                        <outlet property="scrollView" destination="Pkb-i2-wet" id="i11-HG-JlA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hko-oi-g5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -905,7 +969,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWB-1O-4jm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="recents" id="pgX-yZ-xvp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0V-yl-GEW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0V-yl-GEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -924,7 +988,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ejb-Of-1pV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="list-fat-7" selectedImage="list-fat-7" id="FOy-OB-el9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="amu-We-GBg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amu-We-GBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

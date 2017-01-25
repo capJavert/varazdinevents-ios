@@ -48,6 +48,7 @@
 		E4DB146D1E12A3BE00F0CB10 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146C1E12A3BE00F0CB10 /* CategoryController.swift */; };
 		E4DB146F1E12D7D500F0CB10 /* EventCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146E1E12D7D500F0CB10 /* EventCategoryController.swift */; };
 		E4DB14711E12DB4C00F0CB10 /* EventCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB14701E12DB4C00F0CB10 /* EventCategoryCell.swift */; };
+		E4DCBFB91E38EFAB009830DC /* aboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DCBFB81E38EFAB009830DC /* aboutController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		E4DB146C1E12A3BE00F0CB10 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		E4DB146E1E12D7D500F0CB10 /* EventCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCategoryController.swift; sourceTree = "<group>"; };
 		E4DB14701E12DB4C00F0CB10 /* EventCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCategoryCell.swift; sourceTree = "<group>"; };
+		E4DCBFB81E38EFAB009830DC /* aboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutController.swift; sourceTree = "<group>"; };
 		F0CD8825CA3BDDF4C94ACC1F /* Pods-VzLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +260,7 @@
 				E45FB0A01DEB3F6A00056445 /* EventController.swift */,
 				E4A962C91DE42BE400BCF470 /* Assets.xcassets */,
 				68C389431E244073004E0A8F /* InitController.swift */,
+				E4DCBFB81E38EFAB009830DC /* aboutController.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				E4A963001DE435DB00BCF470 /* JsonAdapter.swift in Sources */,
 				E4A962F81DE42EA100BCF470 /* Event.swift in Sources */,
 				E4A962FA1DE42EA100BCF470 /* User.swift in Sources */,
+				E4DCBFB91E38EFAB009830DC /* aboutController.swift in Sources */,
 				E4A963041DE4637F00BCF470 /* DbController.swift in Sources */,
 				6887094A1E253BBD002BC0CC /* FacebookImportController.swift in Sources */,
 				E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */,
