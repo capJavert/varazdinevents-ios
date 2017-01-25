@@ -14,6 +14,8 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     var searchText: String = ""
     var category = ""
     var emptyList = false
+    var cellsNum: Int { return events.count }
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var availabilityText: UITextField!
     
@@ -53,9 +55,9 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
       override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
+        emptyList = false
         self.navigationItem.title = category
        
-        
     }
     
     @IBAction func searchBarAction(_ sender: Any) {
@@ -84,16 +86,25 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     //Implementing methods for classes we included
     //First one is for number of items in collectionView ( how many items will we have )
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("EVENTI", events.count)
+
         if (events.count == 0){
             emptyList = true
         }
+        else{
+            emptyList = false
+        }
         if(emptyList){
+            print("sakrivam ga")
             availabilityText.isHidden = false
         }
         else{
+            print("NE sakrivam ga")
+            
             availabilityText.isHidden = true
         }
-        return events.count
+
+            return events.count
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -121,7 +132,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         cell2.moreInfoButton.tag = indexPath.item
         cell2.moreInfoButton.event = events[indexPath.item]
         cell2.moreInfoButton.addTarget(self, action: #selector(goToEventDetail(sender:)), for: .touchUpInside)
-        
+    
         return cell2
     }
  

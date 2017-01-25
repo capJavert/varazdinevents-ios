@@ -144,6 +144,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     //Implementing methods for classes we included
     //First one is for number of items in collectionView ( how many items will we have )
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("EVENTI", events.count)
         return events.count
     }
     
