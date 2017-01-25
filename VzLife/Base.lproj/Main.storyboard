@@ -233,7 +233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8X-a6-nAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3748" y="1871.5142428785609"/>
+            <point key="canvasLocation" x="3287" y="1872"/>
         </scene>
         <!--Event Controller-->
         <scene sceneID="O8L-PH-Pux">
@@ -425,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QQ-nX-vkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4730.3999999999996" y="1889.5052473763119"/>
+            <point key="canvasLocation" x="4074" y="1012"/>
         </scene>
         <!--Event Create Controller-->
         <scene sceneID="Wg8-Nd-5t1">
@@ -603,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfd-RU-dmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3226.4000000000001" y="1114.0929535232385"/>
+            <point key="canvasLocation" x="2009" y="1013"/>
         </scene>
         <!--Facebook Import Controller-->
         <scene sceneID="Ug0-w9-lHc">
@@ -651,7 +651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpI-Jy-cKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4099.5" y="1136.5"/>
+            <point key="canvasLocation" x="2927" y="1013"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4yC-kb-ifa">
@@ -979,7 +979,7 @@ Hvala svima!
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPm-gP-gcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2808.8000000000002" y="1871.5142428785609"/>
+            <point key="canvasLocation" x="2378" y="1872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CWj-ZX-TqU">
@@ -1008,7 +1008,7 @@ Hvala svima!
         <image name="list-fat-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r9s-mS-euz"/>
-        <segue reference="XnG-T4-XFb"/>
+        <segue reference="NYz-R5-CSN"/>
+        <segue reference="CmU-3I-VSi"/>
     </inferredMetricsTieBreakers>
 </document>

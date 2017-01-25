@@ -48,6 +48,12 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         // Dispose of any resources that can be recreated.
     }
     
+      override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = category
+        
+    }
     
     @IBAction func searchBarAction(_ sender: Any) {
         searchBarController = UISearchController(searchResultsController: nil)
