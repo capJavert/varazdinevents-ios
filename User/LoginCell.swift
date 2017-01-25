@@ -11,19 +11,22 @@ import UIKit
 class LoginCell: UICollectionViewCell {
 
     let logoImageView: UIImageView = {
-        let image = UIImage(named: "VzLife-logo")
+        let image = UIImage(named: "varazdinevents-logo-dark")
         let imageView = UIImageView(image: image)
         return imageView
     }()
     
     let emailTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
-        textField.placeholder = "Korisničko ime"
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-        textField.layer.borderWidth = 1
+        //textField.placeholder = "Korisničko ime"
+       // textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 3
         textField.backgroundColor = .white
+        textField.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
+        textField.attributedPlaceholder = NSAttributedString(string: "Korisničko ime",
+                                                             attributes: [NSForegroundColorAttributeName: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
+        textField.textAlignment = NSTextAlignment.center
         textField.keyboardType = .emailAddress
-        textField.layer.cornerRadius = 15.0
         textField.autocorrectionType = UITextAutocorrectionType.no
         textField.autocapitalizationType = UITextAutocapitalizationType.none
         return textField
@@ -31,10 +34,12 @@ class LoginCell: UICollectionViewCell {
     
     let passwordTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
-        textField.placeholder = "Lozinka"
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-        textField.layer.borderWidth = 1
-        textField.layer.cornerRadius = 15.0
+        //textField.placeholder = "Lozinka"
+        textField.attributedPlaceholder = NSAttributedString(string: "Lozinka",
+                                                            attributes: [NSForegroundColorAttributeName: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
+        textField.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
+        textField.textAlignment = NSTextAlignment.center
+        textField.layer.borderWidth = 3
         textField.backgroundColor = .white
         textField.isSecureTextEntry = true
         return textField
@@ -42,11 +47,11 @@ class LoginCell: UICollectionViewCell {
     
     lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(netHex:0xFFBB46)
         button.setTitle("Prijava", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
-        button.layer.borderWidth = 1
-        button.layer.cornerRadius = 7.0
+        button.setTitleColor(.white, for: .normal)
+        button.layer.borderWidth = 3
+        button.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
         button.addTarget(self, action: #selector(logIn), for: .touchUpInside)
         return button
     }()
@@ -81,7 +86,7 @@ class LoginCell: UICollectionViewCell {
         
         _ = passwordTextField.anchor(emailTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
         
-        _ = loginButton.anchor(passwordTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 40, bottomConstant: 0, rightConstant: 40, widthConstant: 0, heightConstant: 40)
+        _ = loginButton.anchor(passwordTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 40)
        
     }
     
@@ -91,4 +96,6 @@ class LoginCell: UICollectionViewCell {
     
     
 }
+
+
 

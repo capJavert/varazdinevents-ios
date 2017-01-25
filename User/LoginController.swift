@@ -48,7 +48,8 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
      //   view.backgroundColor = .orange
         backButtonTopAnchor = backButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
         collectionView.anchorToTop(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
-        collectionView.backgroundColor = UIColor(netHex:0xFFBB46)
+        collectionView.backgroundColor = .white
+    
         //self.tabBarController?.tabBar.isHidden = true
        // self.tabBarController?.tabBar.layer.isHidden = true
         
