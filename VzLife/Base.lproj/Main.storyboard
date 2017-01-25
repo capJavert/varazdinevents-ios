@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G5r-5b-Eaa">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G5r-5b-Eaa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -909,15 +909,15 @@ Cgo
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">   Ova inicijativa nastala je davnog 10. listopada 2014. godine osnivanjem Facebook stranice „Studentski život Varaždina“ gdje smo nastojali objediniti sva događanja s područja grada Varaždina te ih približiti studentskoj populaciji, ali i svima onima koji su bili zainteresirani sadržajem koji pružamo.
-</mutableString>
+                                                <string key="content">   Ova inicijativa nastala je davnog 10. listopada 2014. godine osnivanjem Facebook stranice „Studentski život Varaždina“ gdje smo nastojali objediniti sva događanja s područja grada Varaždina te ih približiti studentskoj populaciji, ali i svima onima koji su bili zainteresirani sadržajem koji pružamo.
+</string>
                                                 <attributes>
                                                     <font key="NSFont" metaFont="menu" size="14"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
+                                                <string key="content">
 Veliki početni uspjeh te mnogobrojne riječi pohvale ubrzo su ovu jednostavnu ideju pretvorile u ambiciju, koja nas kroz sve ove godine drži na istom putu ka ostvarenju konačnog cilja – podizanju društvenog i kulturološkog standarda grada Varaždina.
 
 Unatoč brojnim preprekama, korak po korak uspjeli smo realizirati još jednu točku naše inicijative te izraditi ovu web stranicu, VaraždinEvents. Stranica je zamišljena kao pregledniji supstitut sadržaja koji smo pružali putem Facebooka te je direktan posrednik između Vas i potencijalnih događaja i aktivnosti na području grada Varaždina i njegove okolice.
@@ -932,7 +932,7 @@ P.S: Istinski bismo Vam bili zahvalni ukoliko biste bili u mogućnosti pružiti 
 
 Hvala svima!
 
-~VaraždinEvents ekipa</mutableString>
+~VaraždinEvents ekipa</string>
                                                 <attributes>
                                                     <font key="NSFont" metaFont="menu" size="14"/>
                                                 </attributes>
