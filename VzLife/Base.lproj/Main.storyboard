@@ -1156,7 +1156,7 @@ Hvala svima!
         <image name="horizontal_settings_mixer_filled-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="CmU-3I-VSi"/>
         <segue reference="NYz-R5-CSN"/>
-        <segue reference="XnG-T4-XFb"/>
     </inferredMetricsTieBreakers>
 </document>
