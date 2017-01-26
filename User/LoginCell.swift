@@ -25,7 +25,7 @@ class LoginCell: UICollectionViewCell {
         textField.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
         textField.attributedPlaceholder = NSAttributedString(string: "Korisničko ime",
                                                              attributes: [NSForegroundColorAttributeName: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
-        textField.textAlignment = NSTextAlignment.center
+        //textField.textAlignment = NSTextAlignment.center
         textField.keyboardType = .emailAddress
         textField.autocorrectionType = UITextAutocorrectionType.no
         textField.autocapitalizationType = UITextAutocapitalizationType.none
@@ -38,7 +38,7 @@ class LoginCell: UICollectionViewCell {
         textField.attributedPlaceholder = NSAttributedString(string: "Lozinka",
                                                             attributes: [NSForegroundColorAttributeName: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
         textField.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
-        textField.textAlignment = NSTextAlignment.center
+        //textField.textAlignment = NSTextAlignment.center
         textField.layer.borderWidth = 3
         textField.backgroundColor = .white
         textField.isSecureTextEntry = true
