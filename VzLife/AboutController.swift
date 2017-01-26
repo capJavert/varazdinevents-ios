@@ -8,13 +8,14 @@
 
 import UIKit
 
-class aboutController: UIViewController {
+class AboutController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var textView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       scrollView.contentSize = CGSize(width: 0, height: 1000)
+        
+          scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: textView.frame.size.height + 150)
     }
 
     override func didReceiveMemoryWarning() {
