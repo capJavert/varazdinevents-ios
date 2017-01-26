@@ -158,8 +158,8 @@ extension EventsByDateController: OnDataLoadedDelegate {
         print("eventi iz klase", self.event)
         let date = event.date
         let date_to = event.date_to
-        let predicate = NSPredicate(format: "(date_to = 0 AND (date >= %d) or (date >= %d AND date_to <= %d))",
-                                   date, date_to, date, date, date_to)
+        let predicate = NSPredicate(format: "date >= %d AND date <= %d",
+                                   date, date_to)
         print("Predikat", predicate)
         self.events = try! Array(Realm().objects(Event.self).filter(predicate))
         self.collectionView!.reloadData()
