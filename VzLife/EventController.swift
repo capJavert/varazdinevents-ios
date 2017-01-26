@@ -28,6 +28,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     var searchText: String = ""
     var userUiItems: [UIBarButtonItem] = []
     
+    @IBOutlet weak var uiView: UICollectionView!
     @IBOutlet weak var datePicker: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loginButton: UIBarButtonItem!
@@ -101,6 +102,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         
         //set collection view size
         collectionView.frame.size.width = self.view.frame.width
+        //collectionView.contentSize = CGSize(width: self.view.frame.size.width, height: uiView.frame.size.height + 300)
         
         self.tabBarController?.tabBar.isHidden = false
     }
