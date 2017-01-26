@@ -124,7 +124,9 @@ public class JsonAdapter
         if let dataFromString = subJson.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             data = JSON(data: dataFromString)
             
-            location["address"] = data["formatted_address"].string!
+            if(data["formatted_address"].exists()) {
+                location["address"] = data["formatted_address"].string!
+            }
             
             subJson = String(describing: data["geometry"])
             if let dataFromString = subJson.data(using: String.Encoding.utf8, allowLossyConversion: false) {
@@ -134,8 +136,10 @@ public class JsonAdapter
                 if let dataFromString = subJson.data(using: String.Encoding.utf8, allowLossyConversion: false) {
                     data = JSON(data: dataFromString)
                     
-                    location["lat"] = data["lat"].double!
-                    location["lng"] = data["lng"].double!
+                    if(data["lat"].exists() && data["lng"].exists()) {
+                        location["lat"] = data["lat"].double!
+                        location["lng"] = data["lng"].double!
+                    }
                 }
             }
         }
