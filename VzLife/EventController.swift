@@ -28,7 +28,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     var searchText: String = ""
     var userUiItems: [UIBarButtonItem] = []
     
-    
+    @IBOutlet weak var datePicker: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var createEventButton: UIBarButtonItem!
@@ -73,6 +73,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,7 +147,6 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     //Implementing methods for classes we included
     //First one is for number of items in collectionView ( how many items will we have )
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("EVENTI", events.count)
         return events.count
     }
     

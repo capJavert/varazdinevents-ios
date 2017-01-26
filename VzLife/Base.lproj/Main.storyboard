@@ -235,6 +235,47 @@
             </objects>
             <point key="canvasLocation" x="3287" y="1872"/>
         </scene>
+        <!--Event By Date Controller View Controller-->
+        <scene sceneID="UeJ-LT-Thp">
+            <objects>
+                <viewController id="Rb4-hv-k1m" customClass="EventByDateControllerViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GIt-f4-Wtc"/>
+                        <viewControllerLayoutGuide type="bottom" id="svy-7f-4be"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xLb-o4-jqj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QOp-WN-P2m">
+                                <rect key="frame" x="0.0" y="225" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="507139157.37426198">
+                                    <!--2017-01-26 15:59:17 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUv-M2-wd1">
+                                <rect key="frame" x="92" y="449" width="191" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.73333333333333328" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Pretraži">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="eventViewPass:" destination="Rb4-hv-k1m" eventType="touchUpInside" id="Kzv-aT-3mH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="QOp-WN-P2m" id="bGM-kU-sTS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2g-pf-NGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="192.80000000000001" y="201.94902548725639"/>
+        </scene>
         <!--Event Controller-->
         <scene sceneID="O8L-PH-Pux">
             <objects>
@@ -321,15 +362,23 @@
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Wux-kL-6BS">
-                            <connections>
-                                <action selector="searchBarAction:" destination="cSh-Vj-10U" id="gA3-lb-e2e"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="Wux-kL-6BS">
+                                <connections>
+                                    <action selector="searchBarAction:" destination="cSh-Vj-10U" id="gA3-lb-e2e"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="horizontal_settings_mixer_filled-50" id="O2N-kV-Van">
+                                <connections>
+                                    <segue destination="Rb4-hv-k1m" kind="show" id="evk-zr-ar4"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="sGH-Gd-zWP" id="60E-6X-Goc"/>
                         <outlet property="createEventButton" destination="tFH-OG-khe" id="L4F-qK-mLy"/>
+                        <outlet property="datePicker" destination="O2N-kV-Van" id="bAh-SQ-F55"/>
                         <outlet property="loginButton" destination="xYJ-B2-y6q" id="mYK-LT-ADG"/>
                         <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="r9s-mS-euz"/>
                     </connections>
@@ -451,53 +500,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMX-ab-sgP">
-                                <rect key="frame" x="-19" y="45" width="415" height="628"/>
+                                <rect key="frame" x="-19" y="0.0" width="415" height="673"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Naziv događaja: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9et-f6-Ygl">
-                                        <rect key="frame" x="59" y="20" width="127" height="21"/>
+                                        <rect key="frame" x="27" y="20" width="127" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O događaju: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aki-ci-qPg">
-                                        <rect key="frame" x="59" y="87" width="98" height="21"/>
+                                        <rect key="frame" x="26" y="87" width="98" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datum događaja: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B82-Gg-2fk">
-                                        <rect key="frame" x="59" y="160" width="135" height="21"/>
+                                        <rect key="frame" x="27" y="164" width="135" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kategorija:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOO-vH-vlD">
-                                        <rect key="frame" x="52" y="302" width="82" height="21"/>
+                                        <rect key="frame" x="26" y="302" width="82" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXQ-MS-m1Y">
-                                        <rect key="frame" x="59" y="49" width="297" height="30"/>
+                                        <rect key="frame" x="33" y="49" width="362" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKk-p4-7Oz">
-                                        <rect key="frame" x="59" y="116" width="297" height="30"/>
+                                        <rect key="frame" x="33" y="116" width="362" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t0h-ae-ntg">
-                                        <rect key="frame" x="58" y="331" width="297" height="30"/>
+                                        <rect key="frame" x="33" y="331" width="362" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -511,7 +560,7 @@
                                         </date>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Host: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-jT-ceS">
-                                        <rect key="frame" x="52" y="369" width="46" height="21"/>
+                                        <rect key="frame" x="26" y="369" width="46" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -532,35 +581,28 @@
                                         </date>
                                     </datePicker>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54E-7J-M4V">
-                                        <rect key="frame" x="58" y="398" width="297" height="30"/>
+                                        <rect key="frame" x="33" y="398" width="362" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ig-fu-SZ0">
-                                        <rect key="frame" x="58" y="472" width="297" height="30"/>
+                                        <rect key="frame" x="33" y="472" width="362" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Az7-au-ZE8">
-                                        <rect key="frame" x="58" y="540" width="297" height="30"/>
+                                        <rect key="frame" x="33" y="540" width="362" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dc-jv-IkP">
-                                        <rect key="frame" x="59" y="443" width="84" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ponuda:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfb-3r-LNJ">
-                                        <rect key="frame" x="59" y="511" width="63" height="21"/>
+                                        <rect key="frame" x="27" y="443" width="84" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -582,6 +624,13 @@
                                             <action selector="eventCreateButton:" destination="qZ1-rc-dDT" eventType="touchUpInside" id="bMk-6A-je5"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ponuda:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfb-3r-LNJ">
+                                        <rect key="frame" x="26" y="511" width="63" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <connections>
                                     <outlet property="delegate" destination="qZ1-rc-dDT" id="BGz-uk-cUf"/>
@@ -590,7 +639,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Kreiraj" id="UCw-wB-lWl"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Event Create Controller" id="eg1-o6-14G">
                         <barButtonItem key="rightBarButtonItem" image="Facebook-logo" id="7aJ-Q8-woD">
@@ -610,11 +658,12 @@
                         <outlet property="host" destination="54E-7J-M4V" id="afg-sd-HUQ"/>
                         <outlet property="offers" destination="Az7-au-ZE8" id="E5D-Qb-a2K"/>
                         <outlet property="scrollView" destination="qMX-ab-sgP" id="K0s-hP-ky7"/>
+                        <outlet property="uiView" destination="LLb-p1-2Vd" id="iVp-HD-TOP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfd-RU-dmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2009" y="1013"/>
+            <point key="canvasLocation" x="2008.8" y="1012.4437781109445"/>
         </scene>
         <!--Facebook Import Controller-->
         <scene sceneID="Ug0-w9-lHc">
@@ -912,15 +961,15 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <mutableString key="content">Ova inicijativa nastala je davnog 10. listopada 2014. godine osnivanjem Facebook stranice „Studentski život Varaždina“ gdje smo nastojali objediniti sva događanja s područja grada Varaždina te ih približiti studentskoj populaciji, ali i svima onima koji su bili zainteresirani sadržajem koji pružamo.
-</mutableString>
+                                                <string key="content">Ova inicijativa nastala je davnog 10. listopada 2014. godine osnivanjem Facebook stranice „Studentski život Varaždina“ gdje smo nastojali objediniti sva događanja s područja grada Varaždina te ih približiti studentskoj populaciji, ali i svima onima koji su bili zainteresirani sadržajem koji pružamo.
+</string>
                                                 <attributes>
                                                     <font key="NSFont" metaFont="menu" size="14"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
+                                                <string key="content">
 Veliki početni uspjeh te mnogobrojne riječi pohvale ubrzo su ovu jednostavnu ideju pretvorile u ambiciju, koja nas kroz sve ove godine drži na istom putu ka ostvarenju konačnog cilja – podizanju društvenog i kulturološkog standarda grada Varaždina.
 
 Unatoč brojnim preprekama, korak po korak uspjeli smo realizirati još jednu točku naše inicijative te izraditi ovu web stranicu, VaraždinEvents. Stranica je zamišljena kao pregledniji supstitut sadržaja koji smo pružali putem Facebooka te je direktan posrednik između Vas i potencijalnih događaja i aktivnosti na području grada Varaždina i njegove okolice.
@@ -929,7 +978,7 @@ Podignimo društveni standard grada Varaždina zajedno!
 
 Hvala svima!
 
-~VaraždinEvents ekipa</mutableString>
+~VaraždinEvents ekipa</string>
                                                 <attributes>
                                                     <font key="NSFont" metaFont="menu" size="14"/>
                                                 </attributes>
@@ -992,6 +1041,108 @@ Hvala svima!
             </objects>
             <point key="canvasLocation" x="2378" y="1872"/>
         </scene>
+        <!--Events By Date Controller-->
+        <scene sceneID="oUb-v3-xOv">
+            <objects>
+                <viewController storyboardIdentifier="eventsByDate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0AK-4g-5e4" customClass="EventsByDateController" customModule="VzLife" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bkw-Gw-eJB"/>
+                        <viewControllerLayoutGuide type="bottom" id="rPw-ru-Hik"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="csn-pF-R0W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cvp-ZU-3V0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NBt-Rs-fZm">
+                                    <size key="itemSize" width="328" height="182"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="0Gc-nd-BG0" customClass="EventCategoryCell" customModule="VzLife">
+                                        <rect key="frame" x="24" y="45" width="328" height="182"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qg6-28-6Fg">
+                                                    <rect key="frame" x="16" y="8" width="296" height="108"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2np-49-baP">
+                                                    <rect key="frame" x="22" y="119" width="295" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jez-Aa-M6W" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="147" width="296" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="More informations">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="Me0-ob-IT0" kind="show" identifier="goToEventDetail" id="Rig-1h-npb"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.99227746390000005" green="0.97469490960000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="aboutView" destination="2np-49-baP" id="MLU-Mc-Nwc"/>
+                                            <outlet property="imageView" destination="qg6-28-6Fg" id="y3A-MC-vwQ"/>
+                                            <outlet property="moreInfoButton" destination="jez-Aa-M6W" id="9OH-Sj-3kt"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Trenutno ne postoje aktivni događaji" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VHg-39-xlY">
+                                <rect key="frame" x="66" y="318" width="242" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="availabilityText">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fvI-IS-ldc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="aW7-0G-QOC">
+                            <connections>
+                                <action selector="searchBarAction:" destination="0AK-4g-5e4" id="JB3-8A-tbd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="availabilityText" destination="VHg-39-xlY" id="lco-IL-fIU"/>
+                        <outlet property="collectionView" destination="cvp-ZU-3V0" id="VXV-DD-tq7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mwe-vm-krf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1617" y="-1112"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Facebook-logo" width="25" height="25"/>
@@ -1001,9 +1152,10 @@ Hvala svima!
         <image name="about-filled-50" width="25" height="25"/>
         <image name="category-icon-50" width="25" height="25"/>
         <image name="home_filled-50" width="25" height="25"/>
+        <image name="horizontal_settings_mixer_filled-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYz-R5-CSN"/>
+        <segue reference="Rig-1h-npb"/>
         <segue reference="XnG-T4-XFb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -4,8 +4,8 @@ import Kingfisher
 import Realm
 
 
-class EventCategoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
-   
+class EventsByDateController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
+    
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
@@ -15,7 +15,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     var category = ""
     var emptyList = false
     var cellsNum: Int { return events.count }
-    
+    var event = Event()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var availabilityText: UITextField!
     
@@ -23,7 +23,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var moreInfoButton: EventDetailButton!
-     override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         
@@ -47,7 +47,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.frame.size.width = self.view.frame.width
     }
     
-     override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -82,12 +82,12 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
             self.collectionView!.reloadData()
         }
     }
-
+    
     
     //Implementing methods for classes we included
     //First one is for number of items in collectionView ( how many items will we have )
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        
         if (events.count == 0){
             emptyList = true
         }
@@ -100,8 +100,8 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         else{
             availabilityText.isHidden = true
         }
-
-            return events.count
+        
+        return events.count
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -115,7 +115,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
-
+    
     
     
     //Second method we needed is for every cell specifing the properties of it
@@ -129,19 +129,19 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         cell2.moreInfoButton.tag = indexPath.item
         cell2.moreInfoButton.event = events[indexPath.item]
         cell2.moreInfoButton.addTarget(self, action: #selector(goToEventDetail(sender:)), for: .touchUpInside)
-    
+        
         return cell2
     }
- 
+    
     func goToEventDetail( sender: UIButton){
         //passing Sender
-        self.performSegue(withIdentifier: "EventDetail", sender: sender)
+        self.performSegue(withIdentifier: "goToEventDetail", sender: sender)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
-        if segue.identifier == "EventDetail"{
+        if segue.identifier == "goToEventDetail"{
             //casting sender to UIButton
             let sender = sender as! EventDetailButton
             let eventDetail = segue.destination as! EventDetailController
@@ -152,16 +152,22 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     }
 }
 
-extension EventCategoryController: OnDataLoadedDelegate {
+extension EventsByDateController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         //dve linije would hit that
-        let predicate = NSPredicate(format: "category = %@", category)
+        print("eventi iz klase", self.event)
+        let date = event.date
+        let date_to = event.date_to
+        let predicate = NSPredicate(format: "(date_to = 0 AND (date >= %d) or (date >= %d AND date_to <= %d))",
+                                   date, date_to, date, date, date_to)
+        print("Predikat", predicate)
         self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        self.collectionView!.reloadData()
         
-        collectionView.reloadData()
     }
     
 }
+
 
 
 
