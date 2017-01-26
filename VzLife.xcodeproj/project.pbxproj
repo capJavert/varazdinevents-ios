@@ -24,14 +24,12 @@
 		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
 		68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */; };
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
-		E43A79651E36A1D100D013CA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A79641E36A1D100D013CA /* TabBar.swift */; };
 		E45FB09D1DEB3E7A00056445 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* EventCell.swift */; };
 		E45FB0A11DEB3F6A00056445 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* EventController.swift */; };
 		E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476B0161E114E96004B2D72 /* EventCreateController.swift */; };
 		E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */; };
 		E4A962C51DE42BE400BCF470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A962C31DE42BE400BCF470 /* Main.storyboard */; };
 		E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */; };
-		E4A962CA1DE42BE400BCF470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A962C91DE42BE400BCF470 /* Assets.xcassets */; };
 		E4A962CD1DE42BE500BCF470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A962CB1DE42BE500BCF470 /* LaunchScreen.storyboard */; };
 		E4A962D81DE42BE500BCF470 /* VzLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962D71DE42BE500BCF470 /* VzLifeTests.swift */; };
 		E4A962E31DE42BE500BCF470 /* VzLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A962E21DE42BE500BCF470 /* VzLifeUITests.swift */; };
@@ -49,6 +47,7 @@
 		E4DB146F1E12D7D500F0CB10 /* EventCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB146E1E12D7D500F0CB10 /* EventCategoryController.swift */; };
 		E4DB14711E12DB4C00F0CB10 /* EventCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB14701E12DB4C00F0CB10 /* EventCategoryCell.swift */; };
 		E4DCBFB91E38EFAB009830DC /* aboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DCBFB81E38EFAB009830DC /* aboutController.swift */; };
+		E4DCBFBB1E3A3D81009830DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DCBFBA1E3A3D81009830DC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +87,6 @@
 		68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailButton.swift; sourceTree = "<group>"; };
 		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
 		9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VzLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E43A79641E36A1D100D013CA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		E45FB09C1DEB3E7A00056445 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		E45FB0A01DEB3F6A00056445 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		E476B0161E114E96004B2D72 /* EventCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreateController.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		E4A962BF1DE42BE400BCF470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4A962C41DE42BE400BCF470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4A962C71DE42BE400BCF470 /* VzLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VzLife.xcdatamodel; sourceTree = "<group>"; };
-		E4A962C91DE42BE400BCF470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4A962CC1DE42BE500BCF470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4A962CE1DE42BE500BCF470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4A962D31DE42BE500BCF470 /* VzLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VzLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +116,7 @@
 		E4DB146E1E12D7D500F0CB10 /* EventCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCategoryController.swift; sourceTree = "<group>"; };
 		E4DB14701E12DB4C00F0CB10 /* EventCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCategoryCell.swift; sourceTree = "<group>"; };
 		E4DCBFB81E38EFAB009830DC /* aboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutController.swift; sourceTree = "<group>"; };
+		E4DCBFBA1E3A3D81009830DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0CD8825CA3BDDF4C94ACC1F /* Pods-VzLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,14 +195,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E43A79631E36A19A00D013CA /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				E43A79641E36A1D100D013CA /* TabBar.swift */,
-			);
-			name = TabBar;
-			sourceTree = "<group>";
-		};
 		E4609D5E1E109AEF00889BFB /* EventCreate */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +207,6 @@
 		E4A962B31DE42BE400BCF470 = {
 			isa = PBXGroup;
 			children = (
-				E43A79631E36A19A00D013CA /* TabBar */,
 				684606D01E1AE8F100165F97 /* User */,
 				68EE63661E165A0B002F57BB /* Host */,
 				E4DB14691E11A0E000F0CB10 /* Category */,
@@ -248,6 +237,7 @@
 		E4A962BE1DE42BE400BCF470 /* VzLife */ = {
 			isa = PBXGroup;
 			children = (
+				E4DCBFBA1E3A3D81009830DC /* Assets.xcassets */,
 				6882A0D91E313A13002CBC76 /* VzLife.entitlements */,
 				684A357B1E2A81EB00193E96 /* Keys.plist */,
 				681603E41E0DE605000EED21 /* GoogleService-Info.plist */,
@@ -258,7 +248,6 @@
 				E4A962C61DE42BE400BCF470 /* VzLife.xcdatamodeld */,
 				E45FB09C1DEB3E7A00056445 /* EventCell.swift */,
 				E45FB0A01DEB3F6A00056445 /* EventController.swift */,
-				E4A962C91DE42BE400BCF470 /* Assets.xcassets */,
 				68C389431E244073004E0A8F /* InitController.swift */,
 				E4DCBFB81E38EFAB009830DC /* aboutController.swift */,
 			);
@@ -448,9 +437,9 @@
 			files = (
 				E4A962CD1DE42BE500BCF470 /* LaunchScreen.storyboard in Resources */,
 				681603E51E0DE605000EED21 /* GoogleService-Info.plist in Resources */,
-				E4A962CA1DE42BE400BCF470 /* Assets.xcassets in Resources */,
 				E4A962C51DE42BE400BCF470 /* Main.storyboard in Resources */,
 				684A357C1E2A81EB00193E96 /* Keys.plist in Resources */,
+				E4DCBFBB1E3A3D81009830DC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +543,6 @@
 				684606D61E1AE96100165F97 /* LeftPaddedTextField.swift in Sources */,
 				68EE63681E165B1B002F57BB /* HostController.swift in Sources */,
 				E4A962C81DE42BE400BCF470 /* VzLife.xcdatamodeld in Sources */,
-				E43A79651E36A1D100D013CA /* TabBar.swift in Sources */,
 				684606D71E1AE96100165F97 /* LoginCell.swift in Sources */,
 				E4DB146F1E12D7D500F0CB10 /* EventCategoryController.swift in Sources */,
 			);

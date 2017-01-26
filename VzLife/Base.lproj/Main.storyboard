@@ -95,7 +95,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem systemItem="topRated" id="qUg-tQ-Esa"/>
+                                    <tabBarItem title="Sviđa mi se" image="Star Filled Filled-50" selectedImage="Star Filled Filled-50" id="qUg-tQ-Esa"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -684,7 +684,7 @@
             </objects>
             <point key="canvasLocation" x="-1551" y="1322"/>
         </scene>
-        <!--View Controller-->
+        <!--Favoriti-->
         <scene sceneID="8Br-93-4uU">
             <objects>
                 <viewController id="ePt-Bq-YlD" sceneMemberID="viewController">
@@ -697,7 +697,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="mBh-Ex-D0N"/>
+                    <tabBarItem key="tabBarItem" title="Favoriti" image="Star Filled Filled-50" selectedImage="Star Filled Filled-50" id="mBh-Ex-D0N"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHj-wf-uOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -965,7 +965,7 @@ Hvala svima!
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="O nama" image="about-51" selectedImage="about-51" id="PT0-4f-dg3"/>
+                    <tabBarItem key="tabBarItem" title="O nama" image="about-filled-50" selectedImage="about-filled-50" id="PT0-4f-dg3"/>
                     <navigationItem key="navigationItem" id="DEX-di-F8Z"/>
                     <connections>
                         <outlet property="scrollView" destination="Pkb-i2-wet" id="i11-HG-JlA"/>
@@ -975,13 +975,13 @@ Hvala svima!
             </objects>
             <point key="canvasLocation" x="615.20000000000005" y="2156.6716641679163"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Početna-->
         <scene sceneID="Rm2-Hh-5Ki">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWB-1O-4jm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="pgX-yZ-xvp"/>
+                    <tabBarItem key="tabBarItem" title="Početna" image="home_filled-50" selectedImage="home_filled-50" id="pgX-yZ-xvp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0V-yl-GEW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0V-yl-GEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1000,7 +1000,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ejb-Of-1pV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kategorije" image="category-icon-50" selectedImage="category-icon-50" id="FOy-OB-el9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amu-We-GBg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="amu-We-GBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1017,9 +1017,11 @@ Hvala svima!
     <resources>
         <image name="Facebook-logo" width="25" height="25"/>
         <image name="FbEventId-help" width="836" height="326"/>
+        <image name="Star Filled Filled-50" width="25" height="25"/>
         <image name="VzLife-logo" width="320" height="39"/>
-        <image name="about-51" width="25" height="25"/>
+        <image name="about-filled-50" width="25" height="25"/>
         <image name="category-icon-50" width="25" height="25"/>
+        <image name="home_filled-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NYz-R5-CSN"/>

@@ -118,6 +118,8 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         else {
             self.navigationItem.setLeftBarButtonItems([userUiItems[0]], animated: false)
         }
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     lazy var refreshControl: UIRefreshControl = {
