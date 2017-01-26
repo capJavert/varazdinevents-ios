@@ -20,6 +20,7 @@ class EventByDateControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = "Odaberite vrijeme događaja"
         
         let dateEnd = self.datePicker.date
         let dateEndTimeInterval = dateEnd.timeIntervalSince1970

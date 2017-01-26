@@ -32,7 +32,9 @@ class EventCreateController: UIViewController {
         //keyboard setting
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: uiView.frame.size.height + 150)
+        
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: uiView.frame.size.height + 180)
+        
         //hide keyboard on click
         self.hideKeyboardWhenTappedAround()
         
