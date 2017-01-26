@@ -55,6 +55,13 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
         
 
         registerCells()
+        
+        //keyboard setting
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        //hide keyboard on click
+        self.hideKeyboardWhenTappedAround()
     }
  /*   override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

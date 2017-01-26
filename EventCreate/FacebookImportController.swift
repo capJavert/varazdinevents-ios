@@ -29,6 +29,13 @@ class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate, UITe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //keyboard setting
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        //hide keyboard on click
+        self.hideKeyboardWhenTappedAround()
+        
         let users = try! Array(Realm().objects(User.self))
         if (users.count > 0) {
             user = users[0]
