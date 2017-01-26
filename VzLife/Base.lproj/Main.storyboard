@@ -433,7 +433,7 @@
                                                     <rect key="frame" x="16" y="147" width="296" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="More informations">
+                                                    <state key="normal" title="Više informacija">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -1087,7 +1087,7 @@ Hvala svima!
                                                     <rect key="frame" x="16" y="147" width="296" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="More informations">
+                                                    <state key="normal" title="Više informacija">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -1157,6 +1157,6 @@ Hvala svima!
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CmU-3I-VSi"/>
-        <segue reference="r9s-mS-euz"/>
+        <segue reference="Rig-1h-npb"/>
     </inferredMetricsTieBreakers>
 </document>
