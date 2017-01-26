@@ -52,12 +52,13 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         // Dispose of any resources that can be recreated.
     }
     
-      override func viewWillAppear(_ animated: Bool){
+    override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
         emptyList = false
         self.navigationItem.title = category
-       
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     @IBAction func searchBarAction(_ sender: Any) {

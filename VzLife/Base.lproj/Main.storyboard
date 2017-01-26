@@ -13,7 +13,7 @@
         <!--Event Detail Controller-->
         <scene sceneID="wC3-VW-utY">
             <objects>
-                <viewController storyboardIdentifier="EventDetail" hidesBottomBarWhenPushed="YES" id="Me0-ob-IT0" customClass="EventDetailController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetail" id="Me0-ob-IT0" customClass="EventDetailController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ATy-tr-smx"/>
                         <viewControllerLayoutGuide type="bottom" id="elq-Ms-8bZ"/>
@@ -795,7 +795,7 @@
         <!--Host Controller-->
         <scene sceneID="hTD-Fm-ybY">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="pEB-Rk-hzW" customClass="HostController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pEB-Rk-hzW" customClass="HostController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bT8-tz-Ygz"/>
                         <viewControllerLayoutGuide type="bottom" id="oDJ-AY-d59"/>
@@ -981,7 +981,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWB-1O-4jm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="recents" id="pgX-yZ-xvp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0V-yl-GEW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0V-yl-GEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1000,7 +1000,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ejb-Of-1pV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kategorije" image="category-icon-50" selectedImage="category-icon-50" id="FOy-OB-el9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="amu-We-GBg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amu-We-GBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1022,7 +1022,7 @@ Hvala svima!
         <image name="category-icon-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NC6-dR-p2e"/>
+        <segue reference="NYz-R5-CSN"/>
         <segue reference="XnG-T4-XFb"/>
     </inferredMetricsTieBreakers>
 </document>
