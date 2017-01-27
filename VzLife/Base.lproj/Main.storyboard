@@ -206,11 +206,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnN-Od-v46" id="wKq-jd-le2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UNg-kW-GCs">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -300,7 +300,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="ePD-Xi-2Pj" customClass="EventCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -412,7 +412,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventCategoryCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -726,8 +726,8 @@
                     <connections>
                         <segue destination="yWB-1O-4jm" kind="relationship" relationship="viewControllers" id="4TG-0r-bWx"/>
                         <segue destination="Ejb-Of-1pV" kind="relationship" relationship="viewControllers" id="DBX-Zq-sph"/>
-                        <segue destination="ePt-Bq-YlD" kind="relationship" relationship="viewControllers" id="ZR4-xf-VNh"/>
-                        <segue destination="1BE-gW-ztr" kind="relationship" relationship="viewControllers" id="P5T-CS-vj5"/>
+                        <segue destination="6IJ-6n-uwu" kind="relationship" relationship="viewControllers" id="k8g-C8-FND"/>
+                        <segue destination="1BE-gW-ztr" kind="relationship" relationship="viewControllers" id="PZ0-8G-HnA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1q-sy-4cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,6 +735,23 @@
             <point key="canvasLocation" x="-1551" y="1322"/>
         </scene>
         <!--Favoriti-->
+        <scene sceneID="eD5-bc-PyZ">
+            <objects>
+                <navigationController id="6IJ-6n-uwu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favoriti" image="Star Filled Filled-50" selectedImage="Star Filled Filled-50" id="qnx-gI-yJf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NHX-7Y-UeO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ePt-Bq-YlD" kind="relationship" relationship="rootViewController" id="yky-FG-4Cx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgO-cX-lXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1594" y="-123"/>
+        </scene>
+        <!--Event Favorite Controller-->
         <scene sceneID="8Br-93-4uU">
             <objects>
                 <viewController id="ePt-Bq-YlD" customClass="EventFavoriteController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
@@ -758,7 +775,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="JD2-bp-S91" customClass="EventCategoryCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -817,7 +834,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favoriti" image="Star Filled Filled-50" selectedImage="Star Filled Filled-50" id="mBh-Ex-D0N"/>
+                    <navigationItem key="navigationItem" id="RwK-kR-FjV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="MSy-3L-kxe">
+                            <connections>
+                                <action selector="searchBarAction:" destination="ePt-Bq-YlD" id="hP0-gU-kwo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="availabilityText" destination="13W-7Z-W61" id="fNe-Ee-Ybb"/>
                         <outlet property="collectionView" destination="PCl-ED-vgu" id="oDY-NO-FMz"/>
@@ -852,7 +875,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="mCi-jN-thc" customClass="EventCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -1085,7 +1108,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWB-1O-4jm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Početna" image="home_filled-50" selectedImage="home_filled-50" id="pgX-yZ-xvp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0V-yl-GEW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0V-yl-GEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1104,7 +1127,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ejb-Of-1pV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kategorije" image="category-icon-50" selectedImage="category-icon-50" id="FOy-OB-el9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amu-We-GBg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="amu-We-GBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1141,7 +1164,7 @@ Hvala svima!
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="0Gc-nd-BG0" customClass="EventCategoryCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>

@@ -32,11 +32,6 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         
         self.navigationItem.title = "Favoriti"
         
-        let predicate = NSPredicate(format: "favorite = YES")
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
-        
-        collectionView.reloadData()
-        
         //set collection view size
         collectionView.frame.size.width = self.view.frame.width
     }
@@ -48,6 +43,11 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
+        
+        let predicate = NSPredicate(format: "favorite = YES")
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        
+        collectionView.reloadData()
         
         emptyList = false
         
@@ -70,7 +70,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
             self.navigationItem.title = "Favoriti"
-            let predicate = NSPredicate(format: "favorite = true")
+            let predicate = NSPredicate(format: "favorite = YES")
             self.events = try! Array(Realm().objects(Event.self).filter(predicate))
             self.collectionView!.reloadData()
         }
@@ -103,7 +103,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
-        let predicate = NSPredicate(format: "title CONTAINS %@ AND favorite = true", searchText)
+        let predicate = NSPredicate(format: "title CONTAINS %@ AND favorite = YES", searchText)
         self.events = try! Array(Realm().objects(Event.self).filter(predicate))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
