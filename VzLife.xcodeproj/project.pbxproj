@@ -27,6 +27,7 @@
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
 		E40B50471E3A58B400B6A6D2 /* DatePickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B50461E3A58B400B6A6D2 /* DatePickController.swift */; };
 		E40B50491E3A917300B6A6D2 /* EventDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B50481E3A917300B6A6D2 /* EventDateController.swift */; };
+		E40B504A1E3B7F0B00B6A6D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A962C31DE42BE400BCF470 /* Main.storyboard */; };
 		E45FB09D1DEB3E7A00056445 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* EventCell.swift */; };
 		E45FB0A11DEB3F6A00056445 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* EventController.swift */; };
 		E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476B0161E114E96004B2D72 /* EventCreateController.swift */; };
@@ -463,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40B504A1E3B7F0B00B6A6D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
