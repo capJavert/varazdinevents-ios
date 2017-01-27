@@ -737,7 +737,7 @@
         <!--Favoriti-->
         <scene sceneID="8Br-93-4uU">
             <objects>
-                <viewController id="ePt-Bq-YlD" sceneMemberID="viewController">
+                <viewController id="ePt-Bq-YlD" customClass="EventFavoriteController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ILv-XS-TeT"/>
                         <viewControllerLayoutGuide type="bottom" id="FUj-YZ-ohn"/>
@@ -745,13 +745,88 @@
                     <view key="view" contentMode="scaleToFill" id="OsQ-7F-rt8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PCl-ED-vgu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.907470522" green="0.91288638099999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jtr-WG-Stc">
+                                    <size key="itemSize" width="328" height="182"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="JD2-bp-S91" customClass="EventCategoryCell" customModule="VzLife">
+                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ff3-pf-mOL">
+                                                    <rect key="frame" x="16" y="8" width="296" height="108"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYj-3O-Xsh">
+                                                    <rect key="frame" x="22" y="119" width="295" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y70-Z5-Vma" customClass="EventDetailButton" customModule="VzLife" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="147" width="296" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Više informacija">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.99227746390000005" green="0.97469490960000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="aboutView" destination="BYj-3O-Xsh" id="f1M-rp-DIG"/>
+                                            <outlet property="imageView" destination="Ff3-pf-mOL" id="sBe-wc-ctU"/>
+                                            <outlet property="moreInfoButton" destination="Y70-Z5-Vma" id="k3i-AL-uNU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Trenutno ne postoje aktivni događaji" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="13W-7Z-W61">
+                                <rect key="frame" x="66" y="318" width="242" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="availabilityText">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favoriti" image="Star Filled Filled-50" selectedImage="Star Filled Filled-50" id="mBh-Ex-D0N"/>
+                    <connections>
+                        <outlet property="availabilityText" destination="13W-7Z-W61" id="fNe-Ee-Ybb"/>
+                        <outlet property="collectionView" destination="PCl-ED-vgu" id="oDY-NO-FMz"/>
+                        <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="gM6-jI-0hA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHj-wf-uOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2218" y="2301"/>
+            <point key="canvasLocation" x="-810" y="-122"/>
         </scene>
         <!--Host Event Controller-->
         <scene sceneID="MMq-hf-gue">
@@ -1010,7 +1085,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWB-1O-4jm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Početna" image="home_filled-50" selectedImage="home_filled-50" id="pgX-yZ-xvp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0V-yl-GEW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0V-yl-GEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1029,7 +1104,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ejb-Of-1pV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kategorije" image="category-icon-50" selectedImage="category-icon-50" id="FOy-OB-el9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="amu-We-GBg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amu-We-GBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1156,7 +1231,7 @@ Hvala svima!
         <image name="home_filled-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="gM6-jI-0hA"/>
         <segue reference="CmU-3I-VSi"/>
-        <segue reference="Rig-1h-npb"/>
     </inferredMetricsTieBreakers>
 </document>

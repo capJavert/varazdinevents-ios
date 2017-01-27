@@ -12,6 +12,7 @@
 		684606D61E1AE96100165F97 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684606D21E1AE96100165F97 /* LeftPaddedTextField.swift */; };
 		684606D71E1AE96100165F97 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684606D31E1AE96100165F97 /* LoginCell.swift */; };
 		684606D81E1AE96100165F97 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684606D41E1AE96100165F97 /* LoginController.swift */; };
+		6846B5EB1E3ACD7D0042E955 /* EventFavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846B5EA1E3ACD7D0042E955 /* EventFavoriteController.swift */; };
 		684A357C1E2A81EB00193E96 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 684A357B1E2A81EB00193E96 /* Keys.plist */; };
 		684A35801E2A853500193E96 /* EventLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A357F1E2A853500193E96 /* EventLocationController.swift */; };
 		6887094A1E253BBD002BC0CC /* FacebookImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688709491E253BBD002BC0CC /* FacebookImportController.swift */; };
@@ -75,6 +76,7 @@
 		684606D21E1AE96100165F97 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
 		684606D31E1AE96100165F97 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		684606D41E1AE96100165F97 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		6846B5EA1E3ACD7D0042E955 /* EventFavoriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFavoriteController.swift; sourceTree = "<group>"; };
 		684A357B1E2A81EB00193E96 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		684A357F1E2A853500193E96 /* EventLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationController.swift; sourceTree = "<group>"; };
 		6882A0D91E313A13002CBC76 /* VzLife.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VzLife.entitlements; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				684606D21E1AE96100165F97 /* LeftPaddedTextField.swift */,
 				684606D31E1AE96100165F97 /* LoginCell.swift */,
 				684606D41E1AE96100165F97 /* LoginController.swift */,
+				6846B5EA1E3ACD7D0042E955 /* EventFavoriteController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */,
 				E45FB0A11DEB3F6A00056445 /* EventController.swift in Sources */,
 				68EE636A1E165E9E002F57BB /* HostEventButton.swift in Sources */,
+				6846B5EB1E3ACD7D0042E955 /* EventFavoriteController.swift in Sources */,
 				68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */,
 				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
 				E4DB14711E12DB4C00F0CB10 /* EventCategoryCell.swift in Sources */,
