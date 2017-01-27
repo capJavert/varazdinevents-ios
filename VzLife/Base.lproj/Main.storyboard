@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="3287" y="1872"/>
         </scene>
-        <!--Event By Date Controller View Controller-->
+        <!--Date Pick Controller-->
         <scene sceneID="UeJ-LT-Thp">
             <objects>
-                <viewController id="Rb4-hv-k1m" customClass="EventByDateControllerViewController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rb4-hv-k1m" customClass="DatePickController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GIt-f4-Wtc"/>
                         <viewControllerLayoutGuide type="bottom" id="svy-7f-4be"/>
@@ -1010,7 +1010,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWB-1O-4jm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Početna" image="home_filled-50" selectedImage="home_filled-50" id="pgX-yZ-xvp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0V-yl-GEW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0V-yl-GEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1029,7 +1029,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ejb-Of-1pV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kategorije" image="category-icon-50" selectedImage="category-icon-50" id="FOy-OB-el9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amu-We-GBg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="amu-We-GBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1042,10 +1042,10 @@ Hvala svima!
             </objects>
             <point key="canvasLocation" x="2378" y="1872"/>
         </scene>
-        <!--Events By Date Controller-->
+        <!--Event Date Controller-->
         <scene sceneID="oUb-v3-xOv">
             <objects>
-                <viewController storyboardIdentifier="eventsByDate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0AK-4g-5e4" customClass="EventsByDateController" customModule="VzLife" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsByDate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0AK-4g-5e4" customClass="EventDateController" customModule="VzLife" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bkw-Gw-eJB"/>
                         <viewControllerLayoutGuide type="bottom" id="rPw-ru-Hik"/>
@@ -1156,7 +1156,7 @@ Hvala svima!
         <image name="home_filled-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r9s-mS-euz"/>
         <segue reference="CmU-3I-VSi"/>
+        <segue reference="Rig-1h-npb"/>
     </inferredMetricsTieBreakers>
 </document>

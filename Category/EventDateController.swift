@@ -4,7 +4,7 @@ import Kingfisher
 import Realm
 
 
-class EventsByDateController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
+class EventDateController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
     
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
@@ -12,7 +12,6 @@ class EventsByDateController: UIViewController, UICollectionViewDelegate, UIColl
     var user = User()
     var searchBarController: UISearchController!
     var searchText: String = ""
-    var category = ""
     var emptyList = false
     var cellsNum: Int { return events.count }
     var event = Event()
@@ -26,25 +25,25 @@ class EventsByDateController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(
-            schemaVersion: 4,
-            migrationBlock: { migration, oldSchemaVersion in })
-        
-        if(NetworkConnection.Connection.isConnectedToNetwork()){
-            webServiceDataLoader.onDataLoadedDelegate = self
-            webServiceDataLoader.LoadData()
-        }else{
-            dbDataLoader.onDataLoadedDelegate = self
-            dbDataLoader.LoadData()
-        }
-        
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self
         
         //set collection view size
         collectionView.frame.size.width = self.view.frame.width
+        
+        let date = event.date
+        let date_to = event.date_to
+        let predicate = NSPredicate(format: "date >= %d AND date <= %d",
+                                    date, date_to)
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "dd.MM.yyyy"
+        let dateFormat = Date(timeIntervalSince1970: TimeInterval(event.date))
+        self.navigationItem.title = dateFormater.string(from: dateFormat)
+        
+        self.collectionView!.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,8 +55,7 @@ class EventsByDateController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewWillAppear(animated)
         
         emptyList = false
-        self.navigationItem.title = category
-        
+
         self.tabBarController?.tabBar.isHidden = false
     }
     
@@ -76,8 +74,13 @@ class EventsByDateController: UIViewController, UICollectionViewDelegate, UIColl
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
-            self.navigationItem.title = searchText.uppercased()
-            let predicate = NSPredicate(format: "category = %@", category)
+            let dateFormater = DateFormatter()
+            dateFormater.dateFormat = "dd.MM.yyyy"
+            let dateFormat = Date(timeIntervalSince1970: TimeInterval(event.date))
+            self.navigationItem.title = dateFormater.string(from: dateFormat)
+            
+            let predicate = NSPredicate(format: "date >= %d AND date <= %d",
+                                        event.date, event.date_to)
             self.events = try! Array(Realm().objects(Event.self).filter(predicate))
             self.collectionView!.reloadData()
         }
@@ -110,7 +113,8 @@ class EventsByDateController: UIViewController, UICollectionViewDelegate, UIColl
         
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
-        let predicate = NSPredicate(format: "title CONTAINS %@ AND category = %@", searchText, category)
+        let predicate = NSPredicate(format: "date >= %d AND date <= %d AND title CONTAINS %@",
+                                    event.date, event.date_to, searchText)
         self.events = try! Array(Realm().objects(Event.self).filter(predicate))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
@@ -151,23 +155,3 @@ class EventsByDateController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
 }
-
-extension EventsByDateController: OnDataLoadedDelegate {
-    public func onDataLoaded(events: [Event]) {
-        //dve linije would hit that
-        print("eventi iz klase", self.event)
-        let date = event.date
-        let date_to = event.date_to
-        let predicate = NSPredicate(format: "date >= %d AND date <= %d",
-                                   date, date_to)
-        print("Predikat", predicate)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
-        self.collectionView!.reloadData()
-        
-    }
-    
-}
-
-
-
-

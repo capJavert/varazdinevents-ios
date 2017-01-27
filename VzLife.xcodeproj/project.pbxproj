@@ -24,8 +24,8 @@
 		68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF51DF48E87000A858E /* EventDetailController.swift */; };
 		68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */; };
 		A6BF9D4DFBD175147DADF1BC /* Pods_VzLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */; };
-		E40B50471E3A58B400B6A6D2 /* EventByDateControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B50461E3A58B400B6A6D2 /* EventByDateControllerViewController.swift */; };
-		E40B50491E3A917300B6A6D2 /* EventsByDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B50481E3A917300B6A6D2 /* EventsByDateController.swift */; };
+		E40B50471E3A58B400B6A6D2 /* DatePickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B50461E3A58B400B6A6D2 /* DatePickController.swift */; };
+		E40B50491E3A917300B6A6D2 /* EventDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B50481E3A917300B6A6D2 /* EventDateController.swift */; };
 		E45FB09D1DEB3E7A00056445 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* EventCell.swift */; };
 		E45FB0A11DEB3F6A00056445 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* EventController.swift */; };
 		E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476B0161E114E96004B2D72 /* EventCreateController.swift */; };
@@ -89,8 +89,8 @@
 		68FADAF71DF4AB0E000A858E /* EventDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailButton.swift; sourceTree = "<group>"; };
 		6971B1807A629156BCDC931F /* Pods-VzLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VzLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-VzLife/Pods-VzLife.release.xcconfig"; sourceTree = "<group>"; };
 		9933F8F1D2417D480C1A8282 /* Pods_VzLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VzLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E40B50461E3A58B400B6A6D2 /* EventByDateControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventByDateControllerViewController.swift; sourceTree = "<group>"; };
-		E40B50481E3A917300B6A6D2 /* EventsByDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsByDateController.swift; sourceTree = "<group>"; };
+		E40B50461E3A58B400B6A6D2 /* DatePickController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickController.swift; sourceTree = "<group>"; };
+		E40B50481E3A917300B6A6D2 /* EventDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDateController.swift; sourceTree = "<group>"; };
 		E45FB09C1DEB3E7A00056445 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		E45FB0A01DEB3F6A00056445 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		E476B0161E114E96004B2D72 /* EventCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreateController.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 				E45FB0A01DEB3F6A00056445 /* EventController.swift */,
 				68C389431E244073004E0A8F /* InitController.swift */,
 				E4DCBFB81E38EFAB009830DC /* AboutController.swift */,
-				E40B50461E3A58B400B6A6D2 /* EventByDateControllerViewController.swift */,
+				E40B50461E3A58B400B6A6D2 /* DatePickController.swift */,
 			);
 			path = VzLife;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 				E4DB146C1E12A3BE00F0CB10 /* CategoryController.swift */,
 				E4DB146E1E12D7D500F0CB10 /* EventCategoryController.swift */,
 				E4DB14701E12DB4C00F0CB10 /* EventCategoryCell.swift */,
-				E40B50481E3A917300B6A6D2 /* EventsByDateController.swift */,
+				E40B50481E3A917300B6A6D2 /* EventDateController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -534,7 +534,7 @@
 				6887094A1E253BBD002BC0CC /* FacebookImportController.swift in Sources */,
 				E4A962FE1DE42F3A00BCF470 /* DataLoader.swift in Sources */,
 				E4DB146D1E12A3BE00F0CB10 /* CategoryController.swift in Sources */,
-				E40B50471E3A58B400B6A6D2 /* EventByDateControllerViewController.swift in Sources */,
+				E40B50471E3A58B400B6A6D2 /* DatePickController.swift in Sources */,
 				68FADAF81DF4AB0E000A858E /* EventDetailButton.swift in Sources */,
 				689A551D1E15F8BA00CEE356 /* HostLabel.swift in Sources */,
 				E4A963061DE4E37100BCF470 /* NetworkConnection.swift in Sources */,
@@ -543,7 +543,7 @@
 				68FADAF61DF48E87000A858E /* EventDetailController.swift in Sources */,
 				E4A962FC1DE42EF900BCF470 /* HTTPRequest.swift in Sources */,
 				E4DB14711E12DB4C00F0CB10 /* EventCategoryCell.swift in Sources */,
-				E40B50491E3A917300B6A6D2 /* EventsByDateController.swift in Sources */,
+				E40B50491E3A917300B6A6D2 /* EventDateController.swift in Sources */,
 				684A35801E2A853500193E96 /* EventLocationController.swift in Sources */,
 				E4A962C01DE42BE400BCF470 /* AppDelegate.swift in Sources */,
 				684606D51E1AE96100165F97 /* Extensions.swift in Sources */,

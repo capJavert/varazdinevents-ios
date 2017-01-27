@@ -1,5 +1,5 @@
 //
-//  EventByDateControllerViewController.swift
+//  DatePickController.swift
 //  VzLife
 //
 //  Created by FOI on 26/01/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventByDateControllerViewController: UIViewController {
+class DatePickController: UIViewController {
 
     
     var date = 0
@@ -25,10 +25,7 @@ class EventByDateControllerViewController: UIViewController {
         let dateEnd = self.datePicker.date
         let dateEndTimeInterval = dateEnd.timeIntervalSince1970
         let dateEndInt = Int(dateEndTimeInterval)
-        
         let date = self.datePicker.date
-        let date1 = date.addingTimeInterval(1440 * 60.0)
-        print ("Ovo je datum", date1)
         
         let dateTimeInterval = date.timeIntervalSince1970
         let dateInInt = Int(dateTimeInterval)
@@ -55,8 +52,6 @@ class EventByDateControllerViewController: UIViewController {
         
         let date = self.datePicker.date
         let date1 = date.addingTimeInterval(1440 * 60.0)
-        print ("Ovo je datum", date1)
-        print ("ovo je datum iznad: ", date)
         let dateTimeInterval = date.timeIntervalSince1970
         let dateInInt = Int(dateTimeInterval)
         
@@ -67,49 +62,13 @@ class EventByDateControllerViewController: UIViewController {
         
         events.date_to = dateDayAfter
         events.date = dateInInt
-        print("Eventi", events.date_to )
         
-        let goBackToCollectionView = self.storyboard?.instantiateViewController(withIdentifier:"eventsByDate") as! EventsByDateController
+        let goBackToCollectionView = self.storyboard?.instantiateViewController(withIdentifier:"eventsByDate") as! EventDateController
         goBackToCollectionView.event = events
         self.navigationController?.pushViewController(goBackToCollectionView, animated: true)
 
 
     }
-  /*  @IBAction func goToEventView(_ sender: Any) {
-    
-    //need to set to event object
-    
-        
-        let dateEnd = self.datePicker.date
-        let dateEndTimeInterval = dateEnd.timeIntervalSince1970
-        let dateEndInt = Int(dateEndTimeInterval)
-        
-        let date = self.datePicker.date
-        let date1 = date.addingTimeInterval(1440 * 60.0)
-        print ("Ovo je datum", date1)
-        
-        let dateTimeInterval = date.timeIntervalSince1970
-        let dateInInt = Int(dateTimeInterval)
-        
-        let events = Event()
-        
-        events.date_to = dateEndInt
-        events.date = dateInInt
-        
-        let dateFormatter = DateFormatter()
-        let dateFormatter2 = DateFormatter()
-        
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        dateFormatter2.dateFormat = "hh:mm:ss"
-        
-        //let stringTime = dateFormatter2.string(from: date)
-        //let stringTimeTo = dateFormatter2.string(from: dateEnd)
-        
-        
-        let goBackToCollectionView = self.storyboard?.instantiateViewController(withIdentifier:"giveDate") as! EventController
-        goBackToCollectionView.events = self.events
-        self.navigationController?.pushViewController(goBackToCollectionView, animated: true)
- */
         
 
 }
