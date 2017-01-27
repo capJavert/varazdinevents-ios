@@ -30,7 +30,22 @@ class VzLifeUITests: XCTestCase {
     
     func testExample() {
         // Use recording to get started writing UI tests.
+    
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        
+        let app = XCUIApplication()
+        app.navigationBars["VzLife.Event"].buttons["Search"].tap()
+        
+        let searchSearchField = app.searchFields["Search"]
+        searchSearchField.tap()
+        searchSearchField.typeText("Test")
+        app.typeText("\r")
+        XCTAssert(app.cells.count != 0)
+        
+        
+        
     }
     
 }
