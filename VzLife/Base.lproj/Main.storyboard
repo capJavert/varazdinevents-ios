@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G5r-5b-Eaa">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G5r-5b-Eaa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -233,7 +233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8X-a6-nAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3287" y="1872"/>
+            <point key="canvasLocation" x="4224.8000000000002" y="1871.5142428785609"/>
         </scene>
         <!--Date Pick Controller-->
         <scene sceneID="UeJ-LT-Thp">
@@ -727,7 +727,7 @@
                         <segue destination="yWB-1O-4jm" kind="relationship" relationship="viewControllers" id="4TG-0r-bWx"/>
                         <segue destination="Ejb-Of-1pV" kind="relationship" relationship="viewControllers" id="DBX-Zq-sph"/>
                         <segue destination="6IJ-6n-uwu" kind="relationship" relationship="viewControllers" id="k8g-C8-FND"/>
-                        <segue destination="1BE-gW-ztr" kind="relationship" relationship="viewControllers" id="PZ0-8G-HnA"/>
+                        <segue destination="Tct-lb-Ffo" kind="relationship" relationship="viewControllers" id="PZ0-8G-HnA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1q-sy-4cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -739,7 +739,7 @@
             <objects>
                 <navigationController id="6IJ-6n-uwu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favoriti" image="Star Filled Filled-50" selectedImage="Star Filled Filled-50" id="qnx-gI-yJf"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NHX-7Y-UeO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NHX-7Y-UeO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1039,7 +1039,7 @@
             </objects>
             <point key="canvasLocation" x="5146" y="-167"/>
         </scene>
-        <!--O nama-->
+        <!--About Controller-->
         <scene sceneID="dS7-8z-WH6">
             <objects>
                 <viewController id="1BE-gW-ztr" customClass="AboutController" customModule="VzLife" customModuleProvider="target" sceneMemberID="viewController">
@@ -1052,11 +1052,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-i2-wet">
-                                <rect key="frame" x="0.0" y="52" width="375" height="566"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgP-Eu-Oej">
-                                        <rect key="frame" x="8" y="20" width="359" height="546"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="varazdinevents-bg" translatesAutoresizingMaskIntoConstraints="NO" id="nOB-HG-5lC">
+                                        <rect key="frame" x="-1" y="3" width="376" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgP-Eu-Oej">
+                                        <rect key="frame" x="8" y="211" width="359" height="358"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -1091,16 +1095,16 @@ Hvala svima!
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="O nama" image="about-filled-50" selectedImage="about-filled-50" id="PT0-4f-dg3"/>
                     <navigationItem key="navigationItem" id="DEX-di-F8Z"/>
                     <connections>
+                        <outlet property="imageView" destination="nOB-HG-5lC" id="bKN-ol-9CW"/>
                         <outlet property="scrollView" destination="Pkb-i2-wet" id="i11-HG-JlA"/>
                         <outlet property="textView" destination="CgP-Eu-Oej" id="4I5-e2-MTj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hko-oi-g5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615.20000000000005" y="2156.6716641679163"/>
+            <point key="canvasLocation" x="1554.4000000000001" y="2156.6716641679163"/>
         </scene>
         <!--Početna-->
         <scene sceneID="Rm2-Hh-5Ki">
@@ -1108,7 +1112,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWB-1O-4jm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Početna" image="home_filled-50" selectedImage="home_filled-50" id="pgX-yZ-xvp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0V-yl-GEW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0V-yl-GEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1127,7 +1131,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ejb-Of-1pV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kategorije" image="category-icon-50" selectedImage="category-icon-50" id="FOy-OB-el9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amu-We-GBg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="amu-We-GBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1138,7 +1142,7 @@ Hvala svima!
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPm-gP-gcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378" y="1872"/>
+            <point key="canvasLocation" x="3316" y="1871.5142428785609"/>
         </scene>
         <!--Event Date Controller-->
         <scene sceneID="oUb-v3-xOv">
@@ -1240,6 +1244,25 @@ Hvala svima!
             </objects>
             <point key="canvasLocation" x="1617" y="-1112"/>
         </scene>
+        <!--O nama-->
+        <scene sceneID="Itr-YJ-sfV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tct-lb-Ffo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="O nama" image="about-filled-50" selectedImage="about-filled-50" id="PT0-4f-dg3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oML-Lk-Q1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1BE-gW-ztr" kind="relationship" relationship="rootViewController" id="Gfb-qC-9b4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fi-qg-hNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="615.20000000000005" y="2156.6716641679163"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Facebook-logo" width="25" height="25"/>
@@ -1250,9 +1273,10 @@ Hvala svima!
         <image name="calendar-50" width="25" height="25"/>
         <image name="category-icon-50" width="25" height="25"/>
         <image name="home_filled-50" width="25" height="25"/>
+        <image name="varazdinevents-bg" width="751" height="421"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r9s-mS-euz"/>
-        <segue reference="CmU-3I-VSi"/>
+        <segue reference="XnG-T4-XFb"/>
+        <segue reference="gM6-jI-0hA"/>
     </inferredMetricsTieBreakers>
 </document>
