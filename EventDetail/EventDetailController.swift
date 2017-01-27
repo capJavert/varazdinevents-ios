@@ -75,7 +75,7 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         categoryLabel.addGestureRecognizer(categoryTap)
         
         imageView.kf.setImage(with: URL(string: event.image))
-        textView.text = event.text.replacingOccurrences(of: "<br />", with: "\n", options: .regularExpression, range: nil)
+        textView.text = event.text.replacingOccurrences(of: "<br />", with: "\n", options: .regularExpression, range: nil).replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil).replacingOccurrences(of: "&nbsp;", with: " ")
         
         //adjust label positions
         dateLabel.frame.origin.y = imageView.frame.origin.y + imageView.frame.height

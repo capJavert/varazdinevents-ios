@@ -39,7 +39,7 @@ class HostController: UIViewController{
         let websiteTap = UITapGestureRecognizer(target: self, action: #selector(self.openWebPage(sender:)))
         websiteLabel.addGestureRecognizer(websiteTap)
 
-        textView.text = host.about.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil).replacingOccurrences(of: "&nbsp;", with: " ")
+        textView.text = host.about.replacingOccurrences(of: "<br />", with: "\n", options: .regularExpression, range: nil).replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil).replacingOccurrences(of: "&nbsp;", with: " ")
         imageView.kf.setImage(with: URL(string: host.image))
         
         //adjust label positions
