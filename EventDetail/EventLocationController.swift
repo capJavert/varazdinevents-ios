@@ -34,6 +34,9 @@ extension EventLocationController: OnLocationFetchedDelegate {
             location = latLng
         }
         
+        let camera = GMSCameraPosition.camera(withLatitude: location["lat"] as! CLLocationDegrees, longitude: location["lng"] as! CLLocationDegrees, zoom: 16.0)
+        mapView.camera = camera
+        
         // Creates a marker for event location
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: location["lat"] as! CLLocationDegrees, longitude: location["lng"] as! CLLocationDegrees)
