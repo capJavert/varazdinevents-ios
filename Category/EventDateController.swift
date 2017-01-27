@@ -139,13 +139,13 @@ class EventDateController: UIViewController, UICollectionViewDelegate, UICollect
     
     func goToEventDetail( sender: UIButton){
         //passing Sender
-        self.performSegue(withIdentifier: "goToEventDetail", sender: sender)
+        self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
-        if segue.identifier == "goToEventDetail"{
+        if segue.identifier == "EventDetail"{
             //casting sender to UIButton
             let sender = sender as! EventDetailButton
             let eventDetail = segue.destination as! EventDetailController

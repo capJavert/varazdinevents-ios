@@ -20,7 +20,7 @@ class LoginCell: UICollectionViewCell {
         let textField = LeftPaddedTextField()
         //textField.placeholder = "Korisničko ime"
        // textField.layer.borderColor = UIColor.lightGray.cgColor
-        textField.layer.borderWidth = 3
+        textField.layer.borderWidth = 2
         textField.backgroundColor = .white
         textField.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
         textField.attributedPlaceholder = NSAttributedString(string: "Korisničko ime",
@@ -39,7 +39,7 @@ class LoginCell: UICollectionViewCell {
                                                             attributes: [NSForegroundColorAttributeName: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
         textField.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
         //textField.textAlignment = NSTextAlignment.center
-        textField.layer.borderWidth = 3
+        textField.layer.borderWidth = 2
         textField.backgroundColor = .white
         textField.isSecureTextEntry = true
         return textField
@@ -50,7 +50,7 @@ class LoginCell: UICollectionViewCell {
         button.backgroundColor = UIColor(netHex:0xFFBB46)
         button.setTitle("Prijava", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.layer.borderWidth = 3
+        button.layer.borderWidth = 2
         button.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
         button.addTarget(self, action: #selector(logIn), for: .touchUpInside)
         return button
@@ -79,7 +79,7 @@ class LoginCell: UICollectionViewCell {
         addSubview(loginButton)
         
         
-        _ = logoImageView.anchor(centerYAnchor, left: nil, bottom: nil, right: nil, topConstant: -150, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 280, heightConstant: 39)
+        _ = logoImageView.anchor(centerYAnchor, left: nil, bottom: nil, right: nil, topConstant: -150, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: self.contentView.frame.width-30)
         logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
         _ = emailTextField.anchor(logoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 60, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 50)
