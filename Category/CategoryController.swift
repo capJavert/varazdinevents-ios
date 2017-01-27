@@ -86,8 +86,6 @@ class CategoryController: UITableViewController, UISearchBarDelegate {
                 shouldShowResults = false
                 self.tableView.reloadData()
             }
-            
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

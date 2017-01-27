@@ -49,10 +49,6 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
         backButtonTopAnchor = backButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
         collectionView.anchorToTop(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         collectionView.backgroundColor = .white
-    
-        //self.tabBarController?.tabBar.isHidden = true
-       // self.tabBarController?.tabBar.layer.isHidden = true
-        
 
         registerCells()
         
@@ -83,13 +79,9 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
             }
     
     public func cancleIt(){
-        
         let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
         self.navigationController?.pushViewController(eventsView, animated: true)
-        
-       
     }
-    
     
     fileprivate func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: .UIKeyboardWillShow, object: nil)
