@@ -37,7 +37,13 @@ extension EventLocationController: OnLocationFetchedDelegate {
         // Creates a marker for event location
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: location["lat"] as! CLLocationDegrees, longitude: location["lng"] as! CLLocationDegrees)
-        marker.title = host.name
+        
+        if latLng.isEmpty {
+            marker.title = "VaraždinEvents"
+        } else {
+            marker.title = host.name
+        }
+        
         marker.snippet = location["address"] as! String?
         self.navigationItem.title = location["address"] as! String?
         marker.map = mapView

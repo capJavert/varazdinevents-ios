@@ -37,25 +37,47 @@ class InitController: UIViewController {
     }
     
     @IBAction func initFirstView(_ sender: Any) {
-        let eventController = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
-        eventController.user = user
-        self.navigationController?.show(eventController, sender: self)
+        performSegue(withIdentifier: "init", sender: sender)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "init" {
-            let sender = sender as! User
-            let eventList = segue.destination as! EventController
-            
-            eventList.user = sender
-            
-        }
-    }
+
 }
 
 extension InitController: OnUserLoggedDelegate {
     public func onUserLogged(user: User) {
         self.user = user
         initFirstView(sender: user)
+    }
+}
+
+/**
+ Hide keyboard Extension
+ **/
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
     }
 }

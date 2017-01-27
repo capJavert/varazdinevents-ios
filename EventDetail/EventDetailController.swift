@@ -111,6 +111,12 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: textView.frame.height + imageView.frame.height + dateLabel.frame.height + timeLabel.frame.height + facebookLable.frame.height + locationLabel.frame.height + hostLabel.frame.height + categoryLabel.frame.height + 150)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         let realm = try! Realm()
         do {

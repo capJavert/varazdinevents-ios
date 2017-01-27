@@ -21,13 +21,26 @@ class EventCreateController: UIViewController {
     var sessionId: String = ""
     var user =  User()
     
+    @IBOutlet var uiView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     var events = [Event]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        //keyboard setting
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: uiView.frame.size.height + 180)
+        
+        //hide keyboard on click
+        self.hideKeyboardWhenTappedAround()
+        
+        self.view.addSubview(scrollView)
+        // Do any additional setup after loading the view.
+        //scrollView.contentSize = CGSize(width: 0, height: 700)
         self.navigationItem.title = "Kreiraj događaj"
     }
 

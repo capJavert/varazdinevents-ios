@@ -52,6 +52,19 @@ class CategoryController: UITableViewController, UISearchBarDelegate {
     }
     else {
         cell.textLabel?.text = categories[indexPath.row]
+        
+        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width + 10, height: 50))
+        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
+        whiteRoundedView.layer.masksToBounds = false
+        whiteRoundedView.layer.cornerRadius = 2.0
+       // whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+       // whiteRoundedView.layer.shadowOpacity = 0.2
+        
+        cell.contentView.addSubview(whiteRoundedView)
+        cell.contentView.sendSubview(toBack: whiteRoundedView)
+
+        
+        
         return cell
         }
     }
@@ -73,8 +86,6 @@ class CategoryController: UITableViewController, UISearchBarDelegate {
                 shouldShowResults = false
                 self.tableView.reloadData()
             }
-            
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,6 +95,8 @@ class CategoryController: UITableViewController, UISearchBarDelegate {
         eventsByCategories.category = sender
         }
     }
+    
+    
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.endEditing(true)
     }

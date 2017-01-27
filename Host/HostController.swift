@@ -63,6 +63,12 @@ class HostController: UIViewController{
         scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: textView.frame.height + imageView.frame.height + websiteLabel.frame.height + phoneLabel.frame.height + facebookLabel.frame.height + addressLabel.frame.height + workHoursLabel.frame.height + moreInfoButton.frame.height + 20)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

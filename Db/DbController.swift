@@ -56,6 +56,14 @@ public class DbController
         try! self.realm.commitWrite()
     }
     
+    public func realmDeleteUser() {
+        let items = self.realm.objects(User.self)
+        
+        self.realm.beginWrite()
+        self.realm.delete(items)
+        try! self.realm.commitWrite()
+    }
+    
     public func realmAddEvent(o: Event)
     {
         let event = try! Realm().object(ofType: Event.self, forPrimaryKey: o.id)

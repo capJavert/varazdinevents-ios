@@ -70,9 +70,7 @@ public class WebServiceDataLoader:DataLoader
     
     public func bindUser(user: User)
     {
-        DbController.sharedDBInstance.realm.beginWrite()
-        DbController.sharedDBInstance.realm.deleteAll()
-        try! DbController.sharedDBInstance.realm.commitWrite()
+        DbController.sharedDBInstance.realmDeleteUser()
         
         DbController.sharedDBInstance.realmAdd(o: user)
     }
@@ -80,7 +78,7 @@ public class WebServiceDataLoader:DataLoader
     public func bindEvent(event: Event)
     {
         DbController.sharedDBInstance.realm.beginWrite()
-        DbController.sharedDBInstance.realm.deleteAll()
+        //DbController.sharedDBInstance.realm.deleteAll()
         try! DbController.sharedDBInstance.realm.commitWrite()
         
         DbController.sharedDBInstance.realmAdd(o: event)
@@ -124,6 +122,7 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
                     self.user = User()
                 }
                 
+                self.bindUser(user: user)
                 self.userLoaded = true
                 self.userLogged()
             break

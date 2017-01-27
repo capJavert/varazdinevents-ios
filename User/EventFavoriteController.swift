@@ -4,15 +4,14 @@ import Kingfisher
 import Realm
 
 
-class EventCategoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
-   
+class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
+    
     var events = [Event] ()
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
     var user = User()
     var searchBarController: UISearchController!
     var searchText: String = ""
-    var category = ""
     var emptyList = false
     var cellsNum: Int { return events.count }
     
@@ -23,31 +22,21 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var moreInfoButton: EventDetailButton!
-     override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(
-            schemaVersion: 4,
-            migrationBlock: { migration, oldSchemaVersion in })
-        
-        if(NetworkConnection.Connection.isConnectedToNetwork()){
-            webServiceDataLoader.onDataLoadedDelegate = self
-            webServiceDataLoader.LoadData()
-        }else{
-            dbDataLoader.onDataLoadedDelegate = self
-            dbDataLoader.LoadData()
-        }
         
         //telling CollectionView that stuff he is looking for can be found within this viewController itself
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        self.navigationItem.title = "Favoriti"
+        
         //set collection view size
         collectionView.frame.size.width = self.view.frame.width
     }
     
-     override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -55,8 +44,12 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
+        let predicate = NSPredicate(format: "favorite = YES")
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        
+        collectionView.reloadData()
+        
         emptyList = false
-        self.navigationItem.title = category
         
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -76,18 +69,18 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
-            self.navigationItem.title = searchText.uppercased()
-            let predicate = NSPredicate(format: "category = %@", category)
+            self.navigationItem.title = "Favoriti"
+            let predicate = NSPredicate(format: "favorite = YES")
             self.events = try! Array(Realm().objects(Event.self).filter(predicate))
             self.collectionView!.reloadData()
         }
     }
-
+    
     
     //Implementing methods for classes we included
     //First one is for number of items in collectionView ( how many items will we have )
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        
         if (events.count == 0){
             emptyList = true
         }
@@ -100,8 +93,8 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         else{
             availabilityText.isHidden = true
         }
-
-            return events.count
+        
+        return events.count
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -110,12 +103,12 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
-        let predicate = NSPredicate(format: "title CONTAINS %@ AND category = %@", searchText, category)
+        let predicate = NSPredicate(format: "title CONTAINS %@ AND favorite = YES", searchText)
         self.events = try! Array(Realm().objects(Event.self).filter(predicate))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
-
+    
     
     
     //Second method we needed is for every cell specifing the properties of it
@@ -129,10 +122,10 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         cell2.moreInfoButton.tag = indexPath.item
         cell2.moreInfoButton.event = events[indexPath.item]
         cell2.moreInfoButton.addTarget(self, action: #selector(goToEventDetail(sender:)), for: .touchUpInside)
-    
+        
         return cell2
     }
- 
+    
     func goToEventDetail( sender: UIButton){
         //passing Sender
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
@@ -150,17 +143,6 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
             
         }
     }
-}
-
-extension EventCategoryController: OnDataLoadedDelegate {
-    public func onDataLoaded(events: [Event]) {
-        //dve linije would hit that
-        let predicate = NSPredicate(format: "category = %@", category)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
-        
-        collectionView.reloadData()
-    }
-    
 }
 
 
