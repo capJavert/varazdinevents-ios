@@ -143,7 +143,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func showEvent(eventId: Int) {
         //init storyboard and views
         let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let prevController : EventController = mainStoryboardIpad.instantiateViewController(withIdentifier: "eventsView") as! EventController
         let viewController : EventDetailController = mainStoryboardIpad.instantiateViewController(withIdentifier: "EventDetail") as! EventDetailController
         
         //get event object
@@ -152,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //navigate to view
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
-        navigationController.viewControllers = [prevController, viewController]
+        navigationController.viewControllers = [viewController]
         self.window!.rootViewController = navigationController
         
         self.window?.makeKeyAndVisible()
