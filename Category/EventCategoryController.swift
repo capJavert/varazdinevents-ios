@@ -78,7 +78,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         if(searchText == "") {
             self.navigationItem.title = searchText.uppercased()
             let predicate = NSPredicate(format: "category = %@", category)
-            self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
             self.collectionView!.reloadData()
         }
     }
@@ -111,7 +111,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
         let predicate = NSPredicate(format: "title CONTAINS %@ AND category = %@", searchText, category)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
@@ -156,7 +156,7 @@ extension EventCategoryController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         //dve linije would hit that
         let predicate = NSPredicate(format: "category = %@", category)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
         
         collectionView.reloadData()
     }

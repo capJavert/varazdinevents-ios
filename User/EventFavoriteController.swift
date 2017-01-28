@@ -45,7 +45,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         super.viewWillAppear(animated)
         
         let predicate = NSPredicate(format: "favorite = YES")
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
         
         collectionView.reloadData()
         
@@ -71,7 +71,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         if(searchText == "") {
             self.navigationItem.title = "Favoriti"
             let predicate = NSPredicate(format: "favorite = YES")
-            self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
             self.collectionView!.reloadData()
         }
     }
@@ -104,7 +104,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
         let predicate = NSPredicate(format: "title CONTAINS %@ AND favorite = YES", searchText)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }

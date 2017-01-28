@@ -191,7 +191,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
 
 extension EventController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
-        self.events=events
+        self.events = Array(DbController.sharedDBInstance.realm.objects(Event.self).sorted(byProperty: "date"))
         collectionView.reloadData()
     }
     

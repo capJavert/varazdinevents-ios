@@ -98,7 +98,7 @@ public class DbController
     
     public func realmFetchEvents()
     {
-        let data = self.realm.objects(Event.self)
+        let data = self.realm.objects(Event.self).sorted(byProperty: "date")
         dbResultDelegate?.getEvents(result: data.reversed())
     }
     

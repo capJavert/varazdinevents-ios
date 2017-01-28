@@ -22,7 +22,7 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
         
         let predicate = NSPredicate(format: "author = %@", argumentArray: [host.id])
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
         
         self.navigationItem.title = "Događanja "+host.name
         
@@ -57,7 +57,7 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
         if(searchText == "") {
             self.navigationItem.title = "Događanja "+host.name
             let predicate = NSPredicate(format: "author = %@", argumentArray: [host.id])
-            self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
             self.collectionView!.reloadData()
         }
     }
@@ -76,7 +76,7 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
         let predicate = NSPredicate(format: "title CONTAINS %@ AND author = %@", argumentArray: [searchText, host.id])
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
