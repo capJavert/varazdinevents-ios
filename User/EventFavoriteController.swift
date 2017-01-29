@@ -4,6 +4,7 @@ import Kingfisher
 import Realm
 
 
+/// Favorite Events View
 class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
     
     var events = [Event] ()
@@ -23,6 +24,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBOutlet weak var moreInfoButton: EventDetailButton!
     
+    ///
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,11 +38,16 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.frame.size.width = self.view.frame.width
     }
     
+    ///
     override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    ///
+    ///
+    /// - Parameter animated: Bool
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
@@ -54,6 +61,10 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    
+    /// Search bar action
+    ///
+    /// - Parameter sender: sender
     @IBAction func searchBarAction(_ sender: Any) {
         searchBarController = UISearchController(searchResultsController: nil)
         searchBarController.searchBar.delegate = self
@@ -67,6 +78,12 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         
     }
     
+    
+    /// Search bar text change
+    ///
+    /// - Parameters:
+    ///   - searchBar: searchBar
+    ///   - searchText: String
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
             self.navigationItem.title = "Favoriti"
@@ -97,6 +114,10 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         return events.count
     }
     
+    
+    /// Search button clicked
+    ///
+    /// - Parameter searchBar: searchBar
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchText = searchBar.text!
@@ -108,8 +129,6 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
-    
-    
     
     //Second method we needed is for every cell specifing the properties of it
     // This method is generating cell object and returns it with all properties we need it
@@ -126,12 +145,22 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         return cell2
     }
     
+    
+    /// Go to Event Detail
+    ///
+    /// - Parameter sender: sender
     func goToEventDetail( sender: UIButton){
         //passing Sender
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
     
     
+    
+    /// Prepare segue
+    ///
+    /// - Parameters:
+    ///   - segue: UIStoryboardSegue
+    ///   - sender: sender
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
         if segue.identifier == "EventDetail"{

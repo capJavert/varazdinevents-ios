@@ -3,6 +3,8 @@ import RealmSwift
 import Kingfisher
 import Realm
 
+
+/// Host Events View Controller
 class HostEventController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
     
     var events = [Event] ()

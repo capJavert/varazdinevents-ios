@@ -2,6 +2,8 @@ import Foundation
 
 import RealmSwift
 
+
+/// Host
 public class Host: Object
 {
     dynamic var id = 0
@@ -14,6 +16,9 @@ public class Host: Object
     dynamic var about = ""
     dynamic var image = ""
     
+    /// Primary key
+    ///
+    /// - Returns: String
     override public static func primaryKey() -> String? {
         return "id"
     }

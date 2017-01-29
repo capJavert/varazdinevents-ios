@@ -11,6 +11,8 @@ import Kingfisher
 import RealmSwift
 import Firebase
 
+
+/// Event Details View Controller
 class EventDetailController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dateLabel: UILabel!

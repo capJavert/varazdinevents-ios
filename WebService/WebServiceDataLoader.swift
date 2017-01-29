@@ -1,35 +1,62 @@
 import Foundation
 
+
+/// Web service data Loader
 public class WebServiceDataLoader:DataLoader
 {
+    
+    /// Events loaded flag
     public var eventsLoaded: Bool = false
+    
+    /// User loaded flag
     public var userLoaded: Bool = false
+    
+    /// User preferences
     private var prefs = UserDefaults()
     
+    
+    /// HTTPRequest request instance
     var httpRequest = HTTPRequest()
     
-    
+    /// Load data from web service
     public override func LoadData() {
         httpRequest.wsResultDelegate = self
         httpRequest.requestHosts()
         httpRequest.requestEvents()
     }
     
+    /// Load User
+    ///
+    /// - Parameters:
+    ///   - username: String
+    ///   - password: String
     public override func LoadUser(username: String, password: String) {
         httpRequest.wsResultDelegate = self
         httpRequest.requestUser(username: username, password: password)
     }
     
+    /// CreateFacebookEvent
+    ///
+    /// - Parameters:
+    ///   - eventId: Int
+    ///   - sessionId: String
+    ///   - oAuthToken: String
     public override func CreateFacebookEvent(eventId: String, sessionId: String, oAuthToken: String) {
         httpRequest.wsResultDelegate = self
         httpRequest.createFacebookEvent(eventId: eventId, sessionId: sessionId, oAuthToken: oAuthToken)
     }
     
+    
+    /// Check user Auth status
+    ///
+    /// - Parameter sessionId: String
     public override func CheckUserAuth(sessionId: String) {
         httpRequest.wsResultDelegate = self
         httpRequest.requestAuth(sessionId: sessionId)
     }
     
+    
+    /// Show data loaded from web service
     public func showLoadedData()
     {
         if(self.eventsLoaded){
@@ -38,6 +65,8 @@ public class WebServiceDataLoader:DataLoader
         }
     }
     
+    
+    /// Bind new Events data and remove old data
     private func bindData()
     {
         DbController.sharedDBInstance.realm.beginWrite()
@@ -53,6 +82,7 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realmDeleteEvents(notThese: notThese)
     }
     
+    /// Bind new Hosts data and remove old data
     public func bindHosts(hosts: Array<Host>)
     {
         DbController.sharedDBInstance.realm.beginWrite()
@@ -68,6 +98,7 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realmDeleteHosts(notThese: notThese)
     }
     
+    /// Bind new User data and remove old data
     public func bindUser(user: User)
     {
         DbController.sharedDBInstance.realmDeleteUser()
@@ -75,6 +106,7 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realmAdd(o: user)
     }
     
+    /// Bind new Event data and remove old data
     public func bindEvent(event: Event)
     {
         DbController.sharedDBInstance.realm.beginWrite()
@@ -84,6 +116,7 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realmAdd(o: event)
     }
     
+    /// Load Location data from Google Geocoding API
     public func getLocation(address: String)
     {
         httpRequest.wsResultDelegate = self
@@ -92,6 +125,12 @@ public class WebServiceDataLoader:DataLoader
 }
 
 extension WebServiceDataLoader: WebServiceResultDelegate{
+    
+    /// Get and parse Result to Delegate
+    ///
+    /// - Parameters:
+    ///   - json: json
+    ///   - type: String
     public func getResult(json: AnyObject, type: String) {
         switch type {
             case "events":

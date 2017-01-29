@@ -3,6 +3,8 @@ import RealmSwift
 import Kingfisher
 import Realm
 
+
+/// Host view controller
 class HostController: UIViewController{
     
     var user = User()

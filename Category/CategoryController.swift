@@ -1,5 +1,7 @@
 import UIKit
 
+
+/// Category View Controller
 class CategoryController: UITableViewController, UISearchBarDelegate {
 
     let categories = ["Kazalište i film", "Slušaona", "Svirka", "Volontiranje", "Tečaj", "Predavanje", "Party", "Ostalo"]

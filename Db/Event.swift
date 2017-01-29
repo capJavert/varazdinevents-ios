@@ -2,6 +2,8 @@ import Foundation
 
 import RealmSwift
 
+
+/// Event
 public class Event: Object
 {
     dynamic var id = 0
@@ -18,6 +20,10 @@ public class Event: Object
     dynamic var author = 0
     dynamic var favorite = false
     
+    
+    /// Primary key
+    ///
+    /// - Returns: String
     override public static func primaryKey() -> String? {
         return "id"
     }

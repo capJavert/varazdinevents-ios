@@ -1,15 +1,33 @@
 import Alamofire
 
+
+/// Web service delegate
 public protocol WebServiceResultDelegate{
+    
+    /// Get results
+    ///
+    /// - Parameters:
+    ///   - json: json
+    ///   - type: String
     func getResult(json:AnyObject, type: String)
 }
 
+
+/// Reguest data from Web service through HTTP
 public class HTTPRequest
 {
+    
+    /// API Url
     public var baseUrl = "http://varazdinevents.cf/api"
+    
+    /// Web service result delegate
     public var wsResultDelegate:WebServiceResultDelegate?
+    
+    /// Init
     public init(){}
     
+    
+    /// Request Events
     public func requestEvents()
     {
         Alamofire.request(baseUrl+"/events", method: .get, parameters: [:])
@@ -21,6 +39,12 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Login User
+    ///
+    /// - Parameters:
+    ///   - username: username
+    ///   - password: password
     public func requestUser(username: String, password: String)
     {
         Alamofire.request(baseUrl+"/user/login", method: .post,
@@ -33,6 +57,10 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Request Auth token
+    ///
+    /// - Parameter sessionId: User sessionId
     public func requestAuth(sessionId: String)
     {
         Alamofire.request(baseUrl+"/user/auth?token="+sessionId, method: .get, parameters: [:])
@@ -44,6 +72,10 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Register Firebase token for device
+    ///
+    /// - Parameter token: Firebase token
     public func registerToken(token: String)
     {
         Alamofire.request(baseUrl+"/firebase/add/"+token, method: .get)
@@ -55,6 +87,12 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Favorite event
+    ///
+    /// - Parameters:
+    ///   - token: User sessionId
+    ///   - eventId: EventId
     public func favoriteEvent(token: String, eventId: Int)
     {
         Alamofire.request(baseUrl+"/firebase/favorite/"+String(eventId), method: .get, parameters: ["token": token])
@@ -66,6 +104,12 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Unfavorite Event
+    ///
+    /// - Parameters:
+    ///   - token: User sessionId
+    ///   - eventId: Event Id
     public func unFavoriteEvent(token: String, eventId: Int)
     {
         Alamofire.request(baseUrl+"/firebase/un-favorite/"+String(eventId), method: .get, parameters: ["token": token])
@@ -77,6 +121,12 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Create Event
+    ///
+    /// - Parameters:
+    ///   - data: Event data
+    ///   - sessionId: User sessionId
     public func createEvent(data: [String: Any], sessionId: String)
     {
         var request = URLRequest(url: NSURL(string: baseUrl+"/events?token="+sessionId) as! URL)
@@ -92,6 +142,8 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Request Hosts
     public func requestHosts()
     {
         Alamofire.request(baseUrl+"/hosts", method: .get, parameters: [:])
@@ -103,6 +155,13 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Import Facebook event from Graph api
+    ///
+    /// - Parameters:
+    ///   - eventId: Facebook event Id
+    ///   - sessionId: User SessionId
+    ///   - oAuthToken: oAuth Token
     public func createFacebookEvent(eventId: String, sessionId: String, oAuthToken: String)
     {
         Alamofire.request(baseUrl+"/events/facebook/"+eventId, method: .get, parameters: ["oauth": oAuthToken, "token": sessionId])
@@ -115,6 +174,10 @@ public class HTTPRequest
         }
     }
     
+    
+    /// Get Lat:Lng of address from Google Geocoding API
+    ///
+    /// - Parameter address: Address
     public func getLatLngFromAddress(address: String)
     {
         var googleWebApiKey = ""

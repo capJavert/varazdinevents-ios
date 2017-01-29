@@ -4,6 +4,7 @@ import Kingfisher
 import Realm
 
 
+/// Category Events View Controller
 class EventCategoryController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
    
     var events = [Event] ()
@@ -152,7 +153,13 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
     }
 }
 
+
+// MARK: - OnDataLoadedDelegate
 extension EventCategoryController: OnDataLoadedDelegate {
+    
+    /// Data loaded
+    ///
+    /// - Parameter events: [Event]
     public func onDataLoaded(events: [Event]) {
         //dve linije would hit that
         let predicate = NSPredicate(format: "category = %@", category)

@@ -4,6 +4,7 @@ import Kingfisher
 import Realm
 
 
+/// Date Events View Controller
 class EventDateController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
     
     var events = [Event] ()

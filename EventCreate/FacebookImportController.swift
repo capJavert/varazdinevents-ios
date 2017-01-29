@@ -5,6 +5,8 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import RealmSwift
 
+
+/// Facebook event import View Controller
 class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
     var user =  User()
     let loginManager = LoginManager()

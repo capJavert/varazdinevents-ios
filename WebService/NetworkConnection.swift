@@ -1,10 +1,18 @@
 import Foundation
 import SystemConfiguration
 
+
+/// Check Network Conn status
 public class NetworkConnection
 {
-    public static var Connection = NetworkConnection()
     
+    /// Network Connection instance
+    public static var Connection = NetworkConnection()
+
+    
+    /// Check if user is connected to Internet
+    ///
+    /// - Returns: Bool
     public func isConnectedToNetwork() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))

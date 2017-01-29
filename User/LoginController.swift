@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+/// Login View controller
 class LoginController: UIViewController, UICollectionViewDataSource,  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     let loginCellId = "loginCellId"
@@ -39,6 +41,7 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
     
     var backButtonTopAnchor: NSLayoutConstraint?
     
+    ///
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,13 +62,8 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
         //hide keyboard on click
         self.hideKeyboardWhenTappedAround()
     }
- /*   override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
     
-    }*/
-    
- 
+    ///
     func finishLogin(username: String, password: String) {
        // print("Ovo je user", (loginCell?.emailTextField.text!)!)
         if(NetworkConnection.Connection.isConnectedToNetwork()){
@@ -75,19 +73,21 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
             dbDataLoader.onUserLoggedDelegate = self
             dbDataLoader.LoadData()
         }
-
-            }
+    }
     
+    ///
     public func cancleIt(){
         let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
         self.navigationController?.pushViewController(eventsView, animated: true)
     }
     
+    ///
     fileprivate func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: .UIKeyboardWillHide, object: nil)
     }
     
+    /// Hide keyboard
     func keyboardHide() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -100,20 +100,24 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
             self.view.frame = CGRect(x: 0, y: -50, width: self.view.frame.width, height: self.view.frame.height)
             }, completion: nil)
     }
+    
     //made for scrolling left/right, think we don't need it but justin case
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
     
+    ///
     fileprivate func registerCells() {
         //...
         collectionView.register(LoginCell.self, forCellWithReuseIdentifier: loginCellId)
     }
     
+    ///
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
+    ///
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath) as! LoginCell
@@ -121,33 +125,21 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
         return loginCell
         
     }
-    
-    
-    /*@IBAction func loginAction(sender: AnyObject){
-        
-        if emailTextField.text?.characters.count == nil {
-        
-            let alert = UIAlertView(title: "Greška", message: "Email mora biti upisan",delegate: self, cancelButtonTitle: "U redu")
-            alert.show()
-            
-        }else if passwordField.text?.characters.count == nil {
-        
-            let alert = UIAlertView(title: "Greška", message: "Lozinka mora biti upisana",delegate: self, cancelButtonTitle: "U redu")
-            alert.show()
-        
-        }else{
-            let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 150, height: 150)) as UIActivityIndicatorView
-            spinner.startAnimating()
-        }*/
-  
 
+    ///
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
 
 }
 
+
+// MARK: - OnUserLoggedDelegate
 extension LoginController: OnUserLoggedDelegate {
+    
+    /// User logged protocol
+    ///
+    /// - Parameter user: User
     public func onUserLogged(user: User) {
          self.user=user
         
@@ -161,6 +153,8 @@ extension LoginController: OnUserLoggedDelegate {
     
 }
 
+
+// MARK: - Rgb color extension
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

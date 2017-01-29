@@ -1,8 +1,15 @@
 import Foundation
 import SwiftyJSON
 
+
+/// Base Json parser
 public class JsonAdapter
 {
+    
+    /// Parse JSON Events
+    ///
+    /// - Parameter json: json
+    /// - Returns: Array<Event>
     public static func getEvents(json: AnyObject) -> Array<Event>
     {
         var events = [Event]()
@@ -33,6 +40,11 @@ public class JsonAdapter
         return events
     }
     
+    
+    /// Parse JSON Event
+    ///
+    /// - Parameter json: json
+    /// - Returns: Event
     public static func getEvent(json: AnyObject) -> Event
     {
         let event = Event()
@@ -57,6 +69,11 @@ public class JsonAdapter
         return event
     }
     
+    
+    /// Parse JSON User
+    ///
+    /// - Parameter json: json
+    /// - Returns: User
     public static func getUser(json: AnyObject) -> User
     {
         let user = User()
@@ -76,6 +93,11 @@ public class JsonAdapter
         return user
     }
     
+    
+    /// Parse JSON Hosts
+    ///
+    /// - Parameter json: json
+    /// - Returns: Array<Host>
     public static func getHosts(json: AnyObject) -> Array<Host>
     {
         var hosts = [Host]()
@@ -100,6 +122,11 @@ public class JsonAdapter
         return hosts
     }
     
+    
+    /// Parse JSON Status
+    ///
+    /// - Parameter json: json
+    /// - Returns: Bool
     public static func getFacebookImportStatus(json: AnyObject) -> Bool
     {
         let jsonStatus = JSON(json)
@@ -115,6 +142,11 @@ public class JsonAdapter
         return false
     }
     
+    
+    /// Parse JSON Location
+    ///
+    /// - Parameter json: json
+    /// - Returns: Dictionary<String, Any>
     public static func getLocation(json: AnyObject) -> Dictionary<String, Any>
     {
         var location = Dictionary<String, Any>()

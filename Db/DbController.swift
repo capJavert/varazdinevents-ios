@@ -1,19 +1,40 @@
 import Foundation
 import RealmSwift
 
+
+/// Local Db result Delegate
 public protocol DBResultDelegate{
+    
+    /// Get Events
+    ///
+    /// - Parameter result: [Event]
     func getEvents(result:[Event])
+    
+    /// Get User
+    ///
+    /// - Parameter result: User
     func getUser(result:User)
 }
 
+
+/// Local Database controller
 public class DbController
 {
     
+    /// Shared local Db instance
     public static var sharedDBInstance = DbController()
     
+    
+    /// Db result delegate
     public var dbResultDelegate:DBResultDelegate?
+    
+    /// Realm instance
     public let realm = try! Realm()
     
+    
+    /// Delete Events
+    ///
+    /// - Parameter notThese: Array<Int>
     public func realmDeleteEvents(notThese: Array<Int>) {
         var filterString = ""
         
@@ -35,6 +56,10 @@ public class DbController
         try! self.realm.commitWrite()
     }
     
+    
+    /// Delete Hosts
+    ///
+    /// - Parameter notThese: Array<Int>
     public func realmDeleteHosts(notThese: Array<Int>) {
         var filterString = ""
         
@@ -56,6 +81,8 @@ public class DbController
         try! self.realm.commitWrite()
     }
     
+    
+    /// Delete User
     public func realmDeleteUser() {
         let items = self.realm.objects(User.self)
         
@@ -64,6 +91,10 @@ public class DbController
         try! self.realm.commitWrite()
     }
     
+    
+    /// Add Event
+    ///
+    /// - Parameter o: Event
     public func realmAddEvent(o: Event)
     {
         let event = try! Realm().object(ofType: Event.self, forPrimaryKey: o.id)
@@ -84,6 +115,10 @@ public class DbController
         }
     }
     
+    
+    /// Add Realm object
+    ///
+    /// - Parameter o: Object
     public func realmAdd(o: Object)
     {
         if(!o.isInvalidated) {
@@ -96,12 +131,18 @@ public class DbController
         }
     }
     
+    
+    /// Get Events
     public func realmFetchEvents()
     {
         let data = self.realm.objects(Event.self).sorted(byProperty: "date")
         dbResultDelegate?.getEvents(result: data.reversed())
     }
     
+    
+    /// Get User
+    ///
+    /// - Parameter id: Int
     public func realmFetchUser(id: Int)
     {
         let data = self.realm.object(ofType: User.self, forPrimaryKey: id)

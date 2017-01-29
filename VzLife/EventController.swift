@@ -13,6 +13,7 @@ import Kingfisher
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
+/// Events list View Controller
 class EventController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     struct eventObject{
         var about: String
@@ -189,12 +190,22 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     }
 }
 
+
+// MARK: - OnDataLoadedDelegate
 extension EventController: OnDataLoadedDelegate {
+    
+    /// Data loaded
+    ///
+    /// - Parameter events: [Event]
     public func onDataLoaded(events: [Event]) {
         self.events = Array(DbController.sharedDBInstance.realm.objects(Event.self).sorted(byProperty: "date"))
         collectionView.reloadData()
     }
     
+    
+    /// User loaded
+    ///
+    /// - Parameter users: User
     public func onDataLoaded(users: User){
         self.user = users
     

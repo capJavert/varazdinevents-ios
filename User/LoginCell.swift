@@ -8,14 +8,18 @@
 
 import UIKit
 
+
+/// Login view cell
 class LoginCell: UICollectionViewCell {
 
+    ///
     let logoImageView: UIImageView = {
         let image = UIImage(named: "varazdinevents-logo-dark")
         let imageView = UIImageView(image: image)
         return imageView
     }()
     
+    ///
     let emailTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         //textField.placeholder = "Korisničko ime"
@@ -32,6 +36,8 @@ class LoginCell: UICollectionViewCell {
         return textField
     }()
     
+    
+    ///
     let passwordTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         //textField.placeholder = "Lozinka"
@@ -45,6 +51,8 @@ class LoginCell: UICollectionViewCell {
         return textField
     }()
     
+    
+    ///
     lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(netHex:0xFFBB46)
@@ -61,15 +69,23 @@ class LoginCell: UICollectionViewCell {
     var loginController: LoginController?
     var eventController: EventController?
     
+    
+    ///
     func logIn(){
         
         loginController?.finishLogin(username: emailTextField.text!, password: passwordTextField.text!)
     }
     
+    
+   ///
    func cancle(){
         loginController?.cancleIt()
     }
     
+    
+    /// Init
+    ///
+    /// - Parameter frame: frame
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -89,6 +105,7 @@ class LoginCell: UICollectionViewCell {
         _ = loginButton.anchor(passwordTextField.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 16, leftConstant: 32, bottomConstant: 0, rightConstant: 32, widthConstant: 0, heightConstant: 40)
        
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

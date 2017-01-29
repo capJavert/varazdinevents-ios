@@ -12,6 +12,7 @@ import RealmSwift
 //Those twovarasses we included so we could use it for layout and as for DataSource for collecetion we are using
 
 
+/// Init View Controller
 class InitController: UIViewController {
     var webServiceDataLoader = WebServiceDataLoader()
     var dbDataLoader = DBDataLoader()
@@ -42,7 +43,13 @@ class InitController: UIViewController {
 
 }
 
+
+// MARK: - OnUserLoggedDelegate
 extension InitController: OnUserLoggedDelegate {
+    
+    /// User logged
+    ///
+    /// - Parameter user: User
     public func onUserLogged(user: User) {
         self.user = user
         initFirstView(sender: user)

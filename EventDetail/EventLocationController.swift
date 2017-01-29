@@ -1,6 +1,8 @@
 import UIKit
 import GoogleMaps
 
+
+/// Event location View Controller
 class EventLocationController: UIViewController {
     var event: Event = Event()
     var host: Host = Host()
@@ -22,7 +24,13 @@ class EventLocationController: UIViewController {
     }
 }
 
+
+// MARK: - OnLocationFetchedDelegate
 extension EventLocationController: OnLocationFetchedDelegate {
+    
+    /// Location fetched
+    ///
+    /// - Parameter latLng: Dictionary<String, Any>
     public func onLocationFetched(latLng: Dictionary<String, Any>) {
         var location = Dictionary<String, Any>()
         
@@ -52,6 +60,10 @@ extension EventLocationController: OnLocationFetchedDelegate {
         marker.map = mapView
     }
 
+    
+    /// Display Alert Message
+    ///
+    /// - Parameter userMessage: String
     func displayAlertMessage(userMessage: String){
         
         let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
