@@ -80,9 +80,10 @@ class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate, UITe
 extension FacebookImportController: OnEventCreatedDelegate {
     public func onEventCreated(status: Bool) {
         if(status) {
-            let goBackToCollectionView = self.storyboard?.instantiateViewController(withIdentifier:"eventsView") as! EventController
-            goBackToCollectionView.user = user
-            self.navigationController?.pushViewController(goBackToCollectionView, animated: true)
+            let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
+            eventsView.user = user
+            let rootView = self.navigationController?.popToRootViewController(animated: false)
+            self.navigationController?.pushViewController((rootView?[0])!, animated: true)
         } else {
             self.displayAlertMessage(userMessage: "Neispravan ID Facebook događaja!")
         }

@@ -96,10 +96,12 @@ class EventCreateController: UIViewController {
         }
 
         let httpReq = HTTPRequest()
-        httpReq.createEvent(data: ["title": events.title, "text": events.text, "facebook": events.facebook, "offers": events.offers, "host": events.host,  "date": dateInInt, "dateEnd": dateEndInt, "time": stringTime, "timeTo": stringTimeTo, "category": events.category, "image": "lala", "officialLink": "lala"] , sessionId: user.sessionId)
-        let goBackToCollectionView = self.storyboard?.instantiateViewController(withIdentifier:"eventsView") as! EventController
-        goBackToCollectionView.user = user
-        self.navigationController?.pushViewController(goBackToCollectionView, animated: true)
+        httpReq.createEvent(data: ["title": events.title, "text": events.text, "facebook": events.facebook, "offers": events.offers, "host": events.host,  "date": dateInInt, "date_to": dateEndInt, "time": stringTime, "time_to": stringTimeTo, "category": events.category, "image": "", "officialLink": ""] , sessionId: user.sessionId)
+        
+        let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
+        eventsView.user = user
+        let rootView = self.navigationController?.popToRootViewController(animated: false)
+        self.navigationController?.pushViewController((rootView?[0])!, animated: false)
         
     }
     
