@@ -10,7 +10,7 @@ import UIKit
 
 
 /// Event Create View Controller
-class EventCreateController: UIViewController {
+class EventCreateController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var eventAbout: UITextField!
@@ -22,6 +22,8 @@ class EventCreateController: UIViewController {
     @IBOutlet weak var offers: UITextField!
     var sessionId: String = ""
     var user =  User()
+    var keyBoardObserverShow: Any? = nil
+    var keyBoardObserverHide: Any? = nil
     
     @IBOutlet var uiView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -31,14 +33,14 @@ class EventCreateController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //keyboard setting
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
         scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: uiView.frame.size.height + 180)
         
         //hide keyboard on click
         self.hideKeyboardWhenTappedAround()
+        
+        self.host.delegate = self
+        self.facebookUrl.delegate = self
+        self.offers.delegate = self
         
         self.view.addSubview(scrollView)
         // Do any additional setup after loading the view.
@@ -49,6 +51,16 @@ class EventCreateController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        keyBoardObserverShow = NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        keyBoardObserverHide = NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     @IBAction func eventCreateButton(_ sender: Any) {
