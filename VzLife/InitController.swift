@@ -37,6 +37,15 @@ class InitController: UIViewController {
         webServiceDataLoader.CheckUserAuth(sessionId: user.sessionId)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if(NetworkConnection.Connection.isConnectedToNetwork() == false){
+            DbController.sharedDBInstance.realmDeleteUser();
+            self.performSegue(withIdentifier: "init", sender: self)
+        }
+    }
+    
     @IBAction func initFirstView(_ sender: Any) {
         performSegue(withIdentifier: "init", sender: sender)
     }
