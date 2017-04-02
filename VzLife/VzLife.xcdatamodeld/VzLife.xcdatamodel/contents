@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AboutController.swift" representedClassName="AboutController.swift" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" syncable="YES"/>
     </entity>
@@ -54,12 +54,6 @@
     <entity name="EventController.swift" representedClassName="EventController.swift" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" syncable="YES"/>
     </entity>
-    <entity name="EventCreate" representedClassName="EventCreate" syncable="YES" codeGenerationType="class">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VarazdinEvents" syncable="YES"/>
-    </entity>
-    <entity name="EventCreateController.swift" representedClassName="EventCreateController.swift" syncable="YES" codeGenerationType="class">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventCreate" syncable="YES"/>
-    </entity>
     <entity name="EventDateController.swift" representedClassName="EventDateController.swift" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
     </entity>
@@ -72,20 +66,11 @@
     <entity name="EventDetailController.swift" representedClassName="EventDetailController.swift" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventDetail" syncable="YES"/>
     </entity>
-    <entity name="EventFavoriteController.swift" representedClassName="EventFavoriteController.swift" syncable="YES" codeGenerationType="class">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
-    </entity>
     <entity name="EventLocationController.swift" representedClassName="EventLocationController.swift" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventDetail" syncable="YES"/>
     </entity>
-    <entity name="Extensions.swift" representedClassName="Extensions.swift" syncable="YES" codeGenerationType="class">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
-    </entity>
     <entity name="Facebook" representedClassName="Facebook" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VarazdinEvents" syncable="YES"/>
-    </entity>
-    <entity name="FacebookImportController.swift" representedClassName="FacebookImportController.swift" syncable="YES" codeGenerationType="class">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventCreate" syncable="YES"/>
     </entity>
     <entity name="Firebase" representedClassName="Firebase" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VarazdinEvents" syncable="YES"/>
@@ -123,12 +108,6 @@
     <entity name="Kingfisher" representedClassName="Kingfisher" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VarazdinEvents" syncable="YES"/>
     </entity>
-    <entity name="LoginCell.swift" representedClassName="LoginCell.swift" syncable="YES" codeGenerationType="class">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
-    </entity>
-    <entity name="LoginController.swift" representedClassName="LoginController.swift" syncable="YES" codeGenerationType="class">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
-    </entity>
     <entity name="NetworkConnection.swift" representedClassName="NetworkConnection.swift" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WebService" syncable="YES"/>
     </entity>
@@ -136,9 +115,6 @@
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VarazdinEvents" syncable="YES"/>
     </entity>
     <entity name="SwiftyJSON" representedClassName="SwiftyJSON" syncable="YES" codeGenerationType="class">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VarazdinEvents" syncable="YES"/>
-    </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VarazdinEvents" syncable="YES"/>
     </entity>
     <entity name="User.swift" representedClassName="User.swift" syncable="YES" codeGenerationType="class">
@@ -152,13 +128,15 @@
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WebService" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alamofire" positionX="-155" positionY="-495" width="128" height="58"/>
+        <element name="AboutController.swift" positionX="-522" positionY="0" width="128" height="58"/>
+        <element name="Alamofire" positionX="106" positionY="-495" width="128" height="58"/>
         <element name="AppDelegate" positionX="-515" positionY="-711" width="128" height="58"/>
-        <element name="Assets" positionX="-101" positionY="-571" width="128" height="58"/>
+        <element name="Assets" positionX="72" positionY="-580" width="128" height="58"/>
         <element name="Category" positionX="-81" positionY="306" width="128" height="58"/>
         <element name="CategoryController.swift" positionX="97" positionY="281" width="128" height="43"/>
         <element name="Core" positionX="468" positionY="-108" width="128" height="58"/>
         <element name="DataLoader.swift" positionX="430" positionY="-202" width="128" height="58"/>
+        <element name="DatePickerController.swift" positionX="-497" positionY="101" width="128" height="58"/>
         <element name="Db" positionX="-848" positionY="-315" width="128" height="58"/>
         <element name="DbController.swift" positionX="-1035" positionY="-288" width="128" height="58"/>
         <element name="DbDataLoader.swift" positionX="-668" positionY="-193" width="128" height="58"/>
@@ -168,13 +146,14 @@
         <element name="EventCategoryController.swift" positionX="97" positionY="360" width="128" height="58"/>
         <element name="EventCell.swift" positionX="-650" positionY="162" width="128" height="58"/>
         <element name="EventController.swift" positionX="-918" positionY="122" width="128" height="58"/>
-        <element name="EventCreate" positionX="466" positionY="194" width="128" height="58"/>
-        <element name="EventCreateController.swift" positionX="351" positionY="284" width="128" height="58"/>
+        <element name="EventDateController.swift" positionX="-227" positionY="396" width="128" height="60"/>
         <element name="EventDetail" positionX="-695" positionY="266" width="128" height="58"/>
         <element name="EventDetailButton.swift" positionX="-909" positionY="275" width="128" height="58"/>
         <element name="EventDetailController.swift" positionX="-614" positionY="392" width="128" height="58"/>
-        <element name="Extensions.swift" positionX="450" positionY="-463" width="128" height="58"/>
-        <element name="Firebase" positionX="-261" positionY="-621" width="128" height="58"/>
+        <element name="EventLocationController.swift" positionX="-524" positionY="234" width="128" height="58"/>
+        <element name="Facebook" positionX="-36" positionY="-720" width="128" height="58"/>
+        <element name="Firebase" positionX="241" positionY="-657" width="128" height="58"/>
+        <element name="GoogleMaps" positionX="-711" positionY="-675" width="128" height="58"/>
         <element name="Host" positionX="61" positionY="-315" width="128" height="58"/>
         <element name="Host.swift" positionX="-972" positionY="-391" width="128" height="58"/>
         <element name="HostController.swift" positionX="234" positionY="-216" width="128" height="58"/>
@@ -182,26 +161,15 @@
         <element name="HostEventController.swift" positionX="-119" positionY="-243" width="128" height="58"/>
         <element name="HostLabel.swift" positionX="-857" positionY="374" width="128" height="58"/>
         <element name="HTTPRequest.swift" positionX="-29" positionY="135" width="128" height="58"/>
+        <element name="InitController.swift" positionX="-882" positionY="27" width="128" height="58"/>
         <element name="JsonAdapter.swift" positionX="387" positionY="-13" width="128" height="58"/>
         <element name="Kingfisher" positionX="-713" positionY="-585" width="128" height="58"/>
-        <element name="LoginCell.swift" positionX="243" positionY="-621" width="128" height="58"/>
-        <element name="LoginController.swift" positionX="162" positionY="-414" width="128" height="58"/>
         <element name="NetworkConnection.swift" positionX="88" positionY="-22" width="128" height="58"/>
         <element name="Realm" positionX="-702" positionY="-423" width="128" height="58"/>
         <element name="SwiftyJSON" positionX="-792" positionY="-504" width="128" height="58"/>
-        <element name="User" positionX="286" positionY="-513" width="128" height="58"/>
         <element name="User.swift" positionX="-695" positionY="-112" width="128" height="58"/>
         <element name="VarazdinEvents" positionX="-405" positionY="-423" width="128" height="45"/>
         <element name="WebService" positionX="-72" positionY="36" width="128" height="58"/>
         <element name="WebServiceDataLoader.swift" positionX="261" positionY="131" width="128" height="58"/>
-        <element name="FacebookImportController.swift" positionX="475" positionY="95" width="128" height="58"/>
-        <element name="GoogleMaps" positionX="-711" positionY="-675" width="128" height="58"/>
-        <element name="Facebook" positionX="-36" positionY="-720" width="128" height="58"/>
-        <element name="EventLocationController.swift" positionX="-524" positionY="234" width="128" height="58"/>
-        <element name="InitController.swift" positionX="-882" positionY="27" width="128" height="58"/>
-        <element name="AboutController.swift" positionX="-522" positionY="0" width="128" height="58"/>
-        <element name="DatePickerController.swift" positionX="-497" positionY="101" width="128" height="58"/>
-        <element name="EventDateController.swift" positionX="-227" positionY="396" width="128" height="60"/>
-        <element name="EventFavoriteController.swift" positionX="90" positionY="-558" width="128" height="58"/>
     </elements>
 </model>
