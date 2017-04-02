@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G5r-5b-Eaa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G5r-5b-Eaa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -206,11 +206,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnN-Od-v46" id="wKq-jd-le2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UNg-kW-GCs">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -300,7 +300,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="ePD-Xi-2Pj" customClass="EventCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -351,14 +351,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="nud-kw-PBl">
                         <leftBarButtonItems>
-                            <barButtonItem title="Prijava" id="xYJ-B2-y6q">
-                                <connections>
-                                    <segue destination="Iaj-EK-q1C" kind="show" identifier="toLogInAction" id="UhO-AK-a75"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem systemItem="add" id="tFH-OG-khe">
                                 <connections>
                                     <action selector="goToCreationEvent:" destination="cSh-Vj-10U" id="2Pv-DE-e0g"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem enabled="NO" id="xYJ-B2-y6q">
+                                <connections>
+                                    <segue destination="Iaj-EK-q1C" kind="show" identifier="toLogInAction" id="UhO-AK-a75"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
@@ -412,7 +412,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="5JE-IS-M3w" customClass="EventCategoryCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -775,7 +775,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="JD2-bp-S91" customClass="EventCategoryCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -875,7 +875,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="mCi-jN-thc" customClass="EventCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -1112,7 +1112,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWB-1O-4jm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Početna" image="home_filled-50" selectedImage="home_filled-50" id="pgX-yZ-xvp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0V-yl-GEW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0V-yl-GEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1168,7 +1168,7 @@ Hvala svima!
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell2" id="0Gc-nd-BG0" customClass="EventCategoryCell" customModule="VzLife">
-                                        <rect key="frame" x="24" y="30" width="328" height="182"/>
+                                        <rect key="frame" x="23.5" y="30" width="328" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="182"/>
@@ -1250,7 +1250,7 @@ Hvala svima!
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tct-lb-Ffo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="O nama" image="about-filled-50" selectedImage="about-filled-50" id="PT0-4f-dg3"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oML-Lk-Q1h">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oML-Lk-Q1h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1268,7 +1268,7 @@ Hvala svima!
         <image name="Facebook-logo" width="25" height="25"/>
         <image name="FbEventId-help" width="836" height="326"/>
         <image name="Star Filled Filled-50" width="25" height="25"/>
-        <image name="VzLife-logo" width="320" height="39"/>
+        <image name="VzLife-logo" width="329" height="40"/>
         <image name="about-filled-50" width="25" height="25"/>
         <image name="calendar-50" width="25" height="25"/>
         <image name="category-icon-50" width="25" height="25"/>
@@ -1276,7 +1276,7 @@ Hvala svima!
         <image name="varazdinevents-bg" width="751" height="421"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="r9s-mS-euz"/>
         <segue reference="XnG-T4-XFb"/>
-        <segue reference="gM6-jI-0hA"/>
     </inferredMetricsTieBreakers>
 </document>
