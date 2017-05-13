@@ -10,6 +10,11 @@ public protocol DBResultDelegate{
     /// - Parameter result: [Event]
     func getEvents(result:[Event])
     
+    /// Get Cities
+    ///
+    /// - Parameter result: [City]
+    func getCities(result:[City])
+    
     /// Get User
     ///
     /// - Parameter result: User
@@ -81,6 +86,29 @@ public class DbController
         try! self.realm.commitWrite()
     }
     
+    /// Delete Hosts
+    ///
+    /// - Parameter notThese: Array<Int>
+    public func realmDeleteCities(notThese: Array<Int>) {
+        var filterString = ""
+        
+        for id in notThese {
+            if(filterString != "") {
+                filterString += " AND "
+            }
+            filterString += ("id != "+String(id))
+        }
+        
+        var items = self.realm.objects(City.self)
+        
+        if (filterString != "") {
+            items = self.realm.objects(City.self).filter(filterString)
+        }
+        
+        self.realm.beginWrite()
+        self.realm.delete(items)
+        try! self.realm.commitWrite()
+    }
     
     /// Delete User
     public func realmDeleteUser() {
@@ -139,6 +167,12 @@ public class DbController
         dbResultDelegate?.getEvents(result: data.reversed())
     }
     
+    /// Get Cities
+    public func realmFetchCities()
+    {
+        let data = self.realm.objects(City.self).sorted(byProperty: "date")
+        dbResultDelegate?.getCities(result: data.reversed())
+    }
     
     /// Get User
     ///

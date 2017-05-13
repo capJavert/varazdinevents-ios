@@ -30,6 +30,14 @@ public protocol OnEventCreatedDelegate {
     func onEventCreated(status: Bool)
 }
 
+/// Cities loaded delegate
+public protocol OnCitiesLoadedDelegate {
+    
+    /// City loaded protocol
+    ///
+    /// - Parameter cities: [City]
+    func onCitiesLoaded(cities : [City])
+}
 
 /// Location fetched delegate
 public protocol OnLocationFetchedDelegate {
@@ -48,12 +56,18 @@ public class DataLoader
     /// Events
     public var events:[Event]?
     
+    /// Cities
+    public var cities:[City]?
+    
     /// User
     public var user: User?
     
     /// Data loaded delegate
     public var onDataLoadedDelegate:OnDataLoadedDelegate?
     
+    /// Cities loaded delegate
+    public var onCitiesLoadedDelegate:OnCitiesLoadedDelegate?
+
     /// User logged delegate
     public var onUserLoggedDelegate:OnUserLoggedDelegate?
     
@@ -66,6 +80,9 @@ public class DataLoader
     
     /// Load data
     func LoadData() {}
+    
+    /// Load cities
+    func LoadCities() {}
     
     /// Load User
     ///
@@ -101,7 +118,17 @@ public class DataLoader
         }
         
     }
-    
+   
+    /// Set data loaded flag
+    public func citiesLoaded() {
+        if (cities==nil) {
+            //data not loaded
+        }
+        else {
+            onCitiesLoadedDelegate?.onCitiesLoaded(cities: cities!)
+        }
+        
+    }
     
     /// Set event created flag
     ///

@@ -13,11 +13,22 @@ public class DBDataLoader:DataLoader {
         showDataFromLocalDB()
     }
     
+    /// Load data
+    public override func LoadCities(){
+        DbController.sharedDBInstance.dbResultDelegate = self
+        showCitiesFromLocalDB()
+    }
     
     /// Fetch Events
     private func showDataFromLocalDB()
     {
         DbController.sharedDBInstance.realmFetchEvents()
+    }
+    
+    /// Fetch Events
+    private func showCitiesFromLocalDB()
+    {
+        DbController.sharedDBInstance.realmFetchCities()
     }
 }
 
@@ -31,6 +42,10 @@ extension DBDataLoader:DBResultDelegate {
         self.dataLoaded()
     }
     
+    public func getCities(result: [City]) {
+        self.cities = result
+        self.dataLoaded()
+    }
     
     /// Get User
     ///

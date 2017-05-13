@@ -18,7 +18,7 @@ public class HTTPRequest
 {
     
     /// API Url
-    public var baseUrl = "http://varazdinevents.cf/api"
+    public var baseUrl = "https://varazdinevents.cf/api"
     
     /// Web service result delegate
     public var wsResultDelegate:WebServiceResultDelegate?
@@ -155,6 +155,17 @@ public class HTTPRequest
         }
     }
     
+    /// Request Citites
+    public func requestCitites()
+    {
+        Alamofire.request(baseUrl+"/cities", method: .get, parameters: [:])
+            .responseJSON { response in
+                if let json = response.result.value{
+                    //NSLog("JSON: \(json)")
+                    self.wsResultDelegate?.getResult(json: json as AnyObject, type: "cities")
+                }
+        }
+    }
     
     /// Import Facebook event from Graph api
     ///

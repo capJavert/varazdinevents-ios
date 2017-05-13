@@ -25,6 +25,12 @@ public class WebServiceDataLoader:DataLoader
         httpRequest.requestEvents()
     }
     
+    /// Load data from web service
+    public override func LoadCities() {
+        httpRequest.wsResultDelegate = self
+        httpRequest.requestCitites()
+    }
+    
     /// Load User
     ///
     /// - Parameters:
@@ -98,6 +104,22 @@ public class WebServiceDataLoader:DataLoader
         DbController.sharedDBInstance.realmDeleteHosts(notThese: notThese)
     }
     
+    /// Bind new Cities data and remove old data
+    public func bindCities(cities: Array<City>)
+    {
+        DbController.sharedDBInstance.realm.beginWrite()
+        try! DbController.sharedDBInstance.realm.commitWrite()
+        
+        var notThese = [Int] ()
+        for city in cities
+        {
+            DbController.sharedDBInstance.realmAdd(o: city)
+            notThese.append(city.id)
+        }
+        
+        DbController.sharedDBInstance.realmDeleteCities(notThese: notThese)
+    }
+    
     /// Bind new User data and remove old data
     public func bindUser(user: User)
     {
@@ -152,6 +174,11 @@ extension WebServiceDataLoader: WebServiceResultDelegate{
             case "hosts":
                 let hosts = JsonAdapter.getHosts(json: json)
                 self.bindHosts(hosts: hosts)
+                break
+            case "cities":
+                self.cities = JsonAdapter.getCities(json: json)
+                self.bindCities(cities: cities!)
+                self.citiesLoaded()
                 break
             case "auth":
                 let user = JsonAdapter.getUser(json: json)

@@ -123,6 +123,31 @@ public class JsonAdapter
     }
     
     
+    /// Parse JSON Cities
+    ///
+    /// - Parameter json: json
+    /// - Returns: Array<City>
+    public static func getCities(json: AnyObject) -> Array<City>
+    {
+        var cities = [City]()
+        let jsonEvents = JSON(json)
+        let items = jsonEvents["items"]
+        let itemsString = String(describing: items)
+        if let dataFromString = itemsString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            let json2 = JSON(data: dataFromString)
+            for (_, subJson) in json2 {
+                let city:City = City()
+                city.id = subJson["id"].int!
+                city.name = subJson["name"].string!
+                city.postal_code = subJson["postal_code"].int!
+                city.longitude = subJson["longitude"].int!
+                city.latitude = subJson["latitude"].int!
+                cities.append(city)
+            } }
+        return cities
+    }
+    
+    
     /// Parse JSON Status
     ///
     /// - Parameter json: json
