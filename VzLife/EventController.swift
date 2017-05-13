@@ -34,6 +34,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var createEventButton: UIBarButtonItem!
+    @IBOutlet weak var cityPicker: UIBarButtonItem!
     
     @IBAction func searchBarAction(_ sender: Any) {
         searchBarController = UISearchController(searchResultsController: nil)
@@ -83,6 +84,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         //save navigation items
         userUiItems.append(loginButton)
         userUiItems.append(createEventButton)
+        userUiItems.append(cityPicker)
         
         self.tabBarController?.tabBar.isHidden = false
   
@@ -173,6 +175,9 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
     
+    @IBAction func goToCityPicker(_ sender: Any) {
+        performSegue(withIdentifier: "init", sender: sender)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button
         if segue.identifier == "EventDetail"{

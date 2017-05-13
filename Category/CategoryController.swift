@@ -64,8 +64,6 @@ class CategoryController: UITableViewController, UISearchBarDelegate {
         
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
-
-        
         
         return cell
         }
