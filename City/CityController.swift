@@ -8,18 +8,28 @@
 
 import UIKit
 
-class CityController: UITableViewController {
+class CityController:  UITableViewController{
 
     var city = [City] ()
+    var webServiceDataLoader = WebServiceDataLoader()
+    var dbDataLoader = DBDataLoader()
+    
+    @IBOutlet var tableViewController: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if(NetworkConnection.Connection.isConnectedToNetwork()){
+            webServiceDataLoader.onCitiesLoadedDelegate = self
+            webServiceDataLoader.LoadCities()
+        }else{
+            dbDataLoader.onCitiesLoadedDelegate = self
+            dbDataLoader.LoadCities()
+        }
+        
+        tableViewController.delegate = self
+        tableViewController.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +41,7 @@ class CityController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,6 +60,7 @@ class CityController: UITableViewController {
         cell.textLabel?.text = city[indexPath.item].name
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
+        print("OVO JE JEBENI GRAD: ",city[indexPath.item].name)
 
         return cell
     }
@@ -102,3 +113,13 @@ class CityController: UITableViewController {
     */
 
 }
+
+extension CityController: OnCitiesLoadedDelegate{
+    
+    public func onCitiesLoaded(cities: [City]) {
+        self.city = Array(DbController.sharedDBInstance.realm.objects(City.self))
+        tableViewController.reloadData()
+    }
+}
+
+
