@@ -60,7 +60,6 @@ class CityController:  UITableViewController{
         cell.textLabel?.text = city[indexPath.item].name
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
-        print("OVO JE JEBENI GRAD: ",city[indexPath.item].name)
 
         return cell
     }
@@ -89,10 +88,18 @@ class CityController:  UITableViewController{
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "cityPick", sender: city[indexPath.row])
+        performSegue(withIdentifier: "cityPick", sender: city[indexPath.item].name)
 
     }
  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "cityPick"{
+            let cities = segue.destination as! EventController
+            let sender = sender as! String
+            cities.cityActive = sender
+        }
+    }
+
 
     /*
     // Override to support conditional rearranging of the table view.

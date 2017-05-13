@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLa-gt-srd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="-260"/>
+            <point key="canvasLocation" x="1404" y="-322"/>
         </scene>
         <!--Init Controller-->
         <scene sceneID="Uqh-pZ-v1h">
@@ -350,6 +350,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="nud-kw-PBl">
+                        <nil key="title"/>
                         <leftBarButtonItems>
                             <barButtonItem systemItem="add" id="tFH-OG-khe">
                                 <connections>
@@ -420,11 +421,12 @@
                     </tableView>
                     <connections>
                         <outlet property="tableViewController" destination="OF7-fH-fmg" id="a3g-5o-jUD"/>
+                        <segue destination="cSh-Vj-10U" kind="showDetail" identifier="cityPick" action="showViewController:sender:" id="FEe-LO-7Lp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rC5-cy-ZyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="977"/>
+            <point key="canvasLocation" x="1860" y="906"/>
         </scene>
         <!--Event Category Controller-->
         <scene sceneID="X0L-79-czA">
@@ -1314,7 +1316,8 @@ Hvala svima!
         <image name="varazdinevents-bg" width="751" height="421"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r9s-mS-euz"/>
+        <segue reference="NYz-R5-CSN"/>
         <segue reference="CmU-3I-VSi"/>
+        <segue reference="cje-GK-eQj"/>
     </inferredMetricsTieBreakers>
 </document>

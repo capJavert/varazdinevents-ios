@@ -14,7 +14,7 @@ import Kingfisher
 
 
 /// Events list View Controller
-class EventController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+class EventsByCityController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     struct eventObject{
         var about: String
         var imageUrl: String
@@ -49,7 +49,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         searchBarController.searchBar.tintColor = UIColor.white
         present(searchBarController, animated: true, completion: nil)
     }
- 
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
             self.navigationItem.title = searchText.uppercased()
@@ -61,7 +61,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     @IBAction func goToCreationEvent(_ sender: Any) {
         
         let eventCreateView = self.storyboard?.instantiateViewController(withIdentifier: "eventCreate") as! EventCreateController
-       
+        
         eventCreateView.user = user
         self.navigationController?.pushViewController(eventCreateView, animated: true)
         
@@ -116,8 +116,8 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         super.viewWillAppear(animated)
         
         
-       
-   
+        
+        
         let users = try! Array(Realm().objects(User.self))
         if (users.count > 0) {
             user = users[0]
@@ -131,7 +131,6 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         }
         
         self.navigationItem.title = cityActive
-
         self.tabBarController?.tabBar.isHidden = false
     }
     
@@ -197,14 +196,14 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         }
     }
     
-   @IBAction func toLooginAction(_ sender: Any) {
+    @IBAction func toLooginAction(_ sender: Any) {
         performSegue(withIdentifier: "toLogInAction", sender: loginButton)
     }
 }
 
 
 // MARK: - OnDataLoadedDelegate
-extension EventController: OnDataLoadedDelegate {
+extension EventsByCityController: OnDataLoadedDelegate {
     
     /// Data loaded
     ///
@@ -220,7 +219,7 @@ extension EventController: OnDataLoadedDelegate {
     /// - Parameter users: User
     public func onDataLoaded(users: User){
         self.user = users
-    
+        
     }
 }
 
