@@ -59,8 +59,6 @@ class CategoryController: UITableViewController, UISearchBarDelegate {
         whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
         whiteRoundedView.layer.masksToBounds = false
         whiteRoundedView.layer.cornerRadius = 2.0
-       // whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
-       // whiteRoundedView.layer.shadowOpacity = 0.2
         
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)

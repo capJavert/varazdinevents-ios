@@ -65,9 +65,6 @@ class EventCreateController: UIViewController, UITextFieldDelegate {
     
     @IBAction func eventCreateButton(_ sender: Any) {
         
-        
-        /*var arrayOfEvents: [(title: String, text: String, facebook: String, offers: String, host: String, date: Int, dateEnd: Int, time: String, timeTo: String, category: String, image: String, officialLink: String)] = []*/
-        
         let events = Event()
         //need to set to event object
         events.title = self.eventTitle.text!
@@ -90,17 +87,12 @@ class EventCreateController: UIViewController, UITextFieldDelegate {
         
         dateFormatter.dateFormat = "dd.MM.yyyy"
         dateFormatter2.dateFormat = "hh:mm:ss"
-        
-        //let stringDate = dateFormatter.string(from: date)
-        //let stringDateTo = dateFormatter.string(from: dateEnd)
-        
+
         
         let stringTime = dateFormatter2.string(from: date)
         let stringTimeTo = dateFormatter2.string(from: dateEnd)
 
-        
         events.category = self.eventCategory.text!
-        /*arrayOfEvents.append((tite: self.eventTitle.text!, text: self.eventAbout.text!, facebook: self.facebookUrl.text!, offers: self.offers.text!, host: self.host.text!,  date: dateFrom, dateEnd: date_to, time: "lala", timeTo: "lala", category: self.eventCategory.text!, image: "lala", officialLink: "lala") as! (title: String, text: String, facebook: String, offers: String, host: String, date: Int, dateEnd: Int, time: String, timeTo: String, category: String, image: String, officialLink: String))*/
         
         if(events.title.isEmpty){
             self.displayAlertMessage(userMessage: "Nije ispunjeno jedno od bitnih polja")
@@ -126,17 +118,6 @@ class EventCreateController: UIViewController, UITextFieldDelegate {
         alert.addAction(action)
         self.present(alert, animated:true, completion: nil)
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

@@ -30,7 +30,6 @@
 		E40B504A1E3B7F0B00B6A6D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A962C31DE42BE400BCF470 /* Main.storyboard */; };
 		E433BCE51EC774AB00EB5DDB /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E433BCE41EC774AB00EB5DDB /* Keys.plist */; };
 		E433BCE81EC7754100EB5DDB /* CityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E433BCE71EC7754100EB5DDB /* CityController.swift */; };
-		E433BCEA1EC7A0F500EB5DDB /* EventsByCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E433BCE91EC7A0F500EB5DDB /* EventsByCityController.swift */; };
 		E45FB09D1DEB3E7A00056445 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB09C1DEB3E7A00056445 /* EventCell.swift */; };
 		E45FB0A11DEB3F6A00056445 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FB0A01DEB3F6A00056445 /* EventController.swift */; };
 		E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476B0161E114E96004B2D72 /* EventCreateController.swift */; };
@@ -99,7 +98,6 @@
 		E40B50481E3A917300B6A6D2 /* EventDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDateController.swift; sourceTree = "<group>"; };
 		E433BCE41EC774AB00EB5DDB /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Keys.plist; path = ../../../Keys.plist; sourceTree = "<group>"; };
 		E433BCE71EC7754100EB5DDB /* CityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityController.swift; sourceTree = "<group>"; };
-		E433BCE91EC7A0F500EB5DDB /* EventsByCityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsByCityController.swift; sourceTree = "<group>"; };
 		E45FB09C1DEB3E7A00056445 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		E45FB0A01DEB3F6A00056445 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		E476B0161E114E96004B2D72 /* EventCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreateController.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				E433BCE71EC7754100EB5DDB /* CityController.swift */,
-				E433BCE91EC7A0F500EB5DDB /* EventsByCityController.swift */,
 			);
 			path = City;
 			sourceTree = "<group>";
@@ -542,7 +539,6 @@
 			files = (
 				E4A963081DE4E67600BCF470 /* DbDataLoader.swift in Sources */,
 				E4A962F91DE42EA100BCF470 /* EventCategory.swift in Sources */,
-				E433BCEA1EC7A0F500EB5DDB /* EventsByCityController.swift in Sources */,
 				684606D81E1AE96100165F97 /* LoginController.swift in Sources */,
 				689A55191E15DA2600CEE356 /* HostEventController.swift in Sources */,
 				E476B0171E114E96004B2D72 /* EventCreateController.swift in Sources */,
