@@ -21,7 +21,6 @@ public class WebServiceDataLoader:DataLoader
     /// Load data from web service
     public override func LoadData() {
         httpRequest.wsResultDelegate = self
-        httpRequest.requestHosts()
         httpRequest.requestEvents()
     }
     
