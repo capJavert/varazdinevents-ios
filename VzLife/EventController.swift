@@ -91,12 +91,12 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         
         self.tabBarController?.tabBar.isHidden = false
         
+        //load events from db first
+        self.events = Array(DbController.sharedDBInstance.realm.objects(Event.self).sorted(byProperty: "date"))
+        
         if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
             webServiceDataLoader.LoadData()
-        }else{
-            dbDataLoader.onDataLoadedDelegate = self
-            dbDataLoader.LoadData()
         }
         
         //refresh option
