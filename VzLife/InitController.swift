@@ -36,6 +36,7 @@ class InitController: UIViewController {
         
         //get hosts
         let httpRequest = HTTPRequest()
+        httpRequest.wsResultDelegate = WebServiceDataLoader()
         httpRequest.requestHosts()
         
         webServiceDataLoader.CheckUserAuth(sessionId: user.sessionId)
