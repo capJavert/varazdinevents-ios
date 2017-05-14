@@ -28,7 +28,8 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     var searchBarController: UISearchController!
     var searchText: String = ""
     var userUiItems: [UIBarButtonItem] = []
-    var cityActive = ""
+    var cityActive = 0
+    var city: City = City()
     
     @IBOutlet weak var uiView: UICollectionView!
     @IBOutlet weak var datePicker: UIBarButtonItem!
@@ -84,8 +85,8 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         super.viewDidLoad()
         
         //save navigation items
-        userUiItems.append(loginButton)
-        userUiItems.append(createEventButton)
+      //  userUiItems.append(loginButton)
+      //  userUiItems.append(createEventButton)
         userUiItems.append(cityPicker)
         
         self.tabBarController?.tabBar.isHidden = false
@@ -110,14 +111,19 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         //collectionView.contentSize = CGSize(width: self.view.frame.size.width, height: uiView.frame.size.height + 300)
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        //load city
+        if let city = try! Realm().objects(City.self).filter("active=1").first {
+            self.city = city
+        } else {
+            self.goToCityPicker(self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         
-       
-   
         let users = try! Array(Realm().objects(User.self))
         if (users.count > 0) {
             user = users[0]
@@ -130,8 +136,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
             self.navigationItem.setLeftBarButtonItems([userUiItems[0]], animated: false)
         }
         
-        self.navigationItem.title = cityActive
-
+        self.navigationItem.title = self.city.name
         self.tabBarController?.tabBar.isHidden = false
     }
     
@@ -183,7 +188,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     }
     
     @IBAction func goToCityPicker(_ sender: Any) {
-        performSegue(withIdentifier: "init", sender: sender)
+        performSegue(withIdentifier: "toCityPicker", sender: sender)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //We know that sender is a button

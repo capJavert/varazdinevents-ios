@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CityController:  UITableViewController{
 
@@ -29,6 +30,7 @@ class CityController:  UITableViewController{
         
         tableViewController.delegate = self
         tableViewController.dataSource = self
+        self.navigationItem.title = "Odaberi grad"
         
     }
 
@@ -88,15 +90,22 @@ class CityController:  UITableViewController{
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "cityPick", sender: city[indexPath.item].name)
+        let realm = try! Realm()
+        do {
+            try! realm.write() {
+                city[indexPath.item].active = 1
+                realm.add(city, update: true)
+            }
+        }
+        performSegue(withIdentifier: "cityPick", sender: city[indexPath.item])
 
     }
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cityPick"{
             let cities = segue.destination as! EventController
-            let sender = sender as! String
-            cities.cityActive = sender
+            let sender = sender as! City
+            cities.city = sender
         }
     }
 

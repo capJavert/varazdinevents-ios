@@ -17,7 +17,7 @@ public class City: Object
     dynamic var postal_code = 0
     dynamic var longitude = 0
     dynamic var latitude = 0
-    dynamic var active = ""
+    dynamic var active = 0
     
     /// Primary key
     ///

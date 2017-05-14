@@ -351,18 +351,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="nud-kw-PBl">
                         <nil key="title"/>
-                        <leftBarButtonItems>
-                            <barButtonItem systemItem="add" id="tFH-OG-khe">
-                                <connections>
-                                    <action selector="goToCreationEvent:" destination="cSh-Vj-10U" id="2Pv-DE-e0g"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem enabled="NO" id="xYJ-B2-y6q">
-                                <connections>
-                                    <segue destination="Iaj-EK-q1C" kind="show" identifier="toLogInAction" id="UhO-AK-a75"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" image="gps_marker" id="BV9-rr-E42">
+                            <connections>
+                                <segue destination="Jed-9f-bWK" kind="show" identifier="toCityPicker" id="ku8-OX-xKB"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="search" id="Wux-kL-6BS">
                                 <connections>
@@ -374,19 +367,12 @@
                                     <segue destination="Rb4-hv-k1m" kind="show" id="evk-zr-ar4"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="add" id="BV9-rr-E42">
-                                <connections>
-                                    <segue destination="Jed-9f-bWK" kind="show" identifier="toCityPicker" id="ku8-OX-xKB"/>
-                                </connections>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="cityPicker" destination="BV9-rr-E42" id="dBx-2k-O6U"/>
                         <outlet property="collectionView" destination="sGH-Gd-zWP" id="60E-6X-Goc"/>
-                        <outlet property="createEventButton" destination="tFH-OG-khe" id="L4F-qK-mLy"/>
                         <outlet property="datePicker" destination="O2N-kV-Van" id="bAh-SQ-F55"/>
-                        <outlet property="loginButton" destination="xYJ-B2-y6q" id="mYK-LT-ADG"/>
                         <outlet property="uiView" destination="sGH-Gd-zWP" id="WFo-kT-iNY"/>
                         <segue destination="Me0-ob-IT0" kind="show" identifier="EventDetail" id="r9s-mS-euz"/>
                     </connections>
@@ -1312,12 +1298,13 @@ Hvala svima!
         <image name="about-filled-50" width="25" height="25"/>
         <image name="calendar-50" width="25" height="25"/>
         <image name="category-icon-50" width="25" height="25"/>
+        <image name="gps_marker" width="25" height="25"/>
         <image name="home_filled-50" width="25" height="25"/>
         <image name="varazdinevents-bg" width="751" height="421"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYz-R5-CSN"/>
-        <segue reference="CmU-3I-VSi"/>
+        <segue reference="r9s-mS-euz"/>
         <segue reference="cje-GK-eQj"/>
+        <segue reference="CmU-3I-VSi"/>
     </inferredMetricsTieBreakers>
 </document>
