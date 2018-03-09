@@ -1,2 +1,2 @@
 # VarazdinEvents iOS App
-## Documentation: http://varazdinevents.cf/docs/swift-documentation/
+## Documentation: https://kickass.website/docs/swift-documentation/
