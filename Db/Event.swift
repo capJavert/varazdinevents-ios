@@ -6,19 +6,19 @@ import RealmSwift
 /// Event
 public class Event: Object
 {
-    dynamic var id = 0
-    dynamic var title = ""
-    dynamic var text = ""
-    dynamic var date = 0
-    dynamic var date_to = 0
-    dynamic var host = ""
-    dynamic var official_link = "link"
-    dynamic var image = ""
-    dynamic var facebook = ""
-    dynamic var offers = "offers"
-    dynamic var category = "Ostalo"
-    dynamic var author = 0
-    dynamic var favorite = false
+    @objc dynamic var id = 0
+    @objc dynamic var title = ""
+    @objc dynamic var text = ""
+    @objc dynamic var date = 0
+    @objc dynamic var date_to = 0
+    @objc dynamic var host = ""
+    @objc dynamic var official_link = "link"
+    @objc dynamic var image = ""
+    @objc dynamic var facebook = ""
+    @objc dynamic var offers = "offers"
+    @objc dynamic var category = "Ostalo"
+    @objc dynamic var author = 0
+    @objc dynamic var favorite = false
     
     
     /// Primary key

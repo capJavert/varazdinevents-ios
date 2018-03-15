@@ -32,8 +32,8 @@ class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate, UITe
         super.viewDidLoad()
         
         //keyboard setting
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         //hide keyboard on click
         self.hideKeyboardWhenTappedAround()
@@ -66,14 +66,14 @@ class FacebookImportController: UIViewController, FBSDKLoginButtonDelegate, UITe
         }
     }
     
-    func displayAlertMessage(userMessage: String){
+    @objc func displayAlertMessage(userMessage: String){
         
         let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
         
         let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
         
         alert.addAction(action)
-        self.present(alert, animated:true, completion: nil)
+    self.present(alert, animated:true, completion: nil)
     }
 }
 

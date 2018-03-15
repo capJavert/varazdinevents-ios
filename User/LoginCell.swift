@@ -26,7 +26,7 @@ class LoginCell: UICollectionViewCell {
         textField.backgroundColor = .white
         textField.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
         textField.attributedPlaceholder = NSAttributedString(string: "Korisničko ime",
-                                                             attributes: [NSForegroundColorAttributeName: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
+                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
         textField.keyboardType = .emailAddress
         textField.autocorrectionType = UITextAutocorrectionType.no
         textField.autocapitalizationType = UITextAutocapitalizationType.none
@@ -38,7 +38,7 @@ class LoginCell: UICollectionViewCell {
     let passwordTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         textField.attributedPlaceholder = NSAttributedString(string: "Lozinka",
-                                                            attributes: [NSForegroundColorAttributeName: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
+                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 )])
         textField.layer.borderColor = UIColor( red: 255/255, green: 187/255, blue:70/255, alpha: 1.0 ).cgColor
         textField.layer.borderWidth = 2
         textField.backgroundColor = .white
@@ -64,7 +64,7 @@ class LoginCell: UICollectionViewCell {
     var loginController: LoginController?
     var eventController: EventController?
     
-    
+    @objc   
     ///
     func logIn(){
         

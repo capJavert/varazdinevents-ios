@@ -163,14 +163,14 @@ public class DbController
     /// Get Events
     public func realmFetchEvents()
     {
-        let data = self.realm.objects(Event.self).sorted(byProperty: "date")
+        let data = self.realm.objects(Event.self).sorted(byKeyPath: "date")
         dbResultDelegate?.getEvents(result: data.reversed())
     }
     
     /// Get Cities
     public func realmFetchCities()
     {
-        let data = self.realm.objects(City.self).sorted(byProperty: "date")
+        let data = self.realm.objects(City.self).sorted(byKeyPath: "date")
         dbResultDelegate?.getCities(result: data.reversed())
     }
     

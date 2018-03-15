@@ -52,7 +52,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         super.viewWillAppear(animated)
         
         let predicate = NSPredicate(format: "favorite = YES")
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         
         collectionView.reloadData()
         
@@ -88,7 +88,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         if(searchText == "") {
             self.navigationItem.title = "Favoriti"
             let predicate = NSPredicate(format: "favorite = YES")
-            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
             self.collectionView!.reloadData()
         }
     }
@@ -125,7 +125,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
         let predicate = NSPredicate(format: "title CONTAINS %@ AND favorite = YES", searchText)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
@@ -149,7 +149,7 @@ class EventFavoriteController: UIViewController, UICollectionViewDelegate, UICol
     /// Go to Event Detail
     ///
     /// - Parameter sender: sender
-    func goToEventDetail( sender: UIButton){
+    @objc func goToEventDetail( sender: UIButton){
         //passing Sender
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }

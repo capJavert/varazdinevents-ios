@@ -12,12 +12,12 @@ import RealmSwift
 /// City
 public class City: Object
 {
-    dynamic var id = 0
-    dynamic var name = ""
-    dynamic var postal_code = 0
-    dynamic var longitude = 0
-    dynamic var latitude = 0
-    dynamic var active = 0
+    @objc dynamic var id = 0
+    @objc dynamic var name = ""
+    @objc dynamic var postal_code = 0
+    @objc dynamic var longitude = 0
+    @objc dynamic var latitude = 0
+    @objc dynamic var active = 0
     
     /// Primary key
     ///

@@ -16,12 +16,9 @@ import GoogleMaps
 import RealmSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, FIRMessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
-
-    public func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) {
-    }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool
     {
@@ -31,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             migrationBlock: { migration, oldSchemaVersion in })
         
         //configure fcm
-        FIRApp.configure()
+        FirebaseApp.configure()
         connectToFcm()
         
         //display notifications
@@ -44,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
             // For iOS 10 data message (sent via FCM)
-            FIRMessaging.messaging().remoteMessageDelegate = self
+            Messaging.messaging().delegate = self
             
         } else {
             let settings: UIUserNotificationSettings =
@@ -80,22 +77,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func connectToFcm() {
         // Won't connect since there is no token
-        guard FIRInstanceID.instanceID().token() != nil else {
+        guard InstanceID.instanceID().token() != nil else {
             print("NO_TOKEN")
             return;
         }
         
         // Disconnect previous FCM connection if it exists.
-        FIRMessaging.messaging().disconnect()
+        Messaging.messaging().shouldEstablishDirectChannel = true
         
-        FIRMessaging.messaging().connect { (error) in
+        Messaging.messaging().connect { (error) in
             if error != nil {
-                print("Unable to connect with FCM. \(error)")
+                print("Unable to connect with FCM. \(String(describing: error))")
             } else {
                 //register devices with web api
                 let request = HTTPRequest()
                 //send fcm token
-                request.registerToken(token: FIRInstanceID.instanceID().token()!)
+                request.registerToken(token: InstanceID.instanceID().token()!)
                 
                 print("Connected to FCM.")
             }
@@ -103,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func tokenRefreshNotification(_ notification: Notification) {
-        if let refreshedToken = FIRInstanceID.instanceID().token() {
+        if let refreshedToken = InstanceID.instanceID().token() {
             print("InstanceID token: \(refreshedToken)")
         }
         
@@ -114,7 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         //set APNS token for device Firebase config
-        FIRInstanceID.instanceID().setAPNSToken(deviceToken as Data, type: FIRInstanceIDAPNSTokenType.sandbox)
+        InstanceID.instanceID().setAPNSToken(deviceToken as Data, type: InstanceIDAPNSTokenType.sandbox)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
@@ -159,7 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         // Let FCM know about the message for analytics etc.
-        FIRMessaging.messaging().appDidReceiveMessage(userInfo)
+        Messaging.messaging().appDidReceiveMessage(userInfo)
         // handle your message
     }
 
@@ -177,7 +174,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         //disconnect if app is in background
-        FIRMessaging.messaging().disconnect()
+        Messaging.messaging().disconnect()
         print("Disconnected from FCM.")
     }
 
@@ -196,7 +193,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        FIRMessaging.messaging().connect { error in
+        Messaging.messaging().connect { error in
         print(error ?? "NO_ERROR")
         }
     }

@@ -6,15 +6,15 @@ import RealmSwift
 /// Host
 public class Host: Object
 {
-    dynamic var id = 0
-    dynamic var name = ""
-    dynamic var address = ""
-    dynamic var phone = ""
-    dynamic var work_hours = ""
-    dynamic var facebook = ""
-    dynamic var website = ""
-    dynamic var about = ""
-    dynamic var image = ""
+    @objc dynamic var id = 0
+    @objc dynamic var name = ""
+    @objc dynamic var address = ""
+    @objc dynamic var phone = ""
+    @objc dynamic var work_hours = ""
+    @objc dynamic var facebook = ""
+    @objc dynamic var website = ""
+    @objc dynamic var about = ""
+    @objc dynamic var image = ""
     
     /// Primary key
     ///

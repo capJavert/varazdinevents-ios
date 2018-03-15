@@ -24,7 +24,7 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
         
         let predicate = NSPredicate(format: "author = %@", argumentArray: [host.id])
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         
         self.navigationItem.title = "Događanja "+host.name
         
@@ -59,7 +59,7 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
         if(searchText == "") {
             self.navigationItem.title = "Događanja "+host.name
             let predicate = NSPredicate(format: "author = %@", argumentArray: [host.id])
-            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
             self.collectionView!.reloadData()
         }
     }
@@ -78,7 +78,7 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
         let predicate = NSPredicate(format: "title CONTAINS %@ AND author = %@", argumentArray: [searchText, host.id])
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
@@ -100,7 +100,7 @@ class HostEventController: UIViewController, UICollectionViewDelegate, UICollect
         return cell2
     }
     
-    func goToEventDetail( sender: UIButton){
+    @objc func goToEventDetail( sender: UIButton){
         //passing Sender
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }

@@ -66,7 +66,7 @@ extension InitController: OnUserLoggedDelegate {
     /// - Parameter user: User
     public func onUserLogged(user: User) {
         self.user = user
-        initFirstView(sender: user)
+        initFirstView(user)
     }
 }
 
@@ -80,7 +80,7 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     

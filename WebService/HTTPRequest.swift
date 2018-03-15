@@ -129,7 +129,7 @@ public class HTTPRequest
     ///   - sessionId: User sessionId
     public func createEvent(data: [String: Any], sessionId: String)
     {
-        var request = URLRequest(url: NSURL(string: baseUrl+"/events?token="+sessionId) as! URL)
+        var request = URLRequest(url: NSURL(string: baseUrl+"/events?token="+sessionId)! as URL)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try! JSONSerialization.data(withJSONObject: data)

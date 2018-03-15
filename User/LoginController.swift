@@ -56,8 +56,8 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
         registerCells()
         
         //keyboard setting
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         //hide keyboard on click
         self.hideKeyboardWhenTappedAround()
@@ -76,7 +76,7 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
     }
     
     ///
-    public func cancleIt(){
+    @objc public func cancleIt(){
         let eventsView = self.storyboard?.instantiateViewController(withIdentifier: "eventsView") as! EventController
         self.navigationController?.pushViewController(eventsView, animated: true)
     }
@@ -88,14 +88,14 @@ class LoginController: UIViewController, UICollectionViewDataSource,  UICollecti
     }
     
     /// Hide keyboard
-    func keyboardHide() {
+    @objc func keyboardHide() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
             }, completion: nil)
     }
     
     //For showing keyboard when textfield is touched and the View will go little bit up because of keyboard
-    func keyboardShow() {
+    @objc func keyboardShow() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.frame = CGRect(x: 0, y: -50, width: self.view.frame.width, height: self.view.frame.height)
             }, completion: nil)

@@ -76,17 +76,17 @@ class HostController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    func goToHostEvent( sender: HostEventButton){
+    @objc func goToHostEvent( sender: HostEventButton){
         //passing Sender
         self.performSegue(withIdentifier: "HostEvent", sender: moreInfoButton)
     }
     
-    func openFacebookPage(sender:UITapGestureRecognizer) {
-        UIApplication.shared.open(NSURL(string: host.facebook) as! URL)
+    @objc func openFacebookPage(sender:UITapGestureRecognizer) {
+        UIApplication.shared.open(NSURL(string: host.facebook)! as URL)
     }
     
-    func openWebPage(sender:UITapGestureRecognizer) {
-        UIApplication.shared.open(NSURL(string: host.website) as! URL)
+    @objc func openWebPage(sender:UITapGestureRecognizer) {
+        UIApplication.shared.open(NSURL(string: host.website)! as URL)
     }
     
     

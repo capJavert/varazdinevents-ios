@@ -37,7 +37,7 @@ class EventDateController: UIViewController, UICollectionViewDelegate, UICollect
         let date_to = event.date_to
         let predicate = NSPredicate(format: "date >= %d AND date <= %d",
                                     date, date_to)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy"
@@ -82,7 +82,7 @@ class EventDateController: UIViewController, UICollectionViewDelegate, UICollect
             
             let predicate = NSPredicate(format: "date >= %d AND date <= %d",
                                         event.date, event.date_to)
-            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
             self.collectionView!.reloadData()
         }
     }
@@ -116,7 +116,7 @@ class EventDateController: UIViewController, UICollectionViewDelegate, UICollect
         self.navigationItem.title = searchText.uppercased()
         let predicate = NSPredicate(format: "date >= %d AND date <= %d AND title CONTAINS %@",
                                     event.date, event.date_to, searchText)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
@@ -138,7 +138,7 @@ class EventDateController: UIViewController, UICollectionViewDelegate, UICollect
         return cell2
     }
     
-    func goToEventDetail( sender: UIButton){
+    @objc func goToEventDetail( sender: UIButton){
         //passing Sender
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }

@@ -129,11 +129,11 @@ class EventDetailController: UIViewController, UITabBarDelegate {
                     event.favorite = false
                     tabBar.selectedItem = nil
                     
-                    request.unFavoriteEvent(token: FIRInstanceID.instanceID().token()!, eventId: event.id)
+                    request.unFavoriteEvent(token: InstanceID.instanceID().token()!, eventId: event.id)
                 } else {
                     event.favorite = true
                     
-                    request.favoriteEvent(token: FIRInstanceID.instanceID().token()!, eventId: event.id)
+                    request.favoriteEvent(token: InstanceID.instanceID().token()!, eventId: event.id)
                 }
                 
                 realm.add(event, update: true)
@@ -141,21 +141,21 @@ class EventDetailController: UIViewController, UITabBarDelegate {
         }
     }
     
-    func openFacebookPage(sender:UITapGestureRecognizer) {
-        UIApplication.shared.open(NSURL(string: event.facebook) as! URL)
+    @objc func openFacebookPage(sender:UITapGestureRecognizer) {
+        UIApplication.shared.open(NSURL(string: event.facebook)! as URL)
     }
     
-    func goToEventHost( sender: HostLabel){
+    @objc func goToEventHost( sender: HostLabel){
         //passing Sender
         self.performSegue(withIdentifier: "Host", sender: hostLabel)
     }
     
-    func goToEventLocation( sender: UILabel){
+    @objc func goToEventLocation( sender: UILabel){
         //passing Sender
         self.performSegue(withIdentifier: "EventLocation", sender: sender)
     }
     
-    func goToEventCategory( sender: UILabel){
+    @objc func goToEventCategory( sender: UILabel){
         //passing Sender
         self.performSegue(withIdentifier: "EventCategory", sender: sender)
     }

@@ -79,7 +79,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         if(searchText == "") {
             self.navigationItem.title = searchText.uppercased()
             let predicate = NSPredicate(format: "category = %@", category)
-            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+            self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
             self.collectionView!.reloadData()
         }
     }
@@ -112,7 +112,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
         let predicate = NSPredicate(format: "title CONTAINS %@ AND category = %@", searchText, category)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
@@ -134,7 +134,7 @@ class EventCategoryController: UIViewController, UICollectionViewDelegate, UICol
         return cell2
     }
  
-    func goToEventDetail( sender: UIButton){
+    @objc func goToEventDetail( sender: UIButton){
         //passing Sender
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
@@ -163,7 +163,7 @@ extension EventCategoryController: OnDataLoadedDelegate {
     public func onDataLoaded(events: [Event]) {
         //dve linije would hit that
         let predicate = NSPredicate(format: "category = %@", category)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         
         collectionView.reloadData()
     }

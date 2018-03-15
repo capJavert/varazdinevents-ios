@@ -54,7 +54,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
             self.navigationItem.title = searchText.uppercased()
-            self.events = try! Array(Realm().objects(Event.self).sorted(byProperty: "date"))
+            self.events = try! Array(Realm().objects(Event.self).sorted(byKeyPath: "date"))
             self.collectionView!.reloadData()
         }
     }
@@ -75,7 +75,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         //whetever search I'm making will be the title of the search text
         self.navigationItem.title = searchText.uppercased()
         let predicate = NSPredicate(format: "title CONTAINS %@", searchText)
-        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byProperty: "date"))
+        self.events = try! Array(Realm().objects(Event.self).filter(predicate).sorted(byKeyPath: "date"))
         self.collectionView!.reloadData()
         dismiss(animated: true, completion: nil)
     }
@@ -92,7 +92,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         self.tabBarController?.tabBar.isHidden = false
         
         //load events from db first
-        self.events = Array(DbController.sharedDBInstance.realm.objects(Event.self).sorted(byProperty: "date"))
+        self.events = Array(DbController.sharedDBInstance.realm.objects(Event.self).sorted(byKeyPath: "date"))
         
         if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
@@ -147,7 +147,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         return refreshControl
     }()
     
-    func handleRefresh(_ refreshControl: UIRefreshControl) {
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         if(NetworkConnection.Connection.isConnectedToNetwork()){
             webServiceDataLoader.onDataLoadedDelegate = self
             webServiceDataLoader.LoadData()
@@ -182,7 +182,7 @@ class EventController: UIViewController, UICollectionViewDataSource, UICollectio
         return cell
     }
     
-    func goToEventDetail( sender: UIButton){
+    @objc func goToEventDetail( sender: UIButton){
         //passing Sender
         self.performSegue(withIdentifier: "EventDetail", sender: sender)
     }
@@ -215,7 +215,7 @@ extension EventController: OnDataLoadedDelegate {
     ///
     /// - Parameter events: [Event]
     public func onDataLoaded(events: [Event]) {
-        self.events = Array(DbController.sharedDBInstance.realm.objects(Event.self).sorted(byProperty: "date"))
+        self.events = Array(DbController.sharedDBInstance.realm.objects(Event.self).sorted(byKeyPath: "date"))
         collectionView.reloadData()
     }
     
